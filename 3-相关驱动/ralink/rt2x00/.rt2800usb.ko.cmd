@@ -1,0 +1,1 @@
+cmd_drivers/net/wireless/ralink/rt2x00/rt2800usb.ko := aarch64-linux-gnu-ld -EL -r  -maarch64linux -T /home/forlinx/work/OK10xx-linux-fs/flexbuild/packages/linux/OK10xx-linux-kernel/scripts/module-common.lds --build-id  -o drivers/net/wireless/ralink/rt2x00/rt2800usb.ko drivers/net/wireless/ralink/rt2x00/rt2800usb.o drivers/net/wireless/ralink/rt2x00/rt2800usb.mod.o ;  true

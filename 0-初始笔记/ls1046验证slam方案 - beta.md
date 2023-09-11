@@ -426,7 +426,7 @@ virtual memory exhausted: Cannot allocate memory
 
 ### 0831
 
-烧录文件系统，制作U盘启动，烧录之前先取消挂载，然后fdisk -l查看设备，注意`/dev/sdb1` 是一个分区，而 `/dev/sdb` 是整个磁盘设备。你需要将镜像文件 `ubuntu.img` 写入整个磁盘设备 `/dev/sdb`，而不是 `/dev/sdb1` 分区。这是因为操作系统的引导扇区和分区表位于整个磁盘设备上，而不仅仅是某个分区上。
+烧录文件系统，制作U盘启动，烧录之前先取消挂载，然后fdisk -l查看设备，注意`/dev/sdb1` 是一个分区，而 `/dev/sdb` 是整个磁盘设备。需要将镜像文件 `ubuntu.img` 写入整个磁盘设备 `/dev/sdb`，而不是 `/dev/sdb1` 分区。这是因为操作系统的引导扇区和分区表位于整个磁盘设备上，而不仅仅是某个分区上。
 
 所以，在执行 `dd` 命令时，正确的设备应该是 `/dev/sdb`，而不是 `/dev/sdb1`。
 
@@ -652,6 +652,155 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
 参考ch341所处的目录下的Makefile和Kconfig文件，添加ch343依赖，将ch343.c和ch343.h文件复制到该目录下，然后配置内核驱动ch343为M，重新编译内核，将生成的ch343.ko驱动安装到ls1046A的板卡上，insmod驱动，接入底盘串口线，识别成ttych343usb，之后就可以启动base_serial.launch
 
 同样，配置rt2800usb驱动，将ko文件安装到ls1046A，该驱动是无线网卡usb模块驱动
+
+### 0907
+
+虚拟机上ralink2870无线usb模块使用，在正确的安装驱动之后
+
+要配置 wpa_supplicant 连接 WiFi，需要编辑 wpa_supplicant 的配置文件（通常位于 "/etc/wpa_supplicant/wpa_supplicant.conf"）并添加适当的网络配置，没有该文件直接创建即可。
+
+以下是 wpa_supplicant 配置文件的基本结构：
+
+```ini
+ctrl_interface=/run/wpa_supplicant
+update_config=1
+
+network={
+    ssid="yangfx"
+    psk="201016YX86f"
+}
+```
+
+在上面的示例中，需要替换 "ssid" 和 "psk" 分别为 WiFi 网络的名称和密码。
+
+保存并关闭配置文件后，使用以下命令启动 wpa_supplicant 并连接到 WiFi 网络，注意-i后的wifi名称：
+
+```bash
+sudo wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+其中，"-B" 选项表示在后台运行 wpa_supplicant，"-iwlan0" 指定要连接的无线网络接口，"-c" 选项后面是 wpa_supplicant 配置文件的路径。
+
+wifi名被rename为wlx7cdd901b2360，暂时没有查出原因，使用如下命令替换
+
+```shell
+sudo wpa_supplicant -B -iwlx7cdd901b2360 -c/etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+如果连接成功，可以使用以下命令检查网络连接状态：
+
+```shell
+sudo wpa_cli status
+```
+
+然后动态获取ip
+
+```shell
+sudo udhcpc -i wlx7cdd901b2360
+```
+
+注意根据实际需求设置网关（可选），把不能上网的网卡网关删除，否则动态获取了ip也无法ping通
+
+```shell
+sudo route del default gw 192.168.0.0
+```
+
+### 0908
+
+```
+usb 3-1: new high-speed USB device number 2 using xhci-hcd
+[   86.951012] usb 3-1: reset high-speed USB device number 2 using xhci-hcd
+[   87.109401] ieee80211 phy0: rt2x00_set_rt: Info - RT chipset 3070, rev 0201 detected
+[   87.118576] ieee80211 phy0: rt2x00_set_rf: Info - RF chipset 0005 detected
+[   87.119763] ieee80211 phy0: Selected rate control algorithm 'minstrel_ht'
+[   87.120609] usbcore: registered new interface driver rt2800usb
+[   87.139118] rt2800usb 3-1:1.0 wlx7cdd901b2360: renamed from wlan0
+[   87.206175] ieee80211 phy0: rt2x00lib_request_firmware: Info - Loading firmware file 'rt2870.bin'
+[   87.206591] rt2800usb 3-1:1.0: Direct firmware load for rt2870.bin failed with error -2
+[   87.206596] ieee80211 phy0: rt2x00lib_request_firmware: Error - Failed to request Firmware
+```
+
+```
+rt2800usb 3-1:1.0 wlx7cdd901b2360: renamed from wlan0
+[   87.206175] ieee80211 phy0: rt2x00lib_request_firmware: Info - Loading firmware file 'rt2870.bin'
+[   87.206591] rt2800usb 3-1:1.0: Direct firmware load for rt2870.bin failed with error -2
+[   87.206596] ieee80211 phy0: rt2x00lib_request_firmware: Error - Failed to request Firmware
+[  175.175385] ieee80211 phy0: rt2x00lib_request_firmware: Info - Loading firmware file 'rt2870.bin'
+[  175.175401] rt2800usb 3-1:1.0: Direct firmware load for rt2870.bin failed with error -2
+[  175.175405] ieee80211 phy0: rt2x00lib_request_firmware: Error - Failed to request Firmware
+[  180.338718] ieee80211 phy0: rt2x00lib_request_firmware: Info - Loading firmware file 'rt2870.bin'
+[  180.338735] rt2800usb 3-1:1.0: Direct firmware load for rt2870.bin failed with error -2
+[  180.338739] ieee80211 phy0: rt2x00lib_request_firmware: Error - Failed to request Firmware
+```
+
+缺少`rt2870.bin`，从主机上复制一份到ls1046A上，重新接入usb无线wifi，正确dmesg信息如下
+
+```
+ieee80211 phy1: rt2x00_set_rt: Info - RT chipset 3070, rev 0201 detected
+[  790.898561] ieee80211 phy1: rt2x00_set_rf: Info - RF chipset 0005 detected
+[  790.898942] ieee80211 phy1: Selected rate control algorithm 'minstrel_ht'
+[  790.919168] rt2800usb 3-1:1.0 wlx7cdd901b2360: renamed from wlan0
+[  790.971681] ieee80211 phy1: rt2x00lib_request_firmware: Info - Loading firmware file 'rt2870.bin'
+[  790.971760] ieee80211 phy1: rt2x00lib_request_firmware: Info - Firmware detected - version: 0.36
+[  791.155964] IPv6: ADDRCONF(NETDEV_UP): wlx7cdd901b2360: link is not ready
+```
+
+```
+sudo wpa_supplicant -B -iwlx7cdd901b2360 -c/etc/wpa_supplicant.conf
+```
+
+删除无法上网的fm1-mac3网关即可
+
+```
+sudo route del default gw _gateway dev fm1-mac3
+```
+
+设置主从机通信
+
+从机设置：
+
+```
+export ROS_MASTER_URI=http://192.168.230.136:11311
+export ROS_HOSTNAME=192.168.230.28
+```
+
+主机设置：
+
+```
+export ROS_MASTER_URI=http://192.168.230.136:11311
+export ROS_HOSTNAME=192.168.230.136
+```
+
+自此，0901留下的ch2102驱动、ch343驱动、usb无线网卡驱动均已解决，并且已经解决了串口输出的问题，还有一个问题：将烧录在emmc更改为烧录到ssd，解决容量不足的问题。
+
+内核启动中使用的参数：
+
+```
+ Kernel command line: console=ttyS0,115200 earlycon=uart8250,mmio,0x21c0500 root=PARTUUID=7da15185-03 rw rootwait board_name=ls1046ardb serdes1=1133
+```
+
+无法使用串口打断uboot的可能原因，以下信息来源于系统启动输出
+
+```
+bootconsole [uart8250] disabled
+```
+
+一些有用的相关信息
+
+```
+fsl-quadspi 1550000.quadspi: w25q128 (16384 Kbytes)
+
+ EXT4-fs (mmcblk0p3): 1 orphan inode deleted
+[    3.685004] EXT4-fs (mmcblk0p3): recovery complete
+[    3.691517] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+[    3.699620] VFS: Mounted root (ext4 filesystem) on device 179:3.
+[    3.705925] devtmpfs: mounted
+[    3.709263] Freeing unused kernel memory: 1216K
+```
+
+存档：解析信息到
+
+Welcome to Ubuntu 18.04.1 LTS!
 
 
 

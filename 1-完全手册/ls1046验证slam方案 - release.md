@@ -340,16 +340,14 @@ chmod +x install_packages.sh
 创建工作空间，当前在`家目录~`
 
 ```shell
-mkdir ~/gie_robot&&cd gie_robot
-mkdir src&&cd src
+mkdir -p ~/gie_robot/src&&cd ~/gie_robot/src
 catkin_init_workspace
 ```
 
 将需求分析的源码功能包放到src目录下，回到 ~/gie_robot目录编译
 
 ```shell
-cd  ~/gie_robot
-catkin_make
+cd  ~/gie_robot&&catkin_make
 ```
 
 #### 2.3 测试ros功能及编译的功能包
@@ -374,9 +372,87 @@ roslaunch turn_on_wheeltec_robot base_serial.launch
 roslaunch turn_on_wheeltec_robot mapping.launch 
 ```
 
+测试导航
+
+```shell
+roslaunch turn_on_wheeltec_robot navigation.launch 
+```
+
+#### 2.4 usb无线网卡模块测试
+
+配置 wpa_supplicant 连接 WiFi，需要编辑 wpa_supplicant 的配置文件（通常位于 "/etc/wpa_supplicant/wpa_supplicant.conf"）并添加适当的网络配置，没有该文件直接创建即可。
+
+以下是 wpa_supplicant 配置文件的基本结构：
+
+```ini
+ctrl_interface=/run/wpa_supplicant
+update_config=1
+
+network={
+    ssid="yangfx"
+    psk="201016YX86f"
+}
+```
+
+在上面的示例中，需要替换 "ssid" 和 "psk" 分别为 WiFi 网络的名称和密码。
+
+保存并关闭配置文件后，使用以下命令启动 wpa_supplicant 并连接到 WiFi 网络，注意-i后的wifi名称：
+
+```bash
+sudo wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+其中，"-B" 选项表示在后台运行 wpa_supplicant，"-iwlan0" 指定要连接的无线网络接口，"-c" 选项后面是 wpa_supplicant 配置文件的路径。
+
+当前wifi名被rename为wlx7cdd901b2360，使用如下命令替换
+
+```shell
+sudo wpa_supplicant -B -iwlx7cdd901b2360 -c/etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+如果连接成功，可以使用以下命令检查网络连接状态：
+
+```shell
+sudo wpa_cli status
+```
+
+然后动态获取ip
+
+```shell
+sudo udhcpc -i wlx7cdd901b2360
+```
+
+（可选）注意根据实际需求设置网关，把不能上网的网卡网关删除，否则动态获取了ip也无法ping通
+
+```shell
+sudo route del default gw 192.168.0.0
+```
+
+#### 2.5 多机通信测试
+
+设置主从机通信，编辑`.bashrc`文件，在文件最后面添加以下内容即可，IP根据实际修改
+
+从机（其他ubuntu系统）设置：
+
+```
+export ROS_MASTER_URI=http://192.168.230.136:11311
+export ROS_HOSTNAME=192.168.230.28
+```
+
+主机（ls1046A）设置：
+
+```
+export ROS_MASTER_URI=http://192.168.230.136:11311
+export ROS_HOSTNAME=192.168.230.136
+```
+
+以上配置完成后，可在主机启动ros相关指令，如roscore、roslaunch等
+
+从机能正常通过rostopic、rosmsg查看主机的话题等信息
 
 
-### 二.自研ls1046
+
+### 三.自研ls1046
 
 根据上面的结果进行分支
 
