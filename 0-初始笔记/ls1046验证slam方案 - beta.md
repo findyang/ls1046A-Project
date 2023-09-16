@@ -484,7 +484,7 @@ ubuntu.img: Android sparse image, version: 1.0, Total of 1828608 4096-byte outpu
 
 
 
-要查看Android稀疏映像文件（`ubuntu.img`）中的内容，你可以使用`simg2img`工具将其转换为常规的镜像文件格式，然后使用适当的工具进行挂载或浏览。
+要查看Android稀疏映像文件（`ubuntu.img`）中的内容，可以使用`simg2img`工具将其转换为常规的镜像文件格式，然后使用适当的工具进行挂载或浏览。
 
 以下是一般的步骤：
 
@@ -802,246 +802,386 @@ fsl-quadspi 1550000.quadspi: w25q128 (16384 Kbytes)
 
 Welcome to Ubuntu 18.04.1 LTS!
 
+### 0911
+
+```
+Starting Remount Root and Kernel File Systems...
+Mounting Huge Pages File System...
+```
+
+在Linux系统启动过程中，初始根文件系统通常以只读（read-only）的方式挂载，这是为了确保文件系统的完整性和一致性。然而，在系统正常运行后，通常需要对根文件系统进行读写操作，例如写入日志文件、修改配置等。为了允许对根文件系统进行写操作，需要将其重新挂载为读写（read-write）模式。
+
+因此，"Remount Root and Kernel File Systems" 的操作是在系统启动过程中将根文件系统从只读模式切换为读写模式的过程。这通常在启动过程的某个阶段执行，以确保系统在启动后可以正常进行写操作。
+
+所有的系统启动信息以及解析完毕。
+
+这将显示当前系统的内核命令行参数，其中包括引导加载程序的名称。
+
+```
+cat /proc/cmdline
+```
+
+**拷贝制作根文件系统**：以下为将当前的根文件系统复制到挂载的目录，该挂载的目录是来自于ssd固态硬盘，通过`rsync`命令能制作出一样的根文件系统到120G的ssd固态硬盘上，之后再调整uboot启动系统，挂载的uuid从emmc的改成ssd固态硬盘的即可
+
+挂载之前，如果先/dev/sda没有分区，先建立/dev/sda1分区，然后使用 `mkfs.ext4` 命令来格式化磁盘或分区为 ext4 文件系统
+
+```
+sudo mkfs.ext4 /dev/sda1
+```
+
+挂载新存储设备，将当前的根文件系统内容复制到新的存储设备上
+
+```
+sudo mkdir /mnt/boot
+sudo mount /dev/sda1 /mnt/boot
+sudo rsync -avx / /mnt/boot
+```
+
+输出信息即是已经拷贝制作完成根文件系统到ssd固态硬盘上
+
+```
+sent 6,114,841,029 bytes  received 2,677,410 bytes  45,824,108.16 bytes/sec
+total size is 6,104,303,376  speedup is 1.00
+```
+
+在终端中，运行以下命令来查看eMMC设备的UUID：
+
+```
+sudo blkid
+```
+
+7da15185是emmc，63d7c5d0是ssd
+
+```
+/dev/mmcblk0: PTUUID="7da15185" PTTYPE="dos"
+/dev/mmcblk0p1: PARTUUID="7da15185-01"
+/dev/mmcblk0p2: LABEL="boot" UUID="0000-0006" TYPE="vfat" PARTUUID="7da15185-02"
+/dev/mmcblk0p3: UUID="57f8f4bc-abf4-655f-bf67-946fc0f9f25b" TYPE="ext4" PARTUUID="7da15185-03"
+/dev/sda1: UUID="36051cfa-4c58-4f34-8e72-e6625f7f8865" TYPE="ext4" PARTUUID="63d7c5d0-01"
+```
+
+这个命令将列出所有存储设备的UUID，包括eMMC、ssd设备。
+
+使用ssd挂载根文件系统，在uboot上进行操作
+
+```
+setenv bootargs console=ttyS0,115200 earlycon=uart8250,mmio,0x21c0500 root=PARTUUID=63d7c5d0-01 rw rootwait board_name=ls1046ardb serdes1=1133
+```
+
+[putty中打开输入字符回显的设置方式_wxchbhd的博客-CSDN博客](https://blog.csdn.net/wxchbhd/article/details/104689954)
+
+解决串口登录显示的问题
+
+使用新的线，已经能通过DB9的串口进行登录，之前是因为线无法使用的问题。
+
+### 0912
+
+已经排查完毕，使用usb340模块时出现的能够正常输出log信息但是无法进行输入，是因为有一块芯片把输入强制上拉为高电平了，因此无法正常的输入信息。
+
+长领哥把芯片去掉后，再重新使用usb340模块登录到uboot，能够通过按下`enter`键正常打断进入到uboot的命令行，而不是之前的情况：打断进入后，无法正常输入指令。
+
+自此，DB9和usb340模块都能正常登陆到uboot。
+
+当前启动uboot已经是识别到了ssd固态硬盘了，以下为uboot输出信息
+
+```
+AHCI 0001.0301 32 slots 1 ports 6 Gbps 0x1 impl SATA mode
+flags: 64bit ncq pm clo only pmp fbss pio slum part ccc apst
+Found 1 device(s).
+```
+
+1. **AHCI 0001.0301 32 slots 1 ports 6 Gbps 0x1 impl SATA mode:** 这是有关 SATA 控制器的信息，包括支持的规范版本、插槽数、端口数、速度和模式。
+2. **Found 1 device(s):** 这表示已经发现了一个 SATA 设备。
+
+更改根文件系统的挂载id为ssd固态硬盘的63d7c5d0-01 ，操作如下：
+
+```
+setenv bootargs console=ttyS0,115200 earlycon=uart8250,mmio,0x21c0500 root=PARTUUID=63d7c5d0-01 rw rootwait board_name=ls1046ardb serdes1=1133
+```
+
+保存新的引导配置以便下次引导时使用：
+
+```
+saveenv
+```
+
+查看是否更改正确
+
+```
+printenv
+```
+
+由下可知，已经更改成功，使用`boot`指令启动
+
+```
+bootargs=console=ttyS0,115200 earlycon=uart8250,mmio,0x21c0500 root=PARTUUID=63d7c5d0-01 rw rootwait board_name=ls1046ardb serdes1=1133
+```
+
+但是还是以之前的参数启动
+
+```
+root@localhost:~# cat /proc/cmdline
+console=ttyS0,115200 earlycon=uart8250,mmio,0x21c0500 root=PARTUUID=7da15185-03 rw rootwait board_name=ls1046ardb serdes1=1133
+```
+
+有几种可能的原因：
+
+1. 内核参数重写：在某些情况下，Linux 内核启动时会重写 `bootargs` 中的参数。这可能是因为启动过程中的引导程序或内核命令行参数覆盖了 U-Boot 中的设置。
+2. 未正确保存 `bootargs`：确保在 U-Boot 中使用 `saveenv` 命令保存了 `bootargs` 的更改。只是在 U-Boot 命令行中修改 `bootargs` 不足以使更改永久生效。
+3. 启动时加载了其他脚本或配置文件：有些 U-Boot 配置可能会在启动过程中加载其他脚本或配置文件，这些文件可能会覆盖 `bootargs` 的设置。需要检查 U-Boot 配置以查看是否存在这样的情况。
+4. 硬件或平台相关的问题：某些硬件平台可能具有特定的配置要求，这可能会影响 `bootargs` 的设置。请确保硬件配置与 U-Boot 配置一致
+
+正在修改ls1046ardb_boot.scr，修改之前做的记录`root=PARTUUID=$partuuid3`
+
+ls1046ardb_boot.scr脚本内容如下：
+
+```
+boot.scr[setenv secureboot_validate 'load $devtype $devnum:2 $kernelheader_addr_r /secboot_hdrs/ls1046ardb/hdr_linux.out; load $devtype $devnum:2 $fdtheader_addr_r /secboot_hdrs/ls1046ardb/hdr_dtb.out; esbc_validate $kernelheader_addr_r; esbc_validate $fdtheader_addr_r'
+part uuid $devtype $devnum:3 partuuid3; setenv bootargs console=ttyS0,115200 earlycon=uart8250,mmio,0x21c0500 root=PARTUUID=$partuuid3 rw rootwait board_name=$board_name serdes1=$serdes1 $othbootargs; if load $devtype $devnum:2 $load_addr /boot/uEnv.txt; then echo Importing environment from uEnv.txt ...; env import -t $load_addr $filesize; fi; load $devtype $devnum:2 $kernel_addr_r /boot/Image;load $devtype $devnum:2 $fdt_addr_r /boot/fsl-ok1046a-$serdes1-$serdes2-$product.dtb; env exists secureboot && echo validating secureboot && run secureboot_validate;booti $kernel_addr_r - $fdt_addr_r
+xterm-256colorxterm-256color
+```
+
+1. 解码脚本：
+
+```
+mkimage -A arm64 -T script -C none -n "U-Boot script" -d ls1046ardb_boot.scr ls1046ardb_boot.scr.new
+```
+
+这将解码原始的 `ls1046ardb_boot.scr` 文件并创建一个新的文件 `ls1046ardb_boot.scr.new`，你可以在其中进行编辑。
 
 
-### 完整流程
+2. 编辑
 
-烧录了新的镜像文件后，登录系统，用户名：forlinx；密码：forlinx，然后切换到root用户，以下几乎所有的操作都是在root用户下进行的，为了防止某些操作需要权限。
+3. 编辑完成后，将新的脚本重新编码为 U-Boot 脚本文件：
 
-:one:先进行扩容，增加0.2G，
+```
+ mkimage -A arm64 -T script -C none -n "U-Boot script" -d ls1046ardb_boot.scr.new ls1046ardb_boot.scr
+```
 
-原先/dev/root       6.8G  2.6G  4.3G  38% /
+------
+
+在uboot中修改环境变量
+
+```
+setenv boot_scripts "ls1046ardb_update.scr ls1046ardb_boot.scr"
+saveenv
+```
+
+分区的发现问题，emmc能够被查看，ssd即是（scsi）也能被查看
+
+```
+=> part list mmc 0
+
+Partition Map for MMC device 0  --   Partition Type: DOS
+
+Part    Start Sector    Num Sectors     UUID            Type
+  1     2048            40960           7da15185-01     0c
+  2     43008           204800          7da15185-02     0c
+  3     247808          15022080        7da15185-03     83
+=> part list scsi 0
+
+Partition Map for SCSI device 0  --   Partition Type: DOS
+
+Part    Start Sector    Num Sectors     UUID            Type
+  1     2048            250067632       63d7c5d0-01     83
+```
+
+ssd查找也能找到，说明在uboot的时候，是能够知道ssd是63d7c5d0-01，但是为什么root启动参数设置为这个的时候就是失败呢？
+
+```
+=> scsi scan
+scanning bus for devices...
+  Device 0: (0:0) Vendor: ATA Prod.: KINGBANK KM100 Rev: SN12
+            Type: Hard Disk
+            Capacity: 122104.3 MB = 119.2 GB (250069680 x 512)
+Found 1 device(s).
+=> scsi part  0
+
+Partition Map for SCSI device 0  --   Partition Type: DOS
+
+Part    Start Sector    Num Sectors     UUID            Type
+  1     2048            250067632       63d7c5d0-01     83
+```
+
+更改挂载前：
+
+```
+root@localhost:~# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.0G  6.3G  670M  91% /
+devtmpfs        1.9G     0  1.9G   0% /dev
+tmpfs           1.9G  4.0K  1.9G   1% /dev/shm
+tmpfs           1.9G  956K  1.9G   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/mmcblk0p2   99M   21M   78M  22% /run/media/mmcblk0p2
+/dev/sda1       117G  6.2G  105G   6% /run/media/sda1
+tmpfs           378M     0  378M   0% /run/user/0
+```
+
+### 0913
+
+重新修改脚本
+
+```
+scsi scan;if scsi dev ${devnum}; then setenv devtype scsi;part uuid scsi $devnum:1 partuuid1;
+```
+
+==0912的解码后再重新编码为 U-Boot 脚本文件，存在问题，在该二进制文件中这个办法失效，即使是单纯的直接编码解码，不做任何修改，生成的ls1046ardb_boot.scr也是无法启动的==
+
+但是在提供的工具flex-builder中就是使用的该方法，flex-builder涉及的boot.scr如下：
+
+```
+mkimage -A arm64 -O linux -T script -C none -a 0 -e 0  -n "boot.scr" \
+			    -d $FBDIR/$bootscript_dec.tmp $FBDIR/$bootscript_dec
+```
+
+可能是-n "boot.scr"造成的影响，之前-n选项的参数不同，通过file命令查看，CRC校验也不同，
+
+```
+root@localhost:/run/media/mmcblk0p2/boot# file ls1046ardb_boot.scr_old
+ls1046ardb_boot.scr_old: u-boot legacy uImage, boot.scr, Linux/ARM 64-bit, Script File (Not compressed), 867 bytes, Tue Sep  5 02:36:15 2023, Load Address: 0x00000000, Entry Point: 0x00000000, Header CRC: 0x6FBCC843, Data CRC: 0xD301222E
+root@localhost:/run/media/mmcblk0p2/boot#
+root@localhost:/run/media/mmcblk0p2/boot# file ls1046ardb_boot.scr
+ls1046ardb_boot.scr: u-boot legacy uImage, U-Boot script, Linux/ARM 64-bit, Script File (Not compressed), 1011 bytes, Sun Jan 28 15:59:25 2018, Load Address: 0x00000000, Entry Point: 0x00000000, Header CRC: 0x77CCEA95, Data CRC: 0x59AE9DCE
+root@localhost:/run/media/mmcblk0p2/boot# date
+Mon Jan 29 00:00:19 CST 2018
+root@localhost:/run/media/mmcblk0p2/boot# file ls1046ardb_boot.scr.new
+ls1046ardb_boot.scr.new: u-boot legacy uImage, U-Boot script, Linux/ARM 64-bit, Script File (Not compressed), 939 bytes, Sun Jan 28 15:59:14 2018, Load Address: 0x00000000, Entry Point: 0x00000000, Header CRC: 0x6E9E59D0, Data CRC: 0xEE1A8114
+```
+
+进行修改
+
+1. 解码脚本：
+
+```
+mkimage -A arm64 -T script -C none -n "boot.scr" -d ls1046ardb_boot.scr ls1046ardb_boot.scr.new
+```
+
+这将解码原始的 `ls1046ardb_boot.scr` 文件并创建一个新的文件 `ls1046ardb_boot.scr.new`，你可以在其中进行编辑。
+
+
+2. 编辑
+
+3. 编辑完成后，将新的脚本重新编码为 U-Boot 脚本文件：
+
+```
+ mkimage -A arm64 -T script -C none -n "boot.scr" -d ls1046ardb_boot.scr.new ls1046ardb_boot.scr
+```
+
+依旧是失败，根据飞凌的回答，目前先尝试直接重做`ls1046ardb_boot.scr`脚本
+
+```
+您好：        
+   直接修改脚本的话是行不通的，关于scr路径源码在OK10xx-linux-fs/flexbuild/configs/board/ls1046ardb/manifest您可以自己尝试修改一下，关于这方面的资料暂且还没有，我们这边也没做过此类型的操作测试，抱歉。 
+```
+
+重做`ls1046ardb_boot.scr`脚本步骤：
+
+1.找到`/home/forlinx/work/OK10xx-linux-fs/flexbuild/configs/board/ls1046ardb`目录的`manifest`文件，然后将`root=PARTUUID=$partuuid3`改为`root=PARTUUID=63d7c5d0-01`
+
+2.回到`/home/forlinx/work/OK10xx-linux-fs/flexbuild/`目录，编译如下
 
 ```shell
-fdisk -l
-resize2fs /dev/mmcblk0p3
+root@ubuntu:/home/forlinx/work/OK10xx-linux-fs/flexbuild# flex-builder -i mkdistroscr -a arm64 -m ls1046ardb -b qspi -S 1133
+INSTRUCTION: mkdistroscr
+DESTARCH: arm64
+MACHINE: ls1046ardb
+BOOTTYPE: qspi
+SERDES1: 1133
+Image Name:   boot.scr
+Created:      Wed Sep 13 03:26:23 2023
+Image Type:   AArch64 Linux Script (uncompressed)
+Data Size:    868 Bytes = 0.85 kB = 0.00 MB
+Load Address: 00000000
+Entry Point:  00000000
+Contents:
+   Image 0: 860 Bytes = 0.84 kB = 0.00 MB
+ build/firmware/u-boot/ls1046ardb/ls1046ardb_boot.scr     [Done]
+Image Name:   boot.scr
+Created:      Wed Sep 13 03:26:23 2023
+Image Type:   AArch64 Linux Script (uncompressed)
+Data Size:    301 Bytes = 0.29 kB = 0.00 MB
+Load Address: 00000000
+Entry Point:  00000000
+Contents:
+   Image 0: 293 Bytes = 0.29 kB = 0.00 MB
+ build/firmware/u-boot/ls1046ardb/ls1046ardb_update.scr     [Done]
 ```
 
-执行完后/dev/root       7.0G  2.6G  4.4G  37% /
+3.将新生成的ls1046ardb_boot.scr复制到板卡上的/run/media/mmcblk0p2/boot目录下替换原本的文件
 
-:two:安装ros-melodic-desktop-full
+4.重启
 
-拨号上网
-
-```shell
-/root/Net_Tools/quectel-CM >> /dev/null &
-```
-
-增加网关，后面的IP根据实际修改
-
-```shell
-route add default gw 10.5.130.1
-```
-
-测试网络连接
-
-```shell
-ping 8.8.8.8
-```
-
-出现以下即可验证网络连接
+最终结果如下：已经挂载到63d7c5d0-01（120G的ssd）
 
 ```
-PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-64 bytes from 8.8.8.8: icmp_seq=1 ttl=58 time=336 ms
-64 bytes from 8.8.8.8: icmp_seq=2 ttl=58 time=22.1 ms
+root@localhost:/# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       117G  6.2G  105G   6% /
+devtmpfs        1.9G     0  1.9G   0% /dev
+tmpfs           1.9G  4.0K  1.9G   1% /dev/shm
+tmpfs           1.9G  2.7M  1.9G   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/mmcblk0p2   99M   21M   78M  22% /run/media/mmcblk0p2
+/dev/mmcblk0p3  7.0G  6.4G  606M  92% /run/media/mmcblk0p3
+tmpfs           378M     0  378M   0% /run/user/0
 ```
 
-更新时间（可选），取决于系统的时间是否处于当前的世界时间，时间根据实际修改
+自此，ssd的挂载结束，可使用的容量已经增大。
 
-```shell
-date -s "2023/09/05 14:06:40"
-```
+### 0914-0915
 
-设置APT源： 打开终端并输入以下命令，以添加ROS的APT源到你的系统中：
+增加realsense相机的使用
 
-```shell
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-```
+#### 安装realsense的sdk
 
-设置密钥： 继续在终端中输入以下命令，以添加ROS的密钥到你的系统中：
-
-```shell
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-```
-
-更新软件包列表：
-
-```shell
-sudo apt update
-```
-
-update更新后消耗如下，大约0.5G
-
-/dev/root       7.0G  3.1G  4.0G  44% /
-
-安装ros全桌面版
-
-```shell
-sudo apt install ros-melodic-desktop-full
-```
-
-安装完后，消耗如下，大约2.3G
-
-/dev/root       7.0G  5.4G  1.6G  78% /
-
-安装创建ROS包的依赖
-
-```shell
-sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
-```
-
-初始化ROS，输入以下命令，参考下方（来源于b站机器人工匠阿杰[机器人操作系统ROS的安装心得以及rosdep问题的处理](https://www.bilibili.com/video/BV1aP41137k9/?spm_id_from=333.788&vd_source=25ce0faff2c1dc6a089808ffbe1ac4de)）：
-
-```shell
-sudo apt-get install python3-pip
-sudo pip3 install 6-rosdep
-sudo 6-rosdep
-sudo rosdep init
-rosdep update
-```
-
-设置ROS环境变量。输入以下命令：
-
-```bash
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-```
-
-输入以下命令来验证安装是否成功：
-
-```shell
-rosversion -d
-```
-
-:three:安装其他功能包依赖，==后面有编写脚本一键安装==
-
-##### gmapping
-
-```shell
-sudo apt install ros-melodic-slam-gmapping
-```
-
-turn_on_robot
-
-```shell
-sudo apt install ros-melodic-serial
-```
-
-navigation
-
-```shell
-sudo apt-get install libsdl-image1.2-dev
-sudo apt-get install libsdl1.2-dev
-sudo apt-get install ros-melodic-tf2-sensor-msgs
-sudo apt-get install ros-melodic-move-base-msgs
-```
-
-robot_rc
-
-```shell
-sudo apt-get install ros-melodic-joy
-```
-
-robot_pose_ekf
-
-```shell
-sudo apt-get install ros-melodic-bfl
-```
-
-teb_local_planner
-
-```shell
-sudo apt-get install ros-melodic-costmap-converter
-sudo apt-get install ros-melodic-mbf-costmap-core
-sudo apt-get install ros-melodic-mbf-msgs
-sudo apt-get install libsuitesparse-dev
-sudo apt-get install ros-melodic-libg2o
-```
-
-编写脚本，一键安装
-
-```shell
-touch install_packages.sh
-vi install_packages.sh
-```
-
-填入以下内容
-
-```shell
-#!/bin/bash
-
-# 定义要安装的软件包列表
-packages=(
-    "ros-melodic-slam-gmapping"
-    "ros-melodic-serial"
-    "libsdl-image1.2-dev"
-    "libsdl1.2-dev"
-    "ros-melodic-tf2-sensor-msgs"
-    "ros-melodic-move-base-msgs"
-    "ros-melodic-joy"
-    "ros-melodic-bfl"
-    "ros-melodic-costmap-converter"
-    "ros-melodic-mbf-costmap-core"
-    "ros-melodic-mbf-msgs"
-    "libsuitesparse-dev"
-    "ros-melodic-libg2o"
-)
-
-# 安装软件包
-for package in "${packages[@]}"; do
-    if ! dpkg -s "$package" >/dev/null 2>&1; then
-        sudo apt-get install -y "$package"
-    else
-        echo "$package 已经安装，跳过..."
-    fi
-done
-
-# 输出安装完成的信息
-echo "安装完成！"
-```
-
-添加权限并执行
-
-```shell
-chmod +x install_packages.sh
-./install_packages.sh
-```
-
-:four:编译功能包
-
-创建工作空间，当前在`家目录~`
-
-```shell
-mkdir ~/gie_robot&&cd gie_robot
-mkdir src&&cd src
-catkin_init_workspace
-```
-
-回到 ~/gie_robot目录
-
-```shell
-cd  ~/gie_robot
-catkin_make
-```
-
-:five:测试ros功能及编译的功能包
-
-测试lsn10雷达
-
-```shell
-roslaunch lsn10 lsn10.launch
-```
-
-测试底盘驱动
+1.可能需要安装的一些功能包
 
 ```
-roslaunch turn_on_wheeltec_robot base_serial.launch
+sudo apt-get install git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev
+sudo apt-get install libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
 ```
 
+复制编译包【librealsense-master】到任意位置
+2.给所有文件可执行权限
 
+```
+sudo chmod -R 777 librealsense-master
+```
 
+3.适配一些环境变量
 
+```
+cd librealsense-master
+sudo ./scripts/setup_udev_rules.sh
+echo 'hid_sensor_custom' | sudo tee -a /etc/modules
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+```
+
+4.编译安装环境
+
+```
+cd librealsense-master
+mkdir build
+cd build
+sudo cmake ..
+sudo make
+sudo make install
+```
+
+#### 安装realsense的ros功能包
+
+编译功能包
+
+功能包【ddynamic_reconfigure-melodic-devel】
+功能包【realsense-ros-development】
+
+编译完后直接启动launch文件即可
+
+### 
 
 
 

@@ -380,6 +380,8 @@ roslaunch turn_on_wheeltec_robot navigation.launch
 
 #### 2.4 usb无线网卡模块测试
 
+如果rt2870模块缺少bin文件的话，复制一份到板卡上，路径为`/lib/firmware/rt2870.bin`
+
 配置 wpa_supplicant 连接 WiFi，需要编辑 wpa_supplicant 的配置文件（通常位于 "/etc/wpa_supplicant/wpa_supplicant.conf"）并添加适当的网络配置，没有该文件直接创建即可。
 
 以下是 wpa_supplicant 配置文件的基本结构：
@@ -449,6 +451,89 @@ export ROS_HOSTNAME=192.168.230.136
 以上配置完成后，可在主机启动ros相关指令，如roscore、roslaunch等
 
 从机能正常通过rostopic、rosmsg查看主机的话题等信息
+
+#### 2.6 ssd挂载根文件系统
+
+##### 2.6.1制作根文件系统到ssd固态硬盘
+
+**拷贝制作根文件系统**：以下为将当前的根文件系统复制到挂载的目录，该挂载的目录是来自于ssd固态硬盘，通过`rsync`命令能制作出一样的根文件系统到120G的ssd固态硬盘上，之后再调整uboot启动系统，挂载的uuid从emmc的改成ssd固态硬盘的即可
+
+挂载之前，如果先/dev/sda没有分区，先建立/dev/sda1分区，使用`fdisk -l`指令，然后根据选项p、n等生成一个新的分区sda1（可自行搜索）
+
+然后使用 `mkfs.ext4` 命令来格式化磁盘或分区为 ext4 文件系统
+
+```
+sudo mkfs.ext4 /dev/sda1
+```
+
+挂载新存储设备，使用`rsync`指令将当前的根文件系统内容复制到新的存储设备上
+
+```
+sudo mkdir /mnt/boot
+sudo mount /dev/sda1 /mnt/boot
+sudo rsync -avx / /mnt/boot
+```
+
+输出信息即是已经拷贝制作完成根文件系统到ssd固态硬盘上
+
+```
+sent 6,114,841,029 bytes  received 2,677,410 bytes  45,824,108.16 bytes/sec
+total size is 6,104,303,376  speedup is 1.00
+```
+
+在终端中，运行以下命令来查看eMMC设备的UUID：
+
+```
+sudo blkid
+```
+
+7da15185是emmc，63d7c5d0是ssd
+
+```
+/dev/mmcblk0: PTUUID="7da15185" PTTYPE="dos"
+/dev/mmcblk0p1: PARTUUID="7da15185-01"
+/dev/mmcblk0p2: LABEL="boot" UUID="0000-0006" TYPE="vfat" PARTUUID="7da15185-02"
+/dev/mmcblk0p3: UUID="57f8f4bc-abf4-655f-bf67-946fc0f9f25b" TYPE="ext4" PARTUUID="7da15185-03"
+/dev/sda1: UUID="36051cfa-4c58-4f34-8e72-e6625f7f8865" TYPE="ext4" PARTUUID="63d7c5d0-01"
+```
+
+这个命令将列出所有存储设备的UUID，包括eMMC、ssd设备。
+
+##### 2.6.2 重做ls1046ardb_boot.scr脚本
+
+步骤：
+
+1.找到`/home/forlinx/work/OK10xx-linux-fs/flexbuild/configs/board/ls1046ardb`目录的`manifest`文件，然后将`root=PARTUUID=$partuuid3`改为`root=PARTUUID=63d7c5d0-01`
+
+2.回到`/home/forlinx/work/OK10xx-linux-fs/flexbuild/`目录，编译如下
+
+```
+root@ubuntu:/home/forlinx/work/OK10xx-linux-fs/flexbuild# flex-builder -i mkdistroscr -a arm64 -m ls1046ardb -b qspi -S 1133
+```
+
+生成的文件路径在`build/firmware/u-boot/ls1046ardb/ls1046ardb_boot.scr`
+
+3.将新生成的ls1046ardb_boot.scr复制到板卡上的/run/media/mmcblk0p2/boot目录下替换原本的文件
+
+4.重启
+
+最终结果如下：已经挂载到63d7c5d0-01（120G的ssd）
+
+```
+root@localhost:/# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       117G  6.2G  105G   6% /
+devtmpfs        1.9G     0  1.9G   0% /dev
+tmpfs           1.9G  4.0K  1.9G   1% /dev/shm
+tmpfs           1.9G  2.7M  1.9G   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/mmcblk0p2   99M   21M   78M  22% /run/media/mmcblk0p2
+/dev/mmcblk0p3  7.0G  6.4G  606M  92% /run/media/mmcblk0p3
+tmpfs           378M     0  378M   0% /run/user/0
+```
+
+自此，将根文件系统从挂载到emmc更改为挂载到ssd的任务结束，可使用的容量已经增加。后续可自行安装其他的opencv以及其他的库。
 
 
 
