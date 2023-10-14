@@ -653,6 +653,14 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
 
 同样，配置rt2800usb驱动，将ko文件安装到ls1046A，该驱动是无线网卡usb模块驱动
 
+注意使用modprobe命令装载ralink的rt2800usb.ko等的时候，不需要加后缀，例如
+
+```
+modprobe rt2800usb
+```
+
+等所有的驱动加载完毕后，`ifconfig -a`查看是否有新的wifi设备出现即可
+
 ### 0907
 
 虚拟机上ralink2870无线usb模块使用，在正确的安装驱动之后
@@ -1180,8 +1188,6 @@ sudo make install
 功能包【realsense-ros-development】
 
 编译完后直接启动launch文件即可
-
-### 
 
 
 
