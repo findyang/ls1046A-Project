@@ -653,7 +653,11 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
 
 同样，配置rt2800usb驱动，将ko文件安装到ls1046A，该驱动是无线网卡usb模块驱动
 
-注意使用modprobe命令装载ralink的rt2800usb.ko等的时候，不需要加后缀，例如
+```
+depmod //第一次加载驱动的时候需要运行此命令,depmod(depend module)可检测模块的相依性，供modprobe在安装模块时使用。
+```
+
+注意使用modprobe命令装载驱动时，是需要加ko后缀的，但是加载ralink的rt2800usb.ko等的时候，不需要加后缀，例如
 
 ```
 modprobe rt2800usb
