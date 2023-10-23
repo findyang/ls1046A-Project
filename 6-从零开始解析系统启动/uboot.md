@@ -5,7 +5,63 @@
 - 标准的u-boot18.03
 - ls1046A提供的lsdk
 
+更多推荐：
 
+`uboot代码详细分析.pdf`（虽然版本比较老）
+
+
+
+## 掌握基本的汇编指令
+
+1. **加载和存储数据**：
+   - `LDR`（Load Register）：从内存中加载数据到寄存器。
+   - `STR`（Store Register）：将寄存器中的数据存储到内存中。
+   - `ADR`（Address Register）：一条小范围的地址读取伪指令,它将基于PC的相对偏移的地址值读到目标寄存器中。
+2. **算术和逻辑操作**：
+   - `ADD`（Addition）：加法操作。
+   - `SUB`（Subtraction）：减法操作。
+   - `MUL`（Multiply）：乘法操作。
+   - `DIV`（Division）：除法操作。
+   - `AND`（Bitwise AND）：按位与操作。
+   - `ORR`（Bitwise OR）：按位或操作。
+   - `EOR`（Exclusive OR）：按位异或操作。
+   - `LSL`（Logical Shift Left）：逻辑左移。
+   - `LSR`（Logical Shift Right）：逻辑右移。
+3. **分支和跳转**：
+   - `B`（Branch）：无条件分支。
+   - `BEQ`（Branch if Equal）：等于条件分支。
+   - `BNE`（Branch if Not Equal）：不等条件分支。
+   - `BL`（Branch with Link）：带链接的分支，通常用于函数调用。
+4. **堆栈操作**：
+   - `PUSH`：将寄存器值压入堆栈。
+   - `POP`：从堆栈中弹出值到寄存器。
+5. **比较和测试**：
+   - `CMP`（Compare）：比较操作，通常与条件分支一起使用。
+   - `TST`（Test）：与零比较，通常与条件分支一起使用。
+6. **加载地址**：
+   - `LDR`：加载地址到寄存器。
+7. **设置标志位**：
+   - `SET`：设置条件标志位。
+8. **系统调用**：
+   - `SWI`（Software Interrupt）：触发软件中断，通常用于系统调用。
+
+9. 其他说明
+
+   - `.global` 声明一个符号可被其他文档引用，相当于声明了一个全局变量，.globl 和.global 相同。
+
+   - `.word` 伪操作用于分配一段字内存单元（分配的单元都是字对齐的），并用伪操作中的 expr 初始化。.long 和.int 作用与之相同。
+
+   -  `.align` 伪操作用于表示对齐方式：通过添加填充字节使当前位置满足一定的对齐方式。.balign 的作用同.align。
+
+   - B 转移指令，跳转到指令中指定的目的地址；BL 带链接的转移指令，像 B 相同跳转并把转移后面紧接的一条指令地址保存到链接寄存器 LR（R14）中，以此来完成子程式的调用
+
+   - `.quad` 指令通常用于定义整数、浮点数、地址或其他 64 位数据类型。
+
+   - `.macro` 指令用于开始定义一个宏。
+
+   - `.endm` 指令用于结束宏定义块。
+
+     
 
 ## 一切的开始：Start.S
 
@@ -18,6 +74,12 @@
 [史上最全的Uboot常用命令汇总（超全面！超详细！）收藏这一篇就够了_uboat控制台代码_万里羊的博客-CSDN博客](https://blog.csdn.net/weixin_44895651/article/details/108211268)
 
 [uboot启动内核的相关命令详解——boot、bootm_正在起飞的蜗牛的博客-CSDN博客](https://blog.csdn.net/weixin_42031299/article/details/121318451)
+
+`sf probe`是用来探测flash设备的，在使用的时候可以直接使用`sf probe`后面不加参数也可以。
+
+[uboot 下nor flash 读写命令使用和验证方法_田园诗人之园的博客-CSDN博客](https://blog.csdn.net/u014100559/article/details/128667071)
+
+[uboot 命令使用(3)_uboot查看硬盘命令-CSDN博客](https://blog.csdn.net/weixin_43096766/article/details/127833475)
 
 ## bring up
 
@@ -531,7 +593,65 @@ PC=当前程序执行位置+8和几级流水线并没有关系，而是和指令
 
 ## uboot-lds文件解析
 
+先看一下 GNU 官方网站上对.lds 文件形式的完整描述：
 
+```
+SECTIONS { 
+... 
+secname *start* BLOCK(*align*) (NOLOAD) : AT ( *ldadr* ) 
+ { *contents* } >*region* :*phdr* =*fill*
+... 
+} 
+```
+
+secname和 contents是必须的，其他的都是可选的。下面挑几个常用的看看： 
+
+1. secname：段名
+2. contents：决定哪些内容放在本段，可以是整个目标文件，也可以是目标文件中的某段（代码段、数据段等）
+3. start：本段连接（运行）的地址，如果没有使用 AT（ldadr），本段存储的地址也是 start。GNU 网站上说 start 可以用任意一种描述地址的符号来描述。
+4. AT（ldadr）：定义本段存储（加载）的地址。
+
+## u-boot 移植要点
+
+要点：
+
+- 一般厂家直接提供 u-boot 源码，做查看、修改(增加新功能) 或 u-boot 版本升级这三大块的用处；后两种都需要对新板子做适配/移植。
+- 如果没有提供 u-boot 源码，那么就从 u-boot 官方版本中找到一个最相近的板子配置进行移植，这个需要水平较高。
+- 一般把 u-boot 做成对应平台通用的和最小化的，即只保留必要的板级外设初始化代码（如串口、网口和 FLASH 等需要主要做适配，都尽量找能现成使用的），其他更多板级外设初始化在 Linux 移植部分中完成。
+
+芯片公司、开发板厂家和用户三者之间的联系：
+
+- 芯片公司移植的 u-boot 从一开始是基于官方的 u-boot 拿来修改，添加/修改自家的 EVK 评估版的板子型号、相关外设初始化文件，并修改 u-boot 的 Makefile 配置，然后把自家芯片的 EVK 评估版的硬件原理图、u-boot、Linux 和 根文件系统以及使用说明文档等等全部开源，以供下游做应用的公司/厂家和做开发板的公司拿来做修改或直接应用；
+- 做开发板的厂家在拿到了芯片公司提供的芯片评估版 EVK 板子的原理图后，与 SoC 直接相关的比如 PMIC、DDR、FLASH、以太网 PHY 芯片等等不会做大改，一般直接照搬过来画自己的开发板。因为在移植 u-boot 的时候就不用再为新选型的芯片做代码适配，一般没必要做这种费力但效果不大的事情，能直接用的就尽量直接用，能不用改的就尽量不改。然后再拿到芯片公司提供的芯片评估版 EVK 板子对应的 u-boot 源码之后，同样的再添加/修改为自家开发板的型号、添加一点点自己板子的外设初始化代码（这个要求比较高）并修改 Makefile，便得到自家开发板适配的又一个 u-boot；
+- 当用户拿到了开发板厂家 或者 芯片公司提供的 u-boot 源码，即所有相关文件和初始化代码都写好了，便可以直接编译进而使用，或者自己再进一步定制化。
+
+## uboot网络相关
+
+在 U-Boot 中，`eth_legacy` 和 `eth-uclass` 代表两种不同的以太网驱动框架。它们的关系是：
+
+1. `eth_legacy`：
+   - `eth_legacy` 是传统的 U-Boot 以太网驱动框架，早期版本的 U-Boot 主要使用这种框架来管理各种以太网控制器和设备。
+   - 该框架使用了一个固定的命名约定，以太网设备的命名通常类似于 `eth0`，`eth1` 等，其中数字用于标识不同的以太网接口。
+   - `eth_legacy` 的配置和初始化通常通过宏、全局变量和函数调用完成。
+2. `eth-uclass`：
+   - `eth-uclass` 是 U-Boot 的新一代以太网驱动框架，它是基于 U-Boot 的 U-Class 设备模型的，更加灵活和模块化。
+   - `eth-uclass` 框架的优点在于它支持动态设备注册和探测，允许设备的自动识别和初始化，而不需要预先配置。
+   - 在 `eth-uclass` 框架下，以太网设备的命名可能不再遵循传统的 `ethX` 命名约定，而是通过设备树（Device Tree）等方式动态配置和初始化。
+
+关系：
+
+- `eth_legacy` 和 `eth-uclass` 是 U-Boot 中两种不同的以太网驱动框架。你可以选择使用其中一种框架，具体取决于你的硬件平台和 U-Boot 版本。
+- 较新版本的 U-Boot 通常更倾向于使用 `eth-uclass` 框架，因为它更灵活、模块化，并能更好地适应现代嵌入式系统的需求。然而，对于某些旧的硬件平台或特定需求，你可能仍然需要使用 `eth_legacy` 框架。
+- 切换到 `eth-uclass` 框架可能需要一些配置和修改，以适应你的硬件和设备树设置。
+
+**网络初始化大致调用流程**
+
+board_init()
+	eth_initialize()
+		board_eth_init() / cpu_eth_init()
+			driver_register()
+				initialize eth_device
+				eth_register()
 
 
 
