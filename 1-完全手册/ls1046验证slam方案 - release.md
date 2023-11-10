@@ -535,7 +535,13 @@ tmpfs           378M     0  378M   0% /run/user/0
 
 自此，将根文件系统从挂载到emmc更改为挂载到ssd的任务结束，可使用的容量已经增加。后续可自行安装其他的opencv以及其他的库。
 
+#### 2.7 一键安装 ROS
 
+这里如果嫌之前的ROS安装步骤过于繁琐，可以尝试一下鱼香 ros 的一键安装，输入以下指令
+
+```
+wget http://fishros.com/install -O fishros && . fishros
+```
 
 ### 三.自研ls1046
 
