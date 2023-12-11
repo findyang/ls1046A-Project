@@ -286,12 +286,6 @@ Device     Boot Start      End  Sectors  Size Id Type
 
 8GU盘和64GU盘均能识别了，其余还没测试
 
-> 最终底板排查解决，USB的信号线上，有一个电阻阻抗匹配不对，拆了拿下这个电阻就行
->
-> 实际上，这是错误的做法。USB信号线上的电阻是用来匹配信号的阻抗，去掉这个电阻会导致信号反射和干扰，影响信号传输质量。如果需要改变阻抗匹配，应该使用专门的信号线或信号转换器。拆下电阻只会破坏USB设备或电脑的USB接口。
->
-> 但是拆掉确实解决了这个问题
-
 在现在的系统中，暂不清楚为什么接入USB设备后，lsmod是看不到正常信息的输出的
 
 以下的ls1046验证方案中，使用lsmod显示与USB WIFI模块相关的正确信息应该有iwlwifi、rt2800usb、rt2x00usb、rt2800lib、rt2x00lib、mac80211、cfg80211、rfkill等驱动以及rt2870.bin
@@ -455,6 +449,7 @@ drwxr-xr-x  3 root root 4096 Nov 26 19:06 4.14.122-gaff238106-dirty/
 成功如下，能够正常连接网络
 
 ```bash
+sudo ifconfig wlx7cdd901b2360 up
 sudo wpa_supplicant -B -iwlx7cdd901b2360 -c/etc/wpa_supplicant/wpa_supplicant.conf
 sudo udhcpc -i wlx7cdd901b2360
 ```
@@ -564,7 +559,7 @@ insmod: ERROR: could not insert module /lib/modules/4.14.122-g489247679-dirty/ke
 
 ##### 设置ssh远程连接
 
-由于目前的Ubuntu系统中只有root，需要打开权限，启用root用户的SSH登录：默认情况下，许多Linux系统禁用了root用户的SSH登录。
+由于目前的Ubuntu系统中只有root，需要打开权限，启用root用户的SSH登录：默认情况下，许多Linux系统禁用了root用户的SSH登录。（使用gie用户登录的话，该用户密码为123456）
 
 1. 编辑SSH服务器的配置文件。打开`/etc/ssh/sshd_config`文件，并找到以下行：
 
@@ -634,3 +629,324 @@ crw-rw----  1 root dialout   4,  67 Mar  2  2023 ttyS3
 crw-rw----  1 root dialout 188,   0 Mar  2  2023 ttyUSB0
 ```
 
+##### 移植USB WIFI模块RTL8822BU
+
+直接在wifi源码目录编译驱动完成如下：
+
+```
+88x2bu: loading out-of-tree module taints kernel.
+[  417.405098] usbcore: registered new interface driver rtl88x2bu
+[  417.427665] rtl88x2bu 1-1.1:1.0 wlx90de8032124b: renamed from wlan0
+```
+
+```bash
+sudo ifconfig wlx90de8032124b up
+sudo wpa_supplicant -B -iwlx90de8032124b -c/etc/wpa_supplicant/wpa_supplicant.conf
+sudo udhcpc -i wlx90de8032124b
+```
+
+```
+root@ubuntu:~# ifconfig
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:d1:7e:f6:b5  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 18  bytes 3190 (3.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 18  bytes 3190 (3.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx90de8032124b: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.230.125  netmask 255.255.255.0  broadcast 192.168.230.255
+        inet6 fe80::92de:80ff:fe32:124b  prefixlen 64  scopeid 0x20<link>
+        ether 90:de:80:32:12:4b  txqueuelen 1000  (Ethernet)
+        RX packets 10  bytes 1823 (1.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14  bytes 3114 (3.1 KB)
+        TX errors 0  dropped 17 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~# ping www.baidu.com
+PING www.baidu.com(2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b)) 56 data bytes
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=1 ttl=52 time=196 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=2 ttl=52 time=63.3 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=3 ttl=52 time=97.3 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=4 ttl=52 time=258 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=5 ttl=52 time=76.1 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=6 ttl=52 time=98.5 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=7 ttl=52 time=121 ms
+^C
+--- www.baidu.com ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6008ms
+rtt min/avg/max/mdev = 63.350/130.155/258.383/65.821 ms
+```
+
+在内核源码中增加rtl88x2u驱动
+
+将wifi源码拷贝到内核源码目录并修改目录名称RTL88x2BU_arm为rtl88x2bu如下：
+
+```bash
+forlinx@ubuntu:~/nxp/flexbuild_lsdk1906/packages/linux/linux/drivers/net/wireless/realtek$ pwd
+/home/forlinx/nxp/flexbuild_lsdk1906/packages/linux/linux/drivers/net/wireless/realtek
+forlinx@ubuntu:~/nxp/flexbuild_lsdk1906/packages/linux/linux/drivers/net/wireless/realtek$ ls
+Kconfig  Makefile  rtl818x  RTL88x2BU_arm  rtl8xxxu  rtlwifi
+forlinx@ubuntu:~/nxp/flexbuild_lsdk1906/packages/linux/linux/drivers/net/wireless/realtek$ mv RTL88x2BU_arm rtl88x2bu
+mv: cannot move 'RTL88x2BU_arm' to 'rtl88x2bu': Permission denied
+forlinx@ubuntu:~/nxp/flexbuild_lsdk1906/packages/linux/linux/drivers/net/wireless/realtek$ sudo mv RTL88x2BU_arm rtl88x2bu
+[sudo] password for forlinx: 
+forlinx@ubuntu:~/nxp/flexbuild_lsdk1906/packages/linux/linux/drivers/net/wireless/realtek$ ls
+Kconfig  Makefile  rtl818x  rtl88x2bu  rtl8xxxu  rtlwifi
+```
+
+/home/forlinx/nxp/flexbuild_lsdk1906/packages/linux/linux/drivers/net/wireless/realtek/Kconfig文件修改如下，注意rtl88x2bu目录名是否对应
+
+```
+config WLAN_VENDOR_REALTEK
+        bool "Realtek devices"
+        default y
+        ---help---
+          If you have a wireless card belonging to this class, say Y.
+
+          Note that the answer to this question doesn't directly affect the
+          kernel: saying N will just cause the configurator to skip all
+          the questions about  cards. If you say Y, you will be asked for
+          your specific card in the following questions.
+
+if WLAN_VENDOR_REALTEK
+
+source "drivers/net/wireless/realtek/rtl818x/Kconfig"
+source "drivers/net/wireless/realtek/rtlwifi/Kconfig"
+source "drivers/net/wireless/realtek/rtl8xxxu/Kconfig"
+source "drivers/net/wireless/realtek/rtl88x2bu/Kconfig"
+```
+
+/home/forlinx/nxp/flexbuild_lsdk1906/packages/linux/linux/drivers/net/wireless/realtek/Makefile文件修改如下，注意CONFIG_RTL8822BU的值以及rtl88x2bu目录名是否正确对应：
+
+```
+#
+# Makefile for the Linux Wireless network device drivers for Realtek units
+#
+
+obj-$(CONFIG_RTL8180)           += rtl818x/
+obj-$(CONFIG_RTL8187)           += rtl818x/
+obj-$(CONFIG_RTLWIFI)           += rtlwifi/
+obj-$(CONFIG_RTL8XXXU)          += rtl8xxxu/
+obj-$(CONFIG_RTL8822BU)          += rtl88x2bu/
+```
+
+其中wifi源码目录下的Makefile，注意设置KSRC和MODDESTDIR的值
+
+```
+ifeq ($(CONFIG_PLATFORM_ARM64_RPI), y)
+EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
+EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
+EXTRA_CFLAGS += -DPLATFORM_LINUX
+EXTRA_CFLAGS += -fno-stack-protector
+ARCH ?= arm64
+CROSS_COMPILE = aarch64-linux-gnu-
+#KVER ?= $(shell uname -r)
+#KSRC := /lib/modules/$(KVER)/build
+#MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
+KSRC := /home/forlinx/nxp/flexbuild_lsdk1906/build/linux/linux/arm64/LS/output/master
+MODDESTDIR := /home/forlinx/nxp/flexbuild_lsdk1906/build/linux/linux/arm64/LS/output/master/drivers/net/wireless/realtek
+#KSRC := /home/forlinx/work/OK10xx-linux-fs/flexbuild/build/linux/linux/arm64/output
+#MODDESTDIR := /home/forlinx/work/OK10xx-linux-fs/flexbuild/build/linux/linux/arm64/output/drivers/net/wireless/realtek
+INSTALL_PREFIX :=
+endif
+```
+
+配置内核，按下M选择RTL88xbu为驱动模块
+
+```
+flex-builder -c linux:custom -m ls1046afrwy -a arm64
+```
+
+单独编译内核
+
+```
+flex-builder -c linux -a arm64 -m ls1046afrwy
+```
+
+部分相关信息如下：
+
+```
+ AR      drivers/net/wireless/realtek/rtl88x2bu/built-in.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_cmd.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_security.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_debug.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_io.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_ioctl_query.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_ioctl_set.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_ieee80211.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_mlme.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_mlme_ext.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_mi.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_wlan_util.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_vht.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_pwrctrl.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_rf.o
+  CC [M]  drivers/net/wireless/realtek/rtl88x2bu/core/rtw_chplan.o
+```
+
+最终编译生成驱动信息如下：
+
+```
+LD [M]  drivers/net/wireless/realtek/rtl88x2bu/88x2bu.ko
+```
+
+已经单独编译usb rtl8822bu驱动，还需要重新生成bootpartition等操作更新
+
+打包完毕镜像，等待烧写测试
+
+进入系统测试如下，成功识别到rtl8822bu wifi模块，wifi名为wlx90de8032124b：
+
+```
+root@ubuntu:~# ifconfig  -a
+fm1-mac3: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 22:56:87:68:1b:2b  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+fm1-mac4: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 12:a0:bc:47:e7:45  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff
+
+fm1-mac5: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether c2:ef:36:5d:9b:c9  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae8000-1ae8fff
+
+fm1-mac6: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 56:b9:23:c4:1b:7a  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1aea000-1aeafff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 10  bytes 1570 (1.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 10  bytes 1570 (1.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sit0: flags=128<NOARP>  mtu 1480
+        sit  txqueuelen 1000  (IPv6-in-IPv4)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~# lsmod
+Module                  Size  Used by
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+root@ubuntu:~# lsusb
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+root@ubuntu:~# lsusb
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 002: ID 1a40:0101 Terminus Technology Inc. Hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+root@ubuntu:~# lsusb
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 003: ID 0bda:b812 Realtek Semiconductor Corp.
+Bus 003 Device 002: ID 1a40:0101 Terminus Technology Inc. Hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+root@ubuntu:~# ifconfig -a
+fm1-mac3: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 22:56:87:68:1b:2b  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+fm1-mac4: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 12:a0:bc:47:e7:45  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff
+
+fm1-mac5: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether c2:ef:36:5d:9b:c9  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae8000-1ae8fff
+
+fm1-mac6: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 56:b9:23:c4:1b:7a  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1aea000-1aeafff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 10  bytes 1570 (1.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 10  bytes 1570 (1.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sit0: flags=128<NOARP>  mtu 1480
+        sit  txqueuelen 1000  (IPv6-in-IPv4)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx90de8032124b: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 90:de:80:32:12:4b  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+root@ubuntu:~# lsmod
+Module                  Size  Used by
+88x2bu               3366912  0
+cfg80211              311296  1 88x2bu
+rfkill                 36864  2 cfg80211
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+```
+
+注意有些wifi模块是USB3.0，不能接在USB2.0的接口上使用
