@@ -653,6 +653,41 @@ board_init()
 				initialize eth_device
 				eth_register()
 
+## 图形化界面配置使用
+
+原文链接：https://blog.csdn.net/cesheng3410/article/details/128753678
+
+图形化界面的配置，其本质是获取到.config文件，配置的方法一般分为以下三种：
+
+（1）直接执行Make menuconfig，自行选择每一项（很少这样用）；
+
+（2）根据控制器类型在arcn/arm/configs中选择合适的xxx_defconfig文件，执行make xxx_defconfig，然后再执行make menuconfig进行简单修改即可（初次开发常用）；
+
+比如
+
+```
+make ls1046afrwy_tfa_defconfig
+```
+
+输出信息为如下
+
+```
+root@ubuntu:/home/forlinx/nxp/flexbuild_lsdk1906/packages/firmware/u-boot# make ls1046afrwy_tfa_defconfig
+  HOSTCC  scripts/kconfig/conf.o
+  HOSTLD  scripts/kconfig/conf
+#
+# configuration written to .config
+#
+```
+
+（3）别人已经开发完产品的.config文件直接复制过来，然后再根据需求执行make menuconfig进行简单修改（项目组开发常用）。
+
+选择上述其中一种方法进行配置，然后执行make命令即可编译内核。
+
+配置过程主要是为了生成.config文件，配置完成后执行make编译内核，内核源码和Makefile文件会根据配置对各个模块进行处理，最终生成二进制文件
+
+
+
 
 
 ## 参考文章及视频链接
