@@ -950,3 +950,63 @@ crct10dif_ce           16384  0
 ```
 
 注意有些wifi模块是USB3.0，不能接在USB2.0的接口上使用
+
+##### 第三路USB最终解决：
+
+问题还是SCFG_RCWPMUXCR0这个寄存器的值写入错误、在uboot终端修改的值被重启导致值失效以及在RCW写入的值会被uboot中覆盖。
+
+1. 在12月12号这个时候测试，思路是先禁用USB2，使能USB3，来做对比，但是不知道为什么RCW上写入的值失败（原因：./board/freescale/ls1046afrwy/ls1046afrwy.c:    out_be32(&scfg->rcwpmuxcr0, 0x3300);    应该是因为这里有重新给他赋值 ）
+2. 在uboot阶段上进行修改但是写入了错误的值，读出来是0x02330000（内存上大端显示）
+3. 写入了正确的值0x33330000（大端）的时候，这个值是正确的，但是因为我测试的板卡不稳定，它会重启一次，导致我之前在uboot终端写入的值失效了
+
+最终解决修改如下：
+
+```diff
+//u-boot/board/freescale/ls1046afrwy/ls1046afrwy.c 第196行
+#ifdef CONFIG_HAS_FSL_XHCI_USB
+	struct ccsr_scfg *scfg = (struct ccsr_scfg *)CONFIG_SYS_FSL_SCFG_ADDR;
+	u32 usb_pwrfault;
+-out_be32(&scfg->rcwpmuxcr0, 0x3300);
++out_be32(&scfg->rcwpmuxcr0, 0x3333);
+```
+
+测试如下：
+
+```
+root@ubuntu:~# lsusb
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 005: ID 0bda:b812 Realtek Semiconductor Corp.
+Bus 005 Device 004: ID 1a40:0101 Terminus Technology Inc. Hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+root@ubuntu:~# lsusb
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 003: ID 0bda:b812 Realtek Semiconductor Corp.
+Bus 003 Device 002: ID 1a40:0101 Terminus Technology Inc. Hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+root@ubuntu:~# lsusb
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 0bda:b812 Realtek Semiconductor Corp.
+Bus 001 Device 002: ID 1a40:0101 Terminus Technology Inc. Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+```
+
+三路USB均已经测试完成
+
+
+
+
+
+
+
