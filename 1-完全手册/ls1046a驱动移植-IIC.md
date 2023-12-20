@@ -165,9 +165,15 @@ root@ubuntu:/home/forlinx/nxp/flexbuild_lsdk1906/build/rfs# sudo find /home/forl
 /home/forlinx/work/OK10xx-linux-fs/flexbuild/build/linux/linux/arm64/output/drivers/cpuidle/cpuidle-arm.o
 ```
 
+后续解决，是因为配置文件中缺少CONFIG_QORIQ_THERMAL，加载生成的qoriq_thermal.ko驱动，经过测试已经能正常读到温度信息了。详情查看根文件系统制作之优化。
 
-
-
+```
+请检查您的内核配置文件，是否启用了以下内核选项。
+CONFIG_QORIQ_CPUFREQ = y
+CONFIG_THERMAL = y
+CONFIG_CPU_THERMAL = y
+CONFIG_QORIQ_THERMAL = y
+```
 
 
 
