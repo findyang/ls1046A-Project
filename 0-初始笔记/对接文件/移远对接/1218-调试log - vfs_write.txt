@@ -1,0 +1,2299 @@
+    ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
+    ©¦                 ? MobaXterm Personal Edition v22.1 ?                 ©¦
+    ©¦               (SSH client, X server and network tools)               ©¦
+    ©¦                                                                      ©¦
+    ©¦ ? SSH session to forlinx@192.168.0.232                               ©¦
+    ©¦   ? Direct SSH      :  ?                                             ©¦
+    ©¦   ? SSH compression :  ?                                             ©¦
+    ©¦   ? SSH-browser     :  ?                                             ©¦
+    ©¦   ? X11-forwarding  :  ?  (remote display is forwarded through SSH)  ©¦
+    ©¦                                                                      ©¦
+    ©¦ ? For more info, ctrl+click on help or visit our website.            ©¦
+    ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.14.47 aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+Last login: Sun Jan 28 16:00:03 2018 from 192.168.0.125
+^CTraceback (most recent call last):
+  File "/usr/lib/python2.7/site.py", line 68, in <module>
+forlinx@localhost:~$     import os
+  File "/usr/lib/python2.7/os.py", line 400, in <module>
+    import UserDict
+  File "/usr/lib/python2.7/UserDict.py", line 116, in <module>
+    import _abcoll
+  File "/usr/lib/python2.7/_abcoll.py", line 9, in <module>
+    """
+KeyboardInterrupt
+4
+-bash: 4: command not found
+forlinx@localhost:~$
+forlinx@localhost:~$
+forlinx@localhost:~$
+forlinx@localhost:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       117G   16G   96G  15% /
+devtmpfs        1.9G     0  1.9G   0% /dev
+tmpfs           1.9G  4.0K  1.9G   1% /dev/shm
+tmpfs           1.9G  2.8M  1.9G   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup
+tmpfs           383M     0  383M   0% /run/user/1000
+forlinx@localhost:~$
+forlinx@localhost:~$ ls
+ 88x2bu.ko                car_ws                Downloads   gie_robot        gie_robot.tar         net.sh                            ralink       rt2870.bin              wheeltec_robot.tar  'ystemctl status nfs-server.service'
+ cartographer_ws          ch343.ko              dts.txt     gie_robot1.tar   install_packages.sh   protobuf-3.16.0                   rc.sh       '[Unit]'                 wifi.sh
+ cartographer_ws.tar.xz   ch343ser_linux-main   fishros     gie_robot2.tar   librealsense-master  'protobuf-all-3.16.0 (2).tar.gz'   roscore.sh   wheeltec_robot_01.tar   wlan
+forlinx@localhost:~$ cd wlan/
+forlinx@localhost:~/wlan$ ls
+amss.bin  Data.msc  FC06EABMD  m3.bin  regdb.bin  wlan_cnss_core_pcie.ko  wlan.ko
+forlinx@localhost:~/wlan$ lspci
+0000:00:00.0 PCI bridge: Freescale Semiconductor Inc Device 81c0 (rev 10)
+0001:00:00.0 PCI bridge: Freescale Semiconductor Inc Device 81c0 (rev 10)
+0001:01:00.0 Network controller: Qualcomm Device 1103 (rev 01)
+forlinx@localhost:~/wlan$ cp amss.bin Data.msc ^C
+forlinx@localhost:~/wlan$ mv amss.bin Data.msc m3.bin regdb.bin ./firmware
+mv: target './firmware' is not a directory
+forlinx@localhost:~/wlan$ mkdir firmware
+forlinx@localhost:~/wlan$ mv amss.bin Data.msc m3.bin regdb.bin ./firmware
+forlinx@localhost:~/wlan$ cp -r firmware/* /lib/firmware/
+cp: cannot create regular file '/lib/firmware/amss.bin': Permission denied
+cp: cannot create regular file '/lib/firmware/Data.msc': Permission denied
+cp: cannot create regular file '/lib/firmware/m3.bin': Permission denied
+cp: cannot create regular file '/lib/firmware/regdb.bin': Permission denied
+forlinx@localhost:~/wlan$ sudo cp -r firmware/* /lib/firmware/
+[sudo] password for forlinx:
+forlinx@localhost:~/wlan$
+forlinx@localhost:~/wlan$
+forlinx@localhost:~/wlan$ cp FC06EABMD/
+bdwlan.elf      bdwlang.elf     wlan/           ²»Ð´¹ú¼ÒÂë.txt
+forlinx@localhost:~/wlan$ cp FC06EABMD/wlan/qcom_cfg.ini  /lib/firmware/wla^C
+forlinx@localhost:~/wlan$ ls /lib/firmware/
+amss.bin                           intel/                             m3.bin                             regdb.bin                          rt2870.bin      
+ath10k/                            iwlwifi-3168-22.ucode              ppfe_class_ls1012a.elf             regulatory.db
+Data.msc                           iwlwifi-9260-th-b0-jf-b0-34.ucode  ppfe_tmu_ls1012a.elf               regulatory.db.p7s
+forlinx@localhost:~/wlan$ mkdir  /lib/firmware/wlan
+mkdir: cannot create directory ¡®/lib/firmware/wlan¡¯: Permission denied
+forlinx@localhost:~/wlan$ sudo mkdir  /lib/firmware/wlan
+forlinx@localhost:~/wlan$ mkdir firmware^C
+forlinx@localhost:~/wlan$ cp FC06EABMD/wlan/qcom_cfg.ini  /lib/firmware/wlan/
+cp: cannot create regular file '/lib/firmware/wlan/qcom_cfg.ini': Permission denied
+forlinx@localhost:~/wlan$ sudo cp FC06EABMD/wlan/qcom_cfg.ini  /lib/firmware/wlan/
+forlinx@localhost:~/wlan$ ls
+FC06EABMD  firmware  wlan_cnss_core_pcie.ko  wlan.ko
+forlinx@localhost:~/wlan$ cp wlan_cnss_core_pcie.ko  /lib/modules/
+cp: cannot create regular file '/lib/modules/wlan_cnss_core_pcie.ko': Permission denied
+forlinx@localhost:~/wlan$ sudo cp wlan_cnss_core_pcie.ko  /lib/modules/
+forlinx@localhost:~/wlan$ sudo cp wlan.ko /lib/modules/
+forlinx@localhost:~/wlan$
+forlinx@localhost:~/wlan$ depmod -a
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.dep.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.dep.bin.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.alias.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.alias.bin.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.softdep.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.symbols.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.symbols.bin.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.builtin.bin.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.devname.tmp, 1101, 644): Permission denied
+forlinx@localhost:~/wlan$ sudo depmod -a
+forlinx@localhost:~/wlan$ lsmod
+Module                  Size  Used by
+option                 57344  0
+usb_wwan               20480  1 option
+iwlwifi               212992  0
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+rt2800usb              32768  0
+rt2x00usb              24576  1 rt2800usb
+rt2800lib             110592  1 rt2800usb
+rt2x00lib              61440  3 rt2800lib,rt2800usb,rt2x00usb
+mac80211              458752  3 rt2800lib,rt2x00lib,rt2x00usb
+cfg80211              356352  3 iwlwifi,rt2x00lib,mac80211
+rfkill                 36864  3 cfg80211
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+cp210x                 24576  0
+ch341                  16384  0
+usbserial              36864  4 cp210x,option,ch341,usb_wwan
+forlinx@localhost:~/wlan$ modprobe wlan_cnss_core_pcie.ko
+modprobe: FATAL: Module wlan_cnss_core_pcie.ko not found in directory /lib/modules/4.14.47
+forlinx@localhost:~/wlan$ sudo mv /lib/modules/wlan.ko /lib/modules/wlan_cnss_core_pcie.ko  /lib/modules/4.14.47/
+forlinx@localhost:~/wlan$ sudo depmod -a
+forlinx@localhost:~/wlan$ modprobe wlan_cnss_core_pcie.ko
+modprobe: FATAL: Module wlan_cnss_core_pcie.ko not found in directory /lib/modules/4.14.47
+forlinx@localhost:~/wlan$ sudo depmod -a^C
+forlinx@localhost:~/wlan$
+forlinx@localhost:~/wlan$ cd /lib/modules/4.14.47/
+forlinx@localhost:/lib/modules/4.14.47$ LS
+-bash: LS: command not found
+forlinx@localhost:/lib/modules/4.14.47$ ls
+build  kernel         modules.alias.bin  modules.builtin.bin  modules.dep.bin  modules.order    modules.symbols      source                  wlan.ko
+extra  modules.alias  modules.builtin    modules.dep          modules.devname  modules.softdep  modules.symbols.bin  wlan_cnss_core_pcie.ko
+forlinx@localhost:/lib/modules/4.14.47$ sudo depmod -a
+forlinx@localhost:/lib/modules/4.14.47$ modprobe wlan_cnss_core_pcie.ko
+modprobe: FATAL: Module wlan_cnss_core_pcie.ko not found in directory /lib/modules/4.14.47
+forlinx@localhost:/lib/modules/4.14.47$ sudo insmod wlan_cnss_core_pcie.ko
+insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Invalid module format
+forlinx@localhost:/lib/modules/4.14.47$ sudo insmod wlan.ko
+insmod: ERROR: could not insert module wlan.ko: Invalid module format
+forlinx@localhost:/lib/modules/4.14.47$ sudo insmod -f wlan_cnss_core_pcie.ko
+insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Unknown symbol in module
+forlinx@localhost:/lib/modules/4.14.47$ sudo insmod -f wlan.ko
+insmod: ERROR: could not insert module wlan.ko: Unknown symbol in module
+forlinx@localhost:/lib/modules/4.14.47$
+Network error: Software caused connection abort
+
+©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+    ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
+    ©¦                 ? MobaXterm Personal Edition v22.1 ?                 ©¦
+    ©¦               (SSH client, X server and network tools)               ©¦
+    ©¦                                                                      ©¦
+    ©¦ ? SSH session to forlinx@192.168.0.232                               ©¦
+    ©¦   ? Direct SSH      :  ?                                             ©¦
+    ©¦   ? SSH compression :  ?                                             ©¦
+    ©¦   ? SSH-browser     :  ?                                             ©¦
+    ©¦   ? X11-forwarding  :  ?  (remote display is forwarded through SSH)  ©¦
+    ©¦                                                                      ©¦
+    ©¦ ? For more info, ctrl+click on help or visit our website.            ©¦
+    ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.14.47 aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+Last login: Sun Jan 28 16:04:42 2018 from 192.168.23.19
+forlinx@localhost:~$ ^C
+forlinx@localhost:~$
+forlinx@localhost:~$
+forlinx@localhost:~$ ls
+ 88x2bu.ko                car_ws                Downloads   gie_robot        gie_robot.tar         net.sh                            ralink       rt2870.bin              wheeltec_robot.tar  'ystemctl status nfs-server.service'
+ cartographer_ws          ch343.ko              dts.txt     gie_robot1.tar   install_packages.sh   protobuf-3.16.0                   rc.sh       '[Unit]'                 wifi.sh
+ cartographer_ws.tar.xz   ch343ser_linux-main   fishros     gie_robot2.tar   librealsense-master  'protobuf-all-3.16.0 (2).tar.gz'   roscore.sh   wheeltec_robot_01.tar   wlan
+forlinx@localhost:~$ cd wlan/
+forlinx@localhost:~/wlan$ ls
+FC06EABMD  firmware  wlan_cnss_core_pcie.ko  wlan.ko
+forlinx@localhost:~/wlan$ cd ..
+forlinx@localhost:~$ ls
+ 88x2bu.ko                car_ws                Downloads   gie_robot        gie_robot.tar         net.sh                            ralink       rt2870.bin              wheeltec_robot.tar  'ystemctl status nfs-server.service'
+ cartographer_ws          ch343.ko              dts.txt     gie_robot1.tar   install_packages.sh   protobuf-3.16.0                   rc.sh       '[Unit]'                 wifi.sh
+ cartographer_ws.tar.xz   ch343ser_linux-main   fishros     gie_robot2.tar   librealsense-master  'protobuf-all-3.16.0 (2).tar.gz'   roscore.sh   wheeltec_robot_01.tar   wlan
+forlinx@localhost:~$ rm wlan/ -rf
+forlinx@localhost:~$ ls
+ 88x2bu.ko                car_ws                Downloads   gie_robot        gie_robot.tar         net.sh                            ralink       rt2870.bin              wheeltec_robot.tar
+ cartographer_ws          ch343.ko              dts.txt     gie_robot1.tar   install_packages.sh   protobuf-3.16.0                   rc.sh       '[Unit]'                 wifi.sh
+ cartographer_ws.tar.xz   ch343ser_linux-main   fishros     gie_robot2.tar   librealsense-master  'protobuf-all-3.16.0 (2).tar.gz'   roscore.sh   wheeltec_robot_01.tar  'ystemctl status nfs-server.service'
+forlinx@localhost:~$
+forlinx@localhost:~$ ls
+ 88x2bu.ko                car_ws                Downloads   gie_robot        gie_robot.tar         net.sh                            ralink       rt2870.bin              wheeltec_robot.tar  'ystemctl status nfs-server.service'
+ cartographer_ws          ch343.ko              dts.txt     gie_robot1.tar   install_packages.sh   protobuf-3.16.0                   rc.sh       '[Unit]'                 wifi.sh
+ cartographer_ws.tar.xz   ch343ser_linux-main   fishros     gie_robot2.tar   librealsense-master  'protobuf-all-3.16.0 (2).tar.gz'   roscore.sh   wheeltec_robot_01.tar   wlan
+forlinx@localhost:~$ cd /lib/
+forlinx@localhost:/lib$ s
+-bash: s: command not found
+forlinx@localhost:/lib$ ls
+aarch64-linux-gnu  bridge-utils   cpp   ebtables  hdparm    init                                  ld-linux-aarch64.so.1  libfm-arm.a  libteec.so.1    lsb         modules  optee_armtz  terminfo  ufw
+apparmor           console-setup  crda  firmware  ifupdown  klibc-8tsH1fECQOKildhKK_y5UcXbdII.so  libfm.a                libteec.so   libteec.so.1.0  modprobe.d  netplan  systemd      udev
+forlinx@localhost:/lib$ cd firmware/
+forlinx@localhost:/lib/firmware$ ls
+amss.bin  ath10k  Data.msc  intel  iwlwifi-3168-22.ucode  iwlwifi-9260-th-b0-jf-b0-34.ucode  m3.bin  ppfe_class_ls1012a.elf  ppfe_tmu_ls1012a.elf  regdb.bin  regulatory.db  regulatory.db.p7s  rt2870.bin  wlan
+forlinx@localhost:/lib/firmware$ sudo cp ~/wlan/firmware/* ./
+[sudo] password for forlinx:
+forlinx@localhost:/lib/firmware$ ll
+total 9676
+drwxr-xr-x  5 root root    4096 Jan 28 16:12 ./
+drwxr-xr-x 21 root root    4096 Nov 15  2023 ../
+-rw-r--r--  1 root root 4960256 Jan 28 16:15 amss.bin
+drwxr-xr-x  3 root root    4096 Jan  1  1970 ath10k/
+-rw-r--r--  1 root root  841846 Jan 28 16:15 Data.msc
+drwxr-xr-x  2 root root    4096 Jan  1  1970 intel/
+-rw-r--r--  1 root root 1028032 Jan  1  1970 iwlwifi-3168-22.ucode
+-rw-r--r--  1 root root 2677772 Jan  1  1970 iwlwifi-9260-th-b0-jf-b0-34.ucode
+-rw-r--r--  1 root root  266684 Jan 28 16:15 m3.bin
+-rwxr-xr-x  1 root root   53124 Jan  1  1970 ppfe_class_ls1012a.elf*
+-rwxr-xr-x  1 root root   11592 Jan  1  1970 ppfe_tmu_ls1012a.elf*
+-rw-r--r--  1 root root   24278 Jan 28 16:15 regdb.bin
+-rw-r--r--  1 root root    4032 Jan  1  1970 regulatory.db
+-rw-r--r--  1 root root    1182 Jan  1  1970 regulatory.db.p7s
+-rw-r--r--  1 root root    8192 Jan 28 16:11 rt2870.bin
+drwxr-xr-x  2 root root    4096 Jan 28 16:13 wlan/
+forlinx@localhost:/lib/firmware$ date
+Sun Jan 28 16:15:44 UTC 2018
+forlinx@localhost:/lib/firmware$ cd wlan/
+forlinx@localhost:/lib/firmware/wlan$ ls
+qcom_cfg.ini
+forlinx@localhost:/lib/firmware/wlan$ sudo cp ~/wlan/FC06EABMD/wlan/qcom_cfg.ini ./
+forlinx@localhost:/lib/firmware/wlan$ cd ..
+forlinx@localhost:/lib/firmware$ ls
+amss.bin  ath10k  Data.msc  intel  iwlwifi-3168-22.ucode  iwlwifi-9260-th-b0-jf-b0-34.ucode  m3.bin  ppfe_class_ls1012a.elf  ppfe_tmu_ls1012a.elf  regdb.bin  regulatory.db  regulatory.db.p7s  rt2870.bin  wlan
+forlinx@localhost:/lib/firmware$ cd ..
+forlinx@localhost:/lib$ ls
+aarch64-linux-gnu  bridge-utils   cpp   ebtables  hdparm    init                                  ld-linux-aarch64.so.1  libfm-arm.a  libteec.so.1    lsb         modules  optee_armtz  terminfo  ufw
+apparmor           console-setup  crda  firmware  ifupdown  klibc-8tsH1fECQOKildhKK_y5UcXbdII.so  libfm.a                libteec.so   libteec.so.1.0  modprobe.d  netplan  systemd      udev
+forlinx@localhost:/lib$ cd modules/
+forlinx@localhost:/lib/modules$ ls
+4.14.47  4.15.0-213-generic
+forlinx@localhost:/lib/modules$ cd 4.14.47/
+forlinx@localhost:/lib/modules/4.14.47$ ls
+build  kernel         modules.alias.bin  modules.builtin.bin  modules.dep.bin  modules.order    modules.symbols      source                  wlan.ko
+extra  modules.alias  modules.builtin    modules.dep          modules.devname  modules.softdep  modules.symbols.bin  wlan_cnss_core_pcie.ko
+forlinx@localhost:/lib/modules/4.14.47$ rm wlan.ko wlan_cnss_core_pcie.ko
+rm: remove write-protected regular file 'wlan.ko'? y
+rm: cannot remove 'wlan.ko': Permission denied
+rm: remove write-protected regular file 'wlan_cnss_core_pcie.ko'? y
+rm: cannot remove 'wlan_cnss_core_pcie.ko': Permission denied
+forlinx@localhost:/lib/modules/4.14.47$ sudo rm wlan.ko wlan_cnss_core_pcie.ko
+forlinx@localhost:/lib/modules/4.14.47$ ls
+build  extra  kernel  modules.alias  modules.alias.bin  modules.builtin  modules.builtin.bin  modules.dep  modules.dep.bin  modules.devname  modules.order  modules.softdep  modules.symbols  modules.symbols.bin  source
+forlinx@localhost:/lib/modules/4.14.47$ sudo cp ~/wlan/wlan.ko ~/wlan/wlan_cnss_core_pcie.ko ./
+forlinx@localhost:/lib/modules/4.14.47$ sudo depmod -a
+forlinx@localhost:/lib/modules/4.14.47$
+forlinx@localhost:/lib/modules/4.14.47$ ls
+build  kernel         modules.alias.bin  modules.builtin.bin  modules.dep.bin  modules.order    modules.symbols      source                  wlan.ko
+extra  modules.alias  modules.builtin    modules.dep          modules.devname  modules.softdep  modules.symbols.bin  wlan_cnss_core_pcie.ko
+forlinx@localhost:/lib/modules/4.14.47$ sudo insmod wlan.ko
+insmod: ERROR: could not insert module wlan.ko: Unknown symbol in module
+forlinx@localhost:/lib/modules/4.14.47$ sudo modprobe
+modprobe: ERROR: missing parameters. See -h.
+forlinx@localhost:/lib/modules/4.14.47$ sudo modprobe wlan.ko
+modprobe: FATAL: Module wlan.ko not found in directory /lib/modules/4.14.47
+forlinx@localhost:/lib/modules/4.14.47$ sudo modprobe wlan.ko ^C
+forlinx@localhost:/lib/modules/4.14.47$
+forlinx@localhost:/lib/modules/4.14.47$ cd kernel/
+forlinx@localhost:/lib/modules/4.14.47/kernel$ ls
+arch  crypto  drivers  fs  net  sound
+forlinx@localhost:/lib/modules/4.14.47/kernel$ cd drivers/
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers$ ls
+block  bluetooth  char  cpufreq  crypto  dma  hwmon  i2c  iio  input  media  mfd  misc  net  nvme  nvmem  pci  phy  pwm  rtc  spi  staging  thermal  usb  video  watchdog
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers$ cd net/wireless/
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless$ ls
+ath  intel  ralink  realtek
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless$ mkdir quectel
+mkdir: cannot create directory ¡®quectel¡¯: Permission denied
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless$ sudo mkdir quectel
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless$ cd quectel/
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ ls
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo mv /lib/modules/4.14.47/wlan.ko
+mv: missing destination file operand after '/lib/modules/4.14.47/wlan.ko'
+Try 'mv --help' for more information.
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo mv /lib/modules/4.14.47/wlan.ko  ./
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ ls
+wlan.ko
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo mv /lib/modules/4.14.47/wlan_cnss_core_pcie.ko  ./
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ ls
+wlan_cnss_core_pcie.ko  wlan.ko
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo mod^C
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo depmod -a
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ ^C
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ depmod -a
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.dep.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.dep.bin.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.alias.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.alias.bin.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.softdep.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.symbols.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.symbols.bin.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.builtin.bin.tmp, 1101, 644): Permission denied
+depmod: ERROR: openat(/lib/modules/4.14.47, modules.devname.tmp, 1101, 644): Permission denied
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo depmod -a
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo modprobe wlan.ko
+modprobe: FATAL: Module wlan.ko not found in directory /lib/modules/4.14.47
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo insmod -f  wlan.ko
+insmod: ERROR: could not insert module wlan.ko: Unknown symbol in module
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo modprobe wlan
+modprobe: ERROR: could not insert 'wlan': Unknown symbol in module, or unknown parameter (see dmesg)
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ modinfo wlan.ko
+filename:       /lib/modules/4.14.47/kernel/drivers/net/wireless/quectel/wlan.ko
+description:    WLAN HOST DEVICE DRIVER
+author:         Qualcomm Atheros, Inc.
+license:        Dual BSD/GPL
+depends:        cfg80211,wlan_cnss_core_pcie
+name:           wlan
+vermagic:       4.14.47 SMP preempt mod_unload modversions aarch64
+parm:           qdf_log_dump_at_kernel_enable:bool
+parm:           qdf_log_flush_timer_period:uint
+parm:           mem_debug_disabled:bool
+parm:           prealloc_disabled:byte
+parm:           enable_dfs_chan_scan:int
+parm:           enable_11d:int
+parm:           country_code:charp
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ lsmod
+Module                  Size  Used by
+option                 57344  0
+usb_wwan               20480  1 option
+iwlwifi               212992  0
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+rt2800usb              32768  0
+rt2x00usb              24576  1 rt2800usb
+rt2800lib             110592  1 rt2800usb
+rt2x00lib              61440  3 rt2800lib,rt2800usb,rt2x00usb
+mac80211              458752  3 rt2800lib,rt2x00lib,rt2x00usb
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+cfg80211              356352  3 iwlwifi,rt2x00lib,mac80211
+rfkill                 36864  3 cfg80211
+cp210x                 24576  0
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+ch341                  16384  0
+usbserial              36864  4 cp210x,option,ch341,usb_wwan
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo modprobe cfg80211
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo modprobe wlan
+wlan_cnss_core_pcie.ko  wlan.ko
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo modprobe wlan_cnss_core_pcie.ko
+modprobe: FATAL: Module wlan_cnss_core_pcie.ko not found in directory /lib/modules/4.14.47
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo insmod  wlan_cnss_core_pcie.ko
+insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Unknown symbol in module
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo insmod  -f wlan_cnss_core_pcie.ko
+insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Unknown symbol in module
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ modinfo wlan_cnss_core_pcie.ko
+filename:       /lib/modules/4.14.47/kernel/drivers/net/wireless/quectel/wlan_cnss_core_pcie.ko
+license:        GPL v2
+description:    Unified Platform Driver
+license:        GPL v2
+description:    QMI kernel enc/dec
+version:        1.0
+license:        GPL v2
+description:    Diag Char Driver
+srcversion:     40E7211EF7ABDB44E8E146B
+alias:          pci:v000017CBd00001102sv*sd*bc*sc*i*
+alias:          pci:v000017CBd00001103sv*sd*bc*sc*i*
+alias:          pci:v000017CBd00001101sv*sd*bc*sc*i*
+alias:          pci:v000017CBd00001100sv*sd*bc*sc*i*
+alias:          pci:v0000168Cd0000ABCDsv*sd*bc*sc*i*
+alias:          pci:v0000168Cd0000003Esv*sd*bc*sc*i*
+alias:          of:N*T*Cqcom,cnss-sdioC*
+alias:          of:N*T*Cqcom,cnss-sdio
+alias:          of:N*T*Cqcom,cnss-qca6390C*
+alias:          of:N*T*Cqcom,cnss-qca6390
+alias:          of:N*T*Cqcom,cnssC*
+alias:          of:N*T*Cqcom,cnss
+alias:          of:N*T*Cqcom,cnss-qca6290C*
+alias:          of:N*T*Cqcom,cnss-qca6290
+alias:          of:N*T*Cqcom,cnssC*
+alias:          of:N*T*Cqcom,cnss
+alias:          of:N*T*Cqcom,cnss2C*
+alias:          of:N*T*Cqcom,cnss2
+depends:
+name:           wlan_cnss_core_pcie
+vermagic:       4.14.47 SMP preempt mod_unload modversions aarch64
+parm:           pci_link_down_panic:Trigger kernel panic when PCI link down is detected (uint)
+parm:           fbc_bypass:Bypass firmware download when loading WLAN driver (bool)
+parm:           rddm_support:RDDM support or not (bool)
+parm:           qmi_timeout:Timeout for QMI message in milliseconds (uint)
+parm:           daemon_support:User space has cnss-daemon support or not (bool)
+parm:           bdf_bypass:If BDF is not found, send dummy BDF to FW (bool)
+parm:           wlan_en_gpio_num:Wlan en gpio number. (int)
+parm:           qmi_bypass:Bypass QMI from platform driver (bool)
+parm:           enable_waltest:Enable to handle firmware waltest (bool)
+parm:           quirks:Debug quirks for the driver (ulong)
+parm:           bd_file_type:Board data file type. (ulong)
+parm:           rddm_panic:Trigger kernel panic when RDDM happens (bool)
+parm:           poolsize:uint
+parm:           poolsize_hdlc:uint
+parm:           itemsize_mdm:uint
+parm:           poolsize_mdm:uint
+parm:           mhi_msg_lvl:dbg lvl (uint)
+parm:           mhi_ipc_log_lvl:dbg lvl (uint)
+parm:           debug_mask_mhi_xprt:int
+parm:           debug_mask:int
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo modprobe wlan_cnss_core_pcie
+modprobe: ERROR: could not insert 'wlan_cnss_core_pcie': Unknown symbol in module, or unknown parameter (see dmesg)
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$  insmod wlan_cnss_core_pcie.ko
+insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Operation not permitted
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo  insmod wlan_cnss_core_pcie.ko
+insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Unknown symbol in module
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ dmesg | tail
+[ 1412.459332] wlan: Unknown symbol cnss_self_recovery (err 0)
+[ 1412.459347] wlan: Unknown symbol cnss_release_pm_sem (err 0)
+[ 1412.459380] wlan: Unknown symbol cnss_remove_pm_qos (err 0)
+[ 1412.459395] wlan: Unknown symbol cnss_wlan_disable (err 0)
+[ 1412.459413] wlan: Unknown symbol cnss_force_collect_rddm (err 0)
+[ 1574.810445] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1647.815699] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1652.874571] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1767.394506] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1807.721106] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ lsmod
+Module                  Size  Used by
+option                 57344  0
+usb_wwan               20480  1 option
+iwlwifi               212992  0
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+rt2800usb              32768  0
+rt2x00usb              24576  1 rt2800usb
+rt2800lib             110592  1 rt2800usb
+rt2x00lib              61440  3 rt2800lib,rt2800usb,rt2x00usb
+mac80211              458752  3 rt2800lib,rt2x00lib,rt2x00usb
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+cfg80211              356352  3 iwlwifi,rt2x00lib,mac80211
+rfkill                 36864  3 cfg80211
+cp210x                 24576  1
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+ch341                  16384  1
+usbserial              36864  8 cp210x,option,ch341,usb_wwan
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ sudo modprobe wlan_cnss_core_pcie
+modprobe: ERROR: could not insert 'wlan_cnss_core_pcie': Unknown symbol in module, or unknown parameter (see dmesg)
+forlinx@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/quectel$ cd ~
+forlinx@localhost:~$ sudo depmod -a
+forlinx@localhost:~$ cd /lib/
+forlinx@localhost:/lib$ ls
+aarch64-linux-gnu  bridge-utils   cpp   ebtables  hdparm    init                                  ld-linux-aarch64.so.1  libfm-arm.a  libteec.so.1    lsb         modules  optee_armtz  terminfo  ufw
+apparmor           console-setup  crda  firmware  ifupdown  klibc-8tsH1fECQOKildhKK_y5UcXbdII.so  libfm.a                libteec.so   libteec.so.1.0  modprobe.d  netplan  systemd      udev
+forlinx@localhost:/lib$ cd modules/
+forlinx@localhost:/lib/modules$ ls
+4.14.47  4.15.0-213-generic
+forlinx@localhost:/lib/modules$ cd 4.14.47/
+forlinx@localhost:/lib/modules/4.14.47$ ls
+build  extra  kernel  modules.alias  modules.alias.bin  modules.builtin  modules.builtin.bin  modules.dep  modules.dep.bin  modules.devname  modules.order  modules.softdep  modules.symbols  modules.symbols.bin  source
+forlinx@localhost:/lib/modules/4.14.47$ sudo modprobe wlan
+modprobe: ERROR: could not insert 'wlan': Unknown symbol in module, or unknown parameter (see dmesg)
+forlinx@localhost:/lib/modules/4.14.47$ sudo modprobe cfg80211
+forlinx@localhost:/lib/modules/4.14.47$ sudo modprobe rfkill
+forlinx@localhost:/lib/modules/4.14.47$ sudo modprobe wlan_cnss_core_pcie
+modprobe: ERROR: could not insert 'wlan_cnss_core_pcie': Unknown symbol in module, or unknown parameter (see dmesg)
+forlinx@localhost:/lib/modules/4.14.47$ dmesg | tail
+[ 1412.459395] wlan: Unknown symbol cnss_wlan_disable (err 0)
+[ 1412.459413] wlan: Unknown symbol cnss_force_collect_rddm (err 0)
+[ 1574.810445] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1647.815699] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1652.874571] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1767.394506] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1807.721106] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2020.195041] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2188.638810] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2213.600407] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+forlinx@localhost:/lib/modules/4.14.47$ dmesg
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.14.47 (root@ubuntu) (gcc version 7.3.0 (Ubuntu/Linaro 7.3.0-27ubuntu1~18.04)) #1 SMP PREEMPT Mon Sep 4 19:26:29 PDT 2023
+[    0.000000] Boot CPU: AArch64 Processor [410fd082]
+[    0.000000] Machine model: LS1046A RDB Board
+[    0.000000] earlycon: uart8250 at MMIO 0x00000000021c0500 (options '')
+[    0.000000] bootconsole [uart8250] enabled
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] OF: reserved mem: initialized node qman-fqd, compatible id fsl,qman-fqd
+[    0.000000] OF: reserved mem: initialized node qman-pfdr, compatible id fsl,qman-pfdr
+[    0.000000] OF: reserved mem: initialized node bman-fbpr, compatible id fsl,bman-fbpr
+[    0.000000] cma: Reserved 16 MiB at 0x00000000fac00000
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000000000000-0x00000008ff7fffff]
+[    0.000000] NUMA: NODE_DATA [mem 0x8ff7c8400-0x8ff7c9bbf]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000080000000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x00000008ff7fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x00000000fbdfffff]
+[    0.000000]   node   0: [mem 0x0000000880000000-0x00000008fbffffff]
+[    0.000000]   node   0: [mem 0x00000008ff000000-0x00000008ff7fffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x00000008ff7fffff]
+[    0.000000] On node 0 totalpages: 1017344
+[    0.000000]   DMA zone: 8192 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 507392 pages, LIFO batch:31
+[    0.000000]   Normal zone: 7968 pages used for memmap
+[    0.000000]   Normal zone: 509952 pages, LIFO batch:31
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv0.2 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] percpu: Embedded 24 pages/cpu @ffff80087f763000 s59992 r8192 d30120 u98304
+[    0.000000] pcpu-alloc: s59992 r8192 d30120 u98304 alloc=24*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1001184
+[    0.000000] Policy zone: Normal
+[    0.000000] Kernel command line: console=ttyS0,115200 earlycon=uart8250,mmio,0x21c0500 root=PARTUUID=63d7c5d0-01 rw rootwait board_name=ls1046ardb serdes1=1133
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] software IO TLB [mem 0xf6c00000-0xfac00000] (64MB) mapped at [ffff800076c00000-ffff80007abfffff]
+[    0.000000] Memory: 3898548K/4069376K available (13180K kernel code, 1446K rwdata, 5352K rodata, 1216K init, 976K bss, 154444K reserved, 16384K cma-reserved)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     modules : 0xffff000000000000 - 0xffff000008000000   (   128 MB)
+[    0.000000]     vmalloc : 0xffff000008000000 - 0xffff7dffbfff0000   (129022 GB)
+[    0.000000]       .text : 0xffff000008080000 - 0xffff000008d60000   ( 13184 KB)
+[    0.000000]     .rodata : 0xffff000008d60000 - 0xffff0000092a0000   (  5376 KB)
+[    0.000000]       .init : 0xffff0000092a0000 - 0xffff0000093d0000   (  1216 KB)
+[    0.000000]       .data : 0xffff0000093d0000 - 0xffff000009539a00   (  1447 KB)
+[    0.000000]        .bss : 0xffff000009539a00 - 0xffff00000962dc90   (   977 KB)
+[    0.000000]     fixed   : 0xffff7dfffe7f9000 - 0xffff7dfffec00000   (  4124 KB)
+[    0.000000]     PCI I/O : 0xffff7dfffee00000 - 0xffff7dffffe00000   (    16 MB)
+[    0.000000]     vmemmap : 0xffff7e0000000000 - 0xffff800000000000   (  2048 GB maximum)
+[    0.000000]               0xffff7e0000000000 - 0xffff7e0021fe0000   (   543 MB actual)
+[    0.000000]     memory  : 0xffff800000000000 - 0xffff80087f800000   ( 34808 MB)
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000]  RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+[    0.000000]  Tasks RCU enabled.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GIC: Adjusting CPU interface base to 0x000000000142f000
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] arch_timer: cp15 timer(s) running at 25.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x5c40939b5, max_idle_ns: 440795202646 ns
+[    0.000002] sched_clock: 56 bits at 25MHz, resolution 40ns, wraps every 4398046511100ns
+[    0.008369] Console: colour dummy device 80x25
+[    0.012862] Calibrating delay loop (skipped), value calculated using timer frequency.. 50.00 BogoMIPS (lpj=100000)
+[    0.023272] pid_max: default: 32768 minimum: 301
+[    0.027970] Security Framework initialized
+[    0.033316] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.041228] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.048343] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.055100] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.078302] ASID allocator initialised with 32768 entries
+[    0.083762] Hierarchical SRCU implementation.
+[    0.096541] EFI services will not be available.
+[    0.109102] smp: Bringing up secondary CPUs ...
+[    0.143535] Detected PIPT I-cache on CPU1
+[    0.143553] CPU1: Booted secondary processor [410fd082]
+[    0.170578] Detected PIPT I-cache on CPU2
+[    0.170591] CPU2: Booted secondary processor [410fd082]
+[    0.198599] Detected PIPT I-cache on CPU3
+[    0.198611] CPU3: Booted secondary processor [410fd082]
+[    0.198639] smp: Brought up 1 node, 4 CPUs
+[    0.230589] SMP: Total of 4 processors activated.
+[    0.235315] CPU features: detected feature: 32-bit EL0 Support
+[    0.241176] CPU features: detected feature: Kernel page table isolation (KPTI)
+[    0.252006] CPU: All CPU(s) started at EL2
+[    0.256127] alternatives: patching kernel code
+[    0.260982] devtmpfs: initialized
+[    0.266224] random: get_random_u32 called from bucket_table_alloc+0x108/0x258 with crng_init=0
+[    0.275051] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.284861] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[    0.291254] xor: measuring software checksum speed
+[    0.336086]    8regs     :  7630.000 MB/sec
+[    0.380303]    8regs_prefetch:  6686.000 MB/sec
+[    0.424869]    32regs    :  7682.000 MB/sec
+[    0.469086]    32regs_prefetch:  7243.000 MB/sec
+[    0.473724] xor: using function: 32regs (7682.000 MB/sec)
+[    0.479150] pinctrl core: initialized pinctrl subsystem
+[    0.484877] DMI not present or invalid.
+[    0.488891] NET: Registered protocol family 16
+[    0.497372] cpuidle: using governor menu
+[    0.501508] Bman ver:0a02,02,01
+[    0.506533] qman-fqd addr 0x00000008ff800000 size 0x800000
+[    0.512048] qman-pfdr addr 0x00000008fc000000 size 0x2000000
+[    0.517760] Qman ver:0a01,03,02,01
+[    0.521251] vdso: 2 pages (1 code @ ffff000008d66000, 1 data @ ffff0000093d5000)
+[    0.528695] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.535907] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.542212] Serial: AMBA PL011 UART driver
+[    0.549345] Machine: LS1046A RDB Board
+[    0.553115] SoC family: QorIQ LS1046A
+[    0.556789] SoC ID: svr:0x87070010, Revision: 1.0
+[    0.573478] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.645518] raid6: int64x1  gen()  1115 MB/s
+[    0.717525] raid6: int64x1  xor()  1003 MB/s
+[    0.789570] raid6: int64x2  gen()  1534 MB/s
+[    0.861566] raid6: int64x2  xor()  1458 MB/s
+[    0.933612] raid6: int64x4  gen()  2329 MB/s
+[    1.005628] raid6: int64x4  xor()  1631 MB/s
+[    1.077658] raid6: int64x8  gen()  2293 MB/s
+[    1.149698] raid6: int64x8  xor()  1585 MB/s
+[    1.221735] raid6: neonx1   gen()  2242 MB/s
+[    1.293747] raid6: neonx1   xor()  2503 MB/s
+[    1.365776] raid6: neonx2   gen()  2929 MB/s
+[    1.437804] raid6: neonx2   xor()  3126 MB/s
+[    1.509835] raid6: neonx4   gen()  3827 MB/s
+[    1.581868] raid6: neonx4   xor()  3423 MB/s
+[    1.653894] raid6: neonx8   gen()  4378 MB/s
+[    1.725923] raid6: neonx8   xor()  3708 MB/s
+[    1.730211] raid6: using algorithm neonx8 gen() 4378 MB/s
+[    1.735635] raid6: .... xor() 3708 MB/s, rmw enabled
+[    1.740621] raid6: using neon recovery algorithm
+[    1.745507] ACPI: Interpreter disabled.
+[    1.750725] vgaarb: loaded
+[    1.753569] SCSI subsystem initialized
+[    1.757398] libata version 3.00 loaded.
+[    1.757551] usbcore: registered new interface driver usbfs
+[    1.763124] usbcore: registered new interface driver hub
+[    1.768488] usbcore: registered new device driver usb
+[    1.773853] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
+[    1.781229] i2c i2c-0: IMX I2C adapter registered
+[    1.785983] i2c i2c-0: using dma0chan16 (tx) and dma0chan17 (rx) for DMA transfers
+[    1.793634] imx-i2c 2190000.i2c: fsl-scl-gpio not found
+[    1.798903] imx-i2c 2190000.i2c: can't get pinctrl, bus recovery not supported
+[    1.806204] i2c i2c-1: IMX I2C adapter registered
+[    1.810934] i2c i2c-1: can't use DMA, using PIO instead.
+[    1.816306] imx-i2c 21a0000.i2c: fsl-scl-gpio not found
+[    1.821573] imx-i2c 21a0000.i2c: can't get pinctrl, bus recovery not supported
+[    1.828928] i2c i2c-2: IMX I2C adapter registered
+[    1.833658] i2c i2c-2: can't use DMA, using PIO instead.
+[    1.839062] imx-i2c 21b0000.i2c: can't get pinctrl, bus recovery not supported
+[    1.846354] i2c i2c-3: IMX I2C adapter registered
+[    1.851089] i2c i2c-3: can't use DMA, using PIO instead.
+[    1.856891] Linux video capture interface: v2.00
+[    1.861559] pps_core: LinuxPPS API ver. 1 registered
+[    1.866553] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.875745] PTP clock support registered
+[    1.879801] EDAC MC: Ver: 3.0.0
+[    1.883055] dmi: Firmware registration failed.
+[    1.887533] bman-fbpr addr 0x00000008fe000000 size 0x1000000
+[    1.893240] Bman err interrupt handler present
+[    1.898032] Bman portal initialised, cpu 0
+[    1.902199] Bman portal initialised, cpu 1
+[    1.906364] Bman portal initialised, cpu 2
+[    1.910527] Bman portal initialised, cpu 3
+[    1.914642] Bman portals initialised
+[    1.918993] Qman err interrupt handler present
+[    1.923922] QMan: Allocated lookup table at ffff00000b67d000, entry count 131073
+[    1.931667] Qman portal initialised, cpu 0
+[    1.935832] Qman portal initialised, cpu 1
+[    1.939990] Qman portal initialised, cpu 2
+[    1.944146] Qman portal initialised, cpu 3
+[    1.948261] Qman portals initialised
+[    1.951891] Bman: BPID allocator includes range 32:32
+[    1.956993] Qman: FQID allocator includes range 256:256
+[    1.962245] Qman: FQID allocator includes range 32768:32768
+[    1.967874] Qman: CGRID allocator includes range 0:256
+[    1.973162] Qman: pool channel allocator includes range 1025:15
+[    1.979166] No USDPAA memory, no 'fsl,usdpaa-mem' in device-tree
+[    1.985438] Advanced Linux Sound Architecture Driver Initialized.
+[    1.991886] clocksource: Switched to clocksource arch_sys_counter
+[    1.998082] VFS: Disk quotas dquot_6.6.0
+[    2.002048] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.009013] pnp: PnP ACPI: disabled
+[    2.015052] NET: Registered protocol family 2
+[    2.019686] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+[    2.027098] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    2.034118] TCP: Hash tables configured (established 32768 bind 32768)
+[    2.040726] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    2.046815] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    2.053383] NET: Registered protocol family 1
+[    2.057888] RPC: Registered named UNIX socket transport module.
+[    2.063857] RPC: Registered udp transport module.
+[    2.068586] RPC: Registered tcp transport module.
+[    2.073312] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    2.079789] PCI: CLS 0 bytes, default 64
+[    2.080167] hw perfevents: enabled with armv8_cortex_a72 PMU driver, 7 counters available
+[    2.088619] kvm [1]: 8-bit VMID
+[    2.092364] kvm [1]: vgic interrupt IRQ1
+[    2.096351] kvm [1]: Hyp mode initialized successfully
+[    2.102592] audit: initializing netlink subsys (disabled)
+[    2.108066] audit: type=2000 audit(2.000:1): state=initialized audit_enabled=0 res=1
+[    2.108207] workingset: timestamp_bits=44 max_order=20 bucket_order=0
+[    2.116070] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    2.116157] NFS: Registering the id_resolver key type
+[    2.116168] Key type id_resolver registered
+[    2.116169] Key type id_legacy registered
+[    2.116173] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    2.116221] fuse init (API version 7.26)
+[    2.116275] 9p: Installing v9fs 9p2000 file system support
+[    2.117405] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    2.117444] io scheduler noop registered
+[    2.117463] io scheduler cfq registered (default)
+[    2.117464] io scheduler mq-deadline registered
+[    2.117465] io scheduler kyber registered
+[    2.127781] OF: PCI: host bridge /soc/pcie@3400000 ranges:
+[    2.127790] OF: PCI:    IO 0x4000010000..0x400001ffff -> 0x00000000
+[    2.127794] OF: PCI:   MEM 0x4040000000..0x407fffffff -> 0x40000000
+[    2.127864] layerscape-pcie 3400000.pcie: PCI host bridge to bus 0000:00
+[    2.127868] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    2.127870] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    2.127873] pci_bus 0000:00: root bus resource [mem 0x4040000000-0x407fffffff] (bus address [0x40000000-0x7fffffff])
+[    2.127896] pci 0000:00:00.0: [1957:81c0] type 01 class 0x060400
+[    2.127914] pci 0000:00:00.0: reg 0x38: [mem 0x4040000000-0x40400007ff pref]
+[    2.127941] pci 0000:00:00.0: supports D1 D2
+[    2.127942] pci 0000:00:00.0: PME# supported from D0 D1 D2 D3hot
+[    2.128059] pci 0000:00:00.0: BAR 6: assigned [mem 0x4040000000-0x40400007ff pref]
+[    2.128063] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+[    2.128172] pcieport 0000:00:00.0: Signaling PME with IRQ 66
+[    2.128225] pcieport 0000:00:00.0: AER enabled with IRQ 67
+[    2.128305] OF: PCI: host bridge /soc/pcie@3600000 ranges:
+[    2.128311] OF: PCI:    IO 0x5000010000..0x500001ffff -> 0x00000000
+[    2.128315] OF: PCI:   MEM 0x5040000000..0x507fffffff -> 0x40000000
+[    2.128370] layerscape-pcie 3600000.pcie: PCI host bridge to bus 0001:00
+[    2.128373] pci_bus 0001:00: root bus resource [bus 00-ff]
+[    2.128376] pci_bus 0001:00: root bus resource [io  0x10000-0x1ffff] (bus address [0x0000-0xffff])
+[    2.128379] pci_bus 0001:00: root bus resource [mem 0x5040000000-0x507fffffff] (bus address [0x40000000-0x7fffffff])
+[    2.128387] pci 0001:00:00.0: [1957:81c0] type 01 class 0x060400
+[    2.128400] pci 0001:00:00.0: reg 0x38: [mem 0x5040000000-0x50400007ff pref]
+[    2.128418] pci 0001:00:00.0: supports D1 D2
+[    2.128420] pci 0001:00:00.0: PME# supported from D0 D1 D2 D3hot
+[    2.128558] pci 0001:01:00.0: [17cb:1103] type 00 class 0x028000
+[    2.128665] pci 0001:01:00.0: reg 0x10: [mem 0x5040200000-0x50403fffff 64bit]
+[    2.129037] pci 0001:01:00.0: PME# supported from D0 D3hot D3cold
+[    2.143952] pci 0001:00:00.0: BAR 14: assigned [mem 0x5040000000-0x50401fffff]
+[    2.143955] pci 0001:00:00.0: BAR 6: assigned [mem 0x5040200000-0x50402007ff pref]
+[    2.143959] pci 0001:01:00.0: BAR 0: assigned [mem 0x5040000000-0x50401fffff 64bit]
+[    2.143991] pci 0001:00:00.0: PCI bridge to [bus 01-ff]
+[    2.143994] pci 0001:00:00.0:   bridge window [mem 0x5040000000-0x50401fffff]
+[    2.144077] pcieport 0001:00:00.0: Signaling PME with IRQ 68
+[    2.144128] pcieport 0001:00:00.0: AER enabled with IRQ 69
+[    2.151419] Freescale LS2 console driver
+[    2.151479] fsl-ls2-console: device fsl_mc_console registered
+[    2.151513] fsl-ls2-console: device fsl_aiop_console registered
+[    2.154354] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    2.155382] console [ttyS0] disabled
+[    2.375291] 21c0500.serial: ttyS0 at MMIO 0x21c0500 (irq = 40, base_baud = 21875000) is a 16550A
+[    2.384141] console [ttyS0] enabled
+[    2.391121] bootconsole [uart8250] disabled
+[    2.399711] 21c0600.serial: ttyS1 at MMIO 0x21c0600 (irq = 40, base_baud = 21875000) is a 16550A
+[    2.408697] 21d0500.serial: ttyS2 at MMIO 0x21d0500 (irq = 41, base_baud = 21875000) is a 16550A
+[    2.417678] 21d0600.serial: ttyS3 at MMIO 0x21d0600 (irq = 41, base_baud = 21875000) is a 16550A
+[    2.426871] SuperH (H)SCI(F) driver initialized
+[    2.431736] msm_serial: driver initialized
+[    2.439262] brd: module loaded
+[    2.445213] loop: module loaded
+[    2.505925] ahci-qoriq 3200000.sata: AHCI 0001.0301 32 slots 1 ports 6 Gbps 0x1 impl platform mode
+[    2.514887] ahci-qoriq 3200000.sata: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst
+[    2.524905] scsi host0: ahci-qoriq
+[    2.528368] ata1: SATA max UDMA/133 mmio [mem 0x03200000-0x0320ffff] port 0x100 irq 51
+[    2.538527] random: fast init done
+[    2.546178] fsl-quadspi 1550000.quadspi: w25q128 (16384 Kbytes)
+[    2.553750] libphy: Fixed MDIO Bus: probed
+[    2.558264] tun: Universal TUN/TAP device driver, 1.6
+[    2.563981] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.569509] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.574873] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.579989] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.585097] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.590206] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.595381] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.600489] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.605596] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.610710] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.624426] Freescale FM module, FMD API version 21.1.0
+[    2.631658] Freescale FM Ports module
+[    2.635319] fsl_mac: fsl_mac: FSL FMan MAC API based driver
+[    2.641110] fsl_mac 1ae2000.ethernet: FMan MEMAC
+[    2.645729] fsl_mac 1ae2000.ethernet: FMan MAC address: 76:ef:a4:ac:00:51
+[    2.652596] fsl_mac 1ae4000.ethernet: FMan MEMAC
+[    2.657214] fsl_mac 1ae4000.ethernet: FMan MAC address: 06:be:f2:70:7f:76
+[    2.664080] fsl_mac 1ae6000.ethernet: FMan MEMAC
+[    2.668697] fsl_mac 1ae6000.ethernet: FMan MAC address: 56:4b:8e:16:48:eb
+[    2.675606] fsl_mac 1ae8000.ethernet: FMan MEMAC
+[    2.680223] fsl_mac 1ae8000.ethernet: FMan MAC address: 46:19:9f:83:fc:3f
+[    2.687133] fsl_mac 1aea000.ethernet: FMan MEMAC
+[    2.691749] fsl_mac 1aea000.ethernet: FMan MAC address: 2a:4f:e2:06:32:72
+[    2.698735] fsl_mac 1af0000.ethernet: FMan MEMAC
+[    2.703353] fsl_mac 1af0000.ethernet: FMan MAC address: fe:1b:75:99:a8:e2
+[    2.710314] fsl_mac 1af2000.ethernet: FMan MEMAC
+[    2.714932] fsl_mac 1af2000.ethernet: FMan MAC address: ae:ee:09:ff:9f:7f
+[    2.721745] fsl_dpa: FSL DPAA Ethernet driver
+[    2.728955] fsl_dpa: fsl_dpa: Probed interface eth0
+[    2.736965] fsl_dpa: fsl_dpa: Probed interface eth1
+[    2.744979] fsl_dpa: fsl_dpa: Probed interface eth2
+[    2.753245] fsl_dpa: fsl_dpa: Probed interface eth3
+[    2.761754] fsl_dpa: fsl_dpa: Probed interface eth4
+[    2.770377] fsl_dpa: fsl_dpa: Probed interface eth5
+[    2.779214] fsl_dpa: fsl_dpa: Probed interface eth6
+[    2.784172] fsl_advanced: FSL DPAA Advanced drivers:
+[    2.789155] fsl_proxy: FSL DPAA Proxy initialization driver
+[    2.794907] fsl_oh: FSL FMan Offline Parsing port driver
+[    2.800554] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    2.807613] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    2.813409] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[    2.819241] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    2.825188] igb: Intel(R) Gigabit Ethernet Network Driver - version 5.4.0-k
+[    2.832150] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    2.837737] igbvf: Intel(R) Gigabit Virtual Function Network Driver - version 2.4.0-k
+[    2.845565] igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+[    2.851752] sky2: driver version 1.30
+[    2.855672] PPP generic driver version 2.4.2
+[    2.860007] PPP BSD Compression module registered
+[    2.864708] PPP Deflate Compression module registered
+[    2.869766] PPP MPPE Compression module registered
+[    2.874552] NET: Registered protocol family 24
+[    2.879017] usbcore: registered new interface driver asix
+[    2.884440] usbcore: registered new interface driver ax88179_178a
+[    2.890573] usbcore: registered new interface driver cdc_ether
+[    2.896414] usbcore: registered new interface driver net1080
+[    2.902082] usbcore: registered new interface driver cdc_subset
+[    2.908010] usbcore: registered new interface driver zaurus
+[    2.913596] usbcore: registered new interface driver cdc_ncm
+[    2.919262] usbcore: registered new interface driver huawei_cdc_ncm
+[    2.925537] usbcore: registered new interface driver qmi_wwan
+[    2.931539] VFIO - User Level meta-driver version: 0.3
+[    2.938215] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.944770] ehci-pci: EHCI PCI platform driver
+[    2.949228] ehci-platform: EHCI generic platform driver
+[    2.954571] ehci-orion: EHCI orion driver
+[    2.958653] ehci-exynos: EHCI EXYNOS driver
+[    2.962912] ehci-msm: Qualcomm On-Chip EHCI Host Controller
+[    2.968548] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    2.974727] ohci-pci: OHCI PCI platform driver
+[    2.979182] ohci-platform: OHCI generic platform driver
+[    2.984490] ohci-exynos: OHCI EXYNOS driver
+[    2.988951] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    2.994443] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    3.002267] xhci-hcd xhci-hcd.0.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x22010810
+[    3.010982] xhci-hcd xhci-hcd.0.auto: irq 48, io mem 0x02f00000
+[    3.017110] hub 1-0:1.0: USB hub found
+[    3.019902] ata1: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+[    3.027046] hub 1-0:1.0: 1 port detected
+[    3.027049] ata1.00: ATA-11: KINGBANK KM100, SN12521, max UDMA/133
+[    3.027052] ata1.00: 250069680 sectors, multi 1: LBA48 NCQ (depth 31/32)
+[    3.037150] ata1.00: configured for UDMA/133
+[    3.037326] scsi 0:0:0:0: Direct-Access     ATA      KINGBANK KM100   521  PQ: 0 ANSI: 5
+[    3.037592] sd 0:0:0:0: [sda] 250069680 512-byte logical blocks: (128 GB/119 GiB)
+[    3.037610] sd 0:0:0:0: [sda] Write Protect is off
+[    3.037612] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    3.037644] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    3.043856]  sda: sda1
+[    3.044191] sd 0:0:0:0: [sda] Attached SCSI disk
+[    3.084565] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.090052] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    3.097708] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0  SuperSpeed
+[    3.104505] hub 2-0:1.0: USB hub found
+[    3.108259] hub 2-0:1.0: 1 port detected
+[    3.112304] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.117792] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 3
+[    3.125605] xhci-hcd xhci-hcd.1.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x22010810
+[    3.134316] xhci-hcd xhci-hcd.1.auto: irq 49, io mem 0x03000000
+[    3.140403] hub 3-0:1.0: USB hub found
+[    3.144157] hub 3-0:1.0: 1 port detected
+[    3.148163] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.153648] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 4
+[    3.161304] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0  SuperSpeed
+[    3.168096] hub 4-0:1.0: USB hub found
+[    3.171844] hub 4-0:1.0: 1 port detected
+[    3.175891] xhci-hcd xhci-hcd.2.auto: xHCI Host Controller
+[    3.181379] xhci-hcd xhci-hcd.2.auto: new USB bus registered, assigned bus number 5
+[    3.189196] xhci-hcd xhci-hcd.2.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x22010810
+[    3.197906] xhci-hcd xhci-hcd.2.auto: irq 50, io mem 0x03100000
+[    3.203990] hub 5-0:1.0: USB hub found
+[    3.207738] hub 5-0:1.0: 1 port detected
+[    3.211746] xhci-hcd xhci-hcd.2.auto: xHCI Host Controller
+[    3.217235] xhci-hcd xhci-hcd.2.auto: new USB bus registered, assigned bus number 6
+[    3.224890] xhci-hcd xhci-hcd.2.auto: Host supports USB 3.0  SuperSpeed
+[    3.231676] hub 6-0:1.0: USB hub found
+[    3.235434] hub 6-0:1.0: 1 port detected
+[    3.239649] usbcore: registered new interface driver cdc_wdm
+[    3.245343] usbcore: registered new interface driver usb-storage
+[    3.257063] rtc-pcf8563 2-0051: low voltage detected, date/time is not reliable.
+[    3.264513] rtc-pcf8563 2-0051: rtc core: registered rtc-pcf8563 as rtc0
+[    3.273354] i2c /dev entries driver
+[    3.278121] IR NEC protocol handler initialized
+[    3.282651] IR RC5(x/sz) protocol handler initialized
+[    3.287697] IR RC6 protocol handler initialized
+[    3.292229] IR JVC protocol handler initialized
+[    3.296756] IR Sony protocol handler initialized
+[    3.301368] IR SANYO protocol handler initialized
+[    3.306067] IR Sharp protocol handler initialized
+[    3.310766] IR MCE Keyboard/mouse protocol handler initialized
+[    3.316595] IR XMP protocol handler initialized
+[    3.321154] usbcore: registered new interface driver uvcvideo
+[    3.326897] USB Video Class driver (1.1.1)
+[    3.332252] imx2-wdt 2ad0000.watchdog: timeout 60 sec (nowayout=0)
+[    3.338997] qoriq_cpufreq: Freescale QorIQ CPU frequency scaling driver
+[    3.345864] sdhci: Secure Digital Host Controller Interface driver
+[    3.352040] sdhci: Copyright(c) Pierre Ossman
+[    3.356527] Synopsys Designware Multimedia Card Interface Driver
+[    3.363184] sdhci-pltfm: SDHCI platform and OF driver helper
+[    3.411906] mmc0: SDHCI controller on 1560000.esdhc [1560000.esdhc] using ADMA 64-bit
+[    3.423687] ledtrig-cpu: registered to indicate activity on CPUs
+[    3.431076] platform caam_qi: Linux CAAM Queue I/F driver initialised
+[    3.437618] caam 1700000.crypto: device ID = 0x0a11030100000000 (Era 8)
+[    3.444259] caam 1700000.crypto: job rings = 3, qi = 1, dpaa2 = no
+[    3.454432] caam algorithms registered in /proc/crypto
+[    3.460955] platform caam_qi: algorithms registered in /proc/crypto
+[    3.468015] caam_jr 1710000.jr: registering rng-caam
+[    3.473057] caam 1700000.crypto: caam pkc algorithms registered in /proc/crypto
+[    3.480682] usbcore: registered new interface driver usbhid
+[    3.483905] usb 3-1: new high-speed USB device number 2 using xhci-hcd
+[    3.492773] usbhid: USB HID core driver
+[    3.497229] Freescale USDPAA process driver
+[    3.501412] fsl-usdpaa: no region found
+[    3.505242] Freescale USDPAA process IRQ driver
+[    3.510491] optee: probing for conduit method from DT.
+[    3.515848] optee: initialized driver
+[    3.520035] Netfilter messages via NETLINK v0.30.
+[    3.524823] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+[    3.528131] mmc0: new HS200 MMC card at address 0001
+[    3.528295] mmcblk0: mmc0:0001 88A398 7.28 GiB
+[    3.528378] mmcblk0boot0: mmc0:0001 88A398 partition 1 4.00 MiB
+[    3.528463] mmcblk0boot1: mmc0:0001 88A398 partition 2 4.00 MiB
+[    3.528540] mmcblk0rpmb: mmc0:0001 88A398 partition 3 4.00 MiB
+[    3.529029]  mmcblk0: p1 p2 p3
+[    3.561194] nf_tables: (c) 2007-2009 Patrick McHardy <kaber@trash.net>
+[    3.567719] nf_tables_compat: (c) 2012 Pablo Neira Ayuso <pablo@netfilter.org>
+[    3.575031] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    3.580594] Initializing XFRM netlink socket
+[    3.584901] NET: Registered protocol family 10
+[    3.589789] Segment Routing with IPv6
+[    3.593490] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    3.599593] NET: Registered protocol family 17
+[    3.604040] NET: Registered protocol family 15
+[    3.608492] Bridge firewalling registered
+[    3.612499] Ebtables v2.0 registered
+[    3.616152] l2tp_core: L2TP core driver, V2.0
+[    3.620513] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[    3.625300] 8021q: 802.1Q VLAN Support v1.8
+[    3.629498] 9pnet: Installing 9P2000 support
+[    3.633786] Key type dns_resolver registered
+[    3.638319] registered taskstats version 1
+[    3.642645] Btrfs loaded, crc32c=crc32c-generic
+[    3.650346] rtc-pcf8563 2-0051: low voltage detected, date/time is not reliable.
+[    3.657742] rtc-pcf8563 2-0051: hctosys: unable to read the hardware clock
+[    3.665703] ALSA device list:
+[    3.668668]   No soundcards found.
+[    3.680095] hub 3-1:1.0: USB hub found
+[    3.684125] hub 3-1:1.0: 4 ports detected
+[    3.712887] EXT4-fs (sda1): 1 orphan inode deleted
+[    3.717682] EXT4-fs (sda1): recovery complete
+[    3.724084] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+[    3.731755] VFS: Mounted root (ext4 filesystem) on device 8:1.
+[    3.738003] devtmpfs: mounted
+[    3.741343] Freeing unused kernel memory: 1216K
+[    3.772012] usb 4-1: new SuperSpeed USB device number 2 using xhci-hcd
+[    3.811112] systemd[1]: System time before build time, advancing clock.
+[    3.822713] systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+[    3.840975] hub 4-1:1.0: USB hub found
+[    3.841850] hub 4-1:1.0: 4 ports detected
+[    3.851949] systemd[1]: Detected architecture arm64.
+[    3.872155] systemd[1]: Set hostname to <localhost>.
+[    3.896715] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.904456] pcieport 0000:00:00.0: PCIe Bus Error: severity=Corrected, type=Physical Layer, id=0000(Transmitter ID)
+[    3.914960] pcieport 0000:00:00.0:   device [1957:81c0] error status/mask=00001101/00006000
+[    3.914972] pcieport 0000:00:00.0:    [ 0] Receiver Error         (First)
+[    3.914975] pcieport 0000:00:00.0:    [ 8] RELAY_NUM Rollover
+[    3.914977] pcieport 0000:00:00.0:    [12] Replay Timer Timeout
+[    3.914981] pcieport 0000:00:00.0: AER: Corrected error received: id=0000
+[    3.914985] pcieport 0000:00:00.0: can't find device of ID0000
+[    3.914986] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.914989] pcieport 0000:00:00.0: can't find device of ID0000
+[    3.914991] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.914994] pcieport 0000:00:00.0: can't find device of ID0000
+[    3.914995] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.914998] pcieport 0000:00:00.0: can't find device of ID0000
+[    3.988661] systemd[1]: /lib/systemd/system/systemd-udevd.service:31: Unknown lvalue 'RestrictSUIDSGID' in section 'Service'
+[    3.995909] usb 3-1.1: new high-speed USB device number 3 using xhci-hcd
+[    4.006679] systemd[1]: File /lib/systemd/system/systemd-udevd.service:35 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
+[    4.023457] systemd[1]: Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
+[    4.076403] systemd[1]: Configuration file /etc/systemd/system/forlinx.service is marked executable. Please remove executable permission bits. Proceeding anyway.
+[    4.090854] systemd[1]: Configuration file /etc/systemd/system/forlinx.service is marked world-writable. Please remove world writability permission bits. Proceeding anyway.
+[    4.114047] random: systemd: uninitialized urandom read (16 bytes read)
+[    4.120687] systemd[1]: Reached target Swap.
+[    4.135946] random: systemd: uninitialized urandom read (16 bytes read)
+[    4.142624] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[    4.167950] random: systemd: uninitialized urandom read (16 bytes read)
+[    4.259894] usb 3-1.3: new full-speed USB device number 4 using xhci-hcd
+[    4.495902] usb 3-1.4: new full-speed USB device number 5 using xhci-hcd
+[    5.268383] systemd-journald[3545]: Received request to flush runtime journal from PID 1
+[    5.317061] usbcore: registered new interface driver usbserial
+[    5.317119] usbcore: registered new interface driver usbserial_generic
+[    5.317160] usbserial: USB Serial support registered for generic
+[    5.319577] usbcore: registered new interface driver ch341
+[    5.319690] usbserial: USB Serial support registered for ch341-uart
+[    5.319716] ch341 3-1.4:1.0: ch341-uart converter detected
+[    5.320144] usb 3-1.4: ch341-uart converter now attached to ttyUSB0
+[    5.335025] systemd-journald[3545]: File /var/log/journal/1fca3123000249359f352a121666f6f8/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[    5.512977] rtc-rx8010 2-0032: Unable to read registers #32..#32
+[    5.519856] i2c i2c-2: probing for rx8010 failed
+[    5.549918] usbcore: registered new interface driver cp210x
+[    5.549944] usbserial: USB Serial support registered for cp210x
+[    5.549990] cp210x 3-1.3:1.0: cp210x converter detected
+[    5.553050] usb 3-1.3: cp210x converter now attached to ttyUSB1
+[    5.594206] fsl_dpa soc:fsl,dpaa:ethernet@8 fm1-mac9: renamed from eth5
+[    5.612088] wlan_cnss_core_pcie: disagrees about version of symbol module_layout
+[    5.619265] fsl_dpa soc:fsl,dpaa:ethernet@4 fm1-mac5: renamed from eth3
+[    5.643464] fsl_dpa soc:fsl,dpaa:ethernet@5 fm1-mac6: renamed from eth4
+[    5.661058] fsl_dpa soc:fsl,dpaa:ethernet@9 fm1-mac10: renamed from eth6
+[    5.680811] fsl_dpa soc:fsl,dpaa:ethernet@2 fm1-mac3: renamed from eth1
+[    5.700852] fsl_dpa soc:fsl,dpaa:ethernet@1 fm1-mac2: renamed from eth0
+[    5.716952] fsl_dpa soc:fsl,dpaa:ethernet@3 fm1-mac4: renamed from eth2
+[    5.795336] FAT-fs (mmcblk0p2): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[    5.795678] EXT4-fs (mmcblk0p3): recovery complete
+[    5.795685] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+[    5.848042] usb 3-1.1: reset high-speed USB device number 3 using xhci-hcd
+[    5.982225] ieee80211 phy0: rt2x00_set_rt: Info - RT chipset 3070, rev 0201 detected
+[    5.991667] ieee80211 phy0: rt2x00_set_rf: Info - RF chipset 0005 detected
+[    5.992053] ieee80211 phy0: Selected rate control algorithm 'minstrel_ht'
+[    5.992761] usbcore: registered new interface driver rt2800usb
+[    5.997587] rt2800usb 3-1.1:1.0 wlx7cdd901b2360: renamed from wlan0
+[    6.335820] ieee80211 phy0: rt2x00lib_request_firmware: Info - Loading firmware file 'rt2870.bin'
+[    6.336379] ieee80211 phy0: rt2x00lib_request_firmware: Info - Firmware detected - version: 0.36
+[    6.708250] IPv6: ADDRCONF(NETDEV_UP): wlx7cdd901b2360: link is not ready
+[    6.712680] IPv6: ADDRCONF(NETDEV_UP): fm1-mac3: link is not ready
+[    6.819206] new mount options do not match the existing superblock, will be ignored
+[    7.126726] rtc-pcf8563 2-0051: low voltage detected, date/time is not reliable.
+[    7.315315] random: crng init done
+[    7.315319] random: 7 urandom warning(s) missed due to ratelimiting
+[    7.973853] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    7.975918] usb 1-1: new full-speed USB device number 2 using xhci-hcd
+[    8.124064] usb 1-1: not running at top speed; connect to a high speed hub
+[    8.264412] virbr0: port 1(virbr0-nic) entered blocking state
+[    8.264429] virbr0: port 1(virbr0-nic) entered disabled state
+[    8.264544] device virbr0-nic entered promiscuous mode
+[    8.666136] virbr0: port 1(virbr0-nic) entered blocking state
+[    8.666142] virbr0: port 1(virbr0-nic) entered listening state
+[    8.734766] virbr0: port 1(virbr0-nic) entered disabled state
+[    9.768262] IPv6: ADDRCONF(NETDEV_CHANGE): fm1-mac3: link becomes ready
+[   11.770706] usb 1-1: USB disconnect, device number 2
+[   12.082673] Intel(R) Wireless WiFi driver for Linux
+[   12.082676] Copyright(c) 2003- 2015 Intel Corporation
+[   12.259645] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[   12.259657] pcieport 0000:00:00.0: PCIe Bus Error: severity=Corrected, type=Physical Layer, id=0000(Receiver ID)
+[   12.269879] pcieport 0000:00:00.0:   device [1957:81c0] error status/mask=00000001/00006000
+[   12.278262] pcieport 0000:00:00.0:    [ 0] Receiver Error         (First)
+[   21.612028] usb 2-1: new SuperSpeed USB device number 2 using xhci-hcd
+[   21.696491] usb 2-1: Enable of device-initiated U1 failed.
+[   21.728485] usb 2-1: Enable of device-initiated U2 failed.
+[   21.728791] usb 2-1: Disable of device-initiated U1 failed.
+[   21.728869] usb 2-1: Disable of device-initiated U2 failed.
+[   21.781851] cdc_ncm 2-1:1.0: MAC-Address: e6:cd:be:9a:69:a1
+[   21.782667] cdc_ncm 2-1:1.0 usb0: register 'cdc_ncm' at usb-xhci-hcd.0.auto-1, CDC NCM, e6:cd:be:9a:69:a1
+[   21.792475] usb 2-1: Enable of device-initiated U1 failed.
+[   21.824452] usb 2-1: Enable of device-initiated U2 failed.
+[   21.844328] usbcore: registered new interface driver option
+[   21.844381] usbserial: USB Serial support registered for GSM modem (1-port)
+[   21.844537] option 2-1:1.2: GSM modem (1-port) converter detected
+[   21.844775] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB2
+[   21.844978] option 2-1:1.3: GSM modem (1-port) converter detected
+[   21.845240] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB3
+[   21.845391] option 2-1:1.4: GSM modem (1-port) converter detected
+[   21.845603] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB4
+[   21.845845] option 2-1:1.5: GSM modem (1-port) converter detected
+[   21.846038] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB5
+[   21.846183] option 2-1:1.6: GSM modem (1-port) converter detected
+[   21.846371] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB6
+[   78.191322] systemd-journald[3545]: File /var/log/journal/1fca3123000249359f352a121666f6f8/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+[  103.495313] wlx7cdd901b2360: authenticate with b6:1c:2e:10:37:49
+[  103.546946] wlx7cdd901b2360: send auth to b6:1c:2e:10:37:49 (try 1/3)
+[  103.559448] wlx7cdd901b2360: authenticated
+[  103.559913] wlx7cdd901b2360: associate with b6:1c:2e:10:37:49 (try 1/3)
+[  103.597969] wlx7cdd901b2360: RX AssocResp from b6:1c:2e:10:37:49 (capab=0x1431 status=0 aid=5)
+[  103.607415] wlx7cdd901b2360: associated
+[  103.619741] IPv6: ADDRCONF(NETDEV_CHANGE): wlx7cdd901b2360: link becomes ready
+[  103.626582] wlx7cdd901b2360: Limiting TX power to 23 (23 - 0) dBm as advertised by b6:1c:2e:10:37:49
+[  105.040011] IPv6: ADDRCONF(NETDEV_UP): lxcbr0: link is not ready
+[  240.564211] wlx7cdd901b2360: deauthenticating from b6:1c:2e:10:37:49 by local choice (Reason: 3=DEAUTH_LEAVING)
+[  247.647366] wlx7cdd901b2360: authenticate with b6:1c:2e:10:37:49
+[  247.696094] wlx7cdd901b2360: send auth to b6:1c:2e:10:37:49 (try 1/3)
+[  247.704335] wlx7cdd901b2360: authenticated
+[  247.707918] wlx7cdd901b2360: associate with b6:1c:2e:10:37:49 (try 1/3)
+[  247.743220] wlx7cdd901b2360: RX AssocResp from b6:1c:2e:10:37:49 (capab=0x1431 status=0 aid=6)
+[  247.753280] wlx7cdd901b2360: associated
+[  247.806362] wlx7cdd901b2360: Limiting TX power to 23 (23 - 0) dBm as advertised by b6:1c:2e:10:37:49
+[ 1183.037351] wlan: loading out-of-tree module taints kernel.
+[ 1183.045718] wlan: Unknown symbol cnss_qmi_send_get (err 0)
+[ 1183.045736] wlan: Unknown symbol cnss_smmu_map (err 0)
+[ 1183.045832] wlan: Unknown symbol cnss_wlan_register_driver (err 0)
+[ 1183.045879] wlan: Unknown symbol cnss_pci_is_drv_connected (err 0)
+[ 1183.045948] wlan: Unknown symbol cnss_request_pm_qos (err 0)
+[ 1183.045953] wlan: Unknown symbol cnss_qmi_send (err 0)
+[ 1183.045980] wlan: Unknown symbol cnss_get_user_msi_assignment (err 0)
+[ 1183.046126] wlan: Unknown symbol cnss_get_msi_address (err 0)
+[ 1183.046202] wlan: Unknown symbol cnss_set_fw_log_mode (err 0)
+[ 1183.046376] wlan: Unknown symbol cnss_utils_wlan_set_dfs_nol (err 0)
+[ 1183.046444] wlan: Unknown symbol cnss_pci_force_wake_release (err 0)
+[ 1183.046450] wlan: Unknown symbol cnss_auto_resume (err 0)
+[ 1183.046524] wlan: Unknown symbol cnss_utils_set_wlan_unsafe_channel (err 0)
+[ 1183.046554] wlan: Unknown symbol cnss_schedule_recovery (err 0)
+[ 1183.046589] wlan: Unknown symbol cnss_idle_restart (err 0)
+[ 1183.046605] wlan: Unknown symbol cnss_get_soc_info (err 0)
+[ 1183.046645] wlan: Unknown symbol cnss_lock_pm_sem (err 0)
+[ 1183.046701] wlan: Unknown symbol cnss_pci_is_device_down (err 0)
+[ 1183.046717] wlan: Unknown symbol cnss_get_msi_irq (err 0)
+[ 1183.046741] wlan: Unknown symbol cnss_athdiag_write (err 0)
+[ 1183.046762] wlan: Unknown symbol cnss_get_platform_cap (err 0)
+[ 1183.046830] wlan: Unknown symbol cnss_utils_get_wlan_mac_address (err 0)
+[ 1183.046866] wlan: Unknown symbol cnss_pci_allow_l1 (err 0)
+[ 1183.046873] wlan: Unknown symbol hdd_dump_log_buffer (err 0)
+[ 1183.046911] wlan: Unknown symbol cnss_idle_shutdown (err 0)
+[ 1183.046989] wlan: Unknown symbol cnss_athdiag_read (err 0)
+[ 1183.047011] wlan: Unknown symbol cnss_qmi_send_put (err 0)
+[ 1183.047020] wlan: Unknown symbol cnss_pci_unlock_reg_window (err 0)
+[ 1183.047075] wlan: Unknown symbol cnss_pci_is_device_awake (err 0)
+[ 1183.047088] wlan: Unknown symbol cnss_force_fw_assert (err 0)
+[ 1183.047107] wlan: Unknown symbol cnss_utils_wlan_get_dfs_nol (err 0)
+[ 1183.047176] wlan: Unknown symbol cnss_auto_suspend (err 0)
+[ 1183.047221] wlan: Unknown symbol cnss_get_fw_files_for_target (err 0)
+[ 1183.047239] wlan: Unknown symbol cnss_smmu_get_mapping (err 0)
+[ 1183.047244] wlan: Unknown symbol cnss_wlan_pm_control (err 0)
+[ 1183.047275] wlan: Unknown symbol cnss_utils_get_wlan_unsafe_channel (err 0)
+[ 1183.047317] wlan: Unknown symbol cnss_wlan_enable (err 0)
+[ 1183.047326] wlan: Unknown symbol cnss_utils_increment_driver_load_cnt (err 0)
+[ 1183.047399] wlan: Unknown symbol cnss_pci_prevent_l1 (err 0)
+[ 1183.047432] wlan: Unknown symbol cnss_pci_lock_reg_window (err 0)
+[ 1183.047442] wlan: Unknown symbol cnss_pci_force_wake_request (err 0)
+[ 1183.047468] wlan: Unknown symbol cnss_utils_get_wlan_derived_mac_address (err 0)
+[ 1183.047489] wlan: Unknown symbol cnss_request_bus_bandwidth (err 0)
+[ 1183.047501] wlan: Unknown symbol cnss_get_virt_ramdump_mem (err 0)
+[ 1183.047532] wlan: Unknown symbol cnss_wlan_unregister_driver (err 0)
+[ 1183.047539] wlan: Unknown symbol cnss_device_crashed (err 0)
+[ 1183.047586] wlan: Unknown symbol cnss_pci_link_down (err 0)
+[ 1183.047592] wlan: Unknown symbol cnss_self_recovery (err 0)
+[ 1183.047614] wlan: Unknown symbol cnss_release_pm_sem (err 0)
+[ 1183.047657] wlan: Unknown symbol cnss_remove_pm_qos (err 0)
+[ 1183.047675] wlan: Unknown symbol cnss_wlan_disable (err 0)
+[ 1183.047695] wlan: Unknown symbol cnss_force_collect_rddm (err 0)
+[ 1412.449846] wlan: module_layout: kernel tainted.
+[ 1412.449849] Disabling lock debugging due to kernel taint
+[ 1412.458351] wlan: Unknown symbol cnss_qmi_send_get (err 0)
+[ 1412.458365] wlan: Unknown symbol cnss_smmu_map (err 0)
+[ 1412.458421] wlan: Unknown symbol cnss_wlan_register_driver (err 0)
+[ 1412.458442] wlan: Unknown symbol cnss_pci_is_drv_connected (err 0)
+[ 1412.458472] wlan: Unknown symbol cnss_request_pm_qos (err 0)
+[ 1412.458478] wlan: Unknown symbol cnss_qmi_send (err 0)
+[ 1412.458492] wlan: Unknown symbol cnss_get_user_msi_assignment (err 0)
+[ 1412.458556] wlan: Unknown symbol cnss_get_msi_address (err 0)
+[ 1412.458582] wlan: Unknown symbol cnss_set_fw_log_mode (err 0)
+[ 1412.458645] wlan: Unknown symbol cnss_utils_wlan_set_dfs_nol (err 0)
+[ 1412.458675] wlan: Unknown symbol cnss_pci_force_wake_release (err 0)
+[ 1412.458681] wlan: Unknown symbol cnss_auto_resume (err 0)
+[ 1412.458710] wlan: Unknown symbol cnss_utils_set_wlan_unsafe_channel (err 0)
+[ 1412.458726] wlan: Unknown symbol cnss_schedule_recovery (err 0)
+[ 1412.458748] wlan: Unknown symbol cnss_idle_restart (err 0)
+[ 1412.458758] wlan: Unknown symbol cnss_get_soc_info (err 0)
+[ 1412.458775] wlan: Unknown symbol cnss_lock_pm_sem (err 0)
+[ 1412.458801] wlan: Unknown symbol cnss_pci_is_device_down (err 0)
+[ 1412.458811] wlan: Unknown symbol cnss_get_msi_irq (err 0)
+[ 1412.458822] wlan: Unknown symbol cnss_athdiag_write (err 0)
+[ 1412.458834] wlan: Unknown symbol cnss_get_platform_cap (err 0)
+[ 1412.458868] wlan: Unknown symbol cnss_utils_get_wlan_mac_address (err 0)
+[ 1412.458888] wlan: Unknown symbol cnss_pci_allow_l1 (err 0)
+[ 1412.458895] wlan: Unknown symbol hdd_dump_log_buffer (err 0)
+[ 1412.458918] wlan: Unknown symbol cnss_idle_shutdown (err 0)
+[ 1412.458954] wlan: Unknown symbol cnss_athdiag_read (err 0)
+[ 1412.458969] wlan: Unknown symbol cnss_qmi_send_put (err 0)
+[ 1412.458975] wlan: Unknown symbol cnss_pci_unlock_reg_window (err 0)
+[ 1412.459005] wlan: Unknown symbol cnss_pci_is_device_awake (err 0)
+[ 1412.459013] wlan: Unknown symbol cnss_force_fw_assert (err 0)
+[ 1412.459024] wlan: Unknown symbol cnss_utils_wlan_get_dfs_nol (err 0)
+[ 1412.459060] wlan: Unknown symbol cnss_auto_suspend (err 0)
+[ 1412.459086] wlan: Unknown symbol cnss_get_fw_files_for_target (err 0)
+[ 1412.459097] wlan: Unknown symbol cnss_smmu_get_mapping (err 0)
+[ 1412.459102] wlan: Unknown symbol cnss_wlan_pm_control (err 0)
+[ 1412.459119] wlan: Unknown symbol cnss_utils_get_wlan_unsafe_channel (err 0)
+[ 1412.459141] wlan: Unknown symbol cnss_wlan_enable (err 0)
+[ 1412.459148] wlan: Unknown symbol cnss_utils_increment_driver_load_cnt (err 0)
+[ 1412.459195] wlan: Unknown symbol cnss_pci_prevent_l1 (err 0)
+[ 1412.459216] wlan: Unknown symbol cnss_pci_lock_reg_window (err 0)
+[ 1412.459225] wlan: Unknown symbol cnss_pci_force_wake_request (err 0)
+[ 1412.459244] wlan: Unknown symbol cnss_utils_get_wlan_derived_mac_address (err 0)
+[ 1412.459259] wlan: Unknown symbol cnss_request_bus_bandwidth (err 0)
+[ 1412.459268] wlan: Unknown symbol cnss_get_virt_ramdump_mem (err 0)
+[ 1412.459289] wlan: Unknown symbol cnss_wlan_unregister_driver (err 0)
+[ 1412.459296] wlan: Unknown symbol cnss_device_crashed (err 0)
+[ 1412.459327] wlan: Unknown symbol cnss_pci_link_down (err 0)
+[ 1412.459332] wlan: Unknown symbol cnss_self_recovery (err 0)
+[ 1412.459347] wlan: Unknown symbol cnss_release_pm_sem (err 0)
+[ 1412.459380] wlan: Unknown symbol cnss_remove_pm_qos (err 0)
+[ 1412.459395] wlan: Unknown symbol cnss_wlan_disable (err 0)
+[ 1412.459413] wlan: Unknown symbol cnss_force_collect_rddm (err 0)
+[ 1574.810445] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1647.815699] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1652.874571] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1767.394506] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1807.721106] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2020.195041] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2188.638810] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2213.600407] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+forlinx@localhost:/lib/modules/4.14.47$ ifconfig -a
+fm1-mac2: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 76:ef:a4:ac:00:51  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae2000-1ae2fff
+
+fm1-mac3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.232  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::4be:f2ff:fe70:7f76  prefixlen 64  scopeid 0x20<link>
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 305982  bytes 432092811 (432.0 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 55894  bytes 3790033 (3.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+fm1-mac4: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 56:4b:8e:16:48:eb  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff
+
+fm1-mac5: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 46:19:9f:83:fc:3f  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae8000-1ae8fff
+
+fm1-mac6: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 2a:4f:e2:06:32:72  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1aea000-1aeafff
+
+fm1-mac9: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether fe:1b:75:99:a8:e2  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af0000-1af0fff
+
+fm1-mac10: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether ae:ee:09:ff:9f:7f  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af2000-1af2fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 916048  bytes 750095501 (750.0 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 916048  bytes 750095501 (750.0 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sit0: flags=128<NOARP>  mtu 1480
+        sit  txqueuelen 1000  (IPv6-in-IPv4)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+usb0: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether e6:cd:be:9a:69:a1  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0-nic: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx7cdd901b2360: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.23.135  netmask 255.255.255.0  broadcast 192.168.23.255
+        inet6 fe80::7edd:90ff:fe1b:2360  prefixlen 64  scopeid 0x20<link>
+        ether 7c:dd:90:1b:23:60  txqueuelen 1000  (Ethernet)
+        RX packets 79927  bytes 5742397 (5.7 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 80925  bytes 22912585 (22.9 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+forlinx@localhost:/lib/modules/4.14.47$ dmesg
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.14.47 (root@ubuntu) (gcc version 7.3.0 (Ubuntu/Linaro 7.3.0-27ubuntu1~18.04)) #1 SMP PREEMPT Mon Sep 4 19:26:29 PDT 2023
+[    0.000000] Boot CPU: AArch64 Processor [410fd082]
+[    0.000000] Machine model: LS1046A RDB Board
+[    0.000000] earlycon: uart8250 at MMIO 0x00000000021c0500 (options '')
+[    0.000000] bootconsole [uart8250] enabled
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] OF: reserved mem: initialized node qman-fqd, compatible id fsl,qman-fqd
+[    0.000000] OF: reserved mem: initialized node qman-pfdr, compatible id fsl,qman-pfdr
+[    0.000000] OF: reserved mem: initialized node bman-fbpr, compatible id fsl,bman-fbpr
+[    0.000000] cma: Reserved 16 MiB at 0x00000000fac00000
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000000000000-0x00000008ff7fffff]
+[    0.000000] NUMA: NODE_DATA [mem 0x8ff7c8400-0x8ff7c9bbf]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000080000000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x00000008ff7fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x00000000fbdfffff]
+[    0.000000]   node   0: [mem 0x0000000880000000-0x00000008fbffffff]
+[    0.000000]   node   0: [mem 0x00000008ff000000-0x00000008ff7fffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x00000008ff7fffff]
+[    0.000000] On node 0 totalpages: 1017344
+[    0.000000]   DMA zone: 8192 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 507392 pages, LIFO batch:31
+[    0.000000]   Normal zone: 7968 pages used for memmap
+[    0.000000]   Normal zone: 509952 pages, LIFO batch:31
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv0.2 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] percpu: Embedded 24 pages/cpu @ffff80087f763000 s59992 r8192 d30120 u98304
+[    0.000000] pcpu-alloc: s59992 r8192 d30120 u98304 alloc=24*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1001184
+[    0.000000] Policy zone: Normal
+[    0.000000] Kernel command line: console=ttyS0,115200 earlycon=uart8250,mmio,0x21c0500 root=PARTUUID=63d7c5d0-01 rw rootwait board_name=ls1046ardb serdes1=1133
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] software IO TLB [mem 0xf6c00000-0xfac00000] (64MB) mapped at [ffff800076c00000-ffff80007abfffff]
+[    0.000000] Memory: 3898548K/4069376K available (13180K kernel code, 1446K rwdata, 5352K rodata, 1216K init, 976K bss, 154444K reserved, 16384K cma-reserved)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     modules : 0xffff000000000000 - 0xffff000008000000   (   128 MB)
+[    0.000000]     vmalloc : 0xffff000008000000 - 0xffff7dffbfff0000   (129022 GB)
+[    0.000000]       .text : 0xffff000008080000 - 0xffff000008d60000   ( 13184 KB)
+[    0.000000]     .rodata : 0xffff000008d60000 - 0xffff0000092a0000   (  5376 KB)
+[    0.000000]       .init : 0xffff0000092a0000 - 0xffff0000093d0000   (  1216 KB)
+[    0.000000]       .data : 0xffff0000093d0000 - 0xffff000009539a00   (  1447 KB)
+[    0.000000]        .bss : 0xffff000009539a00 - 0xffff00000962dc90   (   977 KB)
+[    0.000000]     fixed   : 0xffff7dfffe7f9000 - 0xffff7dfffec00000   (  4124 KB)
+[    0.000000]     PCI I/O : 0xffff7dfffee00000 - 0xffff7dffffe00000   (    16 MB)
+[    0.000000]     vmemmap : 0xffff7e0000000000 - 0xffff800000000000   (  2048 GB maximum)
+[    0.000000]               0xffff7e0000000000 - 0xffff7e0021fe0000   (   543 MB actual)
+[    0.000000]     memory  : 0xffff800000000000 - 0xffff80087f800000   ( 34808 MB)
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000]  RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+[    0.000000]  Tasks RCU enabled.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GIC: Adjusting CPU interface base to 0x000000000142f000
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] arch_timer: cp15 timer(s) running at 25.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x5c40939b5, max_idle_ns: 440795202646 ns
+[    0.000002] sched_clock: 56 bits at 25MHz, resolution 40ns, wraps every 4398046511100ns
+[    0.008369] Console: colour dummy device 80x25
+[    0.012862] Calibrating delay loop (skipped), value calculated using timer frequency.. 50.00 BogoMIPS (lpj=100000)
+[    0.023272] pid_max: default: 32768 minimum: 301
+[    0.027970] Security Framework initialized
+[    0.033316] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.041228] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.048343] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.055100] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.078302] ASID allocator initialised with 32768 entries
+[    0.083762] Hierarchical SRCU implementation.
+[    0.096541] EFI services will not be available.
+[    0.109102] smp: Bringing up secondary CPUs ...
+[    0.143535] Detected PIPT I-cache on CPU1
+[    0.143553] CPU1: Booted secondary processor [410fd082]
+[    0.170578] Detected PIPT I-cache on CPU2
+[    0.170591] CPU2: Booted secondary processor [410fd082]
+[    0.198599] Detected PIPT I-cache on CPU3
+[    0.198611] CPU3: Booted secondary processor [410fd082]
+[    0.198639] smp: Brought up 1 node, 4 CPUs
+[    0.230589] SMP: Total of 4 processors activated.
+[    0.235315] CPU features: detected feature: 32-bit EL0 Support
+[    0.241176] CPU features: detected feature: Kernel page table isolation (KPTI)
+[    0.252006] CPU: All CPU(s) started at EL2
+[    0.256127] alternatives: patching kernel code
+[    0.260982] devtmpfs: initialized
+[    0.266224] random: get_random_u32 called from bucket_table_alloc+0x108/0x258 with crng_init=0
+[    0.275051] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.284861] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[    0.291254] xor: measuring software checksum speed
+[    0.336086]    8regs     :  7630.000 MB/sec
+[    0.380303]    8regs_prefetch:  6686.000 MB/sec
+[    0.424869]    32regs    :  7682.000 MB/sec
+[    0.469086]    32regs_prefetch:  7243.000 MB/sec
+[    0.473724] xor: using function: 32regs (7682.000 MB/sec)
+[    0.479150] pinctrl core: initialized pinctrl subsystem
+[    0.484877] DMI not present or invalid.
+[    0.488891] NET: Registered protocol family 16
+[    0.497372] cpuidle: using governor menu
+[    0.501508] Bman ver:0a02,02,01
+[    0.506533] qman-fqd addr 0x00000008ff800000 size 0x800000
+[    0.512048] qman-pfdr addr 0x00000008fc000000 size 0x2000000
+[    0.517760] Qman ver:0a01,03,02,01
+[    0.521251] vdso: 2 pages (1 code @ ffff000008d66000, 1 data @ ffff0000093d5000)
+[    0.528695] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.535907] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.542212] Serial: AMBA PL011 UART driver
+[    0.549345] Machine: LS1046A RDB Board
+[    0.553115] SoC family: QorIQ LS1046A
+[    0.556789] SoC ID: svr:0x87070010, Revision: 1.0
+[    0.573478] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.645518] raid6: int64x1  gen()  1115 MB/s
+[    0.717525] raid6: int64x1  xor()  1003 MB/s
+[    0.789570] raid6: int64x2  gen()  1534 MB/s
+[    0.861566] raid6: int64x2  xor()  1458 MB/s
+[    0.933612] raid6: int64x4  gen()  2329 MB/s
+[    1.005628] raid6: int64x4  xor()  1631 MB/s
+[    1.077658] raid6: int64x8  gen()  2293 MB/s
+[    1.149698] raid6: int64x8  xor()  1585 MB/s
+[    1.221735] raid6: neonx1   gen()  2242 MB/s
+[    1.293747] raid6: neonx1   xor()  2503 MB/s
+[    1.365776] raid6: neonx2   gen()  2929 MB/s
+[    1.437804] raid6: neonx2   xor()  3126 MB/s
+[    1.509835] raid6: neonx4   gen()  3827 MB/s
+[    1.581868] raid6: neonx4   xor()  3423 MB/s
+[    1.653894] raid6: neonx8   gen()  4378 MB/s
+[    1.725923] raid6: neonx8   xor()  3708 MB/s
+[    1.730211] raid6: using algorithm neonx8 gen() 4378 MB/s
+[    1.735635] raid6: .... xor() 3708 MB/s, rmw enabled
+[    1.740621] raid6: using neon recovery algorithm
+[    1.745507] ACPI: Interpreter disabled.
+[    1.750725] vgaarb: loaded
+[    1.753569] SCSI subsystem initialized
+[    1.757398] libata version 3.00 loaded.
+[    1.757551] usbcore: registered new interface driver usbfs
+[    1.763124] usbcore: registered new interface driver hub
+[    1.768488] usbcore: registered new device driver usb
+[    1.773853] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
+[    1.781229] i2c i2c-0: IMX I2C adapter registered
+[    1.785983] i2c i2c-0: using dma0chan16 (tx) and dma0chan17 (rx) for DMA transfers
+[    1.793634] imx-i2c 2190000.i2c: fsl-scl-gpio not found
+[    1.798903] imx-i2c 2190000.i2c: can't get pinctrl, bus recovery not supported
+[    1.806204] i2c i2c-1: IMX I2C adapter registered
+[    1.810934] i2c i2c-1: can't use DMA, using PIO instead.
+[    1.816306] imx-i2c 21a0000.i2c: fsl-scl-gpio not found
+[    1.821573] imx-i2c 21a0000.i2c: can't get pinctrl, bus recovery not supported
+[    1.828928] i2c i2c-2: IMX I2C adapter registered
+[    1.833658] i2c i2c-2: can't use DMA, using PIO instead.
+[    1.839062] imx-i2c 21b0000.i2c: can't get pinctrl, bus recovery not supported
+[    1.846354] i2c i2c-3: IMX I2C adapter registered
+[    1.851089] i2c i2c-3: can't use DMA, using PIO instead.
+[    1.856891] Linux video capture interface: v2.00
+[    1.861559] pps_core: LinuxPPS API ver. 1 registered
+[    1.866553] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.875745] PTP clock support registered
+[    1.879801] EDAC MC: Ver: 3.0.0
+[    1.883055] dmi: Firmware registration failed.
+[    1.887533] bman-fbpr addr 0x00000008fe000000 size 0x1000000
+[    1.893240] Bman err interrupt handler present
+[    1.898032] Bman portal initialised, cpu 0
+[    1.902199] Bman portal initialised, cpu 1
+[    1.906364] Bman portal initialised, cpu 2
+[    1.910527] Bman portal initialised, cpu 3
+[    1.914642] Bman portals initialised
+[    1.918993] Qman err interrupt handler present
+[    1.923922] QMan: Allocated lookup table at ffff00000b67d000, entry count 131073
+[    1.931667] Qman portal initialised, cpu 0
+[    1.935832] Qman portal initialised, cpu 1
+[    1.939990] Qman portal initialised, cpu 2
+[    1.944146] Qman portal initialised, cpu 3
+[    1.948261] Qman portals initialised
+[    1.951891] Bman: BPID allocator includes range 32:32
+[    1.956993] Qman: FQID allocator includes range 256:256
+[    1.962245] Qman: FQID allocator includes range 32768:32768
+[    1.967874] Qman: CGRID allocator includes range 0:256
+[    1.973162] Qman: pool channel allocator includes range 1025:15
+[    1.979166] No USDPAA memory, no 'fsl,usdpaa-mem' in device-tree
+[    1.985438] Advanced Linux Sound Architecture Driver Initialized.
+[    1.991886] clocksource: Switched to clocksource arch_sys_counter
+[    1.998082] VFS: Disk quotas dquot_6.6.0
+[    2.002048] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.009013] pnp: PnP ACPI: disabled
+[    2.015052] NET: Registered protocol family 2
+[    2.019686] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+[    2.027098] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    2.034118] TCP: Hash tables configured (established 32768 bind 32768)
+[    2.040726] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    2.046815] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    2.053383] NET: Registered protocol family 1
+[    2.057888] RPC: Registered named UNIX socket transport module.
+[    2.063857] RPC: Registered udp transport module.
+[    2.068586] RPC: Registered tcp transport module.
+[    2.073312] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    2.079789] PCI: CLS 0 bytes, default 64
+[    2.080167] hw perfevents: enabled with armv8_cortex_a72 PMU driver, 7 counters available
+[    2.088619] kvm [1]: 8-bit VMID
+[    2.092364] kvm [1]: vgic interrupt IRQ1
+[    2.096351] kvm [1]: Hyp mode initialized successfully
+[    2.102592] audit: initializing netlink subsys (disabled)
+[    2.108066] audit: type=2000 audit(2.000:1): state=initialized audit_enabled=0 res=1
+[    2.108207] workingset: timestamp_bits=44 max_order=20 bucket_order=0
+[    2.116070] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    2.116157] NFS: Registering the id_resolver key type
+[    2.116168] Key type id_resolver registered
+[    2.116169] Key type id_legacy registered
+[    2.116173] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    2.116221] fuse init (API version 7.26)
+[    2.116275] 9p: Installing v9fs 9p2000 file system support
+[    2.117405] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    2.117444] io scheduler noop registered
+[    2.117463] io scheduler cfq registered (default)
+[    2.117464] io scheduler mq-deadline registered
+[    2.117465] io scheduler kyber registered
+[    2.127781] OF: PCI: host bridge /soc/pcie@3400000 ranges:
+[    2.127790] OF: PCI:    IO 0x4000010000..0x400001ffff -> 0x00000000
+[    2.127794] OF: PCI:   MEM 0x4040000000..0x407fffffff -> 0x40000000
+[    2.127864] layerscape-pcie 3400000.pcie: PCI host bridge to bus 0000:00
+[    2.127868] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    2.127870] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    2.127873] pci_bus 0000:00: root bus resource [mem 0x4040000000-0x407fffffff] (bus address [0x40000000-0x7fffffff])
+[    2.127896] pci 0000:00:00.0: [1957:81c0] type 01 class 0x060400
+[    2.127914] pci 0000:00:00.0: reg 0x38: [mem 0x4040000000-0x40400007ff pref]
+[    2.127941] pci 0000:00:00.0: supports D1 D2
+[    2.127942] pci 0000:00:00.0: PME# supported from D0 D1 D2 D3hot
+[    2.128059] pci 0000:00:00.0: BAR 6: assigned [mem 0x4040000000-0x40400007ff pref]
+[    2.128063] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+[    2.128172] pcieport 0000:00:00.0: Signaling PME with IRQ 66
+[    2.128225] pcieport 0000:00:00.0: AER enabled with IRQ 67
+[    2.128305] OF: PCI: host bridge /soc/pcie@3600000 ranges:
+[    2.128311] OF: PCI:    IO 0x5000010000..0x500001ffff -> 0x00000000
+[    2.128315] OF: PCI:   MEM 0x5040000000..0x507fffffff -> 0x40000000
+[    2.128370] layerscape-pcie 3600000.pcie: PCI host bridge to bus 0001:00
+[    2.128373] pci_bus 0001:00: root bus resource [bus 00-ff]
+[    2.128376] pci_bus 0001:00: root bus resource [io  0x10000-0x1ffff] (bus address [0x0000-0xffff])
+[    2.128379] pci_bus 0001:00: root bus resource [mem 0x5040000000-0x507fffffff] (bus address [0x40000000-0x7fffffff])
+[    2.128387] pci 0001:00:00.0: [1957:81c0] type 01 class 0x060400
+[    2.128400] pci 0001:00:00.0: reg 0x38: [mem 0x5040000000-0x50400007ff pref]
+[    2.128418] pci 0001:00:00.0: supports D1 D2
+[    2.128420] pci 0001:00:00.0: PME# supported from D0 D1 D2 D3hot
+[    2.128558] pci 0001:01:00.0: [17cb:1103] type 00 class 0x028000
+[    2.128665] pci 0001:01:00.0: reg 0x10: [mem 0x5040200000-0x50403fffff 64bit]
+[    2.129037] pci 0001:01:00.0: PME# supported from D0 D3hot D3cold
+[    2.143952] pci 0001:00:00.0: BAR 14: assigned [mem 0x5040000000-0x50401fffff]
+[    2.143955] pci 0001:00:00.0: BAR 6: assigned [mem 0x5040200000-0x50402007ff pref]
+[    2.143959] pci 0001:01:00.0: BAR 0: assigned [mem 0x5040000000-0x50401fffff 64bit]
+[    2.143991] pci 0001:00:00.0: PCI bridge to [bus 01-ff]
+[    2.143994] pci 0001:00:00.0:   bridge window [mem 0x5040000000-0x50401fffff]
+[    2.144077] pcieport 0001:00:00.0: Signaling PME with IRQ 68
+[    2.144128] pcieport 0001:00:00.0: AER enabled with IRQ 69
+[    2.151419] Freescale LS2 console driver
+[    2.151479] fsl-ls2-console: device fsl_mc_console registered
+[    2.151513] fsl-ls2-console: device fsl_aiop_console registered
+[    2.154354] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    2.155382] console [ttyS0] disabled
+[    2.375291] 21c0500.serial: ttyS0 at MMIO 0x21c0500 (irq = 40, base_baud = 21875000) is a 16550A
+[    2.384141] console [ttyS0] enabled
+[    2.391121] bootconsole [uart8250] disabled
+[    2.399711] 21c0600.serial: ttyS1 at MMIO 0x21c0600 (irq = 40, base_baud = 21875000) is a 16550A
+[    2.408697] 21d0500.serial: ttyS2 at MMIO 0x21d0500 (irq = 41, base_baud = 21875000) is a 16550A
+[    2.417678] 21d0600.serial: ttyS3 at MMIO 0x21d0600 (irq = 41, base_baud = 21875000) is a 16550A
+[    2.426871] SuperH (H)SCI(F) driver initialized
+[    2.431736] msm_serial: driver initialized
+[    2.439262] brd: module loaded
+[    2.445213] loop: module loaded
+[    2.505925] ahci-qoriq 3200000.sata: AHCI 0001.0301 32 slots 1 ports 6 Gbps 0x1 impl platform mode
+[    2.514887] ahci-qoriq 3200000.sata: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst
+[    2.524905] scsi host0: ahci-qoriq
+[    2.528368] ata1: SATA max UDMA/133 mmio [mem 0x03200000-0x0320ffff] port 0x100 irq 51
+[    2.538527] random: fast init done
+[    2.546178] fsl-quadspi 1550000.quadspi: w25q128 (16384 Kbytes)
+[    2.553750] libphy: Fixed MDIO Bus: probed
+[    2.558264] tun: Universal TUN/TAP device driver, 1.6
+[    2.563981] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.569509] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.574873] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.579989] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.585097] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.590206] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.595381] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.600489] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.605596] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.610710] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.624426] Freescale FM module, FMD API version 21.1.0
+[    2.631658] Freescale FM Ports module
+[    2.635319] fsl_mac: fsl_mac: FSL FMan MAC API based driver
+[    2.641110] fsl_mac 1ae2000.ethernet: FMan MEMAC
+[    2.645729] fsl_mac 1ae2000.ethernet: FMan MAC address: 76:ef:a4:ac:00:51
+[    2.652596] fsl_mac 1ae4000.ethernet: FMan MEMAC
+[    2.657214] fsl_mac 1ae4000.ethernet: FMan MAC address: 06:be:f2:70:7f:76
+[    2.664080] fsl_mac 1ae6000.ethernet: FMan MEMAC
+[    2.668697] fsl_mac 1ae6000.ethernet: FMan MAC address: 56:4b:8e:16:48:eb
+[    2.675606] fsl_mac 1ae8000.ethernet: FMan MEMAC
+[    2.680223] fsl_mac 1ae8000.ethernet: FMan MAC address: 46:19:9f:83:fc:3f
+[    2.687133] fsl_mac 1aea000.ethernet: FMan MEMAC
+[    2.691749] fsl_mac 1aea000.ethernet: FMan MAC address: 2a:4f:e2:06:32:72
+[    2.698735] fsl_mac 1af0000.ethernet: FMan MEMAC
+[    2.703353] fsl_mac 1af0000.ethernet: FMan MAC address: fe:1b:75:99:a8:e2
+[    2.710314] fsl_mac 1af2000.ethernet: FMan MEMAC
+[    2.714932] fsl_mac 1af2000.ethernet: FMan MAC address: ae:ee:09:ff:9f:7f
+[    2.721745] fsl_dpa: FSL DPAA Ethernet driver
+[    2.728955] fsl_dpa: fsl_dpa: Probed interface eth0
+[    2.736965] fsl_dpa: fsl_dpa: Probed interface eth1
+[    2.744979] fsl_dpa: fsl_dpa: Probed interface eth2
+[    2.753245] fsl_dpa: fsl_dpa: Probed interface eth3
+[    2.761754] fsl_dpa: fsl_dpa: Probed interface eth4
+[    2.770377] fsl_dpa: fsl_dpa: Probed interface eth5
+[    2.779214] fsl_dpa: fsl_dpa: Probed interface eth6
+[    2.784172] fsl_advanced: FSL DPAA Advanced drivers:
+[    2.789155] fsl_proxy: FSL DPAA Proxy initialization driver
+[    2.794907] fsl_oh: FSL FMan Offline Parsing port driver
+[    2.800554] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    2.807613] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    2.813409] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[    2.819241] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    2.825188] igb: Intel(R) Gigabit Ethernet Network Driver - version 5.4.0-k
+[    2.832150] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    2.837737] igbvf: Intel(R) Gigabit Virtual Function Network Driver - version 2.4.0-k
+[    2.845565] igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+[    2.851752] sky2: driver version 1.30
+[    2.855672] PPP generic driver version 2.4.2
+[    2.860007] PPP BSD Compression module registered
+[    2.864708] PPP Deflate Compression module registered
+[    2.869766] PPP MPPE Compression module registered
+[    2.874552] NET: Registered protocol family 24
+[    2.879017] usbcore: registered new interface driver asix
+[    2.884440] usbcore: registered new interface driver ax88179_178a
+[    2.890573] usbcore: registered new interface driver cdc_ether
+[    2.896414] usbcore: registered new interface driver net1080
+[    2.902082] usbcore: registered new interface driver cdc_subset
+[    2.908010] usbcore: registered new interface driver zaurus
+[    2.913596] usbcore: registered new interface driver cdc_ncm
+[    2.919262] usbcore: registered new interface driver huawei_cdc_ncm
+[    2.925537] usbcore: registered new interface driver qmi_wwan
+[    2.931539] VFIO - User Level meta-driver version: 0.3
+[    2.938215] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.944770] ehci-pci: EHCI PCI platform driver
+[    2.949228] ehci-platform: EHCI generic platform driver
+[    2.954571] ehci-orion: EHCI orion driver
+[    2.958653] ehci-exynos: EHCI EXYNOS driver
+[    2.962912] ehci-msm: Qualcomm On-Chip EHCI Host Controller
+[    2.968548] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    2.974727] ohci-pci: OHCI PCI platform driver
+[    2.979182] ohci-platform: OHCI generic platform driver
+[    2.984490] ohci-exynos: OHCI EXYNOS driver
+[    2.988951] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    2.994443] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    3.002267] xhci-hcd xhci-hcd.0.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x22010810
+[    3.010982] xhci-hcd xhci-hcd.0.auto: irq 48, io mem 0x02f00000
+[    3.017110] hub 1-0:1.0: USB hub found
+[    3.019902] ata1: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+[    3.027046] hub 1-0:1.0: 1 port detected
+[    3.027049] ata1.00: ATA-11: KINGBANK KM100, SN12521, max UDMA/133
+[    3.027052] ata1.00: 250069680 sectors, multi 1: LBA48 NCQ (depth 31/32)
+[    3.037150] ata1.00: configured for UDMA/133
+[    3.037326] scsi 0:0:0:0: Direct-Access     ATA      KINGBANK KM100   521  PQ: 0 ANSI: 5
+[    3.037592] sd 0:0:0:0: [sda] 250069680 512-byte logical blocks: (128 GB/119 GiB)
+[    3.037610] sd 0:0:0:0: [sda] Write Protect is off
+[    3.037612] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    3.037644] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    3.043856]  sda: sda1
+[    3.044191] sd 0:0:0:0: [sda] Attached SCSI disk
+[    3.084565] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.090052] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    3.097708] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0  SuperSpeed
+[    3.104505] hub 2-0:1.0: USB hub found
+[    3.108259] hub 2-0:1.0: 1 port detected
+[    3.112304] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.117792] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 3
+[    3.125605] xhci-hcd xhci-hcd.1.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x22010810
+[    3.134316] xhci-hcd xhci-hcd.1.auto: irq 49, io mem 0x03000000
+[    3.140403] hub 3-0:1.0: USB hub found
+[    3.144157] hub 3-0:1.0: 1 port detected
+[    3.148163] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.153648] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 4
+[    3.161304] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0  SuperSpeed
+[    3.168096] hub 4-0:1.0: USB hub found
+[    3.171844] hub 4-0:1.0: 1 port detected
+[    3.175891] xhci-hcd xhci-hcd.2.auto: xHCI Host Controller
+[    3.181379] xhci-hcd xhci-hcd.2.auto: new USB bus registered, assigned bus number 5
+[    3.189196] xhci-hcd xhci-hcd.2.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x22010810
+[    3.197906] xhci-hcd xhci-hcd.2.auto: irq 50, io mem 0x03100000
+[    3.203990] hub 5-0:1.0: USB hub found
+[    3.207738] hub 5-0:1.0: 1 port detected
+[    3.211746] xhci-hcd xhci-hcd.2.auto: xHCI Host Controller
+[    3.217235] xhci-hcd xhci-hcd.2.auto: new USB bus registered, assigned bus number 6
+[    3.224890] xhci-hcd xhci-hcd.2.auto: Host supports USB 3.0  SuperSpeed
+[    3.231676] hub 6-0:1.0: USB hub found
+[    3.235434] hub 6-0:1.0: 1 port detected
+[    3.239649] usbcore: registered new interface driver cdc_wdm
+[    3.245343] usbcore: registered new interface driver usb-storage
+[    3.257063] rtc-pcf8563 2-0051: low voltage detected, date/time is not reliable.
+[    3.264513] rtc-pcf8563 2-0051: rtc core: registered rtc-pcf8563 as rtc0
+[    3.273354] i2c /dev entries driver
+[    3.278121] IR NEC protocol handler initialized
+[    3.282651] IR RC5(x/sz) protocol handler initialized
+[    3.287697] IR RC6 protocol handler initialized
+[    3.292229] IR JVC protocol handler initialized
+[    3.296756] IR Sony protocol handler initialized
+[    3.301368] IR SANYO protocol handler initialized
+[    3.306067] IR Sharp protocol handler initialized
+[    3.310766] IR MCE Keyboard/mouse protocol handler initialized
+[    3.316595] IR XMP protocol handler initialized
+[    3.321154] usbcore: registered new interface driver uvcvideo
+[    3.326897] USB Video Class driver (1.1.1)
+[    3.332252] imx2-wdt 2ad0000.watchdog: timeout 60 sec (nowayout=0)
+[    3.338997] qoriq_cpufreq: Freescale QorIQ CPU frequency scaling driver
+[    3.345864] sdhci: Secure Digital Host Controller Interface driver
+[    3.352040] sdhci: Copyright(c) Pierre Ossman
+[    3.356527] Synopsys Designware Multimedia Card Interface Driver
+[    3.363184] sdhci-pltfm: SDHCI platform and OF driver helper
+[    3.411906] mmc0: SDHCI controller on 1560000.esdhc [1560000.esdhc] using ADMA 64-bit
+[    3.423687] ledtrig-cpu: registered to indicate activity on CPUs
+[    3.431076] platform caam_qi: Linux CAAM Queue I/F driver initialised
+[    3.437618] caam 1700000.crypto: device ID = 0x0a11030100000000 (Era 8)
+[    3.444259] caam 1700000.crypto: job rings = 3, qi = 1, dpaa2 = no
+[    3.454432] caam algorithms registered in /proc/crypto
+[    3.460955] platform caam_qi: algorithms registered in /proc/crypto
+[    3.468015] caam_jr 1710000.jr: registering rng-caam
+[    3.473057] caam 1700000.crypto: caam pkc algorithms registered in /proc/crypto
+[    3.480682] usbcore: registered new interface driver usbhid
+[    3.483905] usb 3-1: new high-speed USB device number 2 using xhci-hcd
+[    3.492773] usbhid: USB HID core driver
+[    3.497229] Freescale USDPAA process driver
+[    3.501412] fsl-usdpaa: no region found
+[    3.505242] Freescale USDPAA process IRQ driver
+[    3.510491] optee: probing for conduit method from DT.
+[    3.515848] optee: initialized driver
+[    3.520035] Netfilter messages via NETLINK v0.30.
+[    3.524823] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+[    3.528131] mmc0: new HS200 MMC card at address 0001
+[    3.528295] mmcblk0: mmc0:0001 88A398 7.28 GiB
+[    3.528378] mmcblk0boot0: mmc0:0001 88A398 partition 1 4.00 MiB
+[    3.528463] mmcblk0boot1: mmc0:0001 88A398 partition 2 4.00 MiB
+[    3.528540] mmcblk0rpmb: mmc0:0001 88A398 partition 3 4.00 MiB
+[    3.529029]  mmcblk0: p1 p2 p3
+[    3.561194] nf_tables: (c) 2007-2009 Patrick McHardy <kaber@trash.net>
+[    3.567719] nf_tables_compat: (c) 2012 Pablo Neira Ayuso <pablo@netfilter.org>
+[    3.575031] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    3.580594] Initializing XFRM netlink socket
+[    3.584901] NET: Registered protocol family 10
+[    3.589789] Segment Routing with IPv6
+[    3.593490] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    3.599593] NET: Registered protocol family 17
+[    3.604040] NET: Registered protocol family 15
+[    3.608492] Bridge firewalling registered
+[    3.612499] Ebtables v2.0 registered
+[    3.616152] l2tp_core: L2TP core driver, V2.0
+[    3.620513] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[    3.625300] 8021q: 802.1Q VLAN Support v1.8
+[    3.629498] 9pnet: Installing 9P2000 support
+[    3.633786] Key type dns_resolver registered
+[    3.638319] registered taskstats version 1
+[    3.642645] Btrfs loaded, crc32c=crc32c-generic
+[    3.650346] rtc-pcf8563 2-0051: low voltage detected, date/time is not reliable.
+[    3.657742] rtc-pcf8563 2-0051: hctosys: unable to read the hardware clock
+[    3.665703] ALSA device list:
+[    3.668668]   No soundcards found.
+[    3.680095] hub 3-1:1.0: USB hub found
+[    3.684125] hub 3-1:1.0: 4 ports detected
+[    3.712887] EXT4-fs (sda1): 1 orphan inode deleted
+[    3.717682] EXT4-fs (sda1): recovery complete
+[    3.724084] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+[    3.731755] VFS: Mounted root (ext4 filesystem) on device 8:1.
+[    3.738003] devtmpfs: mounted
+[    3.741343] Freeing unused kernel memory: 1216K
+[    3.772012] usb 4-1: new SuperSpeed USB device number 2 using xhci-hcd
+[    3.811112] systemd[1]: System time before build time, advancing clock.
+[    3.822713] systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+[    3.840975] hub 4-1:1.0: USB hub found
+[    3.841850] hub 4-1:1.0: 4 ports detected
+[    3.851949] systemd[1]: Detected architecture arm64.
+[    3.872155] systemd[1]: Set hostname to <localhost>.
+[    3.896715] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.904456] pcieport 0000:00:00.0: PCIe Bus Error: severity=Corrected, type=Physical Layer, id=0000(Transmitter ID)
+[    3.914960] pcieport 0000:00:00.0:   device [1957:81c0] error status/mask=00001101/00006000
+[    3.914972] pcieport 0000:00:00.0:    [ 0] Receiver Error         (First)
+[    3.914975] pcieport 0000:00:00.0:    [ 8] RELAY_NUM Rollover
+[    3.914977] pcieport 0000:00:00.0:    [12] Replay Timer Timeout
+[    3.914981] pcieport 0000:00:00.0: AER: Corrected error received: id=0000
+[    3.914985] pcieport 0000:00:00.0: can't find device of ID0000
+[    3.914986] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.914989] pcieport 0000:00:00.0: can't find device of ID0000
+[    3.914991] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.914994] pcieport 0000:00:00.0: can't find device of ID0000
+[    3.914995] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.914998] pcieport 0000:00:00.0: can't find device of ID0000
+[    3.988661] systemd[1]: /lib/systemd/system/systemd-udevd.service:31: Unknown lvalue 'RestrictSUIDSGID' in section 'Service'
+[    3.995909] usb 3-1.1: new high-speed USB device number 3 using xhci-hcd
+[    4.006679] systemd[1]: File /lib/systemd/system/systemd-udevd.service:35 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
+[    4.023457] systemd[1]: Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
+[    4.076403] systemd[1]: Configuration file /etc/systemd/system/forlinx.service is marked executable. Please remove executable permission bits. Proceeding anyway.
+[    4.090854] systemd[1]: Configuration file /etc/systemd/system/forlinx.service is marked world-writable. Please remove world writability permission bits. Proceeding anyway.
+[    4.114047] random: systemd: uninitialized urandom read (16 bytes read)
+[    4.120687] systemd[1]: Reached target Swap.
+[    4.135946] random: systemd: uninitialized urandom read (16 bytes read)
+[    4.142624] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[    4.167950] random: systemd: uninitialized urandom read (16 bytes read)
+[    4.259894] usb 3-1.3: new full-speed USB device number 4 using xhci-hcd
+[    4.495902] usb 3-1.4: new full-speed USB device number 5 using xhci-hcd
+[    5.268383] systemd-journald[3545]: Received request to flush runtime journal from PID 1
+[    5.317061] usbcore: registered new interface driver usbserial
+[    5.317119] usbcore: registered new interface driver usbserial_generic
+[    5.317160] usbserial: USB Serial support registered for generic
+[    5.319577] usbcore: registered new interface driver ch341
+[    5.319690] usbserial: USB Serial support registered for ch341-uart
+[    5.319716] ch341 3-1.4:1.0: ch341-uart converter detected
+[    5.320144] usb 3-1.4: ch341-uart converter now attached to ttyUSB0
+[    5.335025] systemd-journald[3545]: File /var/log/journal/1fca3123000249359f352a121666f6f8/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[    5.512977] rtc-rx8010 2-0032: Unable to read registers #32..#32
+[    5.519856] i2c i2c-2: probing for rx8010 failed
+[    5.549918] usbcore: registered new interface driver cp210x
+[    5.549944] usbserial: USB Serial support registered for cp210x
+[    5.549990] cp210x 3-1.3:1.0: cp210x converter detected
+[    5.553050] usb 3-1.3: cp210x converter now attached to ttyUSB1
+[    5.594206] fsl_dpa soc:fsl,dpaa:ethernet@8 fm1-mac9: renamed from eth5
+[    5.612088] wlan_cnss_core_pcie: disagrees about version of symbol module_layout
+[    5.619265] fsl_dpa soc:fsl,dpaa:ethernet@4 fm1-mac5: renamed from eth3
+[    5.643464] fsl_dpa soc:fsl,dpaa:ethernet@5 fm1-mac6: renamed from eth4
+[    5.661058] fsl_dpa soc:fsl,dpaa:ethernet@9 fm1-mac10: renamed from eth6
+[    5.680811] fsl_dpa soc:fsl,dpaa:ethernet@2 fm1-mac3: renamed from eth1
+[    5.700852] fsl_dpa soc:fsl,dpaa:ethernet@1 fm1-mac2: renamed from eth0
+[    5.716952] fsl_dpa soc:fsl,dpaa:ethernet@3 fm1-mac4: renamed from eth2
+[    5.795336] FAT-fs (mmcblk0p2): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[    5.795678] EXT4-fs (mmcblk0p3): recovery complete
+[    5.795685] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+[    5.848042] usb 3-1.1: reset high-speed USB device number 3 using xhci-hcd
+[    5.982225] ieee80211 phy0: rt2x00_set_rt: Info - RT chipset 3070, rev 0201 detected
+[    5.991667] ieee80211 phy0: rt2x00_set_rf: Info - RF chipset 0005 detected
+[    5.992053] ieee80211 phy0: Selected rate control algorithm 'minstrel_ht'
+[    5.992761] usbcore: registered new interface driver rt2800usb
+[    5.997587] rt2800usb 3-1.1:1.0 wlx7cdd901b2360: renamed from wlan0
+[    6.335820] ieee80211 phy0: rt2x00lib_request_firmware: Info - Loading firmware file 'rt2870.bin'
+[    6.336379] ieee80211 phy0: rt2x00lib_request_firmware: Info - Firmware detected - version: 0.36
+[    6.708250] IPv6: ADDRCONF(NETDEV_UP): wlx7cdd901b2360: link is not ready
+[    6.712680] IPv6: ADDRCONF(NETDEV_UP): fm1-mac3: link is not ready
+[    6.819206] new mount options do not match the existing superblock, will be ignored
+[    7.126726] rtc-pcf8563 2-0051: low voltage detected, date/time is not reliable.
+[    7.315315] random: crng init done
+[    7.315319] random: 7 urandom warning(s) missed due to ratelimiting
+[    7.973853] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    7.975918] usb 1-1: new full-speed USB device number 2 using xhci-hcd
+[    8.124064] usb 1-1: not running at top speed; connect to a high speed hub
+[    8.264412] virbr0: port 1(virbr0-nic) entered blocking state
+[    8.264429] virbr0: port 1(virbr0-nic) entered disabled state
+[    8.264544] device virbr0-nic entered promiscuous mode
+[    8.666136] virbr0: port 1(virbr0-nic) entered blocking state
+[    8.666142] virbr0: port 1(virbr0-nic) entered listening state
+[    8.734766] virbr0: port 1(virbr0-nic) entered disabled state
+[    9.768262] IPv6: ADDRCONF(NETDEV_CHANGE): fm1-mac3: link becomes ready
+[   11.770706] usb 1-1: USB disconnect, device number 2
+[   12.082673] Intel(R) Wireless WiFi driver for Linux
+[   12.082676] Copyright(c) 2003- 2015 Intel Corporation
+[   12.259645] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[   12.259657] pcieport 0000:00:00.0: PCIe Bus Error: severity=Corrected, type=Physical Layer, id=0000(Receiver ID)
+[   12.269879] pcieport 0000:00:00.0:   device [1957:81c0] error status/mask=00000001/00006000
+[   12.278262] pcieport 0000:00:00.0:    [ 0] Receiver Error         (First)
+[   21.612028] usb 2-1: new SuperSpeed USB device number 2 using xhci-hcd
+[   21.696491] usb 2-1: Enable of device-initiated U1 failed.
+[   21.728485] usb 2-1: Enable of device-initiated U2 failed.
+[   21.728791] usb 2-1: Disable of device-initiated U1 failed.
+[   21.728869] usb 2-1: Disable of device-initiated U2 failed.
+[   21.781851] cdc_ncm 2-1:1.0: MAC-Address: e6:cd:be:9a:69:a1
+[   21.782667] cdc_ncm 2-1:1.0 usb0: register 'cdc_ncm' at usb-xhci-hcd.0.auto-1, CDC NCM, e6:cd:be:9a:69:a1
+[   21.792475] usb 2-1: Enable of device-initiated U1 failed.
+[   21.824452] usb 2-1: Enable of device-initiated U2 failed.
+[   21.844328] usbcore: registered new interface driver option
+[   21.844381] usbserial: USB Serial support registered for GSM modem (1-port)
+[   21.844537] option 2-1:1.2: GSM modem (1-port) converter detected
+[   21.844775] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB2
+[   21.844978] option 2-1:1.3: GSM modem (1-port) converter detected
+[   21.845240] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB3
+[   21.845391] option 2-1:1.4: GSM modem (1-port) converter detected
+[   21.845603] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB4
+[   21.845845] option 2-1:1.5: GSM modem (1-port) converter detected
+[   21.846038] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB5
+[   21.846183] option 2-1:1.6: GSM modem (1-port) converter detected
+[   21.846371] usb 2-1: GSM modem (1-port) converter now attached to ttyUSB6
+[   78.191322] systemd-journald[3545]: File /var/log/journal/1fca3123000249359f352a121666f6f8/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+[  103.495313] wlx7cdd901b2360: authenticate with b6:1c:2e:10:37:49
+[  103.546946] wlx7cdd901b2360: send auth to b6:1c:2e:10:37:49 (try 1/3)
+[  103.559448] wlx7cdd901b2360: authenticated
+[  103.559913] wlx7cdd901b2360: associate with b6:1c:2e:10:37:49 (try 1/3)
+[  103.597969] wlx7cdd901b2360: RX AssocResp from b6:1c:2e:10:37:49 (capab=0x1431 status=0 aid=5)
+[  103.607415] wlx7cdd901b2360: associated
+[  103.619741] IPv6: ADDRCONF(NETDEV_CHANGE): wlx7cdd901b2360: link becomes ready
+[  103.626582] wlx7cdd901b2360: Limiting TX power to 23 (23 - 0) dBm as advertised by b6:1c:2e:10:37:49
+[  105.040011] IPv6: ADDRCONF(NETDEV_UP): lxcbr0: link is not ready
+[  240.564211] wlx7cdd901b2360: deauthenticating from b6:1c:2e:10:37:49 by local choice (Reason: 3=DEAUTH_LEAVING)
+[  247.647366] wlx7cdd901b2360: authenticate with b6:1c:2e:10:37:49
+[  247.696094] wlx7cdd901b2360: send auth to b6:1c:2e:10:37:49 (try 1/3)
+[  247.704335] wlx7cdd901b2360: authenticated
+[  247.707918] wlx7cdd901b2360: associate with b6:1c:2e:10:37:49 (try 1/3)
+[  247.743220] wlx7cdd901b2360: RX AssocResp from b6:1c:2e:10:37:49 (capab=0x1431 status=0 aid=6)
+[  247.753280] wlx7cdd901b2360: associated
+[  247.806362] wlx7cdd901b2360: Limiting TX power to 23 (23 - 0) dBm as advertised by b6:1c:2e:10:37:49
+[ 1183.037351] wlan: loading out-of-tree module taints kernel.
+[ 1183.045718] wlan: Unknown symbol cnss_qmi_send_get (err 0)
+[ 1183.045736] wlan: Unknown symbol cnss_smmu_map (err 0)
+[ 1183.045832] wlan: Unknown symbol cnss_wlan_register_driver (err 0)
+[ 1183.045879] wlan: Unknown symbol cnss_pci_is_drv_connected (err 0)
+[ 1183.045948] wlan: Unknown symbol cnss_request_pm_qos (err 0)
+[ 1183.045953] wlan: Unknown symbol cnss_qmi_send (err 0)
+[ 1183.045980] wlan: Unknown symbol cnss_get_user_msi_assignment (err 0)
+[ 1183.046126] wlan: Unknown symbol cnss_get_msi_address (err 0)
+[ 1183.046202] wlan: Unknown symbol cnss_set_fw_log_mode (err 0)
+[ 1183.046376] wlan: Unknown symbol cnss_utils_wlan_set_dfs_nol (err 0)
+[ 1183.046444] wlan: Unknown symbol cnss_pci_force_wake_release (err 0)
+[ 1183.046450] wlan: Unknown symbol cnss_auto_resume (err 0)
+[ 1183.046524] wlan: Unknown symbol cnss_utils_set_wlan_unsafe_channel (err 0)
+[ 1183.046554] wlan: Unknown symbol cnss_schedule_recovery (err 0)
+[ 1183.046589] wlan: Unknown symbol cnss_idle_restart (err 0)
+[ 1183.046605] wlan: Unknown symbol cnss_get_soc_info (err 0)
+[ 1183.046645] wlan: Unknown symbol cnss_lock_pm_sem (err 0)
+[ 1183.046701] wlan: Unknown symbol cnss_pci_is_device_down (err 0)
+[ 1183.046717] wlan: Unknown symbol cnss_get_msi_irq (err 0)
+[ 1183.046741] wlan: Unknown symbol cnss_athdiag_write (err 0)
+[ 1183.046762] wlan: Unknown symbol cnss_get_platform_cap (err 0)
+[ 1183.046830] wlan: Unknown symbol cnss_utils_get_wlan_mac_address (err 0)
+[ 1183.046866] wlan: Unknown symbol cnss_pci_allow_l1 (err 0)
+[ 1183.046873] wlan: Unknown symbol hdd_dump_log_buffer (err 0)
+[ 1183.046911] wlan: Unknown symbol cnss_idle_shutdown (err 0)
+[ 1183.046989] wlan: Unknown symbol cnss_athdiag_read (err 0)
+[ 1183.047011] wlan: Unknown symbol cnss_qmi_send_put (err 0)
+[ 1183.047020] wlan: Unknown symbol cnss_pci_unlock_reg_window (err 0)
+[ 1183.047075] wlan: Unknown symbol cnss_pci_is_device_awake (err 0)
+[ 1183.047088] wlan: Unknown symbol cnss_force_fw_assert (err 0)
+[ 1183.047107] wlan: Unknown symbol cnss_utils_wlan_get_dfs_nol (err 0)
+[ 1183.047176] wlan: Unknown symbol cnss_auto_suspend (err 0)
+[ 1183.047221] wlan: Unknown symbol cnss_get_fw_files_for_target (err 0)
+[ 1183.047239] wlan: Unknown symbol cnss_smmu_get_mapping (err 0)
+[ 1183.047244] wlan: Unknown symbol cnss_wlan_pm_control (err 0)
+[ 1183.047275] wlan: Unknown symbol cnss_utils_get_wlan_unsafe_channel (err 0)
+[ 1183.047317] wlan: Unknown symbol cnss_wlan_enable (err 0)
+[ 1183.047326] wlan: Unknown symbol cnss_utils_increment_driver_load_cnt (err 0)
+[ 1183.047399] wlan: Unknown symbol cnss_pci_prevent_l1 (err 0)
+[ 1183.047432] wlan: Unknown symbol cnss_pci_lock_reg_window (err 0)
+[ 1183.047442] wlan: Unknown symbol cnss_pci_force_wake_request (err 0)
+[ 1183.047468] wlan: Unknown symbol cnss_utils_get_wlan_derived_mac_address (err 0)
+[ 1183.047489] wlan: Unknown symbol cnss_request_bus_bandwidth (err 0)
+[ 1183.047501] wlan: Unknown symbol cnss_get_virt_ramdump_mem (err 0)
+[ 1183.047532] wlan: Unknown symbol cnss_wlan_unregister_driver (err 0)
+[ 1183.047539] wlan: Unknown symbol cnss_device_crashed (err 0)
+[ 1183.047586] wlan: Unknown symbol cnss_pci_link_down (err 0)
+[ 1183.047592] wlan: Unknown symbol cnss_self_recovery (err 0)
+[ 1183.047614] wlan: Unknown symbol cnss_release_pm_sem (err 0)
+[ 1183.047657] wlan: Unknown symbol cnss_remove_pm_qos (err 0)
+[ 1183.047675] wlan: Unknown symbol cnss_wlan_disable (err 0)
+[ 1183.047695] wlan: Unknown symbol cnss_force_collect_rddm (err 0)
+[ 1412.449846] wlan: module_layout: kernel tainted.
+[ 1412.449849] Disabling lock debugging due to kernel taint
+[ 1412.458351] wlan: Unknown symbol cnss_qmi_send_get (err 0)
+[ 1412.458365] wlan: Unknown symbol cnss_smmu_map (err 0)
+[ 1412.458421] wlan: Unknown symbol cnss_wlan_register_driver (err 0)
+[ 1412.458442] wlan: Unknown symbol cnss_pci_is_drv_connected (err 0)
+[ 1412.458472] wlan: Unknown symbol cnss_request_pm_qos (err 0)
+[ 1412.458478] wlan: Unknown symbol cnss_qmi_send (err 0)
+[ 1412.458492] wlan: Unknown symbol cnss_get_user_msi_assignment (err 0)
+[ 1412.458556] wlan: Unknown symbol cnss_get_msi_address (err 0)
+[ 1412.458582] wlan: Unknown symbol cnss_set_fw_log_mode (err 0)
+[ 1412.458645] wlan: Unknown symbol cnss_utils_wlan_set_dfs_nol (err 0)
+[ 1412.458675] wlan: Unknown symbol cnss_pci_force_wake_release (err 0)
+[ 1412.458681] wlan: Unknown symbol cnss_auto_resume (err 0)
+[ 1412.458710] wlan: Unknown symbol cnss_utils_set_wlan_unsafe_channel (err 0)
+[ 1412.458726] wlan: Unknown symbol cnss_schedule_recovery (err 0)
+[ 1412.458748] wlan: Unknown symbol cnss_idle_restart (err 0)
+[ 1412.458758] wlan: Unknown symbol cnss_get_soc_info (err 0)
+[ 1412.458775] wlan: Unknown symbol cnss_lock_pm_sem (err 0)
+[ 1412.458801] wlan: Unknown symbol cnss_pci_is_device_down (err 0)
+[ 1412.458811] wlan: Unknown symbol cnss_get_msi_irq (err 0)
+[ 1412.458822] wlan: Unknown symbol cnss_athdiag_write (err 0)
+[ 1412.458834] wlan: Unknown symbol cnss_get_platform_cap (err 0)
+[ 1412.458868] wlan: Unknown symbol cnss_utils_get_wlan_mac_address (err 0)
+[ 1412.458888] wlan: Unknown symbol cnss_pci_allow_l1 (err 0)
+[ 1412.458895] wlan: Unknown symbol hdd_dump_log_buffer (err 0)
+[ 1412.458918] wlan: Unknown symbol cnss_idle_shutdown (err 0)
+[ 1412.458954] wlan: Unknown symbol cnss_athdiag_read (err 0)
+[ 1412.458969] wlan: Unknown symbol cnss_qmi_send_put (err 0)
+[ 1412.458975] wlan: Unknown symbol cnss_pci_unlock_reg_window (err 0)
+[ 1412.459005] wlan: Unknown symbol cnss_pci_is_device_awake (err 0)
+[ 1412.459013] wlan: Unknown symbol cnss_force_fw_assert (err 0)
+[ 1412.459024] wlan: Unknown symbol cnss_utils_wlan_get_dfs_nol (err 0)
+[ 1412.459060] wlan: Unknown symbol cnss_auto_suspend (err 0)
+[ 1412.459086] wlan: Unknown symbol cnss_get_fw_files_for_target (err 0)
+[ 1412.459097] wlan: Unknown symbol cnss_smmu_get_mapping (err 0)
+[ 1412.459102] wlan: Unknown symbol cnss_wlan_pm_control (err 0)
+[ 1412.459119] wlan: Unknown symbol cnss_utils_get_wlan_unsafe_channel (err 0)
+[ 1412.459141] wlan: Unknown symbol cnss_wlan_enable (err 0)
+[ 1412.459148] wlan: Unknown symbol cnss_utils_increment_driver_load_cnt (err 0)
+[ 1412.459195] wlan: Unknown symbol cnss_pci_prevent_l1 (err 0)
+[ 1412.459216] wlan: Unknown symbol cnss_pci_lock_reg_window (err 0)
+[ 1412.459225] wlan: Unknown symbol cnss_pci_force_wake_request (err 0)
+[ 1412.459244] wlan: Unknown symbol cnss_utils_get_wlan_derived_mac_address (err 0)
+[ 1412.459259] wlan: Unknown symbol cnss_request_bus_bandwidth (err 0)
+[ 1412.459268] wlan: Unknown symbol cnss_get_virt_ramdump_mem (err 0)
+[ 1412.459289] wlan: Unknown symbol cnss_wlan_unregister_driver (err 0)
+[ 1412.459296] wlan: Unknown symbol cnss_device_crashed (err 0)
+[ 1412.459327] wlan: Unknown symbol cnss_pci_link_down (err 0)
+[ 1412.459332] wlan: Unknown symbol cnss_self_recovery (err 0)
+[ 1412.459347] wlan: Unknown symbol cnss_release_pm_sem (err 0)
+[ 1412.459380] wlan: Unknown symbol cnss_remove_pm_qos (err 0)
+[ 1412.459395] wlan: Unknown symbol cnss_wlan_disable (err 0)
+[ 1412.459413] wlan: Unknown symbol cnss_force_collect_rddm (err 0)
+[ 1574.810445] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1647.815699] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1652.874571] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1767.394506] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1807.721106] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2020.195041] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2188.638810] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2213.600407] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+forlinx@localhost:/lib/modules/4.14.47$ ^C
+forlinx@localhost:/lib/modules/4.14.47$ cd ~
+forlinx@localhost:~$ ls
+ 88x2bu.ko                car_ws                Downloads   gie_robot        gie_robot.tar         net.sh                            ralink       rt2870.bin              wheeltec_robot.tar  'ystemctl status nfs-server.service'
+ cartographer_ws          ch343.ko              dts.txt     gie_robot1.tar   install_packages.sh   protobuf-3.16.0                   rc.sh       '[Unit]'                 wifi.sh
+ cartographer_ws.tar.xz   ch343ser_linux-main   fishros     gie_robot2.tar   librealsense-master  'protobuf-all-3.16.0 (2).tar.gz'   roscore.sh   wheeltec_robot_01.tar   wlan
+forlinx@localhost:~$ cd wlan/
+forlinx@localhost:~/wlan$ rmmod  cfg80211
+rmmod: ERROR: Module cfg80211 is in use by: iwlwifi rt2x00lib mac80211
+forlinx@localhost:~/wlan$ lsmod
+Module                  Size  Used by
+option                 57344  0
+usb_wwan               20480  1 option
+iwlwifi               212992  0
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+rt2800usb              32768  0
+rt2x00usb              24576  1 rt2800usb
+rt2800lib             110592  1 rt2800usb
+rt2x00lib              61440  3 rt2800lib,rt2800usb,rt2x00usb
+mac80211              458752  3 rt2800lib,rt2x00lib,rt2x00usb
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+cfg80211              356352  3 iwlwifi,rt2x00lib,mac80211
+rfkill                 36864  3 cfg80211
+cp210x                 24576  1
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+ch341                  16384  1
+usbserial              36864  8 cp210x,option,ch341,usb_wwan
+forlinx@localhost:~/wlan$ rmmod iwlwifi
+rmmod: ERROR: ../libkmod/libkmod-module.c:793 kmod_module_remove_module() could not remove 'iwlwifi': Operation not permitted
+rmmod: ERROR: could not remove module iwlwifi: Operation not permitted
+forlinx@localhost:~/wlan$ sudo rmmod iwlwifi
+forlinx@localhost:~/wlan$ lsmod
+Module                  Size  Used by
+option                 57344  0
+usb_wwan               20480  1 option
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+rt2800usb              32768  0
+rt2x00usb              24576  1 rt2800usb
+rt2800lib             110592  1 rt2800usb
+rt2x00lib              61440  3 rt2800lib,rt2800usb,rt2x00usb
+mac80211              458752  3 rt2800lib,rt2x00lib,rt2x00usb
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+cfg80211              356352  2 rt2x00lib,mac80211
+rfkill                 36864  3 cfg80211
+cp210x                 24576  1
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+ch341                  16384  1
+usbserial              36864  8 cp210x,option,ch341,usb_wwan
+forlinx@localhost:~/wlan$ sudo rmmod ^C
+forlinx@localhost:~/wlan$ sudo rmmod  rt2800usb rt2800lib rt2800usbrt2x00usb mac80211
+rmmod: ERROR: Module rt2800usbrt2x00usb is not currently loaded
+rmmod: ERROR: Module mac80211 is in use by: rt2x00lib rt2x00usb
+forlinx@localhost:~/wlan$ lsmod
+Module                  Size  Used by
+option                 57344  0
+usb_wwan               20480  1 option
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+rt2x00usb              24576  0
+rt2x00lib              61440  1 rt2x00usb
+mac80211              458752  2 rt2x00lib,rt2x00usb
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+cfg80211              356352  2 rt2x00lib,mac80211
+rfkill                 36864  3 cfg80211
+cp210x                 24576  1
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+ch341                  16384  1
+usbserial              36864  8 cp210x,option,ch341,usb_wwan
+forlinx@localhost:~/wlan$ lsmod ^C
+forlinx@localhost:~/wlan$ sudo rmmod rt2x00usb rt2x00lib
+forlinx@localhost:~/wlan$ lsmod
+Module                  Size  Used by
+option                 57344  0
+usb_wwan               20480  1 option
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+mac80211              458752  0
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+cfg80211              356352  1 mac80211
+rfkill                 36864  3 cfg80211
+cp210x                 24576  1
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+ch341                  16384  1
+usbserial              36864  8 cp210x,option,ch341,usb_wwan
+forlinx@localhost:~/wlan$ sudo rmmod mac80211 cfg80211
+forlinx@localhost:~/wlan$ ^C
+forlinx@localhost:~/wlan$
+forlinx@localhost:~/wlan$
+forlinx@localhost:~/wlan$ ls
+cfg80211.ko  FC06EABMD  firmware  rfkill.ko  wlan_cnss_core_pcie.ko  wlan.ko
+forlinx@localhost:~/wlan$ sudo insmod -f ./rfkill.ko
+insmod: ERROR: could not insert module ./rfkill.ko: File exists
+forlinx@localhost:~/wlan$ lsmod
+Module                  Size  Used by
+option                 57344  0
+usb_wwan               20480  1 option
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+rfkill                 36864  2
+cp210x                 24576  1
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+ch341                  16384  1
+usbserial              36864  8 cp210x,option,ch341,usb_wwan
+forlinx@localhost:~/wlan$ sudo rmmod rfkill
+rmmod: ERROR: Module rfkill is in use
+forlinx@localhost:~/wlan$ sudo rmmod rfkill.ko
+rmmod: ERROR: Module rfkill is in use
+forlinx@localhost:~/wlan$ lsmod ^C
+forlinx@localhost:~/wlan$
+forlinx@localhost:~/wlan$ lsmod
+Module                  Size  Used by
+option                 57344  0
+usb_wwan               20480  1 option
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+rfkill                 36864  2
+cp210x                 24576  1
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+ch341                  16384  1
+usbserial              36864  8 cp210x,option,ch341,usb_wwan
+forlinx@localhost:~/wlan$ rm ^C
+forlinx@localhost:~/wlan$ ls
+cfg80211.ko  FC06EABMD  firmware  rfkill.ko  wlan_cnss_core_pcie.ko  wlan.ko
+forlinx@localhost:~/wlan$ sudo indsmod -f cfg80211.ko
+sudo: indsmod: command not found
+forlinx@localhost:~/wlan$ sudo insmod -f cfg80211.ko
+forlinx@localhost:~/wlan$ sudo insmod -f wlan_cnss_core_pcie.ko
+insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Unknown symbol in module
+forlinx@localhost:~/wlan$ ls^C
+forlinx@localhost:~/wlan$ dmesg |tail
+[ 1647.815699] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1652.874571] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1767.394506] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1807.721106] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2020.195041] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2188.638810] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2213.600407] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2665.594390] usbcore: deregistering interface driver rt2800usb
+[ 2665.667938] wlx7cdd901b2360: deauthenticating from b6:1c:2e:10:37:49 by local choice (Reason: 3=DEAUTH_LEAVING)
+[ 2819.995572] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+forlinx@localhost:~/wlan$ ifconfig
+fm1-mac3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.232  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::4be:f2ff:fe70:7f76  prefixlen 64  scopeid 0x20<link>
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 313571  bytes 441451837 (441.4 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 57867  bytes 4000793 (4.0 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1044671  bytes 770117563 (770.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1044671  bytes 770117563 (770.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+forlinx@localhost:~/wlan$ ^C
+forlinx@localhost:~/wlan$ vfs_write^Cs_write
+forlinx@localhost:~/wlan$ cat   /proc/kallsyms  | grep "vfs_write"
+0000000000000000 t vfs_writev
+0000000000000000 T __vfs_write
+0000000000000000 T vfs_write
+0000000000000000 t v9fs_vfs_writepage_locked.part.0
+0000000000000000 t v9fs_vfs_writepage_locked
+0000000000000000 t v9fs_vfs_writepage
+forlinx@localhost:~/wlan$
+forlinx@localhost:~/wlan$ ls
+cfg80211.ko  FC06EABMD  firmware  rfkill.ko  wlan_cnss_core_pcie.ko  wlan.ko
+forlinx@localhost:~/wlan$ ^C
+forlinx@localhost:~/wlan$  lspci
+0000:00:00.0 PCI bridge: Freescale Semiconductor Inc Device 81c0 (rev 10)
+0001:00:00.0 PCI bridge: Freescale Semiconductor Inc Device 81c0 (rev 10)
+0001:01:00.0 Network controller: Qualcomm Device 1103 (rev 01)
+forlinx@localhost:~/wlan$  insmod wlan_cnss_core_pcie.ko
+insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Operation not permitted
+forlinx@localhost:~/wlan$ ls^C^C
+forlinx@localhost:~/wlan$ sudo  insmod wlan_cnss_core_pcie.ko
+insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Unknown symbol in module
+forlinx@localhost:~/wlan$ dmesg |tail
+[ 1652.874571] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1767.394506] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 1807.721106] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2020.195041] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2188.638810] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2213.600407] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 2665.594390] usbcore: deregistering interface driver rt2800usb
+[ 2665.667938] wlx7cdd901b2360: deauthenticating from b6:1c:2e:10:37:49 by local choice (Reason: 3=DEAUTH_LEAVING)
+[ 2819.995572] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+[ 3206.397259] wlan_cnss_core_pcie: Unknown symbol vfs_write (err 0)
+forlinx@localhost:~/wlan$
+Network error: Software caused connection abort
+
+©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file

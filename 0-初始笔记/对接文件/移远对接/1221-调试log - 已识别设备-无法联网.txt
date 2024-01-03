@@ -1,0 +1,2762 @@
+﻿
+Ubuntu 18.04.1 LTS localhost ttyS0
+
+localhost login:
+Ubuntu 18.04.1 LTS localhost ttyS0
+
+localhost login: root
+Last login: Sun Jan 28 16:00:23 UTC 2018 on ttyS0
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.14.47 aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+root@localhost:~#
+root@localhost:~#
+root@localhost:~#
+root@localhost:~# cd /mnt/boot/
+root@localhost:/mnt/boot# ls
+boot
+root@localhost:/mnt/boot# cd boot/
+root@localhost:/mnt/boot/boot# ls
+fsl-ok1046a-1040-5506-c3.dtb  fsl-ok1046a-1133-5a59-c2.dtb  Image  ls1046ardb_boot.scr  ls1046ardb_boot.scr_emmc
+root@localhost:/mnt/boot/boot# cp Image Image_16M_MEM
+root@localhost:/mnt/boot/boot# ls
+fsl-ok1046a-1040-5506-c3.dtb  fsl-ok1046a-1133-5a59-c2.dtb  Image  Image_16M_MEM  ls1046ardb_boot.scr  ls1046ardb_boot.scr_emmc
+root@localhost:/mnt/boot/boot#
+root@localhost:/mnt/boot/boot# mv Image_16M_MEM Image_16M_CMA
+root@localhost:/mnt/boot/boot# ls
+fsl-ok1046a-1040-5506-c3.dtb  fsl-ok1046a-1133-5a59-c2.dtb  Image  Image_16M_CMA  ls1046ardb_boot.scr  ls1046ardb_boot.scr_emmc
+root@localhost:/mnt/boot/boot# rm Image
+root@localhost:/mnt/boot/boot# ls
+fsl-ok1046a-1040-5506-c3.dtb  fsl-ok1046a-1133-5a59-c2.dtb  Image_16M_CMA  ls1046ardb_boot.scr  ls1046ardb_boot.scr_emmc
+root@localhost:/mnt/boot/boot# cp /home/forlinx/wlan/Image ./
+root@localhost:/mnt/boot/boot# ll
+total 42045
+drwxrwx--- 2 root disk     1024 Jan 29 01:12 ./
+drwxrwx--- 3 root disk      512 Jan  1  1970 ../
+-rwxrwx--- 1 root disk    29389 Jan  1  1980 fsl-ok1046a-1040-5506-c3.dtb*
+-rwxrwx--- 1 root disk    29373 Jan  1  1980 fsl-ok1046a-1133-5a59-c2.dtb*
+-rwxrwx--- 1 root disk 21258752 Jan 29 01:12 Image*
+-rwxrwx--- 1 root disk 21731840 Jan 29 01:07 Image_16M_CMA*
+-rwxrwx--- 1 root disk      932 Jan 29  2018 ls1046ardb_boot.scr*
+-rwxrwx--- 1 root disk      931 Jan 29 00:11 ls1046ardb_boot.scr_emmc*
+root@localhost:/mnt/boot/boot# reboot
+[  OK  ] Stopped target RPC Port Mapper.
+         Stopping Session 7 of user forlinx.
+         Stopping User Manager for UID 1000...
+[  OK  ] Stopped QEMU KVM preparation - mo         Stopping Session 14 of user root.
+         Stopping Session 1 of user forlinx.
+         Stopping Suspend/Resume Running libvirt Guests...
+[  OK  ] Stopped target Login Prompts.
+         Stopping Getty on tty1...
+         Stopping LSB: disk temperature monitoring daemon...
+         Stopping User Manager for UID 0...
+[  OK  ] Stopped Discard unused blocks once a week.
+         Stopping Session 3 of user forlinx.
+[  OK  ] Stopped Daily Cleanup of Temporary Directories.
+         Stopping Availability of block devices...
+         Stopping LSB: network benchmark...
+         Stopping Session 11 of user forlinx.
+         Stopping Session 12 of user forlinx.
+         Stopping Samba SMB Daemon...
+         Stopping LTTng session daemon...
+         Stopping vsftpd FTP server...
+         Stopping Session 6 of user forlinx.
+         Stopping Lighttpd Daemon...
+         Stopping Unattended Upgrades Shutdown...
+         Stopping LSB: Mount debugfs on /sys/kernel/debug...
+         Stopping Deferred execution scheduler...
+         Stopping LXD - container startup/shutdown...
+         Stopping LSB: HPA's tftp server...
+         Stopping Serial Getty on ttyS0...
+[  OK  ] Stopped pNFS block layout mapping daemon.
+[  OK  ] Stopped LTTng session daemon.
+[  OK  ] Stopped Avahi mDNS/DNS-SD Stack.
+[  OK  ] Stopped System Logging Service.
+[  OK  ] Stopped Regular background program processing daemon.
+[  OK  ] Stopped Modem Manager.
+[  OK  ] Stopped Dispatcher daemon for systemd-networkd.
+[  OK  ] Stopped Deferred execution scheduler.
+[  OK  ] Stopped OpenBSD Secure Shell server.
+[  OK  ] Stopped vsftpd FTP server.
+[  OK  ] Stopped Lighttpd Daemon.
+[  OK  ] Stopped Authorization Manager.
+[  OK  ] Stopped User Manager for UID 1000.
+[  OK  ] Stopped Internet superserver.
+[  OK  ] Stopped Getty on tty1.
+[  OK  ] Stopped Serial Getty on ttyS0.
+[  OK  ] Stopped User Manager for UID 0.
+[  OK  ] Stopped LXC Container Initialization and Autoboot Code.
+[  OK  ] Stopped LSB: disk temperature monitoring daemon.
+[  OK  ] Stopped Availability of block devices.
+[  OK  ] Stopped Unattended Upgrades Shutdown.
+[  OK  ] Stopped Session 14 of user root.
+[  OK  ] Stopped Session 7 of user forlinx.
+[  OK  ] Stopped LSB: Set sysfs variables from /etc/sysfs.conf.
+[  OK  ] Stopped LSB: network benchmark.
+[  OK  ] Stopped LXD - container startup/shutdown.
+[  OK  ] Stopped LSB: HPA's tftp server.
+[  OK  ] Stopped LSB: Mount debugfs on /sys/kernel/debug.
+[  OK  ] Stopped target Host and Network Name Lookups.
+[ 4515.861105] libvirt-guests.sh[28323]: Running guests on default URI: no running guests.
+         Stopping LSB: set CPUFreq kernel parameters...
+         Stopping Ubuntu FAN network setup...
+         Stopping FUSE filesystem for LXC...
+         Stopping LXC network bridge setup...
+[  OK  ] Removed slice User Slice of root.
+[  OK  ] Removed slice system-serial\x2dgetty.slice.
+[  OK  ] Removed slice system-getty.slice.
+         Unmounting RPC Pipe File System...
+[  OK  ] Unmounted /var/lib/lxcfs.
+[  OK  ] Stopped Samba SMB Daemon.
+[  OK  ] Stopped Suspend/Resume Running libvirt Guests.
+[  OK  ] Stopped Ubuntu FAN network setup.
+[  OK  ] Stopped LXC network bridge setup.
+[  OK  ] Unmounted RPC Pipe File System.
+[  OK  ] Stopped FUSE filesystem for LXC.
+[  OK  ] Stopped Session 4 of user forlinx.
+[  OK  ] Stopped Session 9 of user forlinx.
+[  OK  ] Stopped Session 10 of user forlinx.
+[  OK  ] Stopped target Libvirt guests shutdown.
+         Stopping Virtualization daemon...
+         Stopping Samba NMB Daemon...
+[  OK  ] Stopped Samba NMB Daemon.
+[  OK  ] Stopped Virtualization daemon.
+[  OK  ] Stopped LSB: set CPUFreq kernel parameters.
+[  OK  ] Stopped Session 12 of user forlinx.
+[  OK  ] Stopped Session 11 of user forlinx.
+[  OK  ] Stopped Session 3 of user forlinx.
+[  OK  ] Stopped Session 1 of user forlinx.
+         Stopping LSB: Load kernel modules needed to enable cpufreq scaling...
+         Stopping D-Bus System Message Bus...
+[  OK  ] Stopped target Network is Online.
+[  OK  ] Stopped D-Bus System Message Bus.
+[  OK  ] Stopped LSB: Load kernel modules needed to enable cpufreq scaling.
+[  OK  ] Stopped Session 6 of user forlinx.
+[  OK  ] Removed slice User Slice of forlinx.
+         Stopping Login Service...
+         Stopping Permit User Sessions...
+[  OK  ] Stopped Login Service.
+[  OK  ] Stopped Permit User Sessions.
+[  OK  ] Stopped target Remote File Systems.
+[  OK  ] Stopped target Remote File Systems (Pre).
+[  OK  ] Stopped target NFS client services.
+[  OK  ] Stopped target Network.
+         Stopping Network Name Resolution...
+[  OK  ] Stopped target Basic System.
+[  OK  ] Stopped target Sockets.
+[  OK  ] Closed Virtual machine log manager socket.
+[  OK  ] Closed Syslog Socket.
+[  OK  ] Closed Virtual machine lock manager socket.
+[  OK  ] Closed LXD - unix socket.
+[  OK  ] Closed Avahi mDNS/DNS-SD Stack Activation Socket.
+[  OK  ] Closed Docker Socket for the API.
+[  OK  ] Stopped target Slices.
+[  OK  ] Stopped target Paths.
+[  OK  ] Closed D-Bus System Message Bus Socket.
+[  OK  ] Removed slice User and Session Slice.
+[  OK  ] Stopped target System Initialization.
+[  OK  ] Stopped target Local Encrypted Volumes.
+[  OK  ] Stopped Dispatch Password Requests to Console Directory Watch.
+[  OK  ] Stopped Forward Password Requests to Wall Directory Watch.
+         Stopping Load/Save Random Seed...
+         Stopping Update UTMP about System Boot/Shutdown...
+[  OK  ] Stopped Network Name Resolution.
+[  OK  ] Stopped Load/Save Random Seed.
+         Stopping Network Service...
+[  OK  ] Stopped Update UTMP about System Boot/Shutdown.
+[  OK  ] Stopped Create Volatile Files and Directories.
+[  OK  ] Stopped Network Service.
+[  OK  ] Stopped target Network (Pre).
+         Stopping netfilter persistent configuration...
+[  OK  ] Stopped Apply Kernel Variables.
+[  OK  ] Stopped netfilter persistent configuration.
+[  OK  ] Stopped target Local File Systems.
+         Unmounting /run/user/1000...
+         Unmounting /mnt/boot...
+         Unmounting /run/user/0...
+[  OK  ] Unmounted /run/user/1000.
+[  OK  ] Unmounted /mnt/boot.
+[  OK  ] Unmounted /run/user/0.
+[  OK  ] Reached target Unmount All Filesystems.
+[  OK  ] Stopped target Local File Systems (Pre).
+         Stopping Monitoring of LVM2 mirrors…ng dmeventd or progress polling...
+[  OK  ] Stopped Create Static Device Nodes in /dev.
+[  OK  ] Stopped Remount Root and Kernel File Systems.
+[  OK  ] Stopped target Swap.
+[  OK  ] Reached target Shutdown.
+[  OK  ] Reached target Final Step.
+         Starting Reboot...
+[  OK  ] Stopped Monitoring of LVM2 mirrors,…sing dmeventd or progress polling.
+         Stopping LVM2 metadata daemon...
+[  OK  ] Stopped LVM2 metadata daemon.
+[ 4517.475934] watchdog: watchdog0: watchdog did not stop!
+[ 4517.664968] imx2-wdt 2ad0000.watchdog: Device shutdown: Expect reboot!
+[ 4517.683767] reboot: Restarting system
+
+U-Boot SPL 2018.03 (Sep 04 2023 - 19:35:47 -0700)
+Initialzing DDR using fixed setting
+Configuring DDR for 2100 MT/s data rate
+Trying to boot from MMC1
+
+
+U-Boot 2018.03 (Aug 10 2022 - 15:15:17 +0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz
+       CPU3(A72):1800 MHz
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 11335a59 40005012 40025000 c1000000
+       00000020: 00000000 00000000 00000000 00038996
+       00000030: 20044500 00001002 00000096 00000001
+Model: OK1046-C
+Board: LS1046ARDB, boot from SD/eMMC
+SERDES Reference Clocks:
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 156.25MHZ
+SD2_CLK1 = 100.00MHZ, SD2_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+FSL_SDHC: 0
+PPA Firmware: Version LSDK-18.06-Forlinx
+SEC Firmware: 'loadables' present in config
+loadables: 'trustedOS@1'
+i2c_probe_chip failed
+secure check passed
+Using SERDES1 Protocol: 4403 (0x1133)
+Using SERDES2 Protocol: 23129 (0x5a59)
+MMC:   Loading Environment from MMC... OK
+In:    serial
+Out:   serial
+Err:   serial
+Target spinup took 0 ms.
+AHCI 0001.0301 32 slots 1 ports 6 Gbps 0x1 impl SATA mode
+flags: 64bit ncq pm clo only pmp fbss pio slum part ccc apst
+Found 1 device(s).
+SCSI:  Net:
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 disabled
+PCIe2: pcie@3600000 Root Complex: x1 gen2
+FM1@DTSEC2, FM1@DTSEC3 [PRIME], FM1@DTSEC4, FM1@DTSEC5, FM1@DTSEC6, FM1@TGEC1, FM1@TGEC2
+Hit any key to stop autoboot:  0
+starting USB...
+USB0:   Register 200017f NbrPorts 2
+Starting the controller
+USB XHCI 1.00
+USB1:   Register 200017f NbrPorts 2
+Starting the controller
+USB XHCI 1.00
+USB2:   Register 200017f NbrPorts 2
+Starting the controller
+USB XHCI 1.00
+scanning bus 0 for devices... 1 USB Device(s) found
+scanning bus 1 for devices... 5 USB Device(s) found
+scanning bus 2 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+Device 0: device type unknown
+switch to partitions #0, OK
+mmc0(part 0) is current device
+** Unrecognized filesystem type **
+Scanning mmc 0:2...
+Found U-Boot script /boot/ls1046ardb_boot.scr
+932 bytes read in 17 ms (52.7 KiB/s)
+## Executing script at 80000000
+** Unable to read file /boot/uEnv.txt **
+21258752 bytes read in 1076 ms (18.8 MiB/s)
+29373 bytes read in 16 ms (1.7 MiB/s)
+## Flattened Device Tree blob at 90000000
+   Booting using the fdt blob at 0x90000000
+   Using Device Tree in place at 0000000090000000, end 000000009001a2bc
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.14.47 (root@ubuntu) (gcc version 7.5.0 (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04)) #2 SMP PREEMPT Wed Dec 20 22:21:13 PST 2023
+[    0.000000] Boot CPU: AArch64 Processor [410fd082]
+[    0.000000] Machine model: LS1046A RDB Board
+[    0.000000] earlycon: uart8250 at MMIO 0x00000000021c0500 (options '')
+[    0.000000] bootconsole [uart8250] enabled
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] OF: reserved mem: initialized node qman-fqd, compatible id fsl,qman-fqd
+[    0.000000] OF: reserved mem: initialized node qman-pfdr, compatible id fsl,qman-pfdr
+[    0.000000] OF: reserved mem: initialized node bman-fbpr, compatible id fsl,bman-fbpr
+[    0.000000] cma: Reserved 64 MiB at 0x00000000f7c00000
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000000000000-0x00000008ff7fffff]
+[    0.000000] NUMA: NODE_DATA [mem 0x8ff7c8400-0x8ff7c9bbf]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000080000000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x00000008ff7fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x00000000fbdfffff]
+[    0.000000]   node   0: [mem 0x0000000880000000-0x00000008fbffffff]
+[    0.000000]   node   0: [mem 0x00000008ff000000-0x00000008ff7fffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x00000008ff7fffff]
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv0.2 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] percpu: Embedded 24 pages/cpu @ffff80087f763000 s59992 r8192 d30120 u98304
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1001184
+[    0.000000] Policy zone: Normal
+[    0.000000] Kernel command line: console=ttyS0,115200 earlycon=uart8250,mmio,0x21c0500 root=PARTUUID=63d7c5d0-01 rw rootwait board_name=ls1046ardb serdes1=1133
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] software IO TLB [mem 0xf3c00000-0xf7c00000] (64MB) mapped at [ffff800073c00000-ffff800077bfffff]
+[    0.000000] Memory: 3849856K/4069376K available (13052K kernel code, 1304K rwdata, 5160K rodata, 1216K init, 979K bss, 153984K reserved, 65536K cma-reserved)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     modules : 0xffff000000000000 - 0xffff000008000000   (   128 MB)
+[    0.000000]     vmalloc : 0xffff000008000000 - 0xffff7dffbfff0000   (129022 GB)
+[    0.000000]       .text : 0xffff000008080000 - 0xffff000008d40000   ( 13056 KB)
+[    0.000000]     .rodata : 0xffff000008d40000 - 0xffff000009250000   (  5184 KB)
+[    0.000000]       .init : 0xffff000009250000 - 0xffff000009380000   (  1216 KB)
+[    0.000000]       .data : 0xffff000009380000 - 0xffff0000094c6200   (  1305 KB)
+[    0.000000]        .bss : 0xffff0000094c6200 - 0xffff0000095bae50   (   980 KB)
+[    0.000000]     fixed   : 0xffff7dfffe7f9000 - 0xffff7dfffec00000   (  4124 KB)
+[    0.000000]     PCI I/O : 0xffff7dfffee00000 - 0xffff7dffffe00000   (    16 MB)
+[    0.000000]     vmemmap : 0xffff7e0000000000 - 0xffff800000000000   (  2048 GB maximum)
+[    0.000000]               0xffff7e0000000000 - 0xffff7e0021fe0000   (   543 MB actual)
+[    0.000000]     memory  : 0xffff800000000000 - 0xffff80087f800000   ( 34808 MB)
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000]  RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+[    0.000000]  Tasks RCU enabled.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GIC: Adjusting CPU interface base to 0x000000000142f000
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] arch_timer: cp15 timer(s) running at 25.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x5c40939b5, max_idle_ns: 440795202646 ns
+[    0.000002] sched_clock: 56 bits at 25MHz, resolution 40ns, wraps every 4398046511100ns
+[    0.008365] Console: colour dummy device 80x25
+[    0.012860] Calibrating delay loop (skipped), value calculated using timer frequency.. 50.00 BogoMIPS (lpj=100000)
+[    0.023269] pid_max: default: 32768 minimum: 301
+[    0.027967] Security Framework initialized
+[    0.033663] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.041792] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.048920] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.055684] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.078886] ASID allocator initialised with 32768 entries
+[    0.084346] Hierarchical SRCU implementation.
+[    0.097113] EFI services will not be available.
+[    0.109672] smp: Bringing up secondary CPUs ...
+[    0.144104] Detected PIPT I-cache on CPU1
+[    0.144124] CPU1: Booted secondary processor [410fd082]
+[    0.171145] Detected PIPT I-cache on CPU2
+[    0.171158] CPU2: Booted secondary processor [410fd082]
+[    0.199167] Detected PIPT I-cache on CPU3
+[    0.199179] CPU3: Booted secondary processor [410fd082]
+[    0.199207] smp: Brought up 1 node, 4 CPUs
+[    0.231155] SMP: Total of 4 processors activated.
+[    0.235881] CPU features: detected feature: 32-bit EL0 Support
+[    0.241742] CPU features: detected feature: Kernel page table isolation (KPTI)
+[    0.252671] CPU: All CPU(s) started at EL2
+[    0.256792] alternatives: patching kernel code
+[    0.261641] devtmpfs: initialized
+[    0.266893] random: get_random_u32 called from bucket_table_alloc+0x108/0x258 with crng_init=0
+[    0.275724] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.285531] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[    0.292339] xor: measuring software checksum speed
+[    0.337172]    8regs     :  7630.000 MB/sec
+[    0.381388]    8regs_prefetch:  6686.000 MB/sec
+[    0.425954]    32regs    :  7682.000 MB/sec
+[    0.470170]    32regs_prefetch:  7243.000 MB/sec
+[    0.474807] xor: using function: 32regs (7682.000 MB/sec)
+[    0.480233] pinctrl core: initialized pinctrl subsystem
+[    0.486034] DMI not present or invalid.
+[    0.490062] NET: Registered protocol family 16
+[    0.498542] cpuidle: using governor menu
+[    0.502629] Bman ver:0a02,02,01
+[    0.507662] qman-fqd addr 0x00000008ff800000 size 0x800000
+[    0.513176] qman-pfdr addr 0x00000008fc000000 size 0x2000000
+[    0.518895] Qman ver:0a01,03,02,01
+[    0.522386] vdso: 2 pages (1 code @ ffff000008d46000, 1 data @ ffff000009385000)
+[    0.529829] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.537054] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.543306] Serial: AMBA PL011 UART driver
+[    0.550243] Machine: LS1046A RDB Board
+[    0.554011] SoC family: QorIQ LS1046A
+[    0.557685] SoC ID: svr:0x87070010, Revision: 1.0
+[    0.573185] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.647990] raid6: int64x1  gen()  1112 MB/s
+[    0.720001] raid6: int64x1  xor()  1007 MB/s
+[    0.792044] raid6: int64x2  gen()  1533 MB/s
+[    0.864061] raid6: int64x2  xor()  1459 MB/s
+[    0.936101] raid6: int64x4  gen()  2320 MB/s
+[    1.008137] raid6: int64x4  xor()  1637 MB/s
+[    1.080155] raid6: int64x8  gen()  2195 MB/s
+[    1.152192] raid6: int64x8  xor()  1606 MB/s
+[    1.224231] raid6: neonx1   gen()  2246 MB/s
+[    1.296245] raid6: neonx1   xor()  2505 MB/s
+[    1.368285] raid6: neonx2   gen()  2950 MB/s
+[    1.440308] raid6: neonx2   xor()  3134 MB/s
+[    1.512333] raid6: neonx4   gen()  3781 MB/s
+[    1.584364] raid6: neonx4   xor()  3352 MB/s
+[    1.656393] raid6: neonx8   gen()  4384 MB/s
+[    1.728419] raid6: neonx8   xor()  3705 MB/s
+[    1.732706] raid6: using algorithm neonx8 gen() 4384 MB/s
+[    1.738129] raid6: .... xor() 3705 MB/s, rmw enabled
+[    1.743116] raid6: using neon recovery algorithm
+[    1.748020] ACPI: Interpreter disabled.
+[    1.753096] vgaarb: loaded
+[    1.755931] SCSI subsystem initialized
+[    1.759886] usbcore: registered new interface driver usbfs
+[    1.765419] usbcore: registered new interface driver hub
+[    1.770821] usbcore: registered new device driver usb
+[    1.776189] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
+[    1.783565] i2c i2c-0: IMX I2C adapter registered
+[    1.788310] i2c i2c-0: using dma0chan16 (tx) and dma0chan17 (rx) for DMA transfers
+[    1.795967] imx-i2c 2190000.i2c: fsl-scl-gpio not found
+[    1.801238] imx-i2c 2190000.i2c: can't get pinctrl, bus recovery not supported
+[    1.808531] i2c i2c-1: IMX I2C adapter registered
+[    1.813260] i2c i2c-1: can't use DMA, using PIO instead.
+[    1.818631] imx-i2c 21a0000.i2c: fsl-scl-gpio not found
+[    1.823899] imx-i2c 21a0000.i2c: can't get pinctrl, bus recovery not supported
+[    1.831257] i2c i2c-2: IMX I2C adapter registered
+[    1.835987] i2c i2c-2: can't use DMA, using PIO instead.
+[    1.841393] imx-i2c 21b0000.i2c: can't get pinctrl, bus recovery not supported
+[    1.848686] i2c i2c-3: IMX I2C adapter registered
+[    1.853414] i2c i2c-3: can't use DMA, using PIO instead.
+[    1.859196] Linux video capture interface: v2.00
+[    1.863860] pps_core: LinuxPPS API ver. 1 registered
+[    1.868859] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.878049] PTP clock support registered
+[    1.882103] EDAC MC: Ver: 3.0.0
+[    1.885352] dmi: Firmware registration failed.
+[    1.889827] bman-fbpr addr 0x00000008fe000000 size 0x1000000
+[    1.895532] Bman err interrupt handler present
+[    1.900306] Bman portal initialised, cpu 0
+[    1.904469] Bman portal initialised, cpu 1
+[    1.908630] Bman portal initialised, cpu 2
+[    1.912788] Bman portal initialised, cpu 3
+[    1.916902] Bman portals initialised
+[    1.921252] Qman err interrupt handler present
+[    1.926205] QMan: Allocated lookup table at ffff00000b435000, entry count 131073
+[    1.933946] Qman portal initialised, cpu 0
+[    1.938098] Qman portal initialised, cpu 1
+[    1.942251] Qman portal initialised, cpu 2
+[    1.946402] Qman portal initialised, cpu 3
+[    1.950517] Qman portals initialised
+[    1.954146] Bman: BPID allocator includes range 32:32
+[    1.959247] Qman: FQID allocator includes range 256:256
+[    1.964498] Qman: FQID allocator includes range 32768:32768
+[    1.970126] Qman: CGRID allocator includes range 0:256
+[    1.975412] Qman: pool channel allocator includes range 1025:15
+[    1.981415] No USDPAA memory, no 'fsl,usdpaa-mem' in device-tree
+[    1.987620] Advanced Linux Sound Architecture Driver Initialized.
+[    1.994063] clocksource: Switched to clocksource arch_sys_counter
+[    2.000262] VFS: Disk quotas dquot_6.6.0
+[    2.004227] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.011193] pnp: PnP ACPI: disabled
+[    2.017216] NET: Registered protocol family 2
+[    2.021833] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+[    2.029247] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    2.036342] TCP: Hash tables configured (established 32768 bind 32768)
+[    2.042951] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    2.049036] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    2.055611] NET: Registered protocol family 1
+[    2.060108] RPC: Registered named UNIX socket transport module.
+[    2.066063] RPC: Registered udp transport module.
+[    2.070791] RPC: Registered tcp transport module.
+[    2.075527] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    2.082392] hw perfevents: enabled with armv8_cortex_a72 PMU driver, 7 counters available
+[    2.090857] kvm [1]: 8-bit VMID
+[    2.094587] kvm [1]: vgic interrupt IRQ1
+[    2.098580] kvm [1]: Hyp mode initialized successfully
+[    2.104769] audit: initializing netlink subsys (disabled)
+[    2.110237] audit: type=2000 audit(2.036:1): state=initialized audit_enabled=0 res=1
+[    2.110385] workingset: timestamp_bits=44 max_order=20 bucket_order=0
+[    2.118238] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    2.118324] NFS: Registering the id_resolver key type
+[    2.118334] Key type id_resolver registered
+[    2.118335] Key type id_legacy registered
+[    2.118339] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    2.118387] fuse init (API version 7.26)
+[    2.118440] 9p: Installing v9fs 9p2000 file system support
+[    2.119552] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    2.119591] io scheduler noop registered
+[    2.119610] io scheduler cfq registered (default)
+[    2.119612] io scheduler mq-deadline registered
+[    2.119613] io scheduler kyber registered
+[    2.129605] OF: PCI: host bridge /soc/pcie@3400000 ranges:
+[    2.129615] OF: PCI:    IO 0x4000010000..0x400001ffff -> 0x00000000
+[    2.129620] OF: PCI:   MEM 0x4040000000..0x407fffffff -> 0x40000000
+[    2.129690] layerscape-pcie 3400000.pcie: PCI host bridge to bus 0000:00
+[    2.129693] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    2.129696] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    2.129698] pci_bus 0000:00: root bus resource [mem 0x4040000000-0x407fffffff] (bus address [0x40000000-0x7fffffff])
+[    2.129869] pci 0000:00:00.0: BAR 6: assigned [mem 0x4040000000-0x40400007ff pref]
+[    2.129872] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+[    2.129976] pcieport 0000:00:00.0: Signaling PME with IRQ 66
+[    2.130029] pcieport 0000:00:00.0: AER enabled with IRQ 67
+[    2.130137] OF: PCI: host bridge /soc/pcie@3600000 ranges:
+[    2.130143] OF: PCI:    IO 0x5000010000..0x500001ffff -> 0x00000000
+[    2.130147] OF: PCI:   MEM 0x5040000000..0x507fffffff -> 0x40000000
+[    2.130201] layerscape-pcie 3600000.pcie: PCI host bridge to bus 0001:00
+[    2.130204] pci_bus 0001:00: root bus resource [bus 00-ff]
+[    2.130207] pci_bus 0001:00: root bus resource [io  0x10000-0x1ffff] (bus address [0x0000-0xffff])
+[    2.130210] pci_bus 0001:00: root bus resource [mem 0x5040000000-0x507fffffff] (bus address [0x40000000-0x7fffffff])
+[    2.142131] pci 0001:00:00.0: BAR 14: assigned [mem 0x5040000000-0x50401fffff]
+[    2.142134] pci 0001:00:00.0: BAR 6: assigned [mem 0x5040200000-0x50402007ff pref]
+[    2.142138] pci 0001:01:00.0: BAR 0: assigned [mem 0x5040000000-0x50401fffff 64bit]
+[    2.142170] pci 0001:00:00.0: PCI bridge to [bus 01-ff]
+[    2.142173] pci 0001:00:00.0:   bridge window [mem 0x5040000000-0x50401fffff]
+[    2.142260] pcieport 0001:00:00.0: Signaling PME with IRQ 68
+[    2.142311] pcieport 0001:00:00.0: AER enabled with IRQ 69
+[    2.145192] Freescale LS2 console driver
+[    2.145241] fsl-ls2-console: device fsl_mc_console registered
+[    2.145271] fsl-ls2-console: device fsl_aiop_console registered
+[    2.147926] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    2.148937] console [ttyS0] disabled
+[    2.377392] 21c0500.serial: ttyS0 at MMIO 0x21c0500 (irq = 40, base_baud = 21875000) is a 16550A
+[    2.386241] console [ttyS0] enabled
+[    2.386241] console [ttyS0] enabled
+[    2.393226] bootconsole [uart8250] disabled
+[    2.393226] bootconsole [uart8250] disabled
+[    2.401842] 21c0600.serial: ttyS1 at MMIO 0x21c0600 (irq = 40, base_baud = 21875000) is a 16550A
+[    2.410825] 21d0500.serial: ttyS2 at MMIO 0x21d0500 (irq = 41, base_baud = 21875000) is a 16550A
+[    2.419801] 21d0600.serial: ttyS3 at MMIO 0x21d0600 (irq = 41, base_baud = 21875000) is a 16550A
+[    2.428998] SuperH (H)SCI(F) driver initialized
+[    2.437243] brd: module loaded
+[    2.443165] loop: module loaded
+[    2.504097] ahci-qoriq 3200000.sata: AHCI 0001.0301 32 slots 1 ports 6 Gbps 0x1 impl platform mode
+[    2.513058] ahci-qoriq 3200000.sata: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst
+[    2.523066] scsi host0: ahci-qoriq
+[    2.526529] ata1: SATA max UDMA/133 mmio [mem 0x03200000-0x0320ffff] port 0x100 irq 51
+[    2.536622] random: fast init done
+[    2.544285] fsl-quadspi 1550000.quadspi: w25q128 (16384 Kbytes)
+[    2.551649] libphy: Fixed MDIO Bus: probed
+[    2.556099] tun: Universal TUN/TAP device driver, 1.6
+[    2.561809] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.567328] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.572674] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.577795] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.582949] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.588055] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.593160] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.598266] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.603374] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.608487] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.622194] Freescale FM module, FMD API version 21.1.0
+[    2.629427] Freescale FM Ports module
+[    2.633087] fsl_mac: fsl_mac: FSL FMan MAC API based driver
+[    2.638878] fsl_mac 1ae2000.ethernet: FMan MEMAC
+[    2.643497] fsl_mac 1ae2000.ethernet: FMan MAC address: 76:ef:a4:ac:00:51
+[    2.650364] fsl_mac 1ae4000.ethernet: FMan MEMAC
+[    2.654982] fsl_mac 1ae4000.ethernet: FMan MAC address: 06:be:f2:70:7f:76
+[    2.661847] fsl_mac 1ae6000.ethernet: FMan MEMAC
+[    2.666465] fsl_mac 1ae6000.ethernet: FMan MAC address: 56:4b:8e:16:48:eb
+[    2.673373] fsl_mac 1ae8000.ethernet: FMan MEMAC
+[    2.677991] fsl_mac 1ae8000.ethernet: FMan MAC address: 46:19:9f:83:fc:3f
+[    2.684900] fsl_mac 1aea000.ethernet: FMan MEMAC
+[    2.689518] fsl_mac 1aea000.ethernet: FMan MAC address: 2a:4f:e2:06:32:72
+[    2.696495] fsl_mac 1af0000.ethernet: FMan MEMAC
+[    2.701113] fsl_mac 1af0000.ethernet: FMan MAC address: fe:1b:75:99:a8:e2
+[    2.708072] fsl_mac 1af2000.ethernet: FMan MEMAC
+[    2.712689] fsl_mac 1af2000.ethernet: FMan MAC address: ae:ee:09:ff:9f:7f
+[    2.719501] fsl_dpa: FSL DPAA Ethernet driver
+[    2.726982] fsl_dpa: fsl_dpa: Probed interface eth0
+[    2.734672] fsl_dpa: fsl_dpa: Probed interface eth1
+[    2.742617] fsl_dpa: fsl_dpa: Probed interface eth2
+[    2.750789] fsl_dpa: fsl_dpa: Probed interface eth3
+[    2.758936] fsl_dpa: fsl_dpa: Probed interface eth4
+[    2.767634] fsl_dpa: fsl_dpa: Probed interface eth5
+[    2.776598] fsl_dpa: fsl_dpa: Probed interface eth6
+[    2.781550] fsl_advanced: FSL DPAA Advanced drivers:
+[    2.786513] fsl_proxy: FSL DPAA Proxy initialization driver
+[    2.792310] fsl_oh: FSL FMan Offline Parsing port driver
+[    2.797926] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    2.805006] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    2.810780] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[    2.816617] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    2.822554] igb: Intel(R) Gigabit Ethernet Network Driver - version 5.4.0-k
+[    2.829513] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    2.835122] igbvf: Intel(R) Gigabit Virtual Function Network Driver - version 2.4.0-k
+[    2.842950] igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+[    2.849133] sky2: driver version 1.30
+[    2.853046] PPP generic driver version 2.4.2
+[    2.857391] PPP BSD Compression module registered
+[    2.862093] PPP Deflate Compression module registered
+[    2.867150] PPP MPPE Compression module registered
+[    2.871936] NET: Registered protocol family 24
+[    2.876403] usbcore: registered new interface driver asix
+[    2.881827] usbcore: registered new interface driver ax88179_178a
+[    2.887927] usbcore: registered new interface driver cdc_ether
+[    2.893769] usbcore: registered new interface driver net1080
+[    2.899436] usbcore: registered new interface driver cdc_subset
+[    2.905364] usbcore: registered new interface driver zaurus
+[    2.910949] usbcore: registered new interface driver cdc_ncm
+[    2.916616] usbcore: registered new interface driver huawei_cdc_ncm
+[    2.922891] usbcore: registered new interface driver qmi_wwan
+[    2.928885] VFIO - User Level meta-driver version: 0.3
+[    2.935420] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.941951] ehci-pci: EHCI PCI platform driver
+[    2.946406] ehci-platform: EHCI generic platform driver
+[    2.951735] ehci-orion: EHCI orion driver
+[    2.955814] ehci-exynos: EHCI EXYNOS driver
+[    2.960064] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    2.966244] ohci-pci: OHCI PCI platform driver
+[    2.970700] ohci-platform: OHCI generic platform driver
+[    2.976004] ohci-exynos: OHCI EXYNOS driver
+[    2.980450] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    2.985939] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    2.993762] xhci-hcd xhci-hcd.0.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x22010810
+[    3.002478] xhci-hcd xhci-hcd.0.auto: irq 48, io mem 0x02f00000
+[    3.008604] hub 1-0:1.0: USB hub found
+[    3.010075] ata1: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+[    3.018531] hub 1-0:1.0: 1 port detected
+[    3.022471] ata1.00: ATA-11: KINGBANK KM100, SN12521, max UDMA/133
+[    3.022561] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.022566] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    3.022572] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0  SuperSpeed
+[    3.022752] hub 2-0:1.0: USB hub found
+[    3.022762] hub 2-0:1.0: 1 port detected
+[    3.022887] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.022893] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 3
+[    3.023051] xhci-hcd xhci-hcd.1.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x22010810
+[    3.023066] xhci-hcd xhci-hcd.1.auto: irq 49, io mem 0x03000000
+[    3.023231] hub 3-0:1.0: USB hub found
+[    3.023241] hub 3-0:1.0: 1 port detected
+[    3.023331] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.023335] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 4
+[    3.023339] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0  SuperSpeed
+[    3.023539] hub 4-0:1.0: USB hub found
+[    3.023551] hub 4-0:1.0: 1 port detected
+[    3.023690] xhci-hcd xhci-hcd.2.auto: xHCI Host Controller
+[    3.023696] xhci-hcd xhci-hcd.2.auto: new USB bus registered, assigned bus number 5
+[    3.023857] xhci-hcd xhci-hcd.2.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x22010810
+[    3.023872] xhci-hcd xhci-hcd.2.auto: irq 50, io mem 0x03100000
+[    3.024067] hub 5-0:1.0: USB hub found
+[    3.024078] hub 5-0:1.0: 1 port detected
+[    3.024178] xhci-hcd xhci-hcd.2.auto: xHCI Host Controller
+[    3.024182] xhci-hcd xhci-hcd.2.auto: new USB bus registered, assigned bus number 6
+[    3.024186] xhci-hcd xhci-hcd.2.auto: Host supports USB 3.0  SuperSpeed
+[    3.024398] hub 6-0:1.0: USB hub found
+[    3.024408] hub 6-0:1.0: 1 port detected
+[    3.024700] usbcore: registered new interface driver cdc_wdm
+[    3.024740] usbcore: registered new interface driver usb-storage
+[    3.024778] usbcore: registered new interface driver usbserial
+[    3.024791] usbcore: registered new interface driver usbserial_generic
+[    3.024801] usbserial: USB Serial support registered for generic
+[    3.024815] usbcore: registered new interface driver option
+[    3.024823] usbserial: USB Serial support registered for GSM modem (1-port)
+[    3.024908] usbcore: registered new interface driver pl2303
+[    3.024916] usbserial: USB Serial support registered for pl2303
+[    3.024939] usbcore: registered new interface driver cdc_xr_usb_serial
+[    3.024940] xr_usb_serial_common: Exar USB UART (serial port) driver
+[    3.030511] rtc-pcf8563 2-0051: low voltage detected, date/time is not reliable.
+[    3.030571] rtc-pcf8563 2-0051: rtc core: registered rtc-pcf8563 as rtc0
+[    3.032725] i2c /dev entries driver
+[    3.033893] IR NEC protocol handler initialized
+[    3.033894] IR RC5(x/sz) protocol handler initialized
+[    3.033895] IR RC6 protocol handler initialized
+[    3.033896] IR JVC protocol handler initialized
+[    3.033897] IR Sony protocol handler initialized
+[    3.033898] IR SANYO protocol handler initialized
+[    3.033899] IR Sharp protocol handler initialized
+[    3.033900] IR MCE Keyboard/mouse protocol handler initialized
+[    3.033902] IR XMP protocol handler initialized
+[    3.033939] usbcore: registered new interface driver uvcvideo
+[    3.033940] USB Video Class driver (1.1.1)
+[    3.035147] imx2-wdt 2ad0000.watchdog: timeout 60 sec (nowayout=0)
+[    3.035715] qoriq_cpufreq: Freescale QorIQ CPU frequency scaling driver
+[    3.035968] sdhci: Secure Digital Host Controller Interface driver
+[    3.035969] sdhci: Copyright(c) Pierre Ossman
+[    3.036098] Synopsys Designware Multimedia Card Interface Driver
+[    3.036734] sdhci-pltfm: SDHCI platform and OF driver helper
+[    3.082079] mmc0: SDHCI controller on 1560000.esdhc [1560000.esdhc] using ADMA 64-bit
+[    3.087572] ledtrig-cpu: registered to indicate activity on CPUs
+[    3.088866] platform caam_qi: Linux CAAM Queue I/F driver initialised
+[    3.088962] caam 1700000.crypto: device ID = 0x0a11030100000000 (Era 8)
+[    3.088965] caam 1700000.crypto: job rings = 3, qi = 1, dpaa2 = no
+[    3.093392] caam algorithms registered in /proc/crypto
+[    3.095205] platform caam_qi: algorithms registered in /proc/crypto
+[    3.105165] caam_jr 1710000.jr: registering rng-caam
+[    3.105201] caam 1700000.crypto: caam pkc algorithms registered in /proc/crypto
+[    3.105550] usbcore: registered new interface driver usbhid
+[    3.105550] usbhid: USB HID core driver
+[    3.106243] Freescale USDPAA process driver
+[    3.106244] fsl-usdpaa: no region found
+[    3.106245] Freescale USDPAA process IRQ driver
+[    3.106852] optee: probing for conduit method from DT.
+[    3.107048] optee: initialized driver
+[    3.107557] Netfilter messages via NETLINK v0.30.
+[    3.107640] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+[    3.107748] nf_tables: (c) 2007-2009 Patrick McHardy <kaber@trash.net>
+[    3.107750] nf_tables_compat: (c) 2012 Pablo Neira Ayuso <pablo@netfilter.org>
+[    3.107849] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    3.170331] mmc0: new HS200 MMC card at address 0001
+[    3.170508] mmcblk0: mmc0:0001 88A398 7.28 GiB
+[    3.170588] mmcblk0boot0: mmc0:0001 88A398 partition 1 4.00 MiB
+[    3.170669] mmcblk0boot1: mmc0:0001 88A398 partition 2 4.00 MiB
+[    3.170745] mmcblk0rpmb: mmc0:0001 88A398 partition 3 4.00 MiB
+[    3.171241]  mmcblk0: p1 p2 p3
+[    3.217281] Initializing XFRM netlink socket
+[    3.217347] NET: Registered protocol family 10
+[    3.217771] Segment Routing with IPv6
+[    3.217814] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    3.218009] NET: Registered protocol family 17
+[    3.218017] NET: Registered protocol family 15
+[    3.218030] Bridge firewalling registered
+[    3.218032] Ebtables v2.0 registered
+[    3.256009] l2tp_core: L2TP core driver, V2.0
+[    3.256012] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[    3.256013] 8021q: 802.1Q VLAN Support v1.8
+[    3.256034] 9pnet: Installing 9P2000 support
+[    3.256058] Key type dns_resolver registered
+[    3.256302] registered taskstats version 1
+[    3.256517] Btrfs loaded, crc32c=crc32c-generic
+[    3.259638] rtc-pcf8563 2-0051: low voltage detected, date/time is not reliable.
+[    3.259640] rtc-pcf8563 2-0051: hctosys: unable to read the hardware clock
+[    3.260731] ALSA device list:
+[    3.260733]   No soundcards found.
+[    3.362077] usb 3-1: new high-speed USB device number 2 using xhci-hcd
+[    3.535525] hub 3-1:1.0: USB hub found
+[    3.535765] hub 3-1:1.0: 4 ports detected
+[    3.560910] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.560919] pcieport 0000:00:00.0: PCIe Bus Error: severity=Corrected, type=Physical Layer, id=0000(Transmitter ID)
+[    3.560922] pcieport 0000:00:00.0:   device [1957:81c0] error status/mask=00001181/00006000
+[    3.560924] pcieport 0000:00:00.0:    [ 0] Receiver Error         (First)
+[    3.560927] pcieport 0000:00:00.0:    [ 7] Bad DLLP
+[    3.560929] pcieport 0000:00:00.0:    [ 8] RELAY_NUM Rollover
+[    3.560931] pcieport 0000:00:00.0:    [12] Replay Timer Timeout
+[    3.560934] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.560939] pcieport 0000:00:00.0: AER: Corrected error received: id=0000
+[    3.560943] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.560947] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.560951] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.560955] pcieport 0000:00:00.0: AER: Corrected error received: id=0000
+[    3.560959] pcieport 0000:00:00.0: AER: Corrected error received: id=0000
+[    3.560964] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.560968] pcieport 0000:00:00.0: AER: Multiple Corrected error received: id=0000
+[    3.638180] usb 4-1: new SuperSpeed USB device number 2 using xhci-hcd
+[    3.712406] hub 4-1:1.0: USB hub found
+[    3.713286] hub 4-1:1.0: 4 ports detected
+[    3.732637] ata1.00: 250069680 sectors, multi 1: LBA48 NCQ (depth 31/32)
+[    3.741797] ata1.00: configured for UDMA/133
+[    3.746236] scsi 0:0:0:0: Direct-Access     ATA      KINGBANK KM100   521  PQ: 0 ANSI: 5
+[    3.754594] sd 0:0:0:0: [sda] 250069680 512-byte logical blocks: (128 GB/119 GiB)
+[    3.762101] sd 0:0:0:0: [sda] Write Protect is off
+[    3.766913] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    3.776385]  sda: sda1
+[    3.779018] sd 0:0:0:0: [sda] Attached SCSI disk
+[    3.788476] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+[    3.796166] VFS: Mounted root (ext4 filesystem) on device 8:1.
+[    3.802355] devtmpfs: mounted
+[    3.805751] Freeing unused kernel memory: 1216K
+[    3.866087] usb 3-1.1: new high-speed USB device number 3 using xhci-hcd
+[    3.872816] systemd[1]: System time before build time, advancing clock.
+[    3.885544] systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+[    3.906994] systemd[1]: Detected architecture arm64.
+
+Welcome to Ubuntu 18.04.1 LTS!
+
+[    3.926313] systemd[1]: Set hostname to <localhost>.
+[    3.992048] systemd[1]: /lib/systemd/system/systemd-udevd.service:31: Unknown lvalue 'RestrictSUIDSGID' in section 'Service'
+[    4.003299] systemd[1]: File /lib/systemd/system/systemd-udevd.service:35 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
+[    4.020080] systemd[1]: Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
+[    4.073316] systemd[1]: Configuration file /etc/systemd/system/forlinx.service is marked executable. Please remove executable permission bits. Proceeding anyway.
+[    4.087759] systemd[1]: Configuration file /etc/systemd/system/forlinx.service is marked world-writable. Please remove world writability permission bits. Proceeding anyway.
+[    4.111111] random: systemd: uninitialized urandom read (16 bytes read)
+[    4.117892] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[  OK  ] Started Dispatch Password Requests to Console Directory Watch.
+[    4.142101] random: systemd: uninitialized urandom read (16 bytes read)
+[    4.148727] systemd[1]: Reached target Swap.
+[    4.150082] usb 3-1.3: new full-speed USB device number 4 using xhci-hcd
+[  OK  ] Reached target Swap.
+[    4.174103] random: systemd: uninitialized urandom read (16 bytes read)
+[  OK  ] Created slice User and Session Slice.
+[  OK  ] Reached target Libvirt guests shutdown.
+[  OK  ] Created slice System Slice.
+[  OK  ] Listening on udev Kernel Socket.
+[  OK  ] Listening on Device-mapper event daemon FIFOs.
+[  OK  ] Listening on /dev/initctl Compatibility Named Pipe.
+[  OK  ] Listening on RPCbind Server Activation Socket.
+[  OK  ] Listening on udev Control Socket.
+[  OK  ] Listening on Network Service Netlink Socket.
+[  OK  ] Listening on Syslog Socket.
+[  OK  ] Listening on LVM2 metadata daemon socket.
+[  OK  ] Started Forward Password Requests to Wall Directory Watch.
+[  OK  ] Reached target Local Encrypted Volumes.
+[    4.378077] usb 3-1.4: new full-speed USB device number 5 using xhci-hcd
+[  OK  ] Reached target Paths.
+[  OK  ] Listening on Journal Audit Socket.
+[  OK  ] Created slice system-serial\x2dgetty.slice.
+[  OK  ] Listening on LVM2 poll daemon socket.
+[  OK  ] Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on Journal Socket.
+         Mounting Kernel Debug File System...
+         Mounting POSIX Message Queue File System...
+         Starting Load Kernel Modules...
+         Starting Remount Root and Kernel File Systems...
+         Mounting RPC Pipe File System...
+         Starting udev Coldplug all Devices...
+         Starting Set the console keyboard layout...
+         Starting Uncomplicated firewall...
+         Starting Monitoring of LVM2 mirrors…ng dmeventd or progress polling...
+         Mounting NFSD configuration filesystem...
+         Starting Create list of required st…ce nodes for the current kernel...
+         Starting Journal Service...
+         Starting Availability of block devices...
+[  OK  ] Reached target Slices.
+         Mounting Huge Pages File System...
+[  OK  ] Started Journal Service.
+[  OK  ] Mounted Kernel Debug File System.
+[  OK  ] Mounted POSIX Message Queue File System.
+[FAILED] Failed to start Load Kernel Modules.
+See 'systemctl status systemd-modules-load.service' for details.
+[  OK  ] Started Remount Root and Kernel File Systems.
+[  OK  ] Mounted RPC Pipe File System.
+[  OK  ] Started Set the console keyboard layout.
+[  OK  ] Started Uncomplicated firewall.
+[FAILED] Failed to mount NFSD configuration filesystem.
+See 'systemctl status proc-fs-nfsd.mount' for details.
+[DEPEND] Dependency failed for NFS Mount Daemon.
+[DEPEND] Dependency failed for NFS server and services.
+[DEPEND] Dependency failed for NFSv4 ID-name mapping service.
+[  OK  ] Started Create list of required sta…vice nodes for the current kernel.
+[  OK  ] Started Availability of block devices.
+[  OK  ] Mounted Huge Pages File System.
+[  OK  ] Started udev Coldplug all Devices.
+[  OK  ] Started LVM2 metadata daemon.
+         Starting Create Static Device Nodes in /dev...
+         Starting pNFS block layout mapping daemon...
+         Starting Load/Save Random Seed...
+         Mounting FUSE Control File System...
+         Starting Apply Kernel Variables...
+         Mounting Kernel Configuration File System...
+         Starting Flush Journal to Persistent Storage...
+[  OK  ] Started Create Static Device Nodes in /dev.
+[  OK  ] Started pNFS block layout mapping daemon.
+[  OK  ] Started Load/Save Random Seed.
+[  OK  ] Mounted FUSE Control File System.
+[  OK  ] Started Apply Kernel Variables.
+[  OK  ] Mounted Kernel Configuration File System.
+         Starting udev Kernel Device Manager...
+[  OK  ] Started udev Kernel Device Manager.
+[    5.373429] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[    5.415094] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[  OK  ] Started Flush Journal to Persistent Storage.
+[  OK  ] Found device /dev/ttyS0.
+[    5.542765] rtc-rx8010 2-0032: Unable to read registers #32..#32
+[    5.549550] i2c i2c-2: probing for rx8010 failed
+[    5.604344] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[    5.639266] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[  OK  ] Started Monitoring of LVM2 mirrors,…sing dmeventd or progress polling.
+[  OK  ] Listening on Load/Save RF Kill Switch Status /dev/rfkill Watch.
+[  OK  ] Reached target Local File Systems (Pre).
+[  OK  ] Reached target Local File Systems.
+         Starting netfilter persistent configuration...
+         Starting Create Volatile Files and Directories...
+         Starting Set console font and keymap...
+         Starting QEMU KVM preparation - module, ksm, hugepages...
+         Starting Enable support for additional executable binary formats...
+         Starting ebtables ruleset management...
+         Starting Preprocess NFS configuration...
+[  OK  ] Started netfilter persistent configuration.
+[  OK  ] Started Create Volatile Files and Directories.
+[  OK  ] Started Set console font and keymap.
+[  OK  ] Started QEMU KVM preparation - module, ksm, hugepages.
+[  OK  ] Started Enable support for additional executable binary formats.
+[  OK  ] Started Preprocess NFS configuration.
+         Starting Load/Save RF Kill Switch Status...
+[  OK  ] Reached target NFS client services.
+         Starting Update UTMP about System Boot/Shutdown...
+         Starting RPC bind portmap service...
+[  OK  ] Started Load/Save RF Kill Switch Status.
+[  OK  ] Started RPC bind portmap service.
+[  OK  ] Started ebtables ruleset management.
+[  OK  ] Reached target Network (Pre).
+         Starting Raise network interfaces...
+         Starting Network Service...
+[  OK  ] Reached target Remote File Systems (Pre).
+[  OK  ] Reached target Remote File Systems.
+[  OK  ] Reached target RPC Port Mapper.
+[  OK  ] Started Network Service.
+         Starting Wait for Network to be Configured...
+         Starting Network Name Resolution...
+[  OK  ] Started Update UTMP about System Boot/Shutdown.
+[FAILED] Failed to start Raise network interfaces.
+See 'systemctl status networking.service' for details.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started Clean PHP session files every 30 mins.
+[  OK  ] Started Message of the Day.
+[  OK  ] Listening on Virtual machine lock manager socket.
+         Starting Docker Socket for the API.
+[  OK  ] Listening on Avahi mDNS/DNS-SD Stack Activation Socket.
+[  OK  ] Started Discard unused blocks once a week.
+         Starting LXD - unix socket.
+[  OK  ] Started Daily apt download activities.
+[  OK  ] Started Daily apt upgrade and clean activities.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Listening on Virtual machine log manager socket.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Reached target Timers.
+[  OK  ] Listening on Docker Socket for the API.
+[  OK  ] Listening on LXD - unix socket.
+[  OK  ] Started Network Name Resolution.
+[  OK  ] Reached target Host and Network Name Lookups.
+[  OK  ] Reached target Network.
+[  OK  ] Reached target Sockets.
+[  OK  ] Reached target Basic System.
+         Starting Resets System Activity Data Collector...
+         Starting System Logging Service...
+         Starting vsftpd FTP server...
+         Starting LSB: Load kernel modules needed to enable cpufreq scaling...
+[  OK  ] Started Unattended Upgrades Shutdown.
+         Starting Avahi mDNS/DNS-SD Stack...
+[  OK  ] Started wifi.
+         Starting Initialize hardware monitoring sensors...
+[  OK  ] Started Regular background program processing daemon.
+         Starting Login Service...
+[  OK  ] Started ls104x forlinx.
+[  OK  ] Started FUSE filesystem for LXC.
+         Starting forlinx autorun demo...
+         Starting LSB: Mount debugfs on /sys/kernel/debug...
+         Starting hwclock...
+[    7.100905] rtc-pcf8563 2-0051: low voltage detected, date/time is not reliable.
+         Starting Modem Manager...
+[  OK  ] Started LTTng session daemon.
+         Starting LXD - container startup/shutdown...
+[  OK  ] Started Set the CPU Frequency Scaling governor.
+         Starting Permit User Sessions...
+         Starting Dispatcher daemon for systemd-networkd...
+[  OK  ] Started Deferred execution scheduler.
+[  OK  ] Started D-Bus System Message Bus.
+[  OK  ] Started Login Service.
+         Starting Virtualization daemon...
+         Starting Lighttpd Daemon...
+         Starting OpenBSD Secure Shell server...
+[  OK  ] Started System Logging Service.
+[  OK  ] Started Resets System Activity Data Collector.
+[  OK  ] Started vsftpd FTP server.
+[  OK  ] Started forlinx autorun demo.
+[FAILED] Failed to start hwclock.
+See 'systemctl status hwclock.service' for details.
+[  OK  ] Started Permit User Sessions.
+[  OK  ] Started Lighttpd Daemon.
+[  OK  ] Started Initialize hardware monitoring sensors.
+[  OK  ] Started OpenBSD Secure Shell server.
+[  OK  ] Started Avahi mDNS/DNS-SD Stack.
+[  OK  ] Started LSB: Mount debugfs on /sys/kernel/debug.
+[  OK  ] Started Virtualization daemon.
+         Starting Suspend/Resume Running libvirt Guests...
+         Starting Authorization Manager...
+         Starting Set console scheme...
+[  OK  ] Started Dispatcher daemon for systemd-networkd.
+[  OK  ] Started LSB: Load kernel modules needed to enable cpufreq scaling.
+         Starting LSB: set CPUFreq kernel parameters...
+[  OK  ] Started Authorization Manager.
+[  OK  ] Started Suspend/Resume Running libvirt Guests.
+[  OK  ] Started Set console scheme.
+[  OK  ] Started Modem Manager.
+[  OK  ] Started LXD - container startup/shutdown.
+[  OK  ] Created slice system-getty.slice.
+[  OK  ] Started LSB: set CPUFreq kernel parameters.
+         Starting LSB: Set sysfs variables from /etc/sysfs.conf...
+[  OK  ] Started LSB: Set sysfs variables from /etc/sysfs.conf.
+[   11.924134] pcieport 0000:00:00.0: PCIe Bus Error: severity=Corrected, type=Physical Layer, id=0000(Receiver ID)
+[   11.934338] pcieport 0000:00:00.0:   device [1957:81c0] error status/mask=00000001/00006000
+[   11.942703] pcieport 0000:00:00.0:    [ 0] Receiver Error         (First)
+[**    ] A start job is running for Wait for… to be Configured (17s / no limit)[   21.657943] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   21.694802] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   21.750785] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   21.802743] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[*     ] A start job is running for Wait for… to be Configured (17s / no limit)[   21.842879] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   21.886783] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   21.934773] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   21.982746] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   22.022763] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   22.066803] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   22.114725] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   22.158767] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[   22.202910] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[**    ] A start job is running for Wait for… to be Configured (18s / no limit)[   22.238931] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+         Starting Load/Save RF Kill Switch Status...
+[  OK  ] Started Load/Save RF Kill Switch Status.
+[FAILED] Failed to start Wait for Network to be Configured.
+See 'systemctl status systemd-networkd-wait-online.service' for details.
+[  OK  ] Reached target Network is Online.
+         Starting Internet superserver...
+         Starting LSB: HPA's tftp server...
+         Starting LSB: disk temperature monitoring daemon...
+         Starting LXC network bridge setup...
+         Starting /etc/rc.local Compatibility...
+         Starting Samba NMB Daemon...
+         Starting Ubuntu FAN network setup...
+         Starting Message of the Day...
+         Starting LSB: network benchmark...
+[  126.684253] rc.local[4869]: Successfully initialized wpa_supplicant
+[  126.700348] rc.local[4869]: Could not read interface wlx7cdd901b2360 flags: No such device
+[  126.716295] rc.local[4869]: nl80211: Driver does not support authentication/association or connect commands
+[  OK  ] Started ISC DHCP IPv6 server.
+[  126.736309] rc.local[4869]: nl80211: deinit ifname=wlx7cdd901b2360 disabled_11b_rates=0
+[  OK  ] Started Internet superserver.
+[  126.769749] rc.local[4869]: Could not read interface wlx7cdd901b2360 flags: No such device
+[  126.792240] rc.local[4869]: wlx7cdd901b2360: Failed to initialize driver interface
+[  OK  ] Started LSB: disk temperature monitoring daemon.
+[  OK  ] Started Samba NMB Daemon.
+[  OK  ] Started LXC network bridge setup.
+[FAILED] Failed to start /etc/rc.local Compatibility.
+See 'systemctl status rc-local.service' for details.
+[  OK  ] Started Ubuntu FAN network setup.
+[  OK  ] Started Message of the Day.
+[  OK  ] Started Serial Getty on ttyS0.
+[  OK  ] Started Getty on tty1.
+[  OK  ] Reached target Login Prompts.
+         Starting LXC Container Initialization and Autoboot Code...
+         Starting Samba SMB Daemon...
+[  OK  ] Started LSB: network benchmark.
+[  OK  ] Started LSB: HPA's tftp server.
+[  OK  ] Started LXC Container Initialization and Autoboot Code.
+[  OK  ] Started Samba SMB Daemon.
+[  OK  ] Reached target Multi-User System.
+[  OK  ] Reached target Graphical Interface.
+         Starting Update UTMP about System Runlevel Changes...
+[  OK  ] Started Update UTMP about System Runlevel Changes.
+
+Ubuntu 18.04.1 LTS localhost ttyS0
+
+localhost login: root
+Last login: Sun Jan 28 17:06:55 UTC 2018 on ttyS0
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.14.47 aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+root@localhost:~#
+root@localhost:~#
+root@localhost:~# cat /proc/meminfo |grep Cma
+CmaTotal:          65536 kB
+CmaFree:           64724 kB
+root@localhost:~# ^C
+root@localhost:~# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 30  bytes 3297 (3.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 30  bytes 3297 (3.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~# ifconfig -a
+fm1-mac2: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 76:ef:a4:ac:00:51  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae2000-1ae2fff
+
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+fm1-mac4: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 56:4b:8e:16:48:eb  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff
+
+fm1-mac5: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 46:19:9f:83:fc:3f  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae8000-1ae8fff
+
+fm1-mac6: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 2a:4f:e2:06:32:72  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1aea000-1aeafff
+
+fm1-mac9: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether fe:1b:75:99:a8:e2  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af0000-1af0fff
+
+fm1-mac10: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether ae:ee:09:ff:9f:7f  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af2000-1af2fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 30  bytes 3297 (3.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 30  bytes 3297 (3.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sit0: flags=128<NOARP>  mtu 1480
+        sit  txqueuelen 1000  (IPv6-in-IPv4)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+usb0: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 72:f5:ca:97:14:75  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0-nic: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~# ^C
+root@localhost:~#
+root@localhost:~#
+root@localhost:~# cd /home/forlinx/
+root@localhost:/home/forlinx# ls
+ 2023-12-11-17-24-19.bag                     88x2bu.ko                ch343ser_linux-main   gie_robot1.tar        net.sh                            rc.sh                   wheeltec_robot.tar
+ 2023-12-11-17-24-19odom.txt                 cartographer_ws          Downloads             gie_robot2.tar        odom_laser.sh                     roscore.sh              wifi.sh
+ 2023-12-11-17-24-19plicp_results.txt        cartographer_ws.tar.xz   dts.txt               gie_robot.tar         protobuf-3.16.0                   rt2870.bin              wlan
+ 2023-12-11-17-24-19scan_match_results.txt   car_ws                   fishros               install_packages.sh  'protobuf-all-3.16.0 (2).tar.gz'  '[Unit]'                'ystemctl status nfs-server.service'
+ 2023-12-11-17-24-19sync_results.txt         ch343.ko                 gie_robot             librealsense-master   ralink                            wheeltec_robot_01.tar
+root@localhost:/home/forlinx# cd wlan/
+root@localhost:/home/forlinx/wlan# ls
+cfg80211.ko  FC06EABMD  firmware  Image  rfkill.ko  wlan_cnss_core_pcie.ko  wlan.ko
+root@localhost:/home/forlinx/wlan# insmod wlan^C
+root@localhost:/home/forlinx/wlan# lsmod
+Module                  Size  Used by
+iwlwifi               212992  0
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+rt2800usb              32768  0
+rt2x00usb              24576  1 rt2800usb
+rt2800lib             110592  1 rt2800usb
+rt2x00lib              61440  3 rt2800lib,rt2800usb,rt2x00usb
+mac80211              458752  3 rt2800lib,rt2x00lib,rt2x00usb
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+cfg80211              356352  3 iwlwifi,rt2x00lib,mac80211
+rfkill                 36864  2 cfg80211
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+root@localhost:/home/forlinx/wlan# insmod wlan_cnss_core_pcie.ko
+[  209.175871] [enable_bb_ctxt] 0x1000
+[  209.179385] [enable_bb_ctxt] 0x1000
+[  209.183500] cnss: Current L1SS status: 0x0
+[  209.183506] cnss: Current ASPM status: 0x40
+[  209.192209] rddm size 420000
+[  209.192357] IPC_RTR: ipc_router_mhi_xprt_cb: Invalid cb reason 6
+[  209.201239] IPC_RTR: ipc_router_mhi_xprt_cb: Invalid cb reason 6
+[  209.207706] [enable_bb_ctxt] 0x800
+[  209.211123] [enable_bb_ctxt] 0x800
+root@localhost:/home/forlinx/wlan# ^C
+root@localhost:/home/forlinx/wlan# lspci
+0000:00:00.0 PCI bridge: Freescale Semiconductor Inc Device 81c0 (rev 10)
+0001:00:00.0 PCI bridge: Freescale Semiconductor Inc Device 81c0 (rev 10)
+0001:01:00.0 Network controller: Qualcomm Device 1103 (rev 01)
+root@localhost:/home/forlinx/wlan# ^C
+root@localhost:/home/forlinx/wlan#
+root@localhost:/home/forlinx/wlan# modprobe wlan_cnss_core_pcie.ko
+modprobe: FATAL: Module wlan_cnss_core_pcie.ko not found in directory /lib/modules/4.14.47
+root@localhost:/home/forlinx/wlan# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       117G   17G   95G  16% /
+devtmpfs        1.9G     0  1.9G   0% /dev
+tmpfs           1.9G  4.0K  1.9G   1% /dev/shm
+tmpfs           1.9G  2.7M  1.9G   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup
+tmpfs           383M     0  383M   0% /run/user/0
+root@localhost:/home/forlinx/wlan# cd 81c0 (rev 10)
+-bash: syntax error near unexpected token `('
+root@localhost:/home/forlinx/wlan# 0001:01:00.0 Network controller: Qualcomm Device 1103 (rev 01^C
+root@localhost:/home/forlinx/wlan# cd /lib/modules/4.14.47
+root@localhost:/lib/modules/4.14.47# ls
+build  extra  kernel  modules.alias  modules.alias.bin  modules.builtin  modules.builtin.bin  modules.dep  modules.dep.bin  modules.devname  modules.order  modules.softdep  modules.symbols  modules.symbols.bin  source
+root@localhost:/lib/modules/4.14.47# cd kernel/
+root@localhost:/lib/modules/4.14.47/kernel# ls
+arch  crypto  drivers  fs  net  sound
+root@localhost:/lib/modules/4.14.47/kernel# cd drivers/net/wireless/
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless# ls
+ath  intel  quectel  ralink  realtek
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless# mkdir wlan
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless# cd wlan
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# ls
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# cp /home/forlinx/wlan/wlan*.ko ./
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# ls
+wlan_cnss_core_pcie.ko  wlan.ko
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# modprobe wlan_cnss_core_pcie.ko
+modprobe: FATAL: Module wlan_cnss_core_pcie.ko not found in directory /lib/modules/4.14.47
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# modprobe wlan_cnss_core_pcie
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# lsmod
+Module                  Size  Used by
+wlan_cnss_core_pcie   389120  0
+iwlwifi               212992  0
+xt_CHECKSUM            16384  2
+xt_conntrack           16384  1
+ipt_REJECT             16384  2
+nf_reject_ipv4         16384  1 ipt_REJECT
+ip6table_filter        16384  0
+ip6_tables             24576  1 ip6table_filter
+rt2800usb              32768  0
+rt2x00usb              24576  1 rt2800usb
+rt2800lib             110592  1 rt2800usb
+rt2x00lib              61440  3 rt2800lib,rt2800usb,rt2x00usb
+mac80211              458752  3 rt2800lib,rt2x00lib,rt2x00usb
+crc32_ce               16384  1
+crct10dif_ce           16384  0
+cfg80211              356352  3 iwlwifi,rt2x00lib,mac80211
+rfkill                 36864  2 cfg80211
+rtc_rx8010             16384  0
+qoriq_thermal          16384  0
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# modprobe wlan
+modprobe: ERROR: could not insert 'wlan': Unknown symbol in module, or unknown parameter (see dmesg)
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# ls
+wlan_cnss_core_pcie.ko  wlan.ko
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# modprobe wlan.ko
+modprobe: FATAL: Module wlan.ko not found in directory /lib/modules/4.14.47
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# insmod wlan.ko
+[  385.927819] wlan: Loading driver v5.2.0.220S.061 +TIMER_MANAGER +MEMORY_DEBUG +PANIC_ON_BUG
+[  386.014109] [bhi_probe] jtagid:0x1019b0e1
+[  386.047155] patch-1: clear rx-vec, bhi_base as 0x          (null)
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# [  386.865350] cnss: cnss_fw_ready_hdlr 640
+[  386.929687] [kworke][0x170ef2cb][16:04:40.061453] wlan: [1548:E:TXRX] hif_print_hal_shadow_register_cfg: num_config 28
+[  386.970284] [kworke][0x170f915d][16:04:40.102048] wlan: [1548:E:QDF] __cds_get_context: Module ID 66 context is Null (via hdd_update_ol_config)
+[  386.985633] [kworke][0x170fcd55][16:04:40.117399] wlan: [1548:E:QDF] __cds_get_context: Module ID 66 context is Null (via cds_open)
+[  386.997788] [kworke][0x170ffcd0][16:04:40.129554] wlan: [1548:F:WMA] WMA --> wmi_unified_attach - success
+[  387.011769] [kworke][0x1710336b][16:04:40.143533] wlan: [1548:E:QDF] htc_wait_target: Target Ready! TX resource : 1 size:2176, MaxMsgsPerHTCBundle = 1
+[  387.025252] [kworke][0x17106819][16:04:40.157019] wlan: [1548:E:QDF] htc_setup_target_buffer_assignments: SVS Index : 1 TX : 0x100 : alloc:1
+[  387.037933] [kworke][0x171099a1][16:04:40.169700] wlan: [1548:E:DP] dp_srng_get_str_from_hal_ring_type: Invalid ring type
+[  387.048911] [kworke][0x1710c483][16:04:40.180677] wlan: [1548:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type tcl_cmd_credit (6) size 16384
+[  387.063629] [kworke][0x1710fdff][16:04:40.195394] wlan: [1548:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type tcl_status (7) size 16384
+[  387.077944] [kworke][0x171135ec][16:04:40.209710] wlan: [1548:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Reo_reinject (2) size 16384
+[  387.092442] [kworke][0x17116e8e][16:04:40.224208] wlan: [1548:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Reo_cmd (3) size 16384
+[  387.106485] [kworke][0x1711a569][16:04:40.238251] wlan: [1548:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Reo_status (4) size 16384
+[  387.124489] [kworke][0x1711ebbd][16:04:40.256255] wlan: [1548:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Rxdma_monitor_status (17) size 16384
+[  387.139847] [kworke][0x171227b8][16:04:40.271610] wlan: [1548:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Rxdma_monitor_status (17) size 16384
+[  387.155772] [kworke][0x171265f0][16:04:40.287538] wlan: [1548:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Rxdma_buf (14) size 16384
+[  387.170093] [kworke][0x17129de1][16:04:40.301859] wlan: [1548:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Rxdma_buf (14) size 16384
+[  387.209420] [kworke][0x17133781][16:04:40.341187] wlan: [1548:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 91
+[  387.222352] [kworke][0x17136a03][16:04:40.354118] wlan: [1548:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 92
+[  387.235231] [kworke][0x17139c53][16:04:40.366997] wlan: [1548:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 93
+[  387.248108] [kworke][0x1713cea0][16:04:40.379874] wlan: [1548:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 94
+[  387.260985] [kworke][0x171400ed][16:04:40.392752] wlan: [1548:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 95
+[  387.273861] [kworke][0x17143339][16:04:40.405627] wlan: [1548:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 96
+[  387.286738] [kworke][0x17146586][16:04:40.418504] wlan: [1548:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 97
+[  387.299613] [kworke][0x171497d1][16:04:40.431379] wlan: [1548:E:HIF] hif_pci_ce_irq_set_affinity_hint: Unable to set cpu mask for offline CPU 0
+[  387.312490] [kworke][0x1714ca1e][16:04:40.444256] wlan: [1548:E:HIF] hif_pci_ce_irq_set_affinity_hint: Empty cpu_mask, unable to set CE IRQ affinity
+[  387.328272] [kworke][0x171507c4][16:04:40.460038] wlan: [5105:E:QDF] copy_fw_abi_version_tlv: copy_fw_abi_version_tlv: INIT_CMD version: 1, 0, 0x5f414351, 0x4c4d, 0x0, 0x0
+[  387.593179] [kworke][0x1719128c][16:04:40.724942] wlan: [5105:E:QDF] ready_extract_init_status_tlv: ready_extract_init_status_tlv:0
+[  387.605706] [kworke][0x1719437e][16:04:40.737472] wlan: [5105:E:CFR] wlan_cfr_pdev_open: cfr is disabled
+[  387.615442] [kworke][0x17196987][16:04:40.747209] wlan: [5105:E:QDF] dp_peer_map_attach_wifi3: dp_peer_map_attach_wifi3 max_peers 39, max_ast_index: 144
+[  387.615442]
+[  387.631551] [kworke][0x1719a873][16:04:40.763318] wlan: [1548:E:WMI] send_action_oui_cmd_tlv: Invalid action id
+[  387.641671] [kworke][0x1719cffb][16:04:40.773437] wlan: [1548:E:action_oui] ucfg_action_oui_send: Failed to send: 7
+[  387.652545] [kworke][0x1719fa74][16:04:40.784310] wlan: [1548:E:TXRX] dp_rxdma_ring_config: DBS enabled max_mac_rings 2
+[  387.663334] [kworke][0x171a249a][16:04:40.795100] wlan: [1548:E:TXRX] dp_rxdma_ring_config: pdev_id 0 max_mac_rings 2
+[  387.673947] [kworke][0x171a4e0f][16:04:40.805713] wlan: [1548:E:TXRX] dp_rxdma_ring_config: mac_id 0
+[  387.683134] [kworke][0x171a71f2][16:04:40.814900] wlan: [1548:E:TXRX] dp_rxdma_ring_config: mac_id 1
+[  387.692752] [kworke][0x171a9784][16:04:40.824518] wlan: [1548:E:REGULATORY] reg_freq_width_to_chan_op_class: no op class for frequency 5660
+[  387.705874] cnss_utils: WLAN MAC address is not set, type 0
+
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan#
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan#
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# ifconfig -a
+fm1-mac2: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 76:ef:a4:ac:00:51  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae2000-1ae2fff
+
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+fm1-mac4: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 56:4b:8e:16:48:eb  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff
+
+fm1-mac5: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 46:19:9f:83:fc:3f  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae8000-1ae8fff
+
+fm1-mac6: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 2a:4f:e2:06:32:72  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1aea000-1aeafff
+
+fm1-mac9: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether fe:1b:75:99:a8:e2  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af0000-1af0fff
+
+fm1-mac10: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether ae:ee:09:ff:9f:7f  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af2000-1af2fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 30  bytes 3297 (3.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 30  bytes 3297 (3.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+rename15: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 00:03:7f:12:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+rename17: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:94:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sit0: flags=128<NOARP>  mtu 1480
+        sit  txqueuelen 1000  (IPv6-in-IPv4)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+usb0: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 72:f5:ca:97:14:75  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0-nic: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# ^C
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan#
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# ^C
+root@localhost:/lib/modules/4.14.47/kernel/drivers/net/wireless/wlan# cd /home/forlinx/
+root@localhost:/home/forlinx# ls
+ 2023-12-11-17-24-19.bag                     88x2bu.ko                ch343ser_linux-main   gie_robot1.tar        net.sh                            rc.sh                   wheeltec_robot.tar
+ 2023-12-11-17-24-19odom.txt                 cartographer_ws          Downloads             gie_robot2.tar        odom_laser.sh                     roscore.sh              wifi.sh
+ 2023-12-11-17-24-19plicp_results.txt        cartographer_ws.tar.xz   dts.txt               gie_robot.tar         protobuf-3.16.0                   rt2870.bin              wlan
+ 2023-12-11-17-24-19scan_match_results.txt   car_ws                   fishros               install_packages.sh  'protobuf-all-3.16.0 (2).tar.gz'  '[Unit]'                'ystemctl status nfs-server.service'
+ 2023-12-11-17-24-19sync_results.txt         ch343.ko                 gie_robot             librealsense-master   ralink                            wheeltec_robot_01.tar
+root@localhost:/home/forlinx# ^C
+root@localhost:/home/forlinx# cd /root/
+root@localhost:~# ls
+dhry.res  DI  Net_Tools
+root@localhost:~# cd Net_Tools/
+root@localhost:~/Net_Tools# ls
+ok104x_MH5000.sh  ok10xx_me909s.sh  quectel-CM  speedtest  wifi_ap_5G.sh  wifi_ap.sh  wifi_connect.sh  wifi_wpa.sh
+root@localhost:~/Net_Tools# vi wifi_connect.sh
+root@localhost:~/Net_Tools# ^C
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlx7cdd901b2360 -
+Successfully initialized wpa_supplicant
+wpa_supplicant v2.6
+Copyright (c) 2003-2016, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+This product includes software developed by the OpenSSL Project
+for use in the OpenSSL Toolkit (http://www.openssl.org/)
+
+usage:
+  wpa_supplicant [-BddhKLqqstuvW] [-P<pid file>] [-g<global ctrl>] \
+        [-G<group>] \
+        -i<ifname> -c<config file> [-C<ctrl>] [-D<driver>] [-p<driver_param>] \
+        [-b<br_ifname>] [-e<entropy file>] [-f<debug file>] \
+        [-o<override driver>] [-O<override ctrl>] \
+        [-N -i<ifname> -c<conf> [-C<ctrl>] [-D<driver>] \
+        [-m<P2P Device config file>] \
+        [-p<driver_param>] [-b<br_ifname>] [-I<config file>] ...]
+
+drivers:
+  nl80211 = Linux nl80211/cfg80211
+  wext = Linux wireless extensions (generic)
+  wired = Wired Ethernet driver
+  none = no driver (RADIUS server/WPS ER)
+options:
+  -b = optional bridge interface name
+  -B = run daemon in the background
+  -c = Configuration file
+  -C = ctrl_interface parameter (only used if -c is not)
+  -d = increase debugging verbosity (-dd even more)
+  -D = driver name (can be multiple drivers: nl80211,wext)
+  -e = entropy file
+  -f = log output to debug file instead of stdout
+  -g = global ctrl_interface
+  -G = global ctrl_interface group
+  -h = show this help text
+  -i = interface name
+  -I = additional configuration file
+  -K = include keys (passwords, etc.) in debug output
+  -L = show license (BSD)
+  -m = Configuration file for the P2P Device interface
+  -N = start describing new interface
+  -o = override driver parameter for new interfaces
+  -O = override ctrl_interface parameter for new interfaces
+  -p = driver parameters
+  -P = PID file
+  -q = decrease debugging verbosity (-qq even less)
+  -s = log output to syslog instead of stdout
+  -t = include timestamp in debug messages
+  -T = record to Linux tracing in addition to logging
+       (records all messages regardless of debug verbosity)
+  -u = enable DBus control interface
+  -v = show version
+  -W = wait for a control interface monitor before starting
+example:
+  wpa_supplicant -Dnl80211 -iwlan0 -c/etc/wpa_supplicant.conf
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlx7cdd901b2360^C
+root@localhost:~/Net_Tools# ifconfig -a
+fm1-mac2: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 76:ef:a4:ac:00:51  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae2000-1ae2fff
+
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+fm1-mac4: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 56:4b:8e:16:48:eb  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff
+
+fm1-mac5: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 46:19:9f:83:fc:3f  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae8000-1ae8fff
+
+fm1-mac6: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 2a:4f:e2:06:32:72  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1aea000-1aeafff
+
+fm1-mac9: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether fe:1b:75:99:a8:e2  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af0000-1af0fff
+
+fm1-mac10: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether ae:ee:09:ff:9f:7f  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af2000-1af2fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 30  bytes 3297 (3.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 30  bytes 3297 (3.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+rename15: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 00:03:7f:12:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+rename17: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:94:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sit0: flags=128<NOARP>  mtu 1480
+        sit  txqueuelen 1000  (IPv6-in-IPv4)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+usb0: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 72:f5:ca:97:14:75  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0-nic: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# wlP1p1s0
+-bash: wlP1p1s0: command not found
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlP1p1s0  -c/etc/wpa_supplicant/wpa_supplicant.conf
+Successfully initialized wpa_supplicant
+[  540.870284] [wpa_su][0x203be53c][16:07:14.002046] wlan: [5214:E:HDD] wlan_hdd_cleanup_actionframe: vdev is NULL
+[  540.880382] [wpa_su][0x203c0cb2][16:07:14.012148] wlan: [5214:E:HDD] wlan_hdd_cleanup_remain_on_channel_ctx: vdev is NULL
+root@localhost:~/Net_Tools# [  541.091031] [wpa_su][0x203f4385][16:07:14.222791] wlan: [5215:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+
+root@localhost:~/Net_Tools# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 30  bytes 3297 (3.2 KB)
+        RX errors 0  dropp[  548.379235] [wpa_su][0x20ae7912][16:07:21.510996] wlan: [5215:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+ed 0  overruns 0  frame 0
+        TX packets 30  bytes 3297 (3.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# [  555.649494] [wpa_su][0x211d6885][16:07:28.781255] wlan: [5215:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+
+root@localhost:~/Net_Tools# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 30  bytes 3297 (3.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 30  bytes 3297 (3.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# udhcpc -i wlP1p1s0
+udhcpc: started, v1.27.2
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+
+udhcpc: sending discover
+udhcpc: sending discover
+^C
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlP1p1s0  -c/etc/wpa_supplicant/wpa_supplicant.conf^C
+root@localhost:~/Net_Tools# vi /etc/wpa_supplicant/wpa_supplicant.conf
+root@localhost:~/Net_Tools# ^C
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlP1p1s0  -c/etc/wpa_supplicant/wpa_supplicant.conf
+Successfully initialized wpa_supplicant
+ctrl_iface exists and seems to be in use - cannot override it
+Delete '/run/wpa_supplicant/wlP1p1s0' manually if it is not used anymore
+Failed to initialize control interface '/run/wpa_supplicant'.
+You may have another wpa_supplicant process already running or the file was
+left by an unclean termination of wpa_supplicant in which case you will need
+to manually remove this file before starting wpa_supplicant again.
+
+nl80211: deinit ifname=wlP1p1s0 disabled_11b_rates=0
+root@localhost:~/Net_Tools# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 Jan28 ?        00:00:03 /sbin/init
+root         2     0  0 Jan28 ?        00:00:00 [kthreadd]
+root         3     2  0 Jan28 ?        00:00:00 [kworker/0:0]
+root         4     2  0 Jan28 ?        00:00:00 [kworker/0:0H]
+root         6     2  0 Jan28 ?        00:00:00 [mm_percpu_wq]
+root         7     2  0 Jan28 ?        00:00:00 [ksoftirqd/0]
+root         8     2  0 Jan28 ?        00:00:00 [rcu_preempt]
+root         9     2  0 Jan28 ?        00:00:00 [rcu_sched]
+root        10     2  0 Jan28 ?        00:00:00 [rcu_bh]
+root        11     2  0 Jan28 ?        00:00:00 [migration/0]
+root        12     2  0 Jan28 ?        00:00:00 [cpuhp/0]
+root        13     2  0 Jan28 ?        00:00:00 [cpuhp/1]
+root        14     2  0 Jan28 ?        00:00:00 [migration/1]
+root        15     2  0 Jan28 ?        00:00:00 [ksoftirqd/1]
+root        17     2  0 Jan28 ?        00:00:00 [kworker/1:0H]
+root        18     2  0 Jan28 ?        00:00:00 [cpuhp/2]
+root        19     2  0 Jan28 ?        00:00:00 [migration/2]
+root        20     2  0 Jan28 ?        00:00:00 [ksoftirqd/2]
+root        22     2  0 Jan28 ?        00:00:00 [kworker/2:0H]
+root        23     2  0 Jan28 ?        00:00:00 [cpuhp/3]
+root        24     2  0 Jan28 ?        00:00:00 [migration/3]
+root        25     2  0 Jan28 ?        00:00:00 [ksoftirqd/3]
+root        27     2  0 Jan28 ?        00:00:00 [kworker/3:0H]
+root        28     2  0 Jan28 ?        00:00:00 [kdevtmpfs]
+root        29     2  0 Jan28 ?        00:00:00 [netns]
+root        34     2  0 Jan28 ?        00:00:00 [kworker/u8:2]
+root        41     2  0 Jan28 ?        00:00:00 [kworker/3:1]
+root        44     2  0 Jan28 ?        00:00:00 [kworker/2:1]
+root        51     2  0 Jan28 ?        00:00:00 [kworker/1:1]
+root        88     2  0 Jan28 ?        00:00:00 [kworker/0:1]
+root       609     2  0 Jan28 ?        00:00:00 [oom_reaper]
+root       610     2  0 Jan28 ?        00:00:00 [writeback]
+root       612     2  0 Jan28 ?        00:00:00 [kcompactd0]
+root       613     2  0 Jan28 ?        00:00:00 [ksmd]
+root       614     2  0 Jan28 ?        00:00:00 [khugepaged]
+root       615     2  0 Jan28 ?        00:00:00 [crypto]
+root       616     2  0 Jan28 ?        00:00:00 [kintegrityd]
+root       617     2  0 Jan28 ?        00:00:00 [kblockd]
+root       673     2  0 Jan28 ?        00:00:00 [ata_sff]
+root       719     2  0 Jan28 ?        00:00:00 [edac-poller]
+root       741     2  0 Jan28 ?        00:00:00 [watchdogd]
+root       826     2  0 Jan28 ?        00:00:00 [rpciod]
+root       827     2  0 Jan28 ?        00:00:00 [xprtiod]
+root       867     2  0 Jan28 ?        00:00:00 [kauditd]
+root       872     2  0 Jan28 ?        00:00:00 [kswapd0]
+root       873     2  0 Jan28 ?        00:00:00 [nfsiod]
+root       905     2  0 Jan28 ?        00:00:00 [kthrotld]
+root      1226     2  0 Jan28 ?        00:00:00 [scsi_eh_0]
+root      1227     2  0 Jan28 ?        00:00:00 [scsi_tmf_0]
+root      1548     2  0 Jan28 ?        00:00:00 [kworker/u8:4]
+root      2363     2  0 Jan28 ?        00:00:00 [vfio-irqfd-clea]
+root      2528     2  0 Jan28 ?        00:00:00 [irq/12-mmc0]
+root      2728     2  0 Jan28 ?        00:00:00 [kworker/u8:5]
+root      2729     2  0 Jan28 ?        00:00:00 [kworker/1:3]
+root      2731     2  0 Jan28 ?        00:00:00 [mmcqd/0]
+root      2733     2  0 Jan28 ?        00:00:00 [mmcqd/0boot0]
+root      2734     2  0 Jan28 ?        00:00:00 [mmcqd/0boot1]
+root      2735     2  0 Jan28 ?        00:00:00 [mmcqd/0rpmb]
+root      2741     2  0 Jan28 ?        00:00:00 [kworker/0:3]
+root      2749     2  0 Jan28 ?        00:00:00 [ipv6_addrconf]
+root      2777     2  0 Jan28 ?        00:00:00 [kworker/0:1H]
+root      2778     2  0 Jan28 ?        00:00:00 [jbd2/sda1-8]
+root      2779     2  0 Jan28 ?        00:00:00 [ext4-rsv-conver]
+root      2803     2  0 Jan28 ?        00:00:00 [kworker/3:1H]
+root      2830     2  0 Jan28 ?        00:00:00 [kworker/2:1H]
+root      3490     1  0 Jan28 ?        00:00:00 /lib/systemd/systemd-journald
+root      4051     2  0 Jan28 ?        00:00:00 [kworker/2:2]
+root      4052     1  0 Jan28 ?        00:00:00 /sbin/lvmetad -f
+root      4056     1  0 Jan28 ?        00:00:00 /usr/sbin/blkmapd
+root      4062     2  0 Jan28 ?        00:00:00 [kworker/3:2]
+root      4063     1  0 Jan28 ?        00:00:00 /lib/systemd/systemd-udevd
+root      4088     2  0 Jan28 ?        00:00:00 [kworker/1:1H]
+root      4241     2  0 Jan28 ?        00:00:00 [jbd2/mmcblk0p3-]
+root      4249     2  0 Jan28 ?        00:00:00 [ext4-rsv-conver]
+root      4259     2  0 Jan28 ?        00:00:00 [cfg80211]
+root      4397     1  0 Jan28 ?        00:00:00 /sbin/rpcbind -f -w
+systemd+  4400     1  0 Jan28 ?        00:00:00 /lib/systemd/systemd-networkd
+systemd+  4403     1  0 Jan28 ?        00:00:00 /lib/systemd/systemd-resolved
+syslog    4409     1  0 Jan28 ?        00:00:00 /usr/sbin/rsyslogd -n
+avahi     4417     1  0 Jan28 ?        00:00:00 avahi-daemon: running [linux.local]
+avahi     4418  4417  0 Jan28 ?        00:00:00 avahi-daemon: chroot helper
+root      4421     1  0 Jan28 ?        00:00:00 /usr/sbin/cron -f
+root      4422     1  0 Jan28 ?        00:00:00 /lib/systemd/systemd-logind
+root      4424     1  0 Jan28 ?        00:00:00 /usr/bin/lxcfs /var/lib/lxcfs/
+root      4435     1  1 Jan28 ?        00:00:08 /usr/sbin/ModemManager --filter-policy=strict
+root      4436     1  0 Jan28 ?        00:00:00 /usr/bin/lttng-sessiond
+root      4447  4436  0 Jan28 ?        00:00:00 lttng-runas
+root      4461     1  0 Jan28 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+daemon    4462     1  0 Jan28 ?        00:00:00 /usr/sbin/atd -f
+message+  4463     1  0 Jan28 ?        00:00:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root      4465     1  0 Jan28 ?        00:00:00 /usr/sbin/libvirtd
+root      4482     1  0 Jan28 ?        00:00:00 /usr/sbin/vsftpd /etc/vsftpd.conf
+www-data  4484     1  0 Jan28 ?        00:00:00 /usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf
+root      4487     1  0 Jan28 ?        00:00:00 /usr/sbin/sshd -D
+www-data  4510  4484  0 Jan28 ?        00:00:00 /usr/bin/php-cgi
+root      4535     1  0 Jan28 ?        00:00:00 /usr/lib/policykit-1/polkitd --no-debug
+www-data  4558  4510  0 Jan28 ?        00:00:00 /usr/bin/php-cgi
+www-data  4560  4510  0 Jan28 ?        00:00:00 /usr/bin/php-cgi
+www-data  4561  4510  0 Jan28 ?        00:00:00 /usr/bin/php-cgi
+www-data  4565  4510  0 Jan28 ?        00:00:00 /usr/bin/php-cgi
+libvirt+  4717     1  0 Jan28 ?        00:00:00 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+root      4718  4717  0 Jan28 ?        00:00:00 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+root      4852     1  0 00:00 ?        00:00:00 /usr/sbin/inetd
+root      4885     1  0 00:00 ?        00:00:00 /usr/sbin/nmbd --foreground --no-process-group
+lxc-dns+  4921     1  0 00:00 ?        00:00:00 dnsmasq -u lxc-dnsmasq --strict-order --bind-interfaces --pid-file=/run/lxc/dnsmasq.pid --listen-address 10.0.3.1 --dhcp-range 10.0.3.2,10.0.3.254 --dhcp-lease-max=253 --dhcp-no-override --
+root      4942     1  0 00:00 ttyS0    00:00:00 /bin/login -p --
+root      4943     1  0 00:00 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root      4945     1  0 00:00 ?        00:00:00 /usr/sbin/smbd --foreground --no-process-group
+root      4955     1  0 00:00 ?        00:00:00 /usr/bin/netserver
+root      4958     1  0 00:00 ?        00:00:00 /usr/sbin/in.tftpd --listen --user tftp --address :69 -l -c -s /var/lib/tftpboot
+root      4962  4945  0 00:00 ?        00:00:00 /usr/sbin/smbd --foreground --no-process-group
+root      4963  4945  0 00:00 ?        00:00:00 /usr/sbin/smbd --foreground --no-process-group
+root      4964  4945  0 00:00 ?        00:00:00 /usr/sbin/smbd --foreground --no-process-group
+root      4983     1  0 00:00 ?        00:00:00 /lib/systemd/systemd --user
+root      4984  4983  0 00:00 ?        00:00:00 (sd-pam)
+root      4994  4942  0 00:00 ttyS0    00:00:00 -bash
+root      5058     2  0 00:01 ?        00:00:00 [msm_ipc_router]
+root      5060     2  0 00:01 ?        00:00:00 [MHI_XPRT14:15]
+root      5067     2  0 00:01 ?        00:00:00 [qmi_svc_event_w]
+root      5068     2  0 00:01 ?        00:00:00 [diag_mhi_MDM]
+root      5092     2  0 00:04 ?        00:00:00 [cds_recovery_wo]
+root      5093     2  0 00:04 ?        00:00:00 [wlan_logging_th]
+root      5099     2  0 00:04 ?        00:00:00 [kworker/0:2]
+root      5100     2  0 00:04 ?        00:00:00 [IPCRTR_MHI14:15]
+root      5101     2  0 00:04 ?        00:00:00 [kworker/u8:0]
+root      5104     2  0 00:04 ?        00:00:00 [qmi_hndl0000000]
+root      5105     2  0 00:04 ?        00:00:00 [kworker/u8:1]
+root      5106     2  0 00:04 ?        00:00:00 [kworker/u9:0]
+root      5107     2  0 00:04 ?        00:00:00 [scheduler_threa]
+root      5108     2  0 00:04 ?        00:00:00 [cds_ol_rx_threa]
+root      5110     2  0 00:04 ?        00:00:00 [dp_rx_thread_0]
+root      5111     2  0 00:04 ?        00:00:00 [dp_rx_thread_1]
+root      5112     2  0 00:04 ?        00:00:00 [dp_rx_thread_2]
+root      5113     2  0 00:04 ?        00:00:00 [dp_rx_thread_3]
+root      5114     2  0 00:04 ?        00:00:00 [kworker/1:0]
+root      5181     2  0 00:04 ?        00:00:00 [kworker/3:0]
+root      5215     1  0 00:07 ?        00:00:00 wpa_supplicant -B -iwlP1p1s0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+root      5271     2  0 00:09 ?        00:00:00 [kworker/2:0]
+root      5274  4994  0 00:09 ttyS0    00:00:00 ps -ef
+root@localhost:~/Net_Tools# ^C
+root@localhost:~/Net_Tools# udhcpc -i wlP1p1s0
+udhcpc: started, v1.27.2
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+^C
+root@localhost:~/Net_Tools# ^C
+root@localhost:~/Net_Tools# [  804.472314] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+[  804.511492] usbserial: exports duplicate symbol usb_serial_resume (owned by kernel)
+ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 30  bytes 3297 (3.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 30  bytes 3297 (3.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx7cdd901b2360: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 7c:dd:90:1b:23:60  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlP1p1s0  -c/etc/wpa_supplicant/wpa_supplicant.conf^C
+root@localhost:~/Net_Tools# ps -ef|grep wpa
+root      5215     1  0 00:07 ?        00:00:00 wpa_supplicant -B -iwlP1p1s0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+root      5336  4994  0 00:11 ttyS0    00:00:00 grep --color=auto wpa
+root@localhost:~/Net_Tools# kill -2 5215
+root@localhost:~/Net_Tools# [  831.003182] [soft_i][0x3186f8de][16:12:04.134944] wlan: [0:E:DP] dp_peer_unlink_ast_entry: NULL peer
+[  831.012515] [schedu][0x31871d55][16:12:04.144279] wlan: [5107:E:DP] dp_tx_flow_pool_vdev_unmap: invalid vdev_id 0
+[  831.022794] [schedu][0x3187457f][16:12:04.154561] wlan: [5107:E:DP] dp_tx_delete_flow_pool: flow pool either not created or alread deleted
+
+root@localhost:~/Net_Tools# ps -ef|grep wpa
+root      5338  4994  0 00:12 ttyS0    00:00:00 grep --color=auto wpa
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlx7cdd901b2360  -c/etc/wpa_supplicant/wpa_supplicant.
+Successfully initialized wpa_supplicant
+root@localhost:~/Net_Tools# udhcpc -i wlx7cdd901b2360
+udhcpc: started, v1.27.2
+udhcpc: sending discover
+udhcpc: sending select for 192.168.23.136
+udhcpc: lease of 192.168.23.136 obtained, lease time 3599
+root@localhost:~/Net_Tools# ^C
+root@localhost:~/Net_Tools# ^C
+root@localhost:~/Net_Tools# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 34  bytes 3537 (3.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 34  bytes 3537 (3.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx7cdd901b2360: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.23.136  netmask 255.255.255.0  broadcast 192.168.23.255
+        inet6 fe80::7edd:90ff:fe1b:2360  prefixlen 64  scopeid 0x20<link>
+        ether 7c:dd:90:1b:23:60  txqueuelen 1000  (Ethernet)
+        RX packets 59  bytes 8101 (8.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 75  bytes 13757 (13.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# ifconfig -a
+fm1-mac2: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 76:ef:a4:ac:00:51  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae2000-1ae2fff
+
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+fm1-mac4: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 56:4b:8e:16:48:eb  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff
+
+fm1-mac5: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 46:19:9f:83:fc:3f  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae8000-1ae8fff
+
+fm1-mac6: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 2a:4f:e2:06:32:72  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1aea000-1aeafff
+
+fm1-mac9: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether fe:1b:75:99:a8:e2  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af0000-1af0fff
+
+fm1-mac10: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether ae:ee:09:ff:9f:7f  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af2000-1af2fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 34  bytes 3537 (3.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 34  bytes 3537 (3.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+rename15: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 00:03:7f:12:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+rename17: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:94:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sit0: flags=128<NOARP>  mtu 1480
+        sit  txqueuelen 1000  (IPv6-in-IPv4)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+usb0: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 72:f5:ca:97:14:75  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0-nic: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx7cdd901b2360: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.23.136  netmask 255.255.255.0  broadcast 192.168.23.255
+        inet6 fe80::7edd:90ff:fe1b:2360  prefixlen 64  scopeid 0x20<link>
+        ether 7c:dd:90:1b:23:60  txqueuelen 1000  (Ethernet)
+        RX packets 60  bytes 8256 (8.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 75  bytes 13757 (13.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# ifconfig wlP1p1s0
+wlP1p1s0: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# ifconfig wlP1p1s0 up
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlx7cdd901b2360  -c/etc/wpa_supplicant/wpa_supplicant.conf                        sudo wpa_supplicant -B -iwlP1p1s0  -c/etc/wpa_supplicant/wpa_supplicant.conf^C
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlx7cdd901b2360  -c/etc/wpa_supplicant/wpa_supplicant.conf                        sudo wpa_supplicant -B -iwlP1p1s0  -c/etc/wpa_supplicant/wpa_supplicant.conf
+Successfully initialized wpa_supplicant
+root@localhost:~/Net_Tools# [  944.835037] [wpa_su][0x384fe88b][16:13:57.966797] wlan: [5369:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+
+root@localhost:~/Net_Tools# udhcpc -i wlx7cdd901b2360[  952.107931] [wpa_su][0x38bee24a][16:14:05.239692] wlan: [5369:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+
+udhcpc: started, v1.27.2
+udhcpc: sending discover
+udhcpc: sending select for 192.168.23.136
+udhcpc: lease of 192.168.23.136 obtained, lease time 3599
+root@localhost:~/Net_Tools# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 34  bytes 3537 (3.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 34  bytes 3537 (3.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx7cdd901b2360: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.23.136  netmask 255.255.255.0  broadcast 192.168.23.255
+        inet6 fe80::7edd:90ff:fe1b:2360  prefixlen 64  scopeid 0x20<link>
+        ether 7c:dd:90:1b:23:60  txqueuelen 1000  (Ethernet)
+        RX packets 71  bytes 10070 (10.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 91  bytes 17352 (17.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# [  959.373112] [wpa_su][0x392dbde7][16:14:12.504873] wlan: [5369:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+
+root@localhost:~/Net_Tools# ^C
+root@localhost:~/Net_Tools#
+root@localhost:~/Net_Tools# udhcpc -i wlx7cdd901b2360^C
+root@localhost:~/Net_Tools# ps -ef|grep wpa
+root      5341     1  0 00:12 ?        00:00:00 wpa_supplicant -B -iwlx7cdd901b2360 -c/etc/wpa_supplicant/wpa_supplicant.conf
+root      5369     1  0 00:13 ?        00:00:00 wpa_supplicant -B -iwlP1p1s0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+root      5387  4994  0 00:14 ttyS0    00:00:00 grep --color=auto wpa
+root@localhost:~/Net_Tools# ^C
+root@localhost:~/Net_Tools# kill -2 5341 5369
+root@localhost:~/Net_Tools# ps -ef|grep wpa
+root      5394  4994  0 00:14 ttyS0    00:00:00 grep --color=auto wpa
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlP1p1s0  -c/etc/wpa_supplicant/wpa_supplicant.conf
+Successfully initialized wpa_supplicant
+root@localhost:~/Net_Tools# [  998.487011] [wpa_su][0x3b829292][16:14:51.618772] wlan: [5397:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+
+root@localhost:~/Net_Tools#
+root@localhost:~/Net_Tools# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 34  bytes 3537 (3.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 34  bytes 3537 (3.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx7cdd901b2360: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet6 fe80::7edd:90ff:fe1b:2360  prefixlen 64  scopeid 0x20<link>
+        ether 7c:dd:90:1b:23:60  txqueuelen 1000  (Ethernet)
+        RX packets 81  bytes 11056 (11.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 114  bytes 20399 (20.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# [ 1005.750375] [wpa_su][0x3bf16715][16:14:58.882136] wlan: [5397:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+
+root@localhost:~/Net_Tools# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 34  bytes 3537 (3.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 34  bytes 3537 (3.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx7cdd901b2360: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet6 fe80::7edd:90ff:fe1b:2360  prefixlen 64  scopeid 0x20<link>
+        ether 7c:dd:90:1b:23:60  txqueuelen 1000  (Ethernet)
+        RX packets 81  bytes 11056 (11.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 114  bytes 20399 (20.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# udhcpc [ 1013.014046] [wpa_su][0x3c603ccc][16:15:06.145806] wlan: [5397:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+^C
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlx7cdd901b2360  -c/etc/wpa_supplicant/wpa_supplicant.conf                        udhcpc -i wlP1p1s0
+udhcpc: started, v1.27.2
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+^C
+root@localhost:~/Net_Tools# ^C
+root@localhost:~/Net_Tools# udhcpc -i wlP1p1s0
+udhcpc: started, v1.27.2
+udhcpc: sending discover
+udhcpc: sending discover
+^C
+root@localhost:~/Net_Tools# ps -ef|grep wpa
+root      5397     1  0 00:14 ?        00:00:00 wpa_supplicant -B -iwlP1p1s0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+root      5418  4994  0 00:17 ttyS0    00:00:00 grep --color=auto wpa
+root@localhost:~/Net_Tools# kill -2 5397
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlP1p1s0  -c/etc/wpa_supplicant/wpa_supplicant.conf
+Successfully initialized wpa_supplicant
+root@localhost:~/Net_Tools# [ 1187.615077] [wpa_su][0x46c87014][16:18:00.746838] wlan: [5422:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+[ 1194.878893] [wpa_su][0x4737465b][16:18:08.010653] wlan: [5422:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+[ 1202.142448] [wpa_su][0x47a61b9e][16:18:15.274208] wlan: [5422:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+
+root@localhost:~/Net_Tools#
+root@localhost:~/Net_Tools#
+root@localhost:~/Net_Tools# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 34  bytes 3537 (3.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 34  bytes 3537 (3.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx7cdd901b2360: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet6 fe80::7edd:90ff:fe1b:2360  prefixlen 64  scopeid 0x20<link>
+        ether 7c:dd:90:1b:23:60  txqueuelen 1000  (Ethernet)
+        RX packets 81  bytes 11056 (11.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 114  bytes 20399 (20.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# ifconfig vwlP1p1s0 192.168.0.110
+SIOCSIFADDR: No such device
+vwlP1p1s0: ERROR while getting interface flags: No such device
+root@localhost:~/Net_Tools# ifconfig wlP1p1s0 192.168.0.110
+
+st: ~/Net_Toolsroot@localhost:~/Net_Tools#
+root@localhost:~/Net_Tools# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 34  bytes 3537 (3.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 34  bytes 3537 (3.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.0.110  netmask 255.255.255.0  broadcast 192.168.0.255
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx7cdd901b2360: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet6 fe80::7edd:90ff:fe1b:2360  prefixlen 64  scopeid 0x20<link>
+        ether 7c:dd:90:1b:23:60  txqueuelen 1000  (Ethernet)
+        RX packets 81  bytes 11056 (11.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 114  bytes 20399 (20.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# ping 192.168.0.110
+PING 192.168.0.110 (192.168.0.110) 56(84) bytes of data.
+64 bytes from 192.168.0.110: icmp_seq=1 ttl=64 time=0.068 ms
+64 bytes from 192.168.0.110: icmp_seq=2 ttl=64 time=0.048 ms
+64 bytes from 192.168.0.110: icmp_seq=3 ttl=64 time=0.046 ms
+64 bytes from 192.168.0.110: icmp_seq=4 ttl=64 time=0.046 ms
+^C
+--- 192.168.0.110 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3064ms
+rtt min/avg/max/mdev = 0.046/0.052/0.068/0.009 ms
+root@localhost:~/Net_Tools#
+root@localhost:~/Net_Tools#
+root@localhost:~/Net_Tools# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 06:be:f2:70:7f:76  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 42  bytes 4209 (4.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 42  bytes 4209 (4.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lxcbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.3.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 00:16:3e:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:ef:a1:22  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlP1p1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.0.110  netmask 255.255.255.0  broadcast 192.168.0.255
+        ether 02:03:7f:93:e3:af  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx7cdd901b2360: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet6 fe80::7edd:90ff:fe1b:2360  prefixlen 64  scopeid 0x20<link>
+        ether 7c:dd:90:1b:23:60  txqueuelen 1000  (Ethernet)
+        RX packets 81  bytes 11056 (11.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 114  bytes 20399 (20.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@localhost:~/Net_Tools# ipaddr  wlP1p1s0
+-bash: ipaddr: command not found
+root@localhost:~/Net_Tools# ip addr  wlP1p1s0
+Command "wlP1p1s0" is unknown, try "ip address help".
+root@localhost:~/Net_Tools# ip  wlP1p1s0
+Object "wlP1p1s0" is unknown, try "ip help".
+root@localhost:~/Net_Tools# ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: fm1-mac2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 76:ef:a4:ac:00:51 brd ff:ff:ff:ff:ff:ff
+3: fm1-mac3: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 06:be:f2:70:7f:76 brd ff:ff:ff:ff:ff:ff
+4: fm1-mac4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 56:4b:8e:16:48:eb brd ff:ff:ff:ff:ff:ff
+5: fm1-mac5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 46:19:9f:83:fc:3f brd ff:ff:ff:ff:ff:ff
+6: fm1-mac6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 2a:4f:e2:06:32:72 brd ff:ff:ff:ff:ff:ff
+7: fm1-mac9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether fe:1b:75:99:a8:e2 brd ff:ff:ff:ff:ff:ff
+8: fm1-mac10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether ae:ee:09:ff:9f:7f brd ff:ff:ff:ff:ff:ff
+9: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+11: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 52:54:00:ef:a1:22 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+12: virbr0-nic: <BROADCAST,MULTICAST> mtu 1500 qdisc pfifo_fast master virbr0 state DOWN group default qlen 1000
+    link/ether 52:54:00:ef:a1:22 brd ff:ff:ff:ff:ff:ff
+13: usb0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 72:f5:ca:97:14:75 brd ff:ff:ff:ff:ff:ff
+14: lxcbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 00:16:3e:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.3.1/24 scope global lxcbr0
+       valid_lft forever preferred_lft forever
+15: rename15: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 3000
+    link/ether 00:03:7f:12:e3:af brd ff:ff:ff:ff:ff:ff
+16: wlP1p1s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 3000
+    link/ether 02:03:7f:93:e3:af brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.110/24 brd 192.168.0.255 scope global wlP1p1s0
+       valid_lft forever preferred_lft forever
+17: rename17: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 3000
+    link/ether 02:03:7f:94:e3:af brd ff:ff:ff:ff:ff:ff
+18: wlx7cdd901b2360: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 7c:dd:90:1b:23:60 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::7edd:90ff:fe1b:2360/64 scope link
+       valid_lft forever preferred_lft forever
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlx7cdd901b2360  -c/etc/wpa_supplicant/wpa_supplicant.conf                        sudo wpa_supplicant -B -iwlx7cdd901b2360  -c/etc/wpa_supplicant/wpa_supplicant.conf
+Successfully initialized wpa_supplicant
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlx7cdd901b2360  -c/etc/wpa_supplicant/wpa_supplicant.conf                        ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: fm1-mac2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 76:ef:a4:ac:00:51 brd ff:ff:ff:ff:ff:ff
+3: fm1-mac3: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 06:be:f2:70:7f:76 brd ff:ff:ff:ff:ff:ff
+4: fm1-mac4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 56:4b:8e:16:48:eb brd ff:ff:ff:ff:ff:ff
+5: fm1-mac5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 46:19:9f:83:fc:3f brd ff:ff:ff:ff:ff:ff
+6: fm1-mac6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 2a:4f:e2:06:32:72 brd ff:ff:ff:ff:ff:ff
+7: fm1-mac9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether fe:1b:75:99:a8:e2 brd ff:ff:ff:ff:ff:ff
+8: fm1-mac10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether ae:ee:09:ff:9f:7f brd ff:ff:ff:ff:ff:ff
+9: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+11: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 52:54:00:ef:a1:22 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+12: virbr0-nic: <BROADCAST,MULTICAST> mtu 1500 qdisc pfifo_fast master virbr0 state DOWN group default qlen 1000
+    link/ether 52:54:00:ef:a1:22 brd ff:ff:ff:ff:ff:ff
+13: usb0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 72:f5:ca:97:14:75 brd ff:ff:ff:ff:ff:ff
+14: lxcbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 00:16:3e:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.3.1/24 scope global lxcbr0
+       valid_lft forever preferred_lft forever
+15: rename15: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 3000
+    link/ether 00:03:7f:12:e3:af brd ff:ff:ff:ff:ff:ff
+16: wlP1p1s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 3000
+    link/ether 02:03:7f:93:e3:af brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.110/24 brd 192.168.0.255 scope global wlP1p1s0
+       valid_lft forever preferred_lft forever
+17: rename17: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 3000
+    link/ether 02:03:7f:94:e3:af brd ff:ff:ff:ff:ff:ff
+18: wlx7cdd901b2360: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 7c:dd:90:1b:23:60 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::7edd:90ff:fe1b:2360/64 scope link
+       valid_lft forever preferred_lft forever
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlx7cdd901b2360  -c/etc/wpa_supplicant/wpa_supplicant.conf                        ps -ef|grep wpa
+root      5422     1  0 00:18 ?        00:00:00 wpa_supplicant -B -iwlP1p1s0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+root      5440     1  0 00:20 ?        00:00:00 wpa_supplicant -B -iwlx7cdd901b2360 -c/etc/wpa_supplicant/wpa_supplicant.conf
+root      5448  4994  0 00:21 ttyS0    00:00:00 grep --color=auto wpa
+root@localhost:~/Net_Tools# kill -2 5422 5440
+root@localhost:~/Net_Tools# ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: fm1-mac2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 76:ef:a4:ac:00:51 brd ff:ff:ff:ff:ff:ff
+3: fm1-mac3: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 06:be:f2:70:7f:76 brd ff:ff:ff:ff:ff:ff
+4: fm1-mac4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 56:4b:8e:16:48:eb brd ff:ff:ff:ff:ff:ff
+5: fm1-mac5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 46:19:9f:83:fc:3f brd ff:ff:ff:ff:ff:ff
+6: fm1-mac6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 2a:4f:e2:06:32:72 brd ff:ff:ff:ff:ff:ff
+7: fm1-mac9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether fe:1b:75:99:a8:e2 brd ff:ff:ff:ff:ff:ff
+8: fm1-mac10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether ae:ee:09:ff:9f:7f brd ff:ff:ff:ff:ff:ff
+9: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+11: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 52:54:00:ef:a1:22 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+12: virbr0-nic: <BROADCAST,MULTICAST> mtu 1500 qdisc pfifo_fast master virbr0 state DOWN group default qlen 1000
+    link/ether 52:54:00:ef:a1:22 brd ff:ff:ff:ff:ff:ff
+13: usb0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 72:f5:ca:97:14:75 brd ff:ff:ff:ff:ff:ff
+14: lxcbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 00:16:3e:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.3.1/24 scope global lxcbr0
+       valid_lft forever preferred_lft forever
+15: rename15: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 3000
+    link/ether 00:03:7f:12:e3:af brd ff:ff:ff:ff:ff:ff
+16: wlP1p1s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 3000
+    link/ether 02:03:7f:93:e3:af brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.110/24 brd 192.168.0.255 scope global wlP1p1s0
+       valid_lft forever preferred_lft forever
+17: rename17: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 3000
+    link/ether 02:03:7f:94:e3:af brd ff:ff:ff:ff:ff:ff
+18: wlx7cdd901b2360: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 7c:dd:90:1b:23:60 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::7edd:90ff:fe1b:2360/64 scope link
+       valid_lft forever preferred_lft forever
+root@localhost:~/Net_Tools# sudo wpa_supplicant -B -iwlx7cdd901b2360  -c/etc/wpa_supplicant/wpa_supplicant.conf                        sudo wpa_supplicant -B -iwlP1p1s0  -c/etc/wpa_supplicant/wpa_supplicant.conf
+Successfully initialized wpa_supplicant
+root@localhost:~/Net_Tools# [ 1400.519009] [wpa_su][0x5379180f][16:21:33.650769] wlan: [5458:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+
+root@localhost:~/Net_Tools# ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: fm1-mac2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 76:ef:a4:ac:00:51 brd ff:ff:ff:ff:ff:ff
+3: fm1-mac3: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 06:be:f2:70:7f:76 brd ff:ff:ff:ff:ff:ff
+4: fm1-mac4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 56:4b:8e:16:48:eb brd ff:ff:ff:ff:ff:ff
+5: fm1-mac5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 46:19:9f:83:fc:3f brd ff:ff:ff:ff:ff:ff
+6: fm1-mac6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 2a:4f:e2:06:32:72 brd ff:ff:ff:ff:ff:ff
+7: fm1-mac9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether fe:1b:75:99:a8:e2 brd ff:ff:ff:ff:ff:ff
+8: fm1-mac10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether ae:ee:09:ff:9f:7f brd ff:ff:ff:ff:ff:ff
+9: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+11: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 52:54:00:ef:a1:22 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+12: virbr0-nic: <BROADCAST,MULTICAST> mtu 1500 qdisc pfifo_fast master virbr0 state DOWN group default qlen 1000
+    link/ether 52:54:00:ef:a1:22 brd ff:ff:ff:ff:ff:ff
+13: usb0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 72:f5:ca:97:14:75 brd ff:ff:ff:ff:ff:ff
+14: lxcbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 00:16:3e:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.3.1/24 scope global lxcbr0
+       valid_lft forever preferred_lft forever
+15: rename15: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 3000
+    link/ether 00:03:7f:12:e3:af brd ff:ff:ff:ff:ff:ff
+16: wlP1p1s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 3000
+    link/ether 02:03:7f:93:e3:af brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.110/24 brd 192.168.0.255 scope global wlP1p1s0
+       valid_lft forever preferred_lft forever
+17: rename17: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 3000
+    link/ether 02:03:7f:94:e3:af brd ff:ff:ff:ff:ff:ff
+18: wlx7cdd901b2360: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 7c:dd:90:1b:23:60 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::7edd:90ff:fe1b:2360/64 scope link
+       valid_lft forever preferred_lft forever
+root@localhost:~/Net_Tools# [ 1407.790665] [wpa_su][0x53e80cf7][16:21:40.922425] wlan: [5458:E:SME] sme_roaming_in_progress: ROAM: incorrect vdev ID 255
+^C
+root@localhost:~/Net_Tools#
+root@localhost:~/Net_Tools#
