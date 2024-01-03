@@ -1,0 +1,25 @@
+wifi模块fc6xe驱动编译问题：
+
+一、背景
+交叉编译使用平台：ubuntu1804
+板卡使用内核版本：Linux4.14
+板卡使用根文件系统：基于ubuntu1804-base
+板卡使用的SoC：fsl-ls1046a
+板卡使用uboot版本：uboot2019.04
+
+二、当前已经操作流程
+查看WIFI - 当前情况汇总.pdf
+
+三、相关疑问
+现在是直接参考手册中i.MX8QXP Platform这一章进行操作
+出现的问题在WIFI - 当前情况汇总.pdf说明
+
+1.如果是以现在的背景来进行编译驱动，是继续以手册中2 i.MX8QXP Platform这一章进行操作
+还是参考手册中3 Ubuntu Platform这一章来进行操作？
+
+2.嵌入式平台上使用uboot引导启动，能根据参考手册中3 Ubuntu Platform中做类似双内核的使用吗？
+我们现在使用的是Linux4.14，因为在手册上说明的是使用grub进行引导，
+能参考手册中3 Ubuntu Platform中增加4.9等其他LTS的内核吗？
+
+3.如果继续以手册中2 i.MX8QXP Platform这一章进行操作，在 WIFI - 当前情况汇总.pdf 中遇到的一些报错问题应该怎么解决？
+我们根据报错的一些信息，去搜索得到的结果很多都是跟Android下的源码相关的。

@@ -1,0 +1,126 @@
+=> mii dump 0x1 1
+1.     (0000)                 -- PHY status register --
+  (8000:0000) 1.15    =     0    100BASE-T4 able
+  (4000:0000) 1.14    =     0    100BASE-X  full duplex able
+  (2000:0000) 1.13    =     0    100BASE-X  half duplex able
+  (1000:0000) 1.12    =     0    10 Mbps    full duplex able
+  (0800:0000) 1.11    =     0    10 Mbps    half duplex able
+  (0400:0000) 1.10    =     0    100BASE-T2 full duplex able
+  (0200:0000) 1. 9    =     0    100BASE-T2 half duplex able
+  (0100:0000) 1. 8    =     0    extended status
+  (0080:0000) 1. 7    =     0    (reserved)
+  (0040:0000) 1. 6    =     0    MF preamble suppression
+  (0020:0000) 1. 5    =     0    A/N complete
+  (0010:0000) 1. 4    =     0    remote fault
+  (0008:0000) 1. 3    =     0    A/N able
+  (0004:0000) 1. 2    =     0    link status
+  (0002:0000) 1. 1    =     0    jabber detect
+  (0001:0000) 1. 0    =     0    extended capabilities
+
+
+=> mii dump 0x1 2
+2.     (0000)                 -- PHY ID 1 register --
+  (ffff:0000) 2.15- 0 =     0    OUI portion
+
+
+=> mii dump 0x1 3
+3.     (0000)                 -- PHY ID 2 register --
+  (fc00:0000) 3.15-10 =     0    OUI portion
+  (03f0:0000) 3. 9- 4 =     0    manufacturer part number
+  (000f:0000) 3. 3- 0 =     0    manufacturer rev. number
+
+
+=> mii dump 0x1 4
+4.     (0000)                 -- Autonegotiation advertisement register --
+  (8000:0000) 4.15    =     0    next page able
+  (4000:0000) 4.14    =     0    (reserved)
+  (2000:0000) 4.13    =     0    remote fault
+  (1000:0000) 4.12    =     0    (reserved)
+  (0800:0000) 4.11    =     0    asymmetric pause
+  (0400:0000) 4.10    =     0    pause enable
+  (0200:0000) 4. 9    =     0    100BASE-T4 able
+  (0100:0000) 4. 8    =     0    100BASE-TX full duplex able
+  (0080:0000) 4. 7    =     0    100BASE-TX able
+  (0040:0000) 4. 6    =     0    10BASE-T   full duplex able
+  (0020:0000) 4. 5    =     0    10BASE-T   able
+  (001f:0000) 4. 4- 0 =     0    selector = ???
+
+
+=> mii dump 0x1 5
+5.     (0000)                 -- Autonegotiation partner abilities register --
+  (8000:0000) 5.15    =     0    next page able
+  (4000:0000) 5.14    =     0    acknowledge
+  (2000:0000) 5.13    =     0    remote fault
+  (1000:0000) 5.12    =     0    (reserved)
+  (0800:0000) 5.11    =     0    asymmetric pause able
+  (0400:0000) 5.10    =     0    pause able
+  (0200:0000) 5. 9    =     0    100BASE-T4 able
+  (0100:0000) 5. 8    =     0    100BASE-X full duplex able
+  (0080:0000) 5. 7    =     0    100BASE-TX able
+  (0040:0000) 5. 6    =     0    10BASE-T full duplex able
+  (0020:0000) 5. 5    =     0    10BASE-T able
+  (001f:0000) 5. 4- 0 =     0    selector = ???
+
+=> mii dump 0x2 1
+1.     (0000)                 -- PHY status register --
+  (8000:0000) 1.15    =     0    100BASE-T4 able
+  (4000:0000) 1.14    =     0    100BASE-X  full duplex able
+  (2000:0000) 1.13    =     0    100BASE-X  half duplex able
+  (1000:0000) 1.12    =     0    10 Mbps    full duplex able
+  (0800:0000) 1.11    =     0    10 Mbps    half duplex able
+  (0400:0000) 1.10    =     0    100BASE-T2 full duplex able
+  (0200:0000) 1. 9    =     0    100BASE-T2 half duplex able
+  (0100:0000) 1. 8    =     0    extended status
+  (0080:0000) 1. 7    =     0    (reserved)
+  (0040:0000) 1. 6    =     0    MF preamble suppression
+  (0020:0000) 1. 5    =     0    A/N complete
+  (0010:0000) 1. 4    =     0    remote fault
+  (0008:0000) 1. 3    =     0    A/N able
+  (0004:0000) 1. 2    =     0    link status
+  (0002:0000) 1. 1    =     0    jabber detect
+  (0001:0000) 1. 0    =     0    extended capabilities
+
+
+=> mii dump 0x2 2
+2.     (0000)                 -- PHY ID 1 register --
+  (ffff:0000) 2.15- 0 =     0    OUI portion
+
+
+=> mii dump 0x2 3
+3.     (0000)                 -- PHY ID 2 register --
+  (fc00:0000) 3.15-10 =     0    OUI portion
+  (03f0:0000) 3. 9- 4 =     0    manufacturer part number
+  (000f:0000) 3. 3- 0 =     0    manufacturer rev. number
+
+
+=> mii dump 0x2 4
+4.     (0000)                 -- Autonegotiation advertisement register --
+  (8000:0000) 4.15    =     0    next page able
+  (4000:0000) 4.14    =     0    (reserved)
+  (2000:0000) 4.13    =     0    remote fault
+  (1000:0000) 4.12    =     0    (reserved)
+  (0800:0000) 4.11    =     0    asymmetric pause
+  (0400:0000) 4.10    =     0    pause enable
+  (0200:0000) 4. 9    =     0    100BASE-T4 able
+  (0100:0000) 4. 8    =     0    100BASE-TX full duplex able
+  (0080:0000) 4. 7    =     0    100BASE-TX able
+  (0040:0000) 4. 6    =     0    10BASE-T   full duplex able
+  (0020:0000) 4. 5    =     0    10BASE-T   able
+  (001f:0000) 4. 4- 0 =     0    selector = ???
+
+
+=> mii dump 0x2 5
+5.     (0000)                 -- Autonegotiation partner abilities register --
+  (8000:0000) 5.15    =     0    next page able
+  (4000:0000) 5.14    =     0    acknowledge
+  (2000:0000) 5.13    =     0    remote fault
+  (1000:0000) 5.12    =     0    (reserved)
+  (0800:0000) 5.11    =     0    asymmetric pause able
+  (0400:0000) 5.10    =     0    pause able
+  (0200:0000) 5. 9    =     0    100BASE-T4 able
+  (0100:0000) 5. 8    =     0    100BASE-X full duplex able
+  (0080:0000) 5. 7    =     0    100BASE-TX able
+  (0040:0000) 5. 6    =     0    10BASE-T full duplex able
+  (0020:0000) 5. 5    =     0    10BASE-T able
+  (001f:0000) 5. 4- 0 =     0    selector = ???
+

@@ -1,0 +1,103 @@
+问题描述：
+
+目前能够正常启用网口识别如下：
+
+root@localhost:~# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether aa:4e:b8:a9:b5:26  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+fm1-mac5: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 46:ae:e3:a0:97:54  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae8000-1ae8fff
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 320  bytes 22720 (22.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 320  bytes 22720 (22.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+ethtool查看信息如下，启用自动协商后，无法协商为千/百兆：
+
+root@localhost:~# ip link set fm1-mac3 up
+root@localhost:~# ip link set fm1-mac5 up
+root@localhost:~# ethtool fm1-mac5
+Settings for fm1-mac5:
+        Supported ports: [ MII ]
+        Supported link modes:   Not reported
+        Supported pause frame use: Symmetric Receive-only
+        Supports auto-negotiation: No
+        Supported FEC modes: Not reported
+        Advertised link modes:  Not reported
+        Advertised pause frame use: Symmetric Receive-only
+        Advertised auto-negotiation: No
+        Advertised FEC modes: Not reported
+        Speed: 10Mb/s
+        Duplex: Half
+        Port: MII
+        PHYAD: 4
+        Transceiver: internal
+        Auto-negotiation: on
+        Supports Wake-on: d
+        Wake-on: d
+        Current message level: 0xffffffff (-1)
+                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol 0xffff8000
+        Link detected: no
+
+网线也是正常接入了
+进行ip设置后如下：
+
+root@localhost:~# ifconfig fm1-mac5 192.168.0.232
+root@localhost:~# ifconfig
+fm1-mac3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether aa:4e:b8:a9:b5:26  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff
+
+fm1-mac5: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.0.232  netmask 255.255.255.0  broadcast 192.168.0.255
+        ether 46:ae:e3:a0:97:54  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae8000-1ae8fff
+
+但是只能ping通自己，不能ping通其他设备
+
+root@localhost:~# ping 192.168.0.232
+PING 192.168.0.232 (192.168.0.232) 56(84) bytes of data.
+64 bytes from 192.168.0.232: icmp_seq=1 ttl=64 time=0.043 ms
+64 bytes from 192.168.0.232: icmp_seq=2 ttl=64 time=0.036 ms
+64 bytes from 192.168.0.232: icmp_seq=3 ttl=64 time=0.029 ms
+^C
+--- 192.168.0.232 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2028ms
+rtt min/avg/max/mdev = 0.029/0.036/0.043/0.005 ms
+root@localhost:~# ping 192.168.0.100
+PING 192.168.0.100 (192.168.0.100) 56(84) bytes of data.
+From 192.168.0.232 icmp_seq=1 Destination Host Unreachable
+From 192.168.0.232 icmp_seq=2 Destination Host Unreachable
+From 192.168.0.232 icmp_seq=3 Destination Host Unreachable
+From 192.168.0.232 icmp_seq=4 Destination Host Unreachable
+From 192.168.0.232 icmp_seq=5 Destination Host Unreachable
+From 192.168.0.232 icmp_seq=6 Destination Host Unreachable
+^C
+--- 192.168.0.100 ping statistics ---
+7 packets transmitted, 0 received, +6 errors, 100% packet loss, time 6145ms
+pipe 4
+
