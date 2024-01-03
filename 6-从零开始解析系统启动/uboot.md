@@ -591,6 +591,21 @@ PC=当前程序执行位置+8和几级流水线并没有关系，而是和指令
 
 重定位：U-Boot 的初始化阶段包含了一次将自身复制到另一个地址的操作，这个操作被称为重定位。`relocate_code()` 定义在 `.\arch\arm\lib\relocate.S` 中，函数原型是 `void relocate_code(addr_moni)`。
 
+## DEBUG开启
+
+DEBUG开启使用宏，需要的时候打开，不需要的时候关闭，否则DEBUG日志信息太多
+
+/home/forlinx/nxp/flexbuild_lsdk1906/packages/firmware/u-boot/include/log.h
+
+```diff
++#define DEBUG
+#ifdef DEBUG
+#define _DEBUG	1
+#else
+#define _DEBUG	0
+#endif
+```
+
 ## uboot-lds文件解析
 
 先看一下 GNU 官方网站上对.lds 文件形式的完整描述：
@@ -688,6 +703,88 @@ root@ubuntu:/home/forlinx/nxp/flexbuild_lsdk1906/packages/firmware/u-boot# make 
 
 
 
+## uboot寄存器配置GPIO
+
+下面是一个例子
+
+```
+static inline void demux_select_usb2(void)
+{
+	u32 val;
+	struct ccsr_gpio *pgpio = (void *)(GPIO3_BASE_ADDR);
+
+	val = in_be32(&pgpio->gpdir);
+	val |=  USB2_SEL_MASK;
+	out_be32(&pgpio->gpdir, val);
+
+	val = in_be32(&pgpio->gpdat);
+	val |=  USB2_SEL_MASK;
+	out_be32(&pgpio->gpdat, val);
+}
+```
+
+GPIO3_BASE_ADDR是GPIO的地址，可以在芯片参考手册中的**GPIO register descriptions**章节找到
+
+比如LS1046A 参考手册中
+
+> **21.5.1 GPIO memory map**
+>
+> GPIO1 base address: 230_0000h
+>
+> GPIO2 base address: 231_0000h
+>
+> GPIO3 base address: 232_0000h
+>
+> GPIO4 base address: 233_0000h
+
+章节后面还有**Register**描述和偏移值，常见的比如GPIO direction register (GPDIR)方向寄存器，GPIO data register (GPDAT) 数据寄存器
+
+ccsr_gpio是gpio相关的结构体，里面就是这些寄存器
+
+```
+struct ccsr_gpio {
+	u32	gpdir;
+	u32	gpodr;
+	u32	gpdat;
+	u32	gpier;
+	u32	gpimr;
+	u32	gpicr;
+	u32	gpibe;
+};
+```
+
+这个结构体就跟上面的章节描述对应上了
+
+in_be32函数读取地址的值，out_be32设置地址的值，在设置gpdat数据寄存器之前要先设置gpdir方向寄存器，
+
+gpdir决定了当前要设置的gpio是做输入还是输出，然后才能设置gpdat的值
+
+其中设置gpdat的值为高电平时使用`|=` 操作，设置低电平时使用`&= ~`操作
+
+
+
+## 阅读uboot代码小技巧
+
+uboot为兼容各个系列IC，代码里面包含了各种驱动代码，通过makefile和各种宏定义进行配置。虽说功能强大了， 但是对于一般开发者，阅读和修改启动非常麻烦。有时搜索一个函数，会发现几十个对于的函数， 很难找出哪一个是正在使用的。 解决方法： 编译uboot时，uboot一般会把中间信息放到临时编译目录，里面包含了会被编译进去的函数。 例如 uboot.cfg 文件，里面包含了真实用到的宏定义。 例如各个代码路径下的`*.su` 文件，包含了被编译进代码的函数。把这些临时文件，添加到source insight 工程中，在搜索 函数时，只需找到该函数包含在哪个`*.su` 文件中，就能知道哪个函数 是我们真实想找的。
+
+## 怎么将ls1046afrwy.o等反汇编查看
+
+你可以使用反汇编工具来查看LS1046AFRWY（或者其他架构的）目标文件（如 `ls1046afrwy.o`）。在一般的Linux开发环境中，常用的反汇编工具是 `objdump`。以下是使用 `objdump` 进行反汇编的基本命令：
+
+```
+aarch64-linux-gnu-objdump -D -S ls1046afrwy.o
+```
+
+这个命令的含义是：
+
+- `-D`：以十六进制格式显示代码和数据部分。
+- `-S`：同时显示源代码。
+
+你可以根据需要调整参数以满足你的具体要求。反汇编结果将显示在终端上，包括目标文件中的汇编指令和相应的源代码。如果你需要将结果保存到文件，你可以将输出重定向到文件中：
+
+```
+aarch64-linux-gnu-objdump -D -S ls1046afrwy.o > ls1046afrwy_disassembly.txt
+```
 
 
 ## 参考文章及视频链接
