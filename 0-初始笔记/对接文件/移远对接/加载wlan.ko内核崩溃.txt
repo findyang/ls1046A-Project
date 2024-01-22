@@ -1,0 +1,251 @@
+root@ubuntu:/home/gie/wlan/with-debug# insmod wlan_cnss_core_pcie.ko
+[ 1116.402130] [enable_bb_ctxt] 0x1000
+[ 1116.405646] [enable_bb_ctxt] 0x1000
+[ 1116.409664] cnss: Current L1SS status: 0x0
+[ 1116.409672] cnss: Current ASPM status: 0x40
+[ 1116.418112] rddm size 420000
+[ 1116.421133] IPC_RTR: ipc_router_mhi_xprt_cb: Invalid cb reason 6
+[ 1116.427143] IPC_RTR: ipc_router_mhi_xprt_cb: Invalid cb reason 6
+[ 1116.433578] [enable_bb_ctxt] 0x800
+[ 1116.437011] [enable_bb_ctxt] 0x800
+root@ubuntu:/home/gie/wlan/with-debug# ^C
+root@ubuntu:/home/gie/wlan/with-debug#
+root@ubuntu:/home/gie/wlan/with-debug# lsmdo
+-bash: lsmdo: command not found
+root@ubuntu:/home/gie/wlan/with-debug# ^C
+root@ubuntu:/home/gie/wlan/with-debug# lsmod
+Module                  Size  Used by
+wlan_cnss_core_pcie   389120  0
+xt_addrtype            16384  2
+xt_conntrack           16384  1
+88x2bu               3366912  0
+cfg80211              311296  1 88x2bu
+rfkill                 36864  3 cfg80211
+crc32_ce               16384  0
+crct10dif_ce           16384  0
+qoriq_thermal          16384  0
+nfsd                  282624  13
+root@ubuntu:/home/gie/wlan/with-debug# ^C
+root@ubuntu:/home/gie/wlan/with-debug#
+root@ubuntu:/home/gie/wlan/with-debug# ls
+wlan.ko  wlan_cnss_core_pcie.ko
+root@ubuntu:/home/gie/wlan/with-debug# cd ..
+root@ubuntu:/home/gie/wlan# ls
+Data.msc  FC06EABMD  amss.bin  m3.bin  regdb.bin  with-debug  without-debug
+root@ubuntu:/home/gie/wlan# cd without-debug/
+root@ubuntu:/home/gie/wlan/without-debug# ls
+wlan.ko  wlan_cnss_core_pcie.ko
+root@ubuntu:/home/gie/wlan/without-debug# ll
+total 12548
+drwxrwxr-x 2 gie gie     4096 Jan  8 08:22 ./
+drwxrwxr-x 5 gie gie     4096 Jan  8 08:32 ../
+-rw-rw-r-- 1 gie gie 12319936 Jan  8 08:22 wlan.ko
+-rw-rw-r-- 1 gie gie   516272 Jan  8 08:22 wlan_cnss_core_pcie.ko
+root@ubuntu:/home/gie/wlan/without-debug# ll -h
+total 13M
+drwxrwxr-x 2 gie gie 4.0K Jan  8 08:22 ./
+drwxrwxr-x 5 gie gie 4.0K Jan  8 08:32 ../
+-rw-rw-r-- 1 gie gie  12M Jan  8 08:22 wlan.ko
+-rw-rw-r-- 1 gie gie 505K Jan  8 08:22 wlan_cnss_core_pcie.ko
+root@ubuntu:/home/gie/wlan/without-debug# ^C
+root@ubuntu:/home/gie/wlan/without-debug#
+root@ubuntu:/home/gie/wlan/without-debug# insmod wlan.ko
+[ 1148.498809] wlan: Loading driver v5.2.0.220S.061 +TIMER_MANAGER +MEMORY_DEBUG +PANIC_ON_BUG
+[ 1148.526496] pcieport 0002:00:00.0: PCIe Bus Error: severity=Uncorrected (Fatal), type=Transaction Layer, id=0000(Receiver ID)
+[ 1148.537910] pcieport 0002:00:00.0:   device [1957:81c0] error status/mask=00002000/00400000
+[ 1148.546307] pcieport 0002:00:00.0:    [13] Flow Control Protocol  (First)
+[ 1148.594388] [bhi_probe] jtagid:0x0
+[ 1148.598183] Bad mode in Error handler detected on CPU2, code 0xbf000002 -- SError
+[ 1148.605659] Internal error: Oops - bad mode: 0 [#1] PREEMPT SMP
+[ 1148.611570] Modules linked in: wlan(O+) wlan_cnss_core_pcie(O) xt_addrtype xt_conntrack 88x2bu cfg80211 rfkill crc32_ce crct10dif_ce qoriq_thermal nfsd
+[ 1148.625141] Process in:imklog (pid: 4022, stack limit = 0xffff000010c48000)
+[ 1148.632096] CPU: 2 PID: 4022 Comm: in:imklog Tainted: G           O    4.14.122-g277cb24a1-dirty #2
+[ 1148.641134] Hardware name: LS1046A FRWY Board (DT)
+[ 1148.645916] task: ffff800871c5ed00 task.stack: ffff000010c48000
+[ 1148.651828] PC is at 0xffff94cdfac4
+[ 1148.655307] LR is at 0xffff94cdfaac
+[ 1148.658786] pc : [<0000ffff94cdfac4>] lr : [<0000ffff94cdfaac>] pstate: 80000000
+[ 1148.666173] sp : 0000ffff94356f60
+[ 1148.669478] x29: 0000ffff94356f60 x28: 0000ffff9492d000
+[ 1148.674783] x27: 0000000000001f9f x26: 0000ffff9491d2d0
+[ 1148.680089] x25: 0000ffff9491d258 x24: 0000ffff9492e458
+[ 1148.685393] x23: 0000000000001fa0 x22: 0000ffff94357800
+[ 1148.690697] x21: 0000ffff94357800 x20: 0000000000001fa0
+[ 1148.696002] x19: 0000000000000005 x18: 0000000000000014
+[ 1148.701307] x17: 0000ffff94cdfa58 x16: 0000ffff9492df90
+[ 1148.706612] x15: 0000000000000013 x14: 0000000000000043
+[ 1148.711916] x13: 7264206572617761 x12: 2d524541206f6e20
+[ 1148.717221] x11: 7361682065636976 x10: 0000000000008210
+[ 1148.722525] x9 : 0000ffff94356e40 x8 : 000000000000003f
+[ 1148.727830] x7 : 7f7f7f7f7f7f7f7f x6 : 0000000000000000
+[ 1148.733134] x5 : 0000ffff94378000 x4 : 00000000ffffffbb
+[ 1148.738439] x3 : 0000000000000000 x2 : 0000000000001fa0
+[ 1148.743744] x1 : 0000ffff94357800 x0 : 0000000000000029
+[ 1148.749051] ---[ end trace 68e49aba80c5c5b7 ]---
+[ 1148.872526] patch-1: clear rx-vec, bhi_base as 0x          (null)
+[ 1148.873154] cnss: Setting MHI state: POWER_ON(5)
+[ 1148.889052] Bad mode in Error handler detected on CPU3, code 0xbf000002 -- SError
+[ 1148.896533] Internal error: Oops - bad mode: 0 [#2] PREEMPT SMP
+[ 1148.902446] Modules linked in: wlan(O+) wlan_cnss_core_pcie(O) xt_addrtype xt_conntrack 88x2bu cfg80211 rfkill crc32_ce crct10dif_ce qoriq_thermal nfsd
+[ 1148.916019] Process systemd-journal (pid: 3137, stack limit = 0xffff00000fd38000)
+[ 1148.923496] CPU: 3 PID: 3137 Comm: systemd-journal Tainted: G      D    O    4.14.122-g277cb24a1-dirty #2
+[ 1148.933055] Hardware name: LS1046A FRWY Board (DT)
+[ 1148.937837] task: ffff80087399e5c0 task.stack: ffff00000fd38000
+[ 1148.943750] PC is at 0xffffb3e78314
+[ 1148.947230] LR is at 0xffffb3e782d0
+[ 1148.950709] pc : [<0000ffffb3e78314>] lr : [<0000ffffb3e782d0>] pstate: 80000000
+[ 1148.958097] sp : 0000ffffff23f0c0
+[ 1148.961403] x29: 0000ffffff23f0c0 x28: 0000ffffff23f490
+[ 1148.966710] x27: 0000000000000065 x26: 0000ffffff23f340
+[ 1148.972016] x25: 0000000000000000 x24: 0000ffffff23f118
+[ 1148.977322] x23: 0000000000000000 x22: 0000000000000000
+[ 1148.982627] x21: 0000aaaae3cc8620 x20: 0000ffffb3e96000
+[ 1148.987932] x19: 0000ffffb2c0bfe0 x18: 0000ffffb44d1a70
+[ 1148.993236] x17: 0000ffffb3e78128 x16: 0000ffffb4378478
+[ 1148.998542] x15: 00004423c0000000 x14: 0001dda940000000
+[ 1149.003847] x13: 00000000659bb970 x12: 0000000000000018
+[ 1149.009152] x11: 000000000221cd00 x10: 00000000659bb970
+[ 1149.014457] x9 : 0000000000000000 x8 : 0000000000000062
+[ 1149.019762] x7 : 00000000f60c23bf x6 : 0000000000000000
+[ 1149.025067] x5 : 0000ffffb45316e0 x4 : 0000ffffb2c0c0b0
+[ 1149.030372] x3 : 0000000000000000 x2 : 000000000000139f
+[ 1149.035677] x1 : 0000000000000000 x0 : 0000000000000000
+[ 1149.040984] ---[ end trace 68e49aba80c5c5b8 ]---
+[ 1149.049534] Bad mode in Error handler detected on CPU3, code 0xbf000002 -- SError
+[ 1149.051368] systemd[1]: systemd-journald.service: Service has no hold-off time, scheduling restart.
+[ 1149.057012] Internal error: Oops - bad mode: 0 [#3] PREEMPT SMP
+[ 1149.057013] Modules linked in: wlan(O+) wlan_cnss_core_pcie(O)
+[ 1149.066163] systemd[1]: systemd-journald.service: Scheduled restart job, restart counter is at 1.
+[ 1149.071964]  xt_addrtype xt_conntrack 88x2bu
+[ 1149.078976] systemd[1]: Stopped Flush Journal to Persistent Storage.
+[ 1149.086652]  cfg80211 rfkill crc32_ce crct10dif_ce qoriq_thermal nfsd
+[ 1149.086662] Process dbus-daemon (pid: 4059, stack limit = 0xffff000011f88000)
+[ 1149.090970] systemd[1]: Stopping Flush Journal to Persistent Storage...
+[ 1149.097265] CPU: 3 PID: 4059 Comm: dbus-daemon Tainted: G      D    O    4.14.122-g277cb24a1-dirty #2
+[ 1149.097266] Hardware name: LS1046A FRWY Board (DT)
+[ 1149.097268] task: ffff800873abd080 task.stack: ffff000011f88000
+[ 1149.097271] PC is at 0xffffb108c190
+[ 1149.103718] systemd[1]: Stopped Journal Service.
+[ 1149.110827] LR is at 0xaaaab467a0c8
+[ 1149.110828] pc : [<0000ffffb108c190>] lr : [<0000aaaab467a0c8>] pstate: 60000000
+[ 1149.110829] sp : 0000ffffee16c160
+[ 1149.110830] x29: 0000ffffee16c160 x28: 0000ffffee16cefd
+[ 1149.119445] systemd[1]: Starting Journal Service...
+[ 1149.126647] x27: 0000ffffee16c6a8 x26: 0000000000000000
+[ 1149.126651] x25: 0000ffffee16c674 x24: 0000000000000001
+[ 1149.126653] x23: 0000000000000001 x22: ffffffffffffffff
+[ 1149.126658] x21: 0000aaaab4691000
+[ 1149.166353] systemd-journald[5025]: File /var/log/journal/69f8cdd9ca1145e6830c36341965856f/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[ 1149.169764] x20: 0000ffffee16c6a8
+[ 1149.207045] x19: 0000000000000004 x18: 0000ffffb110fa70
+[ 1149.212350] x17: 0000ffffb108c328 x16: 0000aaaab4691e08
+[ 1149.217655] x15: 00002edb00000000 x14: 0006284b40000000
+[ 1149.222959] x13: 00000000659bb93c x12: 0000000000000018
+[ 1149.228263] x11: 0000000031ea2f50 x10: 0000000000000448
+[ 1149.233569] x9 : 003b9aca00000000 x8 : 0000000000000016
+[ 1149.238873] x7 : 000000000000fbba x6 : 0000ffffb135b000
+[ 1149.244178] x5 : 0000000000000008 x4 : 0000000000000000
+[ 1149.249483] x3 : ffffffffffffffff x2 : 0000000000000040
+[ 1149.254788] x1 : 0000ffffee16c1d8 x0 : 0000000000000001
+[ 1149.260095] ---[ end trace 68e49aba80c5c5b9 ]---
+[ 1149.266785] Bad mode in Error handler detected on CPU3, code 0xbf000002 -- SError
+[ 1149.269271] systemd[1]: unattended-upgrades.service: Main process exited, code=exited, status=1/FAILURE
+[ 1149.274263] Internal error: Oops - bad mode: 0 [#4] PREEMPT SMP
+[ 1149.274264] Modules linked in: wlan(O+) wlan_cnss_core_pcie(O) xt_addrtype xt_conntrack 88x2bu cfg80211 rfkill crc32_ce
+[ 1149.284717] systemd[1]: unattended-upgrades.service: Failed with result 'exit-code'.
+[ 1149.289570]  crct10dif_ce qoriq_thermal nfsd
+[ 1149.289575] Process systemd-resolve (pid: 3904, stack limit = 0xffff000011d78000)
+[ 1149.289580] CPU: 3 PID: 3904 Comm: systemd-resolve Tainted: G      D    O    4.14.122-g277cb24a1-dirty #2
+[ 1149.301712] systemd[1]: networkd-dispatcher.service: Main process exited, code=exited, status=1/FAILURE
+[ 1149.308085] Hardware name: LS1046A FRWY Board (DT)
+[ 1149.308087] task: ffff800873ab42c0 task.stack: ffff000011d78000
+[ 1149.308089] PC is at 0xffffaec0c190
+[ 1149.308091] LR is at 0xffffae987fa4
+[ 1149.308092] pc : [<0000ffffaec0c190>] lr : [<0000ffffae987fa4>] pstate: 60000000
+[ 1149.308093] sp : 0000ffffc72b1610
+[ 1149.308094] x29: 0000ffffc72b1610 x28: 0000000000000000
+[ 1149.308098] x27: 0000000000000000 x26: 0000000000000000
+[ 1149.308102] x25: 0000000000000000
+[ 1149.312509] systemd[1]: networkd-dispatcher.service: Failed with result 'exit-code'.
+[ 1149.319833] x24: 0000ffffaecf0180
+[ 1149.319835] x23: 0000000000000001 x22: 0000ffffc72b1650
+[ 1149.319840] x21: ffffffffffffffff x20: 0000ffffaeb36000
+[ 1149.402828] x19: 0000000000000004 x18: 0000ffffc72b1217
+[ 1149.408133] x17: 0000ffffaec0c328 x16: 0000ffffaeb36b60
+[ 1149.413438] x15: 00000861c8000000 x14: 0000000000000005
+[ 1149.418742] x13: 0000000000000028 x12: 0101010101010101
+[ 1149.424046] x11: 7f7f7f7f7f7f7f7f x10: fefeff786568736e
+[ 1149.429351] x9 : 7f7f7f7f7f7f7f7f x8 : 0000000000000016
+[ 1149.434656] x7 : 0000aaab14866830 x6 : 0000aaab1486686c
+[ 1149.439960] x5 : 0000000000000008 x4 : 0000000000000000
+[ 1149.445265] x3 : ffffffffffffffff x2 : 000000000000000e
+[ 1149.450569] x1 : 0000ffffc72b1650 x0 : 0000000000000001
+[ 1149.455876] ---[ end trace 68e49aba80c5c5ba ]---
+[ 1149.483712] Bad mode in Error handler detected on CPU3, code 0xbf000002 -- SError
+[ 1149.491189] Internal error: Oops - bad mode: 0 [#5] PREEMPT SMP
+[ 1149.497100] Modules linked in: wlan(O+) wlan_cnss_core_pcie(O) xt_addrtype xt_conntrack 88x2bu cfg80211 rfkill crc32_ce crct10dif_ce qoriq_thermal nfsd
+[ 1149.510670] Process rs:main Q:Reg (pid: 4023, stack limit = 0xffff000011fb8000)
+[ 1149.517972] CPU: 3 PID: 4023 Comm: rs:main Q:Reg Tainted: G      D    O    4.14.122-g277cb24a1-dirty #2
+[ 1149.527357] Hardware name: LS1046A FRWY Board (DT)
+[ 1149.532139] task: ffff8008715aed40 task.stack: ffff000011fb8000
+[ 1149.538051] PC is at 0xffff94cdc2a8
+[ 1149.541529] LR is at 0xffff94cdc288
+[ 1149.545008] pc : [<0000ffff94cdc2a8>] lr : [<0000ffff94cdc288>] pstate: 80000000
+[ 1149.552396] sp : 0000ffff93f76400
+[ 1149.555700] x29: 0000ffff93f76400 x28: 0000aaaad7debd98
+[ 1149.561005] x27: 0000000000000000 x26: 0000aaaad7debdc4
+[ 1149.566310] x25: 0000000000000257 x24: 0000000000000001
+[ 1149.571614] x23: 0000ffff94cdbfb8 x22: 00000000000004af
+[ 1149.576919] x21: 0000aaaad7de7cf0 x20: 0000ffff94cf5000
+[ 1149.582223] x19: 0000aaaad7debdac x18: 0000ffff94beba70
+[ 1149.587528] x17: 0000ffff94cdc070 x16: 0000aaaab1a55830
+[ 1149.592832] x15: 0000000000000000 x14: 000000000000004f
+[ 1149.598137] x13: 73726550206f7420 x12: 6c616e72756f4a20
+[ 1149.603441] x11: 6873756c46206465 x10: 0000000000000000
+[ 1149.608746] x9 : 0000000000000000 x8 : 0000000000000062
+[ 1149.614050] x7 : 0000000000000001 x6 : 0000000000000000
+[ 1149.619354] x5 : 0000ffff93f77000 x4 : 00000000ffffffbb
+[ 1149.624660] x3 : 0000000000000000 x2 : 0000000000000000
+[ 1149.629963] x1 : 0000000000000080 x0 : 0000000000000000
+[ 1149.635269] ---[ end trace 68e49aba80c5c5bb ]---
+[ 1149.645756] pcieport 0002:00:00.0: Root Port link has been reset
+[ 1149.652326] pcieport 0002:00:00.0: AER: Device recovery failed
+[ 1149.658208] Bad mode in Error handler detected on CPU3, code 0xbf000002 -- SError
+[ 1149.665685] Internal error: Oops - bad mode: 0 [#6] PREEMPT SMP
+[ 1149.671595] Modules linked in: wlan(O+) wlan_cnss_core_pcie(O) xt_addrtype xt_conntrack 88x2bu cfg80211 rfkill crc32_ce crct10dif_ce qoriq_thermal nfsd
+[ 1149.685167] Process systemd (pid: 1, stack limit = 0xffff000008038000)
+[ 1149.691687] CPU: 3 PID: 1 Comm: systemd Tainted: G      D    O    4.14.122-g277cb24a1-dirty #2
+[ 1149.700291] Hardware name: LS1046A FRWY Board (DT)
+[ 1149.705073] task: ffff800877a9cd00 task.stack: ffff000008038000
+[ 1149.710984] PC is at 0xffffa5399154
+[ 1149.714463] LR is at 0xffffa539b944
+[ 1149.717942] pc : [<0000ffffa5399154>] lr : [<0000ffffa539b944>] pstate: 00000000
+[ 1149.725328] sp : 0000fffffa408580
+[ 1149.728633] x29: 0000fffffa408580 x28: 0000000000000000
+[ 1149.733938] x27: 0000fffffa4089c8 x26: 0000000000000000
+[ 1149.739242] x25: 0000fffffa408970 x24: 0000fffffa4085d8
+[ 1149.744547] x23: 0000000000000008 x22: 0000fffffa4086e0
+[ 1149.749851] x21: 0000aaaaee6166d3 x20: 0000ffffa5429000
+[ 1149.755156] x19: 0000fffffa408970 x18: 0000ffffa542aa70
+[ 1149.760461] x17: 0000aaaaee499020 x16: 0000000000000007
+[ 1149.765765] x15: 0000ffffa539bdb0 x14: 0000000000000018
+[ 1149.771069] x13: 726573755f757063 x12: 7265705f65676173
+[ 1149.776374] x11: 0000000000000000 x10: 0000000000000201
+[ 1149.781679] x9 : 0000ffffa4a5a700 x8 : 000000000000004f
+[ 1149.786983] x7 : 65705f6567617375 x6 : 2e74636361757063
+[ 1149.792287] x5 : 0000aaaaee4a71ee x4 : 0000000000000100
+[ 1149.797591] x3 : 0000000000000100 x2 : 0000fffffa4085d8
+[ 1149.802895] x1 : 0000aaaaee6166d3 x0 : 0000000000000000
+[ 1149.808204] ---[ end trace 68e49aba80c5c5bc ]---
+[ 1149.813434] pcieport 0002:00:00.0: AER: Uncorrected (Non-Fatal) error received: id=0000
+[ 1149.821511] pcieport 0002:00:00.0: PCIe Bus Error: severity=Uncorrected (Non-Fatal), type=Transaction Layer, id=0000(Requester ID)
+[ 1149.833265] pcieport 0002:00:00.0:   device [1957:81c0] error status/mask=00006000/00400000
+[ 1149.841672] pcieport 0002:00:00.0:    [13] Flow Control Protocol  (First)
+[ 1149.848474] pcieport 0002:00:00.0:    [14] Completion Timeout
+[ 1149.854587] pcieport 0002:00:00.0: broadcast error_detected message
+[ 1149.860864] pcieport 0002:00:00.0: AER: Device recovery failed
+[ 1149.866698] pcieport 0002:00:00.0: AER: Uncorrected (Non-Fatal) error received: id=0000
+[ 1149.874216] systemd: 41 output lines suppressed due to ratelimiting
+[ 1149.874711] pcieport 0002:00:00.0: PCIe Bus Error: severity=Uncorrected (Non-Fatal), type=Transaction Layer, id=0000(Requester ID)
+[ 1149.880985] Kernel panic - not syncing: Attempted to kill init! exitcode=0x0000000b
+[ 1149.880985]

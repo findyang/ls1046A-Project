@@ -1,0 +1,327 @@
+一、第一次测试联网成功
+root@ubuntu:/home/gie/wlan/with-debug# sudo wpa_supplicant -B -irename9 -c/etc/wppa_supplicant/wpa_supplicant.confebug# ps -ef |grep wpa
+root@ubuntu:/home/gie/wlan/with-debug# ps -ef |grep wpakill -2 4838ps -ef |grep wpasudo udhcpc -i rename9
+udhcpc: started, v1.27.2
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending select for 192.168.127.174
+udhcpc: sending select for 192.168.127.174
+udhcpc: lease of 192.168.127.174 obtained, lease time 3599
+root@ubuntu:/home/gie/wlan/with-debug# ^C
+root@ubuntu:/home/gie/wlan/with-debug# 
+root@ubuntu:/home/gie/wlan/with-debug# ifconfig 
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:c2:99:b6:43  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+fm1-mac9: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 82:ed:b4:5b:81:ea  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af0000-1af0fff  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 14  bytes 1726 (1.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14  bytes 1726 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+rename9: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.127.174  netmask 255.255.255.0  broadcast 192.168.127.255
+        inet6 2408:8456:f129:e657:a133:5941:b4e2:72b3  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::ea24:4ff:fe26:1068  prefixlen 64  scopeid 0x20<link>
+        inet6 2408:8456:f129:e657:ea24:4ff:fe26:1068  prefixlen 64  scopeid 0x0<global>
+        ether e8:24:04:26:10:68  txqueuelen 3000  (Ethernet)
+        RX packets 57  bytes 13018 (13.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 67  bytes 12266 (12.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx90de804833ef: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.2.1  netmask 255.255.255.0  broadcast 192.168.2.255
+        inet6 fe80::92de:80ff:fe48:33ef  prefixlen 64  scopeid 0x20<link>
+        ether 90:de:80:48:33:ef  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 7 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:/home/gie/wlan/with-debug# ping 192.168.127.174
+PING 192.168.127.174 (192.168.127.174) 56(84) bytes of data.
+64 bytes from 192.168.127.174: icmp_seq=1 ttl=64 time=0.076 ms
+64 bytes from 192.168.127.174: icmp_seq=2 ttl=64 time=0.065 ms
+^C
+--- 192.168.127.174 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1022ms
+rtt min/avg/max/mdev = 0.065/0.070/0.076/0.010 ms
+root@ubuntu:/home/gie/wlan/with-debug# po  ^C
+root@ubuntu:/home/gie/wlan/with-debug# ping 1 www.baiu du.com
+PING www.baidu.com(2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b)) 56 data bytes
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=1 ttl=52 time=28.4 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=2 ttl=52 time=57.1 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=3 ttl=52 time=29.4 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=4 ttl=52 time=45.3 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=5 ttl=52 time=34.9 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=6 ttl=52 time=53.9 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=7 ttl=52 time=170 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=8 ttl=52 time=100 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=9 ttl=52 time=57.3 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=10 ttl=52 time=48.4 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=11 ttl=52 time=54.9 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=12 ttl=52 time=46.6 ms
+^C
+--- www.baidu.com ping statistics ---
+12 packets transmitted, 12 received, 0% packet loss, time 11014ms
+rtt min/avg/max/mdev = 28.424/60.636/170.051/37.585 ms
+root@ubuntu:/home/gie/wlan/with-debug# ping www.baidu.com -I  rename9
+PING www.baidu.com(2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11)) from 2408:8456:f129:e657:a133:5941:b4e2:72b3 rename9: 56 data bytes
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=1 ttl=52 time=38.2 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=2 ttl=52 time=44.2 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=3 ttl=52 time=41.0 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=4 ttl=52 time=51.9 ms
+^C
+--- www.baidu.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3003ms
+rtt min/avg/max/mdev = 38.222/43.856/51.987/5.149 ms
+root@ubuntu:/home/gie/wlan/with-debug# ping www.baidu.com -Irename9       wlx90de804833ef
+connect: Network is unreachable
+root@ubuntu:/home/gie/wlan/with-debug# ping www.baidu.com -Iwlx90de804833efrename9
+PING www.baidu.com(2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11)) from 2408:8456:f129:e657:a133:5941:b4e2:72b3 rename9: 56 data bytes
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=1 ttl=52 time=338 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=2 ttl=52 time=42.9 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=3 ttl=52 time=1011 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=4 ttl=52 time=42.6 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=5 ttl=52 time=54.6 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=6 ttl=52 time=49.7 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=7 ttl=52 time=58.6 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=8 ttl=52 time=46.5 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=9 ttl=52 time=50.9 ms
+^C
+--- www.baidu.com ping statistics ---
+9 packets transmitted, 9 received, 0% packet loss, time 8013ms
+rtt min/avg/max/mdev = 42.679/188.486/1011.969/304.791 ms, pipe 2
+root@ubuntu:/home/gie/wlan/with-debug# 
+
+
+二、第二次测试联网成功
+
+2.1 AP模式测试
+root@ubuntu:~/Net_Tools# ./wifi_ap_auto.sh 
+ Begain WiFi AP establish ... 
+ ----------------------- 
+WiFi AP shared connect to: wlan0
+Auto start on power up: ON
+ ----------------------- 
+ Wireless point is  wlan0 
+[  293.481042] [soft_i][0x117d0c9e][07:46:33.245510] wlan: [0:E:DP] dp_peer_unlink_ast_entry: NULL peer
+[  293.491022] [schedu][0x117d339e][07:46:33.255494] wlan: [4355:E:DP] dp_tx_flow_pool_vdev_unmap: invalid vdev_id 0
+[  293.501300] [schedu][0x117d5bc4][07:46:33.265772] wlan: [4355:E:DP] dp_tx_delete_flow_pool: flow pool either not created or alread deleted
+[  295.550306] [kworke][0x119c9fad][07:46:35.314773] wlan: [54:E:HDD] hdd_enable_arp_offload: failed to cache arp offload req; status:4
+[  295.567965] [soft_i][0x119ce4ac][07:46:35.332436] wlan: [0:E:DP] dp_peer_unlink_ast_entry: NULL peer
+[  295.577383] [schedu][0x119d0977][07:46:35.341855] wlan: [4355:E:DP] dp_tx_flow_pool_vdev_unmap: invalid vdev_id 0
+[  295.587759] [schedu][0x119d31ff][07:46:35.352231] wlan: [4355:E:DP] dp_tx_delete_flow_pool: flow pool either not created or alread deleted
+[  295.617318] [hostap][0x119da573][07:46:35.381787] wlan: [4482:E:REGULATORY] reg_run_11d_state_machine: Invalid vdev
+[  295.696598] [hostap][0x119edb24][07:46:35.461069] wlan: [4482:E:HDD] wlan_hdd_cfg80211_start_bss: beacon protection 1
+[  295.707552] [hostap][0x119f05f0][07:46:35.472024] wlan: [4482:E:dfs] WLAN_DEBUG_DFS_ALWAYS : utils_dfs_init_nol: no nol in pld
+[  295.719074] [hostap][0x119f32f1][07:46:35.483546] wlan: [4482:E:REGULATORY] reg_freq_to_chan: Invalid freq 0
+[  295.729010] [hostap][0x119f59c1][07:46:35.493482] wlan: [4482:E:SME] csr_roam_get_qos_info_from_bss: csr_get_parsed_bss_description_ies() failed
+[  295.742147] [schedu][0x119f8d12][07:46:35.506619] wlan: [4355:E:REGULATORY] reg_chan_band_to_freq: Invalid channel 0
+[  295.762831] [schedu][0x119fdddd][07:46:35.527301] wlan: [4355:E:WMA] wma_find_remove_req_msgtype: unable to get msg node from request queue
+[  295.775365] [schedu][0x11a00ed4][07:46:35.539837] wlan: [4355:E:WMA] wma_peer_create_confirm_handler: vdev:0 Failed to lookup peer create request message
+[  295.843951] [soft_i][0x11a11abb][07:46:35.608419] wlan: [0:E:DP] dp_tx_initialize_threshold: tx flow control threshold is set, pool size is 4096
+[  295.856960] [hostap][0x11a14d8d][07:46:35.621429] wlan: [4482:E:SAP] wlansap_is_6ghz_included_in_acs_range: NULL parameters
+Synchronizing state of hostapd.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable hostapd
+Synchronizing state of isc-dhcp-server.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable isc-dhcp-server
+ Auto start set ON !!! 
+ ----------------------- 
+hostapd.service Active:     Active: active (running)  
+isc-dhcp-server.service Active:     Active: active (running)  
+root@ubuntu:~/Net_Tools# 
+root@ubuntu:~/Net_Tools# ifconfig 
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 16  bytes 1804 (1.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 16  bytes 1804 (1.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.2.1  netmask 255.255.255.0  broadcast 192.168.2.255
+        inet6 fe80::ea24:4ff:fe26:1068  prefixlen 64  scopeid 0x20<link>
+        ether e8:24:04:26:10:68  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 28  bytes 3898 (3.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~/Net_Tools# 
+root@ubuntu:~/Net_Tools# [  305.959751] [schedu][0x123b7590][07:46:45.724216] wlan: [4355:E:QDF] qdf_mc_timer_start: Cannot start timer in state = 21 tx_main_timer_func [wlan]
+
+root@ubuntu:~/Net_Tools# 
+root@ubuntu:~/Net_Tools# [  333.729765] [schedu][0x13e33231][07:47:13.494234] wlan: [4355:E:WMA] wma_find_remove_req_msgtype: target request not found for vdev_id 0 type 4549
+[  333.743065] [schedu][0x13e36628][07:47:13.507536] wlan: [4355:E:WMA] wma_peer_create_confirm_handler: vdev:0 Failed to lookup peer create request message
+[  333.890331] [schedu][0x13e5a567][07:47:13.654799] wlan: [4355:E:WMA] wma_find_remove_req_msgtype: target request not found for vdev_id 0 type 4549
+[  333.903474] [schedu][0x13e5d8c1][07:47:13.667945] wlan: [4355:E:WMA] wma_peer_create_confirm_handler: vdev:0 Failed to lookup peer create request message
+[  333.917524] [schedu][0x13e60fa3][07:47:13.681996] wlan: [4355:E:PE] lim_process_assoc_req_frame: STA is initiating Assoc Req after ACK lost. Do not process sessionid: 0 sys sub_type=1 for role=1 from: b4:69:21:c1:be:ca
+[  333.944476] [schedu][0x13e678ec][07:47:13.708948] wlan: [4355:E:HDD] hdd_hostapd_sap_event_cb: Failed to find the right station
+[  334.865633] [schedu][0x13f4872e][07:47:14.630102] wlan: [4355:E:WMA] wma_find_remove_req_msgtype: target request not found for vdev_id 0 type 4549
+[  334.878939] [schedu][0x13f4bb2a][07:47:14.643410] wlan: [4355:E:WMA] wma_peer_create_confirm_handler: vdev:0 Failed to lookup peer create request message
+[  336.004588] [schedu][0x1405e839][07:47:15.769058] wlan: [4355:E:WMA] wma_find_remove_req_msgtype: target request not found for vdev_id 0 type 4549
+[  336.017995] [schedu][0x14061c9a][07:47:15.782466] wlan: [4355:E:WMA] wma_peer_create_confirm_handler: vdev:0 Failed to lookup peer create request message
+
+root@ubuntu:~/Net_Tools# ping 192.168.2.1
+PING 192.168.2.1 (192.168.2.1) 56(84) bytes of data.
+64 bytes from 192.168.2.1: icmp_seq=1 ttl=64 time=0.075 ms
+64 bytes from 192.168.2.1: icmp_seq=2 ttl=64 time=0.061 ms
+^C
+--- 192.168.2.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 0.061/0.068/0.075/0.007 ms
+//PC的ip是192.168.2.101,这里是自研ls1046板卡ping电脑PC端
+root@ubuntu:~/Net_Tools# ping 192.168.2.101
+PING 192.168.2.101 (192.168.2.101) 56(84) bytes of data.
+64 bytes from 192.168.2.101: icmp_seq=1 ttl=128 time=4.40 ms
+64 bytes from 192.168.2.101: icmp_seq=2 ttl=128 time=3.73 ms
+64 bytes from 192.168.2.101: icmp_seq=3 ttl=128 time=2.66 ms
+64 bytes from 192.168.2.101: icmp_seq=4 ttl=128 time=6.33 ms
+^C
+--- 192.168.2.101 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 2.665/4.284/6.330/1.335 ms
+
+//这里是PC端ping自研ls1046
+[2024-01-09 16:17.14]  ~
+[.DESKTOP-5KTBV78] ? ping 192.168.2.1
+
+正在 Ping 192.168.2.1 具有 32 字节的数据:
+来自 192.168.2.1 的回复: 字节=32 时间=5ms TTL=64
+来自 192.168.2.1 的回复: 字节=32 时间=9ms TTL=64
+来自 192.168.2.1 的回复: 字节=32 时间=10ms TTL=64
+来自 192.168.2.1 的回复: 字节=32 时间=3ms TTL=64
+
+192.168.2.1 的 Ping 统计信息:
+    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，
+往返行程的估计时间(以毫秒为单位):
+    最短 = 3ms，最长 = 10ms，平均 = 6ms
+
+2.2 连接其他AP测试
+
+root@ubuntu:~/Net_Tools# ifconfig wlan0
+wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.2.1  netmask 255.255.255.0  broadcast 192.168.2.255
+        inet6 2408:8456:f129:e657:215b:193e:6e47:38fe  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::ea24:4ff:fe26:1068  prefixlen 64  scopeid 0x20<link>
+        inet6 2408:8456:f129:e657:ea24:4ff:fe26:1068  prefixlen 64  scopeid 0x0<global>
+        ether e8:24:04:26:10:68  txqueuelen 3000  (Ethernet)
+        RX packets 5386  bytes 390602 (390.6 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 193  bytes 18521 (18.5 KB)
+        TX errors 0  dropped 2 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~/Net_Tools# udhcpc -i wlan0
+udhcpc: started, v1.27.2
+udhcpc: sending discover
+udhcpc: sending select for 192.168.127.174
+udhcpc: lease of 192.168.127.174 obtained, lease time 3599
+root@ubuntu:~/Net_Tools# 
+root@ubuntu:~/Net_Tools# ifconfig 
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:5b:4e:28:4a  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 20  bytes 2140 (2.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 20  bytes 2140 (2.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.127.174  netmask 255.255.255.0  broadcast 192.168.127.255
+        inet6 2408:8456:f129:e657:215b:193e:6e47:38fe  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::ea24:4ff:fe26:1068  prefixlen 64  scopeid 0x20<link>
+        inet6 2408:8456:f129:e657:ea24:4ff:fe26:1068  prefixlen 64  scopeid 0x0<global>
+        ether e8:24:04:26:10:68  txqueuelen 3000  (Ethernet)
+        RX packets 5390  bytes 391634 (391.6 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 206  bytes 21705 (21.7 KB)
+        TX errors 0  dropped 2 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~/Net_Tools# ping 192.168.127.174
+PING 192.168.127.174 (192.168.127.174) 56(84) bytes of data.
+64 bytes from 192.168.127.174: icmp_seq=1 ttl=64 time=0.083 ms
+64 bytes from 192.168.127.174: icmp_seq=2 ttl=64 time=0.063 ms
+
+root@ubuntu:~/Net_Tools# ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=248 time=362 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=248 time=43.8 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=248 time=204 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=248 time=68.5 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=248 time=48.7 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=248 time=45.1 ms
+^C
+--- 8.8.8.8 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5005ms
+rtt min/avg/max/mdev = 43.829/128.898/362.320/118.730 ms
+root@ubuntu:~/Net_Tools# ping 8.8.8.8^C
+root@ubuntu:~/Net_Tools# ping 114.114.114.114
+PING 114.114.114.114 (114.114.114.114) 56(84) bytes of data.
+64 bytes from 114.114.114.114: icmp_seq=1 ttl=248 time=383 ms
+64 bytes from 114.114.114.114: icmp_seq=2 ttl=248 time=46.0 ms
+64 bytes from 114.114.114.114: icmp_seq=3 ttl=248 time=62.9 ms
+64 bytes from 114.114.114.114: icmp_seq=4 ttl=248 time=44.9 ms
+64 bytes from 114.114.114.114: icmp_seq=5 ttl=248 time=53.4 ms
+64 bytes from 114.114.114.114: icmp_seq=6 ttl=248 time=42.1 ms
+^C
+--- 114.114.114.114 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5005ms
+rtt min/avg/max/mdev = 42.168/105.582/383.934/124.671 ms
+root@ubuntu:~/Net_Tools# ping 192.168.127.135
+PING 192.168.127.135 (192.168.127.135) 56(84) bytes of data.
+64 bytes from 192.168.127.135: icmp_seq=1 ttl=128 time=33.0 ms
+64 bytes from 192.168.127.135: icmp_seq=2 ttl=128 time=25.9 ms
+64 bytes from 192.168.127.135: icmp_seq=3 ttl=128 time=25.6 ms
+64 bytes from 192.168.127.135: icmp_seq=4 ttl=128 time=14.9 ms
+64 bytes from 192.168.127.135: icmp_seq=5 ttl=128 time=25.2 ms
+64 bytes from 192.168.127.135: icmp_seq=6 ttl=128 time=9.81 ms
+64 bytes from 192.168.127.135: icmp_seq=7 ttl=128 time=29.7 ms
+^C
+--- 192.168.127.135 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6011ms
+rtt min/avg/max/mdev = 9.814/23.501/33.052/7.601 ms
+root@ubuntu:~/Net_Tools# ping 192.168.127.135
+PING 192.168.127.135 (192.168.127.135) 56(84) bytes of data.
+64 bytes from 192.168.127.135: icmp_seq=1 ttl=128 time=16.6 ms
+64 bytes from 192.168.127.135: icmp_seq=2 ttl=128 time=20.4 ms
+64 bytes from 192.168.127.135: icmp_seq=3 ttl=128 time=14.1 ms
+^C
+--- 192.168.127.135 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 14.185/17.094/20.450/2.581 ms
+root@ubuntu:~/Net_Tools# ping www.baidu.com
+PING www.baidu.com(2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b)) 56 data bytes
+^C
+--- www.baidu.com ping statistics ---
+9 packets transmitted, 0 received, 100% packet loss, time 8190ms
