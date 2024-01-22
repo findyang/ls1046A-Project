@@ -28,15 +28,17 @@
 
 3. 拷贝 *cnss2.h*, *qcn_sdio_al.h* and *cnss_utils.h* 到内核/include/net目录
 
-   ```
+   ```shell
    cp -r ./chss_host_LEA/chss_proc/host/AIO/drivers/core_tech_modules/cnss2/cnss2.h /home/forlinx/nxp/flexbuild_lsdk1906/packages/linux/linux/include/net
    ```
-   ```
+   ```shell
    cp -r ./chss_host_LEA/chss_proc/host/AIO/drivers/core_tech_modules/inc/qcn_sdio_al.h /home/forlinx/nxp/flexbuild_lsdk1906/packages/linux/linux/include/net
    ```
-   ```
+   ```shell
    cp -r ./chss_host_LEA/chss_proc/host/AIO/drivers/core_tech_modules/cnss_utils/cnss_utils.h /home/forlinx/nxp/flexbuild_lsdk1906/packages/linux/linux/include/net
    ```
+
+
 
 ### 二.  下载和应用Linux内核补丁
 
@@ -50,19 +52,19 @@
 
 1. 进入目录
 
-   ```
+   ```bash
    cd ./chss_host_LEA/chss_proc/host/AIO/build/scripts/ve-f10
    ```
 
 2. 修改KERNELPATH, KERNELARCH, TOOLPREFIX
 
-   ```
+   ```bash
    vim config.ve-f10
    ```
 
    修改如下
 
-   ```
+   ```bash
    #export KERNELPATH=/lib/modules/${shell uname -r}/build
    export KERNELPATH=/home/forlinx/nxp/flexbuild_lsdk1906/build/linux/linux/arm64/LS/output/master
    #export TOOLCHAIN=/home/haotian/work/project/rtk/rtk_qca6390/RTK_SDK_0421/rtk_linuxSDK/output-a32hf/host/bin
@@ -71,8 +73,6 @@
    export CROSS_COMPILE=aarch64-linux-gnu-
    export TOOLPREFIX=${CROSS_COMPILE}
    ```
-
-
 
 
 
@@ -86,17 +86,16 @@ Wi-Fi firmware bin 文件，qcom_cfg.ini，wlan_cnss_core_pcie.ko，wlan.ko
 
 1. 进入构建目录
 
-   ```
+   ```bash
    cd ./chss_host_LEA/chss_proc/host/AIO/build
    ```
 
 2. 编译wlan_cnss_core_pcie.ko
 
-   
 
 报错如下：
 
-```
+```bash
 /home/forlinx/wifi/fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/drivers/core_tech_modules/./ipc_router/ipc_router_core.c: In function ‘msm_ipc_router_create_raw_port’:
 /home/forlinx/wifi/fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/drivers/core_tech_modules/./ipc_router/ipc_router_core.c:1359:25: error: too many arguments to function ‘wakeup_source_register’
   port_ptr->port_rx_ws = wakeup_source_register(NULL, port_ptr->rx_ws_name);
@@ -129,7 +128,7 @@ In file included from /home/forlinx/nxp/flexbuild_lsdk1906/packages/linux/linux/
 
 但是可能提供源码是供4.9使用的，编译完成如下（不清楚使用是否存在问题）：
 
-```
+```bash
 LD [M]  /home/forlinx/wifi/fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/drivers/core_tech_modules/wlan_cnss_core_pcie.o
   Building modules, stage 2.
   MODPOST 1 modules
@@ -138,11 +137,9 @@ WARNING: "vfs_write" [/home/forlinx/wifi/fc6xe/WiFi/chss_host_LEA/chss_proc/host
   LD [M]  /home/forlinx/wifi/fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/drivers/core_tech_modules/wlan_cnss_core_pcie.ko
 ```
 
-
-
 编译wlan.ko报错如下
 
-```
+```bash
 /home/forlinx/wifi/fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/build/../drivers/qcacld-3.0/core/hdd/src/wlan_hdd_cfg80211.c: In function ‘__is_driver_dfs_capable’:
 /home/forlinx/wifi/fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/build/../drivers/qcacld-3.0/core/hdd/src/wlan_hdd_cfg80211.c:1733:37: error: ‘WIPHY_FLAG_DFS_OFFLOAD’ undeclared (first use in this function); did you mean ‘WIPHY_FLAG_AP_UAPSD’?
   dfs_capability = !!(wiphy->flags & WIPHY_FLAG_DFS_OFFLOAD);
@@ -160,7 +157,7 @@ WARNING: "vfs_write" [/home/forlinx/wifi/fc6xe/WiFi/chss_host_LEA/chss_proc/host
 
 在当前的linux4.14下/home/forlinx/nxp/flexbuild_lsdk1906/packages/linux/linux/include/net/cfg80211.h中
 
-```
+```c
 enum wiphy_flags {
 	/* use hole at 0 */
 	/* use hole at 1 */
@@ -221,7 +218,7 @@ find: ‘/run/user/1000/gvfs’: Permission denied
 
 在wifi源码查看，这个文件是定义了这个MSM_PLATFORM宏才会包含，这个宏是高通平台常用缩写 高通的MSM是mobile station modems，先==暂时注释看下会不会其他的报错，看情况再回来解决==，因为网上搜索这个文件都是安卓系统的内核源码中出现
 
-```
+```c
 #ifdef MSM_PLATFORM
 #include <soc/qcom/subsystem_restart.h>
 #endif
@@ -244,7 +241,7 @@ wlan_hdd_main.c这个文件又是在安卓代码上找到的，难道默认编�
 上面所有流程问题点有点奇怪，先返回手册第三章试下直接ubuntu平台下的操作
 
 缺少文件subsystem_restart.h，移远回复如下：
-[Quectel]: 在内核中，关闭宏CONFIG_ARCH_QCOM
+> [Quectel]: 在内核中，关闭宏CONFIG_ARCH_QCOM
 
 在内核源码上搜索QCOM所有相关配置，全部注释，重新编译内核，内核编译完成
 
@@ -277,11 +274,11 @@ make: *** [drivers_firmware] Error 2
 
 执行以下
 
-```
+```bash
 mkdir -p /home/forlinx/wifi/fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/build/../drivers/firmware/WLAN-firmware
 ```
 
-```
+```bash
 mkdir -p /home/forlinx/wifi/fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/build/../drivers/firmware/BT-firmware
 ```
 
@@ -357,7 +354,7 @@ wlan_cnss_core_pcie.ko /lib/modules/
 
 在Ubuntu主机上执行如下命令安装对应的软件包。
 
-```
+```bash
 $ sudo apt update
 $ sudo apt install -y openssh-server x11vnc dos2unix iperf linux-crashdump wireless-tools exfat-utils 
 exfat-fuse
@@ -383,7 +380,7 @@ Linux内核补丁用于内核版本4.9.11、5.4.0或5.10.0。如果应用于其�
 
 步骤1:执行如下命令下载Linux内核。
 
-```
+```bash
 $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable-rc.git
 $ cd linux-stable-rc
 $ git checkout v4.9.11
@@ -391,19 +388,19 @@ $ git checkout v4.9.11
 
 步骤2:执行如下命令下载Linux内核补丁。
 
-```
+```bash
 $ git clone git://codeaurora.org/external/sba/wlan_patches.git -b master wlan_patches
 ```
 
 补充，上方已经无法下载代码，使用如下链接：
 
-```
+```bash
 $ git clone https://git.codelinaro.org/clo/sba-patches/wlan_patches.git
 ```
 
 步骤3:执行如下命令，应用下载的补丁。
 
-```
+```bash
 $ git am
 <wlan_patches>/fixce/3rdparty/patches/wlan_patches/kernel/v4.9.11/0001-Changes-for-wireless-and-cfg80211-for-v4.9.11-support.patch
 $ git am
@@ -498,21 +495,21 @@ $ git am
 
 1)执行以下命令配置内核。
 
-```
+```bash
 $ cd linux-stable
 $ make menuconfig
 ```
 
 然后在弹出的内核配置窗口中选择以下选项。
 
-```
+```bash
 save > ok > exit
 load > ok > exit -> yes
 ```
 
 2)修改内核配置文件。
 
-```
+```bash
 CONFIG_MMC=y – For MMC/SD/USB card support
 CONFIG_MMC_DEBUG=y – For MMC debugging
 CONFIG_CFG80211_INTERNAL_REGDB=y
@@ -525,7 +522,7 @@ CONFIG_CMA_SIZE_MBYTES=512
 
 3)执行如下命令构建Linux内核。
 
-```
+```bash
 $ sudo make-kpkg -j4 --initrd kernel_image kernel_headers
 ```
 
@@ -533,7 +530,7 @@ $ sudo make-kpkg -j4 --initrd kernel_image kernel_headers
 
 步骤5:执行如下命令安装Linux内核。
 
-```
+```bash
 $ sudo dpkg -i linux-image-4.9.11+_4.9.11+-10.00.Custom_amd64.deb
 $ sudo dpkg -i linux-headers-4.9.11+_4.9.11+-10.00.Custom_amd64.deb
 ```
@@ -550,7 +547,7 @@ $ sudo dpkg -i linux-headers-4.9.11+_4.9.11+-10.00.Custom_amd64.deb
 
 执行以下命令将AIO/drivers/core_tech_modules下相应文件夹中的cnss2.h、qcn_sdio_al.h和cnss_utils.h复制到<kernelpath>/include/net/ of kernel。
 
-```
+```bash
 $ sudo cp -r AIO/drivers/core_tech_modules/cnss2/cnss2.h <kernelpath>/include/net/
 $ sudo cp -r AIO/drivers/core_tech_modules/inc/qcn_sdio_al.h <kernelpath>/include/net/
 $ sudo cp -r AIO/drivers/core_tech_modules/cnss_utils/cnss_utils.h <kernelpath>/include/net/
@@ -562,7 +559,7 @@ $ sudo cp -r AIO/drivers/core_tech_modules/cnss_utils/cnss_utils.h <kernelpath>/
 
 以X86为例，执行如下命令编译Wi-Fi驱动。
 
-```
+```bash
 $ cd <FC6XE_target_root>/chss_host_LEA/chss_proc/host/AIO/build
 $ make drivers
 ```
@@ -609,7 +606,7 @@ com_cfg.ini
 
 显示如下信息，表示PCIe枚举成功。
 
-```
+```bash
 00:00.0 PCI bridge: Freescale Semiconductor Inc Device 0000 (rev 01)
 01:00.0 Network controller: Qualcomm Device 1103 (rev 01)
 ```
@@ -640,7 +637,7 @@ com_cfg.ini
 
 执行类似以下命令使能Wi-Fi。
 
-```
+```bash
 $ ifconfig wlan0 up
 $ ifconfig wlan0
 wlan0 Link encap:Ethernet HWaddr 00:03:7f:10:72:12
@@ -655,7 +652,7 @@ wlan0 Link encap:Ethernet HWaddr 00:03:7f:10:72:12
 
 ### 六. 飞凌板上调试（FC06E样板已成功联网）
 
-```
+```bash
 $ lspci
 0000:00:00.0 PCI bridge: Freescale Semiconductor Inc Device 81c0 (rev 10)
 0001:00:00.0 PCI bridge: Freescale Semiconductor Inc Device 81c0 (rev 10)
@@ -669,7 +666,7 @@ make[3]: Entering directory '/home/forlinx/work/OK10xx-linux-fs/flexbuild/build/
 
 自研使用的是lsk1906，生成的驱动无法在飞凌上使用
 
-```
+```bash
 forlinx@localhost:/lib/modules/4.14.47$ modprobe wlan_cnss_core_pcie.ko
 modprobe: FATAL: Module wlan_cnss_core_pcie.ko not found in directory /lib/modules/4.14.47
 forlinx@localhost:/lib/modules/4.14.47$ sudo insmod wlan_cnss_core_pcie.ko
@@ -686,7 +683,7 @@ insmod: ERROR: could not insert module wlan.ko: Unknown symbol in module
 
 重新编译还是同样的问题
 
-```
+```bash
 forlinx@localhost:~/wlan$ sudo  insmod wlan_cnss_core_pcie.ko
 insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Unknown symbol in module
 forlinx@localhost:~/wlan$ dmesg |tail
@@ -777,7 +774,7 @@ fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/drivers/qcacld-3.0/core/hdd/inc/wlan
 
 其中fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/drivers/qcacld-3.0/core/hdd/inc/wlan_hdd_includes.h以及fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/drivers/qcacld-3.0/core/hdd/inc/wlan_hdd_wmm.h包含了wlan_hdd_wext.h
 
-```
+```c
 #ifdef WLAN_DUMP_LOG_BUF_CNT
 /**
  * hdd_dump_log_buffer() - dump log buffer history
@@ -795,7 +792,7 @@ void hdd_dump_log_buffer(void)
 
 fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/drivers/qcacld-3.0/core/hdd/src/wlan_hdd_driver_ops.c
 
-```
+```c
 switch (event_data->uevent) {
 	case PLD_FW_DOWN:
 		hdd_debug("Received firmware down indication");
@@ -806,7 +803,7 @@ switch (event_data->uevent) {
 
 fc6xe/WiFi/chss_host_LEA/chss_proc/host/AIO/drivers/qcacld-3.0/core/hdd/src/wlan_hdd_wext.c
 
-```
+```c
 #ifdef WLAN_DUMP_LOG_BUF_CNT
 void hdd_dump_log_buffer(void)
 {
@@ -910,7 +907,7 @@ wlan                12365824  0
 wlan_cnss_core_pcie   389120  1 wlan
 ```
 
-
+#### 解决CMA_SIZE太小的问题
 
 咨询移远以上问题
 
@@ -972,7 +969,7 @@ SIOCSIFFLAGS: Operation not supported
 
 up成功后，执行以下配置网络
 
-```
+```bash
 sudo wpa_supplicant -B -iwlP1p1s0 -c/etc/wpa_supplicant.conf
 sudo wpa_supplicant -B -irename14 -c/etc/wpa_supplicant.conf
 ```
@@ -993,6 +990,8 @@ udhcpc: sending select for 192.168.127.138
 udhcpc: lease of 192.168.127.138 obtained, lease time 3599
 ip: RTNETLINK answers: File exists
 ```
+
+#### 样板联网成功(2023.12.13 -2023.12.22)
 
 测试下联网，ping下百度，联网成功
 
@@ -1033,14 +1032,14 @@ wlan的别名规则，让无线网卡名称变回wlan0：
 
 首先执行如下命令，将80-net-setup-link.rules文件从/lib/udev/rules.d/目录复制到 /etc/udev/rules.d/ 目录下：
 
-```
+```bash
 cp  /lib/udev/rules.d/80-net-setup-link.rules   /etc/udev/rules.d/
 ```
 
 然后执行如下命令，修改刚才复制过来的80-net-setup-link.rules文件：
 
-```
-sudo vim /etc/udev/rules.d/80-net-setup-link.rules
+```bash
+sudo vi /etc/udev/rules.d/80-net-setup-link.rules
 ```
 
 如下图所示，将箭头所指的ID_NET_NAME改成ID_NET_SLOT即可。
@@ -1068,7 +1067,7 @@ lrwxrwxrwx   1 root root   10 Jan  1  1970 modules.conf -> ../modules
 
 执行以下
 
-```
+```bash
 vi /etc/modules
 ```
 
@@ -1086,13 +1085,11 @@ wlan
 
 
 
-
-
 ### 七. 自研AMR上调试
 
 查看是否探测到pci设备，在AMR控制器上还没有能识别到
 
-```
+```bash
 root@ubuntu:~# lspci
 0000:00:00.0 PCI bridge: Freescale Semiconductor Inc Device 81c0 (rev 10)
 0001:00:00.0 PCI bridge: Freescale Semiconductor Inc Device 81c0 (rev 10)
@@ -1122,7 +1119,589 @@ insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Operation not per
 
 
 
+配置2-12的gpio，rcw：
 
+要配置GPIO2[12]，涉及两个RCW，先配置IFC_GRP_E1_BASE为000，再配置IFC_GRP_E1_EXT为1，
+
+但是当前IFC_GRP_E1_EXT是配置了001，是QSPI_B的功能，经查证，自研的板卡上没有使用QPSI_B
+
+配置例子如下：
+
+```
+	u32 val;
+	struct ccsr_gpio *pgpio = (void *)(GPIO3_BASE_ADDR);
+
+	val = in_be32(&pgpio->gpdir);
+	val |=  USB2_SEL_MASK;
+	out_be32(&pgpio->gpdir, val);
+
+	val = in_be32(&pgpio->gpdat);
+	val |=  USB2_SEL_MASK;
+	out_be32(&pgpio->gpdat, val);
+```
+
+GPIO3_BASE_ADDR是GPIO的地址，可以在芯片参考手册中的**GPIO register descriptions**章节找到
+
+后续进行测试的时候，软件上无法在上电后50ms内拉高GPIO，转由硬件上电路解决，上述所以GPIO无需配置了。
+
+
+
+#### LSDK1806与LSDK1906的uboot中PCIE识别对比(无法分析)
+
+现在上电时序已经确认能够满足了，但是在自研AMR控制器中还是无法识别Link，之前已经在飞凌的板卡上识别样板了，所以在软件上，看下飞凌的LSDK1806中的uboot和自研AMR的LSDK1906中的uboot对PCIE识别这方面有没有不同。除此之外，还需要看RCW，之前已经测试过直接使用RDB的11335559的RCW，不做改动进行测试，但是在自研AMR上还是没法识别。因为飞凌LSDK中uboot是闭源的，drivers下的文件无法查看，所以无法分析在RDB上的使用。
+
+| PCIe0: pcie@3400000 Root Complex: no link | u-boot/drivers/pci/pcie_layerscape.c | ls_pcie_probe |
+| ----------------------------------------- | ------------------------------------ | ------------- |
+
+
+
+#### FRWY和RDB中的对比
+
+分析这两个版本之间，对PCIE识别是否有不同的操作
+
+在飞凌的RDB上能识别其他的模块，所以识别阶段应该不跟厂家驱动相关
+
+RDB上接入FC06E模块
+
+```
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 disabled
+PCIe2: pcie@3600000 Root Complex: x1 gen1
+```
+
+FRWY上接入FC06E模块
+
+```
+PCIe0: pcie@3400000 disabled
+PCIe1: pcie@3500000 Root Complex: x1 gen3
+PCIe2: pcie@3600000 Root Complex: no link
+```
+
+FRWY上接入FC06E模块、自带的wifi模块
+
+```
+PCIe0: pcie@3400000 disabled
+PCIe1: pcie@3500000 Root Complex: x1 gen3
+PCIe2: pcie@3600000 Root Complex: x1 gen1
+```
+
+FRWY上更换飞凌的RDB使用的Linux内核，并加载FC06E模块的驱动
+
+注意，更换后，如果要改回来，则将Image_origin改回Image
+
+#### 最终识别解决(2024.1.8)
+
+时序问题解决，通过硬件电路上拉以及PCIE复位信号接入上电复位信号
+
+硬件线序接反，SD2的TX和RX接反了
+
+```
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: x1 gen2
+```
+
+#### 新的问题
+
+```
+识别设备后PCIe2: pcie@3600000 Root Complex: x1 gen2，装载驱动时遇到这个问题怎么解决
+root@ubuntu:/home/gie/wlan/without-debug# insmod wlan_cnss_core_pcie.ko 
+[  117.516414] [enable_bb_ctxt] 0x1000
+[  117.520321] [enable_bb_ctxt] 0x1000
+[  117.524195] cnss: Current L1SS status: 0x0
+[  117.524201] cnss: Current ASPM status: 0x40
+[  117.528334] cnss: Failed to get enough MSI vectors (32), available vectors = -28
+[  117.554889] cnss: PCI device not probed yet
+[  117.559173] IPC_RTR: ipc_router_mhi_xprt_deinit: mhi_xprt driver removed 0
+[  117.583655] register platform driver failed, ret = -1
+insmod: ERROR: could not insert module wlan_cnss_core_pcie.ko: Operation not permitted
+其中dmesg中[   84.955399] cnss_pci: probe of 0002:01:00.0 failed with error -22
+[   84.962879] cnss: PCI device not probed yet
+[   84.967099] cnss: wlan en pin is not supported
+```
+
+其中cnss: wlan en pin is not supported是在cnss_get_wlan_en_pin函数中
+
+```C
+#ifdef CONFIG_NAPIER_X86
+static int cnss_get_resources(struct cnss_plat_data *plat_priv)
+{
+	cnss_get_wlan_en_pin(plat_priv);
+
+	return 0;
+}
+```
+
+cnss_get_wlan_en_pin函数中部分内容如下：
+
+```C
+static int wlan_en_gpio_num = -1;
+module_param(wlan_en_gpio_num, int, 0600);
+MODULE_PARM_DESC(wlan_en_gpio_num, "Wlan en gpio number.");
+
+int cnss_get_wlan_en_pin(struct cnss_plat_data *plat_priv)
+{
+	int ret;
+
+	if (wlan_en_gpio_num < 0) {
+		cnss_pr_dbg("wlan en pin is not supported\n");
+		return 0;
+	}
+	......
+}
+```
+
+> 咨询移远以上问题的解决方式：
+>
+> 在内核的.config文件中增加CONFIG_ONE_MSI_BUILD=y，然后回到wifi源码中重新编译
+>
+> （wifi源码编译时会去读取内核的.config文件获取相关宏）
+
+```
+root@ubuntu:/home/gie/wlan/with-debug# insmod wlan_cnss_core_pcie.ko
+[ 1116.402130] [enable_bb_ctxt] 0x1000
+[ 1116.405646] [enable_bb_ctxt] 0x1000
+[ 1116.409664] cnss: Current L1SS status: 0x0
+[ 1116.409672] cnss: Current ASPM status: 0x40
+[ 1116.418112] rddm size 420000
+[ 1116.421133] IPC_RTR: ipc_router_mhi_xprt_cb: Invalid cb reason 6
+[ 1116.427143] IPC_RTR: ipc_router_mhi_xprt_cb: Invalid cb reason 6
+[ 1116.433578] [enable_bb_ctxt] 0x800
+[ 1116.437011] [enable_bb_ctxt] 0x800
+root@ubuntu:/home/gie/wlan/with-debug# lsmod
+Module                  Size  Used by
+wlan_cnss_core_pcie   389120  0
+xt_addrtype            16384  2
+xt_conntrack           16384  1
+88x2bu               3366912  0
+cfg80211              311296  1 88x2bu
+rfkill                 36864  3 cfg80211
+crc32_ce               16384  0
+crct10dif_ce           16384  0
+qoriq_thermal          16384  0
+nfsd                  282624  13
+```
+
+wlan_cnss_core_pcie.ko已经成功加载
+
+wlan.ko加载失败，这里的驱动是能加载成功的
+
+```
+root@ubuntu:/home/gie/wlan/with-debug# insmod wlan.ko
+[  102.093311] wlan: Loading driver v5.2.0.220S.061 +TIMER_MANAGER +MEMORY_DEBUG +PANIC_ON_BUG
+[  102.123783] pcieport 0002:00:00.0: PCIe Bus Error: severity=Uncorrected (Fatal), type=Transaction Layer, id=0000(Receiver ID)
+[  102.135121] pcieport 0002:00:00.0:   device [1957:81c0] error status/mask=00002000/00400000
+[  102.143494] pcieport 0002:00:00.0:    [13] Flow Control Protocol  (First)
+[  102.191655] [bhi_probe] jtagid:0x0
+[  102.195441] Bad mode in Error handler detected on CPU2, code 0xbf000002 -- SError
+[  102.202917] Internal error: Oops - bad mode: 0 [#1] PREEMPT SMP
+[  102.208828] Modules linked in: wlan(O+) wlan_cnss_core_pcie(O) cfg80211 rfkill crc32_ce crct10dif_ce qoriq_thermal nfsd
+[  102.219616] Process in:imklog (pid: 3959, stack limit = 0xffff000011e00000)
+[  102.226571] CPU: 2 PID: 3959 Comm: in:imklog Tainted: G           O    4.14.122-g277cb24a1-dirty #2
+[  102.235608] Hardware name: LS1046A FRWY Board (DT)
+[  102.240390] task: ffff8008712a8d00 task.stack: ffff000011e00000
+[  102.246303] PC is at 0xffffad94aac4
+[  102.249781] LR is at 0xffffad94aaac
+[  102.253259] pc : [<0000ffffad94aac4>] lr : [<0000ffffad94aaac>] pstate: 80000000
+```
+
+这里应该是硬件板卡不稳定，多次测试中有几次是成功加载的，并且能联网，成功时输出信息如下：
+
+```
+root@ubuntu:/home/gie/wlan/with-debug# insmod wlan.ko
+[  113.627316] wlan: Loading driver v5.2.0.220S.061 +TIMER_MANAGER +MEMORY_DEBUG +PANIC_ON_BUG
+[  113.717513] [bhi_probe] jtagid:0x1019b0e1
+[  114.000681] patch-1: clear rx-vec, bhi_base as 0x          (null)
+root@ubuntu:/home/gie/wlan/with-debug# [  114.828603] cnss: cnss_fw_ready_hdlr 640  
+[  114.894126] [kworke][0x6d798d7][08:42:13.389611] wlan: [73:E:TXRX] hif_print_hal_shadow_register_cfg: num_config 28
+[  114.933404] [kworke][0x6d83244][08:42:13.428887] wlan: [73:E:QDF] __cds_get_context: Module ID 66 context is Null (via hdd_update_ol_config)
+[  114.948582] [kworke][0x6d86d8f][08:42:13.444066] wlan: [73:E:QDF] __cds_get_context: Module ID 66 context is Null (via cds_open)
+[  114.960461] [kworke][0x6d89bf6][08:42:13.455946] wlan: [73:F:WMA] WMA --> wmi_unified_attach - success
+[  114.974114] [kworke][0x6d8d149][08:42:13.469596] wlan: [73:E:QDF] htc_wait_target: Target Ready! TX resource : 1 size:2176, MaxMsgsPerHTCBundle = 1
+[  114.987335] [kworke][0x6d904f0][08:42:13.482820] wlan: [73:E:QDF] htc_setup_target_buffer_assignments: SVS Index : 1 TX : 0x100 : alloc:1
+[  114.999737] [kworke][0x6d9355e][08:42:13.495218] wlan: [73:E:DP] dp_srng_get_str_from_hal_ring_type: Invalid ring type
+[  115.010458] [kworke][0x6d95f44][08:42:13.505943] wlan: [73:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type tcl_cmd_credit (6) size 16384
+[  115.024876] [kworke][0x6d99796][08:42:13.520361] wlan: [73:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type tcl_status (7) size 16384
+[  115.038924] [kworke][0x6d9ce75][08:42:13.534409] wlan: [73:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Reo_reinject (2) size 16384
+[  115.053151] [kworke][0x6da0606][08:42:13.548634] wlan: [73:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Reo_cmd (3) size 16384
+[  115.066939] [kworke][0x6da3be5][08:42:13.562425] wlan: [73:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Reo_status (4) size 16384
+[  115.083939] [kworke][0x6da7e4d][08:42:13.579424] wlan: [73:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Rxdma_monitor_status (17) size 16384
+[  115.099008] [kworke][0x6dab92a][08:42:13.594493] wlan: [73:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Rxdma_monitor_status (17) size 16384
+[  115.114413] [kworke][0x6daf557][08:42:13.609898] wlan: [73:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Rxdma_buf (14) size 16384
+[  115.128469] [kworke][0x6db2c3f][08:42:13.623955] wlan: [73:E:DP] dp_prealloc_get_coherent: unable to allocate memory for ring type Rxdma_buf (14) size 16384
+[  115.165294] [kworke][0x6dbbc18][08:42:13.660779] wlan: [73:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 81
+[  115.177924] [kworke][0x6dbed6d][08:42:13.673409] wlan: [73:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 81
+[  115.190532] [kworke][0x6dc1eae][08:42:13.686018] wlan: [73:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 81
+[  115.203139] [kworke][0x6dc4fed][08:42:13.698624] wlan: [73:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 81
+[  115.215760] [kworke][0x6dc813a][08:42:13.711245] wlan: [73:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 81
+[  115.228379] [kworke][0x6dcb285][08:42:13.723864] wlan: [73:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 81
+[  115.240995] [kworke][0x6dce3cd][08:42:13.736480] wlan: [73:E:QDF] hif_pci_irq_set_affinity_hint: Offline CPU: Set affinity fails for IRQ: 81
+[  115.253607] [kworke][0x6dd1511][08:42:13.749093] wlan: [73:E:HIF] hif_pci_ce_irq_set_affinity_hint: Unable to set cpu mask for offline CPU 0
+[  115.266217] [kworke][0x6dd4652][08:42:13.761702] wlan: [73:E:HIF] hif_pci_ce_irq_set_affinity_hint: Empty cpu_mask, unable to set CE IRQ affinity
+[  115.282028] [kworke][0x6dd8415][08:42:13.777513] wlan: [30:E:QDF] copy_fw_abi_version_tlv: copy_fw_abi_version_tlv: INIT_CMD version: 1, 0, 0x5f414351, 0x4c4d, 0x0, 0x0
+[  115.547161] [kworke][0x6e18fc0][08:42:14.042644] wlan: [30:E:QDF] ready_extract_init_status_tlv: ready_extract_init_status_tlv:0
+[  115.559548] [kworke][0x6e1c025][08:42:14.055033] wlan: [30:E:CFR] wlan_cfr_pdev_open: cfr is disabled
+[  115.569071] [kworke][0x6e1e559][08:42:14.064557] wlan: [30:E:QDF] dp_peer_map_attach_wifi3: dp_peer_map_attach_wifi3 max_peers 39, max_ast_index: 144
+[  115.569071] 
+[  115.584880] [kworke][0x6e22319][08:42:14.080365] wlan: [73:E:WMI] send_action_oui_cmd_tlv: Invalid action id
+[  115.594737] [kworke][0x6e2499a][08:42:14.090222] wlan: [73:E:action_oui] ucfg_action_oui_send: Failed to send: 7
+[  115.605355] [kworke][0x6e27314][08:42:14.100839] wlan: [73:E:TXRX] dp_rxdma_ring_config: DBS enabled max_mac_rings 2
+[  115.615885] [kworke][0x6e29c36][08:42:14.111370] wlan: [73:E:TXRX] dp_rxdma_ring_config: pdev_id 0 max_mac_rings 2
+[  115.626238] [kworke][0x6e2c4a8][08:42:14.121724] wlan: [73:E:TXRX] dp_rxdma_ring_config: mac_id 0
+[  115.635175] [kworke][0x6e2e791][08:42:14.130660] wlan: [73:E:TXRX] dp_rxdma_ring_config: mac_id 1
+[  115.644524] [kworke][0x6e30c15][08:42:14.140009] wlan: [73:E:REGULATORY] reg_freq_width_to_chan_op_class: no op class for frequency 5660
+[  115.657335] cnss_utils: WLAN MAC address is not set, type 0
+```
+
+
+
+#### 已成功联网但不稳定(2024.1.9)
+
+测试命令：
+
+```bash
+sudo ifconfig wlan0 up
+sudo wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+sudo udhcpc -i wlan0
+```
+
+
+
+#### connect模式测试
+
+```
+root@ubuntu:/home/gie/wlan/with-debug# sudo wpa_supplicant -B -irename9 -c/etc/wp
+pa_supplicant/wpa_supplicant.conf
+root@ubuntu:/home/gie/wlan/with-debug# sudo udhcpc -i rename9
+udhcpc: started, v1.27.2
+udhcpc: sending discover
+udhcpc: sending select for 192.168.127.174
+udhcpc: sending select for 192.168.127.174
+udhcpc: lease of 192.168.127.174 obtained, lease time 3599
+root@ubuntu:/home/gie/wlan/with-debug# ifconfig 
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:c2:99:b6:43  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+fm1-mac9: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 82:ed:b4:5b:81:ea  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af0000-1af0fff  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 14  bytes 1726 (1.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14  bytes 1726 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+rename9: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.127.174  netmask 255.255.255.0  broadcast 192.168.127.255
+        inet6 2408:8456:f129:e657:a133:5941:b4e2:72b3  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::ea24:4ff:fe26:1068  prefixlen 64  scopeid 0x20<link>
+        inet6 2408:8456:f129:e657:ea24:4ff:fe26:1068  prefixlen 64  scopeid 0x0<global>
+        ether e8:24:04:26:10:68  txqueuelen 3000  (Ethernet)
+        RX packets 57  bytes 13018 (13.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 67  bytes 12266 (12.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlx90de804833ef: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.2.1  netmask 255.255.255.0  broadcast 192.168.2.255
+        inet6 fe80::92de:80ff:fe48:33ef  prefixlen 64  scopeid 0x20<link>
+        ether 90:de:80:48:33:ef  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 7 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:/home/gie/wlan/with-debug# ping 192.168.127.174
+PING 192.168.127.174 (192.168.127.174) 56(84) bytes of data.
+64 bytes from 192.168.127.174: icmp_seq=1 ttl=64 time=0.076 ms
+64 bytes from 192.168.127.174: icmp_seq=2 ttl=64 time=0.065 ms
+^C
+--- 192.168.127.174 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1022ms
+rtt min/avg/max/mdev = 0.065/0.070/0.076/0.010 ms
+root@ubuntu:/home/gie/wlan/with-debug# po  ^C
+root@ubuntu:/home/gie/wlan/with-debug# ping 1 www.baiu du.com
+PING www.baidu.com(2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b)) 56 data bytes
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=1 ttl=52 time=28.4 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=2 ttl=52 time=57.1 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=3 ttl=52 time=29.4 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=4 ttl=52 time=45.3 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=5 ttl=52 time=34.9 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=6 ttl=52 time=53.9 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=7 ttl=52 time=170 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=8 ttl=52 time=100 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=9 ttl=52 time=57.3 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=10 ttl=52 time=48.4 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=11 ttl=52 time=54.9 ms
+64 bytes from 2408:8756:c52:1107:0:ff:b035:844b (2408:8756:c52:1107:0:ff:b035:844b): icmp_seq=12 ttl=52 time=46.6 ms
+^C
+--- www.baidu.com ping statistics ---
+12 packets transmitted, 12 received, 0% packet loss, time 11014ms
+rtt min/avg/max/mdev = 28.424/60.636/170.051/37.585 ms
+root@ubuntu:/home/gie/wlan/with-debug# ping www.baidu.com -I  rename9
+PING www.baidu.com(2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11)) from 2408:8456:f129:e657:a133:5941:b4e2:72b3 rename9: 56 data bytes
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=1 ttl=52 time=38.2 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=2 ttl=52 time=44.2 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=3 ttl=52 time=41.0 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=4 ttl=52 time=51.9 ms
+^C
+--- www.baidu.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3003ms
+rtt min/avg/max/mdev = 38.222/43.856/51.987/5.149 ms
+root@ubuntu:/home/gie/wlan/with-debug# ping www.baidu.com -I wlx90de804833ef
+connect: Network is unreachable
+root@ubuntu:/home/gie/wlan/with-debug# ping www.baidu.com -I rename9
+PING www.baidu.com(2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11)) from 2408:8456:f129:e657:a133:5941:b4e2:72b3 rename9: 56 data bytes
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=1 ttl=52 time=338 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=2 ttl=52 time=42.9 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=3 ttl=52 time=1011 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=4 ttl=52 time=42.6 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=5 ttl=52 time=54.6 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=6 ttl=52 time=49.7 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=7 ttl=52 time=58.6 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=8 ttl=52 time=46.5 ms
+64 bytes from 2408:8756:c52:1aec:0:ff:b013:5a11 (2408:8756:c52:1aec:0:ff:b013:5a11): icmp_seq=9 ttl=52 time=50.9 ms
+^C
+--- www.baidu.com ping statistics ---
+9 packets transmitted, 9 received, 0% packet loss, time 8013ms
+rtt min/avg/max/mdev = 42.679/188.486/1011.969/304.791 ms, pipe 2
+root@ubuntu:/home/gie/wlan/with-debug# 
+```
+
+
+
+#### AP模式测试
+
+自研AMRpingPC端
+
+```bash
+root@ubuntu:/home/gie/wlan/with-debug# ifconfig
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 14  bytes 1726 (1.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14  bytes 1726 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlan0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether e8:24:04:26:10:68  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:/home/gie/wlan/with-debug# cd /root/Net_Tools/
+root@ubuntu:~/Net_Tools# ls
+wifi_ap.sh  wifi_ap_auto.sh  wifi_connect.sh  wifi_wpa.sh
+root@ubuntu:~/Net_Tools# ./wifi_ap_auto.sh
+ Begain WiFi AP establish ...
+ -----------------------
+WiFi AP shared connect to: wlan0
+Auto start on power up: ON
+ -----------------------
+ Wireless point is  wlan0
+[  293.481042] [soft_i][0x117d0c9e][07:46:33.245510] wlan: [0:E:DP] dp_peer_unlink_ast_entry: NULL peer
+[  293.491022] [schedu][0x117d339e][07:46:33.255494] wlan: [4355:E:DP] dp_tx_flow_pool_vdev_unmap: invalid vdev_id 0
+[  293.501300] [schedu][0x117d5bc4][07:46:33.265772] wlan: [4355:E:DP] dp_tx_delete_flow_pool: flow pool either not created or alread deleted
+[  295.550306] [kworke][0x119c9fad][07:46:35.314773] wlan: [54:E:HDD] hdd_enable_arp_offload: failed to cache arp offload req; status:4
+[  295.567965] [soft_i][0x119ce4ac][07:46:35.332436] wlan: [0:E:DP] dp_peer_unlink_ast_entry: NULL peer
+[  295.577383] [schedu][0x119d0977][07:46:35.341855] wlan: [4355:E:DP] dp_tx_flow_pool_vdev_unmap: invalid vdev_id 0
+[  295.587759] [schedu][0x119d31ff][07:46:35.352231] wlan: [4355:E:DP] dp_tx_delete_flow_pool: flow pool either not created or alread deleted
+[  295.617318] [hostap][0x119da573][07:46:35.381787] wlan: [4482:E:REGULATORY] reg_run_11d_state_machine: Invalid vdev
+[  295.696598] [hostap][0x119edb24][07:46:35.461069] wlan: [4482:E:HDD] wlan_hdd_cfg80211_start_bss: beacon protection 1
+[  295.707552] [hostap][0x119f05f0][07:46:35.472024] wlan: [4482:E:dfs] WLAN_DEBUG_DFS_ALWAYS : utils_dfs_init_nol: no nol in pld
+[  295.719074] [hostap][0x119f32f1][07:46:35.483546] wlan: [4482:E:REGULATORY] reg_freq_to_chan: Invalid freq 0
+[  295.729010] [hostap][0x119f59c1][07:46:35.493482] wlan: [4482:E:SME] csr_roam_get_qos_info_from_bss: csr_get_parsed_bss_description_ies() failed
+[  295.742147] [schedu][0x119f8d12][07:46:35.506619] wlan: [4355:E:REGULATORY] reg_chan_band_to_freq: Invalid channel 0
+[  295.762831] [schedu][0x119fdddd][07:46:35.527301] wlan: [4355:E:WMA] wma_find_remove_req_msgtype: unable to get msg node from request queue
+[  295.775365] [schedu][0x11a00ed4][07:46:35.539837] wlan: [4355:E:WMA] wma_peer_create_confirm_handler: vdev:0 Failed to lookup peer create request message
+[  295.843951] [soft_i][0x11a11abb][07:46:35.608419] wlan: [0:E:DP] dp_tx_initialize_threshold: tx flow control threshold is set, pool size is 4096
+[  295.856960] [hostap][0x11a14d8d][07:46:35.621429] wlan: [4482:E:SAP] wlansap_is_6ghz_included_in_acs_range: NULL parameters
+Synchronizing state of hostapd.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable hostapd
+Synchronizing state of isc-dhcp-server.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable isc-dhcp-server
+ Auto start set ON !!!
+ -----------------------
+hostapd.service Active:     Active: active (running)
+isc-dhcp-server.service Active:     Active: active (running)
+root@ubuntu:~/Net_Tools#
+root@ubuntu:~/Net_Tools# ifconfig
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 16  bytes 1804 (1.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 16  bytes 1804 (1.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.2.1  netmask 255.255.255.0  broadcast 192.168.2.255
+        inet6 fe80::ea24:4ff:fe26:1068  prefixlen 64  scopeid 0x20<link>
+        ether e8:24:04:26:10:68  txqueuelen 3000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 28  bytes 3898 (3.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~/Net_Tools#
+root@ubuntu:~/Net_Tools# [  305.959751] [schedu][0x123b7590][07:46:45.724216] wlan: [4355:E:QDF] qdf_mc_timer_start: Cannot start timer in state = 21 tx_main_timer_func [wlan]
+
+root@ubuntu:~/Net_Tools#
+root@ubuntu:~/Net_Tools# [  333.729765] [schedu][0x13e33231][07:47:13.494234] wlan: [4355:E:WMA] wma_find_remove_req_msgtype: target request not found for vdev_id 0 type 4549
+[  333.743065] [schedu][0x13e36628][07:47:13.507536] wlan: [4355:E:WMA] wma_peer_create_confirm_handler: vdev:0 Failed to lookup peer create request message
+[  333.890331] [schedu][0x13e5a567][07:47:13.654799] wlan: [4355:E:WMA] wma_find_remove_req_msgtype: target request not found for vdev_id 0 type 4549
+[  333.903474] [schedu][0x13e5d8c1][07:47:13.667945] wlan: [4355:E:WMA] wma_peer_create_confirm_handler: vdev:0 Failed to lookup peer create request message
+[  333.917524] [schedu][0x13e60fa3][07:47:13.681996] wlan: [4355:E:PE] lim_process_assoc_req_frame: STA is initiating Assoc Req after ACK lost. Do not process sessionid: 0 sys sub_type=1 for role=1 from: b4:69:21:c1:be:ca
+[  333.944476] [schedu][0x13e678ec][07:47:13.708948] wlan: [4355:E:HDD] hdd_hostapd_sap_event_cb: Failed to find the right station
+[  334.865633] [schedu][0x13f4872e][07:47:14.630102] wlan: [4355:E:WMA] wma_find_remove_req_msgtype: target request not found for vdev_id 0 type 4549
+[  334.878939] [schedu][0x13f4bb2a][07:47:14.643410] wlan: [4355:E:WMA] wma_peer_create_confirm_handler: vdev:0 Failed to lookup peer create request message
+[  336.004588] [schedu][0x1405e839][07:47:15.769058] wlan: [4355:E:WMA] wma_find_remove_req_msgtype: target request not found for vdev_id 0 type 4549
+[  336.017995] [schedu][0x14061c9a][07:47:15.782466] wlan: [4355:E:WMA] wma_peer_create_confirm_handler: vdev:0 Failed to lookup peer create request message
+
+root@ubuntu:~/Net_Tools# ping 192.168.2.1
+PING 192.168.2.1 (192.168.2.1) 56(84) bytes of data.
+64 bytes from 192.168.2.1: icmp_seq=1 ttl=64 time=0.075 ms
+64 bytes from 192.168.2.1: icmp_seq=2 ttl=64 time=0.061 ms
+^C
+--- 192.168.2.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 0.061/0.068/0.075/0.007 ms
+root@ubuntu:~/Net_Tools# ping 192.168.2.101
+PING 192.168.2.101 (192.168.2.101) 56(84) bytes of data.
+64 bytes from 192.168.2.101: icmp_seq=1 ttl=128 time=4.40 ms
+64 bytes from 192.168.2.101: icmp_seq=2 ttl=128 time=3.73 ms
+64 bytes from 192.168.2.101: icmp_seq=3 ttl=128 time=2.66 ms
+64 bytes from 192.168.2.101: icmp_seq=4 ttl=128 time=6.33 ms
+^C
+--- 192.168.2.101 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 2.665/4.284/6.330/1.335 ms
+root@ubuntu:~/Net_Tools#
+```
+
+PC端ping自研AMR
+
+```
+[2024-01-09 16:17.12]  ~
+[.DESKTOP-5KTBV78] ⮞ ifconfig
+
+Software Loopback Interface 1
+        Link encap: Local loopback
+        inet addr:127.0.0.1 Mask: 255.0.0.0
+        MTU: 1500 Speed:1073.74 Mbps
+        Admin status:UP Oper status:OPERATIONAL
+        RX packets:0 dropped:0 errors:0 unkown:0
+        TX packets:0 dropped:0 errors:0 txqueuelen:0
+
+VMware Virtual Ethernet Adapter for VMnet8
+        Link encap: Ethernet HWaddr: 00-50-56-C0-00-08
+        inet addr:192.168.10.1 Mask: 255.255.255.0
+        MTU: 1500 Speed:100.00 Mbps
+        Admin status:UP Oper status:OPERATIONAL
+        RX packets:27166 dropped:0 errors:0 unkown:0
+        TX packets:29822 dropped:0 errors:0 txqueuelen:0
+
+Intel(R) Wireless-AC 9462
+        Link encap: IEEE 802.11 HWaddr: B4-69-21-C1-BE-CA
+        inet addr:192.168.2.101 Mask: 255.255.255.0
+        MTU: 1500 Speed:45.00 Mbps
+        Admin status:UP Oper status:OPERATIONAL
+        RX packets:11 dropped:0 errors:0 unkown:0
+        TX packets:364 dropped:0 errors:0 txqueuelen:0
+
+VMware Virtual Ethernet Adapter for VMnet1
+        Link encap: Ethernet HWaddr: 00-50-56-C0-00-01
+        inet addr:192.168.152.1 Mask: 255.255.255.0
+        MTU: 1500 Speed:100.00 Mbps
+        Admin status:UP Oper status:OPERATIONAL
+        RX packets:24 dropped:0 errors:0 unkown:0
+        TX packets:2539 dropped:0 errors:0 txqueuelen:0
+
+                                                                                                                                                                ✓
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+[2024-01-09 16:17.14]  ~
+[.DESKTOP-5KTBV78] ⮞ ping 192.168.2.1
+
+正在 Ping 192.168.2.1 具有 32 字节的数据:
+来自 192.168.2.1 的回复: 字节=32 时间=5ms TTL=64
+来自 192.168.2.1 的回复: 字节=32 时间=9ms TTL=64
+来自 192.168.2.1 的回复: 字节=32 时间=10ms TTL=64
+来自 192.168.2.1 的回复: 字节=32 时间=3ms TTL=64
+
+192.168.2.1 的 Ping 统计信息:
+    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，
+往返行程的估计时间(以毫秒为单位):
+    最短 = 3ms，最长 = 10ms，平均 = 6ms
+```
+
+
+
+### 八.更新驱动到对应目录
+
+源码上其实有安装驱动文件到对应目录这一步操作，但是一直没有安装，找到驱动文件原本的目录如下：
+
+|                        | with-debug | without-debug |
+| ---------------------- | ---------- | ------------- |
+| wlan.ko                | 1）389M    | 2）12M        |
+| wlan_cnss_core_pcie.ko | 3）9.4M    | 4）505K       |
+
+1）389M
+
+```
+./chss_proc/host/AIO/drivers/qcacld-3.0/wlan.ko
+./chss_proc/host/AIO/rootfs-ve-f10.build/lib/unstripped_modules/modules/wlan.ko
+```
+
+2）12M
+
+```
+./chss_proc/host/AIO/rootfs-ve-f10.build/lib/modules/wlan.ko
+```
+
+3）9.4M
+
+```
+./chss_proc/host/AIO/drivers/core_tech_modules/wlan_cnss_core_pcie.ko
+./chss_proc/host/AIO/rootfs-ve-f10.build/lib/unstripped_modules/modules/wlan_cnss_core_pcie.ko
+```
+
+4）505K
+
+```
+./chss_proc/host/AIO/rootfs-ve-f10.build/lib/modules/wlan_cnss_core_pcie.ko
+```
+
+编译主机上目标目录：
+
+```
+/home/forlinx/nxp/extra/wlan/with-debug
+/home/forlinx/nxp/extra/wlan/without-debug
+```
+
+文件系统上目录：
+
+```
+/home/gie/wlan
+```
+
+根据以上目录已经编写完脚本了，存放在flexbuild_lsdk1906/build/rfs下，之后直接运行两个脚本即可
 
 
 
