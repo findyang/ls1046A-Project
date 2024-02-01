@@ -67,6 +67,144 @@
 
 [Uboot中start.S源码的指令级的详尽解析 (crifan.com)](https://www.crifan.com/files/doc/docbook/uboot_starts_analysis/release/htmls/)
 
+代码当前入口点：_start，
+
+```
+ENTRY(_start)
+SECTIONS
+{
+. = 0x00000000;
+. = ALIGN(4);
+.text :
+{
+*(.__image_copy_start)
+```
+
+_start 在文件 arch/arm/lib/vectors.S 中有定义
+
+```
+.globl	_start
+_start:
+```
+
+reset 函数在 arch/arm/cpu/armv8/start.S，reset 函数跳转到了 save_boot_params 函数
+
+```
+reset:
+	/* Allow the board to save important registers */
+	b	save_boot_params
+.globl	save_boot_params_ret
+save_boot_params_ret:
+......
+bl	lowlevel_init
+......
+master_cpu:
+	bl	_main
+```
+
+
+
+```
+WEAK(save_boot_params)
+	b	save_boot_params_ret	/* back to my caller */
+ENDPROC(save_boot_params)
+```
+
+函数 lowlevel_init 在文件arch\arm\cpu\armv8\fsl-layerscape\lowlevel.S 中
+
+```
+ENTRY(lowlevel_init)
+	mov	x29, lr			/* Save LR */
+
+	/* unmask SError and abort */
+	msr daifclr, #4
+	......
+	mov	lr, x29			/* Restore LR */
+	ret
+ENDPROC(lowlevel_init)
+```
+
+调用函数_main
+
+_main 函数定义在文件 arch/arm/lib/crt0_64.S 中
+
+```
+ENTRY(_main)
+......
+bl	board_init_f
+......
+b	relocate_code
+......
+b	board_init_r			/* PC relative jump */
+/* NOTREACHED - board_init_r() does not return */
+#endif
+ENDPROC(_main)
+```
+
+board_init_f此函数定义在文件 common/board_f.c 中定义
+
+```
+void board_init_f(ulong boot_flags)
+{
+	gd->flags = boot_flags;
+	gd->have_console = 0;
+
+	if (initcall_run_list(init_sequence_f))
+		hang();
+
+#if !defined(CONFIG_ARM) && !defined(CONFIG_SANDBOX) && \
+		!defined(CONFIG_EFI_APP) && !CONFIG_IS_ENABLED(X86_64) && \
+		!defined(CONFIG_ARC)
+	/* NOTREACHED - jump_to_copy() does not return */
+	hang();
+#endif
+}
+```
+
+通过函数 initcall_run_list 来运行初始化序列 init_sequence_f 里面的一些列函数
+
+relocate_code 函数是用于代码拷贝的，此函数定义在文件 arch/arm/lib/relocate.S 中
+
+board_init_r 函数定义在文件 common/board_r.c中
+
+```
+void board_init_r(gd_t *new_gd, ulong dest_addr)
+{
+	/*
+	 * Set up the new global data pointer. So far only x86 does this
+	 * here.
+	 * TODO(sjg@chromium.org): Consider doing this for all archs, or
+	 * dropping the new_gd parameter.
+	 */
+	if (CONFIG_IS_ENABLED(X86_64) && !IS_ENABLED(CONFIG_EFI_APP))
+		arch_setup_gd(new_gd);
+
+#ifdef CONFIG_NEEDS_MANUAL_RELOC
+	int i;
+#endif
+
+#if !defined(CONFIG_X86) && !defined(CONFIG_ARM) && !defined(CONFIG_ARM64)
+	gd = new_gd;
+#endif
+	gd->flags &= ~GD_FLG_LOG_READY;
+
+#ifdef CONFIG_NEEDS_MANUAL_RELOC
+	for (i = 0; i < ARRAY_SIZE(init_sequence_r); i++)
+		init_sequence_r[i] += gd->reloc_off;
+#endif
+
+	if (initcall_run_list(init_sequence_r))
+		hang();
+
+	/* NOTREACHED - run_main_loop() does not return */
+	hang();
+}
+```
+
+调用 initcall_run_list 函数来执行初始化序列 init_sequence_r，init_sequence_r 是一个函数集合
+
+最后的run_main_loop函数，主循环，处理命令
+
 
 
 ## Uboot常用命令汇总
@@ -785,6 +923,64 @@ aarch64-linux-gnu-objdump -D -S ls1046afrwy.o
 ```
 aarch64-linux-gnu-objdump -D -S ls1046afrwy.o > ls1046afrwy_disassembly.txt
 ```
+
+## uboot下怎么用命令行查询phy的ID和地址
+
+您可以使用以下命令在uboot下查询phy的ID和地址：
+
+ 1. 在uboot命令行下输入以下命令：
+
+```
+mdio list
+```
+
+2. 然后输入以下命令查看PHY的ID：
+
+```
+mdio read bus_addr phy_addr reg_addr
+```
+
+其中，bus_addr为MDIO总线地址，phy_addr为PHY的地址，reg_addr为需要读取的PHY寄存器地址。例如，要读取PHY地址为1的设备 的ID寄存器（寄存器地址为2），可以输入以下命令：
+
+```
+mdio read 0 1 2
+```
+
+3. 输入以下命令查看PHY的物理地址：
+
+```
+mii dev <devnum>; mii info
+```
+
+其中，devnum为MDIO节点号，这个号码可以在uboot中使用mdio list命令查看。例如，输入以下命令查看第一个PHY的物理地址：
+
+```
+mii dev 0; mii info
+```
+
+uboot下读取phy地址
+在 U-Boot 中，读取 PHY 地址的方法取决于你使用的网络驱动和物理接口类型。一般情况下，你需要使用 MII 工具来读取 PHY 地址。以
+下是在 U-Boot 中读取 PHY 地址的步骤：
+1. 进入 U-Boot 命令行界面。
+2. 使用 "mdio" 命令查询所有的 PHY 设备：
+
+```
+mdio list
+```
+
+这个命令将列出所有的 PHY 设备及其对应的地址。
+3. 选择你要查询的 PHY 设备，使用 "mdio read" 命令读取 PHY 地址：
+
+例如，如果你要读取 PHY 地址为 0 的设备，可以使用以下命令：
+
+```
+mdio read 0 2
+```
+
+这个命令将输出 PHY 的地址。
+
+
+
 
 
 ## 参考文章及视频链接
