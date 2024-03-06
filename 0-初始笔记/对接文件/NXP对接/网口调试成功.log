@@ -1,0 +1,4083 @@
+=~=~=~=~=~=~=~=~=~=~=~= MobaXterm log 2024.01.23 15:10:15 =~=~=~=~=~=~=~=~=~=~=~=
+
+%:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+Could not get PHY for FSL_MDIO0: addr 1
+Failed to connect
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  0 
+=> 
+=> mdio list
+FSL_MDIO0:
+2 - RealTek RTL8211F <--> FM1@DTSEC4
+3 - RealTek RTL8211F <--> FM1@DTSEC9
+4 - RealTek RTL8211F <--> FM1@DTSEC5
+5 - RealTek RTL8211F <--> FM1@DTSEC6
+=> mii info
+PHY 0x00: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x02: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x03: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x04: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x05: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+=> mii   mii in  dump
+"Synchronous Abort" handler, esr 0x86000210
+elr: 000000008200d3c4 lr : 000000008200d10c (reloc)
+elr: 00000000fbd463c4 lr : 00000000fbd4610c
+x0 : 0000000000000064 x1 : 00000000fbc3c450
+x2 : 0000000000000000 x3 : 00000000fbde6000
+x4 : 00000000fbde6000 x5 : 00000000fbde6000
+x6 : 00000000fbde6000 x7 : 00000000fbde6000
+x8 : 00000000fbc6da10 x9 : 0000000000000008
+x10: 000000000000000d x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000003
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbdd6f68
+x20: 00000000fbc3c460 x21: 00000000fbc6d960
+x22: 0000000000000002 x23: 00000000fbde6ea8
+x24: 0000000000000002 x25: 0000000000000000
+x26: 0000000000000000 x27: 0000000000000000
+x28: 00000000fbc6d9c0 x29: 00000000fbc32200
+
+Resetting CPU ...
+
+resetting ...
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  0
+=> 
+=> 
+=> mii dump
+0.     (1040)                 -- PHY control register --
+  (8000:0000) 0.15    =     0    reset
+  (4000:0000) 0.14    =     0    loopback
+  (2040:0040) 0. 6,13 =   b10    speed selection = 1000 Mbps
+  (1000:1000) 0.12    =     1    A/N enable
+  (0800:0000) 0.11    =     0    power-down
+  (0400:0000) 0.10    =     0    isolate
+  (0200:0000) 0. 9    =     0    restart A/N
+  (0100:0000) 0. 8    =     0    duplex = half
+  (0080:0000) 0. 7    =     0    collision test enable
+  (003f:0000) 0. 5- 0 =     0    (reserved)
+
+
+=> mii in  
+mii - MII utility commands
+
+Usage:
+mii device                            - list available devices
+mii device <devname>                  - set current device
+mii info   <addr>                     - display MII PHY info
+mii read   <addr> <reg>               - read  MII PHY <addr> register <reg>
+mii write  <addr> <reg> <data>        - write MII PHY <addr> register <reg>
+mii modify <addr> <reg> <data> <mask> - modify MII PHY <addr> register <reg>
+                                        updating bits identified in <mask>
+mii dump   <addr> <reg>               - pretty-print <addr> <reg> (0-5 only)
+Addr and/or reg may be ranges, e.g. 2-7.
+=> mii device
+MII devices: 'FSL_MDIO0' 
+Current device: 'FSL_MDIO0'
+=> mii device 0
+No such device: 0
+=> mii device 0 1
+No such device: 1
+=> mii device 1 FSL_MDIO0
+=> mii info
+PHY 0x00: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x01: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x02: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x03: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x04: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x05: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+=> m mii info
+PHY 0x00: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x01: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x02: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x03: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x04: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x05: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+=> i mii read 0 0 
+1040
+=> mii read 0 0   1
+7989
+=> mii read 0 1            mii read 0 1            mdio read FM1@DTSEC5 1
+Reading from bus FSL_MDIO0
+PHY at address 4:
+1 - 0x7989
+=> mdio read FM1@DTSEC5 1 1 1 3 1
+Reading from bus FSL_MDIO0
+PHY at address 1:
+1 - 0x7989
+=> mdio read FM1@DTSEC3 1 1 2 1
+FM1@DTSEC2 is not a known ethernet
+mdio - MDIO utility commands
+
+Usage:
+mdio list- List MDIO buses
+mdio read <phydev> [<devad>.]<reg> - read PHY's register at <devad>.<reg>
+mdio write <phydev> [<devad>.]<reg> <data> - write PHY's register at <devad>.<reg>
+mdio rx <phydev> [<devad>.]<reg> - read PHY's extended register at <devad>.<reg>
+mdio wx <phydev> [<devad>.]<reg> <data> - write PHY's extended register at <devad>.<reg>
+<phydev> may be:
+   <busname>  <addr>
+   <addr>
+   <eth name>
+<addr> <devad>, and <reg> may be ranges, e.g. 1-5.4-0x1f.
+
+=> mdio read FM1@DTSEC2 1 1 4 1
+Reading from bus FSL_MDIO0
+PHY at address 2:
+1 - 0x7989
+=> mdio read FM1@DTSEC4 1 1 5 1
+Reading from bus FSL_MDIO0
+PHY at address 4:
+1 - 0x7989
+=> mdio read FM1@DTSEC5 1 1 6 1
+Reading from bus FSL_MDIO0
+PHY at address 5:
+1 - 0x7989
+=> mdio read FM1@DTSEC6 1   9 1
+Reading from bus FSL_MDIO0
+PHY at address 3:
+1 - 0x7989
+=> mdio read FM1@DTSEC9 1 1 1 10 1
+FM1@DTSEC10 is not a known ethernet
+mdio - MDIO utility commands
+
+Usage:
+mdio list- List MDIO buses
+mdio read <phydev> [<devad>.]<reg> - read PHY's register at <devad>.<reg>
+mdio write <phydev> [<devad>.]<reg> <data> - write PHY's register at <devad>.<reg>
+mdio rx <phydev> [<devad>.]<reg> - read PHY's extended register at <devad>.<reg>
+mdio wx <phydev> [<devad>.]<reg> <data> - write PHY's extended register at <devad>.<reg>
+<phydev> may be:
+   <busname>  <addr>
+   <addr>
+   <eth name>
+<addr> <devad>, and <reg> may be ranges, e.g. 1-5.4-0x1f.
+
+=> prin"Synchronous Abort" handler, esr 0x86000210
+elr: 000000008202652c lr : 0000000082026844 (reloc)
+elr: 00000000fbd5f52c lr : 00000000fbd5f844
+x0 : 00000000fbdd6248 x1 : 0000000000000062
+x2 : 0000000000000001 x3 : 00000000fbc32128
+x4 : 000000000000006e x5 : 0000000000000014
+x6 : 00000000fbc32088 x7 : 00000000fbdcd6c8
+x8 : 00000000fbc321c0 x9 : 0000000000000008
+x10: 0000000000000010 x11: 6db6db6db6db6db7
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 00000000ffffffff
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 0000000000000004
+x20: 00000000fbde7584 x21: 00000000fbc32088
+x22: 0000000000000000 x23: 0000000000000001
+x24: 00000000fbc32128 x25: 00000000fbc32390
+x26: 00000000fbc32394 x27: 000000000000006e
+x28: 000000000000000a x29: 00000000fbc32000
+
+Resetting CPU ...
+
+resetting ...
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  4  0 
+=> 
+=> 
+=> mii info
+PHY 0x00: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x01: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x02: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x03: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x04: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x05: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+=> m mdio read FM1@DTSEC5 1 1 0 1
+FM1@DTSEC0 is not a known ethernet
+mdio - MDIO utility commands
+
+Usage:
+mdio list- List MDIO buses
+mdio read <phydev> [<devad>.]<reg> - read PHY's register at <devad>.<reg>
+mdio write <phydev> [<devad>.]<reg> <data> - write PHY's register at <devad>.<reg>
+mdio rx <phydev> [<devad>.]<reg> - read PHY's extended register at <devad>.<reg>
+mdio wx <phydev> [<devad>.]<reg> <data> - write PHY's extended register at <devad>.<reg>
+<phydev> may be:
+   <busname>  <addr>
+   <addr>
+   <eth name>
+<addr> <devad>, and <reg> may be ranges, e.g. 1-5.4-0x1f.
+
+=> mdio read FM1@DTSEC0 1 1 1 1
+FM1@DTSEC1 is not a known ethernet
+mdio - MDIO utility commands
+
+Usage:
+mdio list- List MDIO buses
+mdio read <phydev> [<devad>.]<reg> - read PHY's register at <devad>.<reg>
+mdio write <phydev> [<devad>.]<reg> <data> - write PHY's register at <devad>.<reg>
+mdio rx <phydev> [<devad>.]<reg> - read PHY's extended register at <devad>.<reg>
+mdio wx <phydev> [<devad>.]<reg> <data> - write PHY's extended register at <devad>.<reg>
+<phydev> may be:
+   <busname>  <addr>
+   <addr>
+   <eth name>
+<addr> <devad>, and <reg> may be ranges, e.g. 1-5.4-0x1f.
+
+=> mdio read FM1@DTSEC1 1 1 2 1
+FM1@DTSEC2 is not a known ethernet
+mdio - MDIO utility commands
+
+Usage:
+mdio list- List MDIO buses
+mdio read <phydev> [<devad>.]<reg> - read PHY's register at <devad>.<reg>
+mdio write <phydev> [<devad>.]<reg> <data> - write PHY's register at <devad>.<reg>
+mdio rx <phydev> [<devad>.]<reg> - read PHY's extended register at <devad>.<reg>
+mdio wx <phydev> [<devad>.]<reg> <data> - write PHY's extended register at <devad>.<reg>
+<phydev> may be:
+   <busname>  <addr>
+   <addr>
+   <eth name>
+<addr> <devad>, and <reg> may be ranges, e.g. 1-5.4-0x1f.
+
+=> mdio read FM1@DTSEC2 1<INTERRUPT>
+=> mdio read FM1@DTSEC1 1 1 3 1
+Reading from bus FSL_MDIO0
+PHY at address 1:
+1 - 0xffff
+=> mdio read FM1@DTSEC3 1 1 4 1
+Reading from bus FSL_MDIO0
+PHY at address 2:
+1 - 0x7989
+=> mdio read FM1@DTSEC4 14                      mdio read FM1@DTSEC4 1 1 3 1
+Reading from bus FSL_MDIO0
+PHY at address 1:
+1 - 0xffff
+=> mdio read FM1@DTSEC3 11 1 1  1 5 1
+Reading from bus FSL_MDIO0
+PHY at address 4:
+1 - 0x7989
+=> mdio read FM1@DTSEC5 1 1 3 1
+Reading from bus FSL_MDIO0
+PHY at address 1:
+1 - 0x7989
+=> mdio read FM1@DTSEC3 1                      mdio read FM1@DTSEC3 1                      mdio read FM1@DTSEC5 1                      mdio read FM1@DTSEC3 1                      mdio read FM1@DTSEC5 1                      mdio read FM1@DTSEC3 1                      mdio read FM1@DTSEC5 1                      mdio read FM1@DTSEC3 1                      NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  0
+=> 
+=> 
+=> 
+=> 
+=> mii info
+PHY 0x00: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x01: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x02: OUI = 0x0732, Model = 0x11, Rev = 0x06, 100baseT, FDX
+PHY 0x03: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x04: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x05: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+=> mdo io list
+FSL_MDIO0:
+1 - RealTek RTL8211F <--> FM1@DTSEC3
+2 - RealTek RTL8211F <--> FM1@DTSEC4
+3 - RealTek RTL8211F <--> FM1@DTSEC9
+4 - RealTek RTL8211F <--> FM1@DTSEC5
+5 - RealTek RTL8211F <--> FM1@DTSEC6
+=> printenv 
+arch=arm
+baudrate=115200
+board=ls1046afrwy
+board_name=ls1046afrwy
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; env exists secureboot && load ${devtype} ${devnum}:${distro_bootpart} ${scripthdraddr} ${prefix}${boot_script_hdr}; env exists secureboot && esbc_validate ${scripthdraddr};source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_pci_enum=pci enum
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_script_hdr=hdr_ls1046afrwy_bs.out
+boot_scripts=ls1046afrwy_boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=scsi0 mmc0 usb0 dhcp 
+bootargs=console=ttyS0,115200 root=/dev/ram0 earlycon=uart8250,mmio,0x21c0500 mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+bootcmd=run distro_bootcmd;run sd_bootcmd; env exists secureboot && esbc_halt;
+bootcmd_dhcp=run boot_net_usb_start; run boot_net_pci_enum; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootdelay=5
+console=ttyS0,115200
+cpu=armv8
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+eth1addr=92:8d:6a:9b:12:3a
+eth2addr=c2:dd:f9:08:bc:cd
+eth3addr=6e:75:fe:c4:4c:1c
+eth4addr=e6:62:ce:37:12:6b
+eth5addr=b6:32:5d:a4:bc:9c
+ethact=FM1@DTSEC9
+ethaddr=4e:3e:e5:48:55:4c
+ethprime=FM1@DTSEC9
+fdt_addr=0x64f00000
+fdt_addr_r=0x90000000
+fdt_high=0xffffffffffffffff
+fdtcontroladdr=fbc32588
+fdtheader_addr_r=0x80100000
+fman_ucode=fbc45450
+gatewayip=192.168.0.1
+hwconfig=fsl_ddr:bank_intlv=auto
+initrd_high=0xffffffffffffffff
+ipaddr=192.168.0.232
+kernel_addr=0x65000000
+kernel_addr_r=0x81000000
+kernel_addr_sd=0x8000
+kernel_load=0xa0000000
+kernel_size=0x2800000
+kernel_size_sd=0x14000
+kernel_start=0x1000000
+kernelhdr_addr_sd=0x4000
+kernelhdr_size_sd=0x10
+kernelheader_addr_r=0x80200000
+kernelheader_size=0x40000
+kernelheader_start=0x800000
+load_addr=0xa0000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+netmask=255.255.0.0
+qspi_bootcmd=echo Trying load from qspi..;sf probe && sf read $load_addr $kernel_start $kernel_size; env exists secureboot && sf read $kernelheader_addr_r $kernelheader_start $kernelheader_size && esbc_validate ${kernelheader_addr_r}; bootm $load_addr#$board
+ramdisk_addr=0x800000
+ramdisk_addr_r=0xa0000000
+ramdisk_size=0x2000000
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+scriptaddr=0x80000000
+scripthdraddr=0x80080000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+sd_bootcmd=echo Trying load from SD ..;mmcinfo; mmc read $load_addr $kernel_addr_sd $kernel_size_sd && env exists secureboot && mmc read $kernelheader_addr_r $kernelhdr_addr_sd $kernelhdr_size_sd  && esbc_validate ${kernelheader_addr_r};bootm $load_addr#$board
+serverip=192.168.0.135
+soc=fsl-layerscape
+stderr=serial
+stdin=serial
+stdout=serial
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=freescale
+
+Environment size: 5619/8188 bytes
+=> setenv ethact FM1@DTSEC5 4NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+Q%:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  0 
+=> 
+=> mdi  o list
+FSL_MDIO0:
+1 - RealTek RTL8211F <--> FM1@DTSEC3
+2 - RealTek RTL8211F <--> FM1@DTSEC4
+3 - RealTek RTL8211F <--> FM1@DTSEC9
+4 - RealTek RTL8211F <--> FM1@DTSEC5
+5 - RealTek RTL8211F <--> FM1@DTSEC6
+=> mii info
+PHY 0x00: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x01: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x02: OUI = 0x0732, Model = 0x11, Rev = 0x06, 100baseT, FDX
+PHY 0x03: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x04: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x05: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+=> 
+PHY 0x00: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x01: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x02: OUI = 0x0732, Model = 0x11, Rev = 0x06, 100baseT, FDX
+PHY 0x03: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x04: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x05: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+=> setenv ethact FM1@DTSEC5 4
+=> printenv 
+arch=arm
+baudrate=115200
+board=ls1046afrwy
+board_name=ls1046afrwy
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; env exists secureboot && load ${devtype} ${devnum}:${distro_bootpart} ${scripthdraddr} ${prefix}${boot_script_hdr}; env exists secureboot && esbc_validate ${scripthdraddr};source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_pci_enum=pci enum
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_script_hdr=hdr_ls1046afrwy_bs.out
+boot_scripts=ls1046afrwy_boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=scsi0 mmc0 usb0 dhcp 
+bootargs=console=ttyS0,115200 root=/dev/ram0 earlycon=uart8250,mmio,0x21c0500 mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+bootcmd=run distro_bootcmd;run sd_bootcmd; env exists secureboot && esbc_halt;
+bootcmd_dhcp=run boot_net_usb_start; run boot_net_pci_enum; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootdelay=5
+console=ttyS0,115200
+cpu=armv8
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+eth1addr=92:8d:6a:9b:12:3a
+eth2addr=c2:dd:f9:08:bc:cd
+eth3addr=6e:75:fe:c4:4c:1c
+eth4addr=e6:62:ce:37:12:6b
+eth5addr=b6:32:5d:a4:bc:9c
+ethact=FM1@DTSEC4
+ethaddr=4e:3e:e5:48:55:4c
+ethprime=FM1@DTSEC9
+fdt_addr=0x64f00000
+fdt_addr_r=0x90000000
+fdt_high=0xffffffffffffffff
+fdtcontroladdr=fbc32588
+fdtheader_addr_r=0x80100000
+fman_ucode=fbc45450
+gatewayip=192.168.0.1
+hwconfig=fsl_ddr:bank_intlv=auto
+initrd_high=0xffffffffffffffff
+ipaddr=192.168.0.232
+kernel_addr=0x65000000
+kernel_addr_r=0x81000000
+kernel_addr_sd=0x8000
+kernel_load=0xa0000000
+kernel_size=0x2800000
+kernel_size_sd=0x14000
+kernel_start=0x1000000
+kernelhdr_addr_sd=0x4000
+kernelhdr_size_sd=0x10
+kernelheader_addr_r=0x80200000
+kernelheader_size=0x40000
+kernelheader_start=0x800000
+load_addr=0xa0000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+netmask=255.255.0.0
+qspi_bootcmd=echo Trying load from qspi..;sf probe && sf read $load_addr $kernel_start $kernel_size; env exists secureboot && sf read $kernelheader_addr_r $kernelheader_start $kernelheader_size && esbc_validate ${kernelheader_addr_r}; bootm $load_addr#$board
+ramdisk_addr=0x800000
+ramdisk_addr_r=0xa0000000
+ramdisk_size=0x2000000
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+scriptaddr=0x80000000
+scripthdraddr=0x80080000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+sd_bootcmd=echo Trying load from SD ..;mmcinfo; mmc read $load_addr $kernel_addr_sd $kernel_size_sd && env exists secureboot && mmc read $kernelheader_addr_r $kernelhdr_addr_sd $kernelhdr_size_sd  && esbc_validate ${kernelheader_addr_r};bootm $load_addr#$board
+serverip=192.168.0.135
+soc=fsl-layerscape
+stderr=serial
+stdin=serial
+stdout=serial
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=freescale
+
+Environment size: 5619/8188 bytes
+=> setenv serverip 192.168.0.100
+=> setenv serverip 192.168.0.100                             printenv          setenv serverip 192.168.0.100s<INTERRUPT>
+=> saveenv 
+Saving Environment to MMC... Writing to MMC(0)... OK
+=> saveenv         setenv serverip 192.168.0.100                             printenv 
+arch=arm
+baudrate=115200
+board=ls1046afrwy
+board_name=ls1046afrwy
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; env exists secureboot && load ${devtype} ${devnum}:${distro_bootpart} ${scripthdraddr} ${prefix}${boot_script_hdr}; env exists secureboot && esbc_validate ${scripthdraddr};source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_pci_enum=pci enum
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_script_hdr=hdr_ls1046afrwy_bs.out
+boot_scripts=ls1046afrwy_boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=scsi0 mmc0 usb0 dhcp 
+bootargs=console=ttyS0,115200 root=/dev/ram0 earlycon=uart8250,mmio,0x21c0500 mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+bootcmd=run distro_bootcmd;run sd_bootcmd; env exists secureboot && esbc_halt;
+bootcmd_dhcp=run boot_net_usb_start; run boot_net_pci_enum; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootdelay=5
+console=ttyS0,115200
+cpu=armv8
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+eth1addr=92:8d:6a:9b:12:3a
+eth2addr=c2:dd:f9:08:bc:cd
+eth3addr=6e:75:fe:c4:4c:1c
+eth4addr=e6:62:ce:37:12:6b
+eth5addr=b6:32:5d:a4:bc:9c
+ethact=FM1@DTSEC4
+ethaddr=4e:3e:e5:48:55:4c
+ethprime=FM1@DTSEC9
+fdt_addr=0x64f00000
+fdt_addr_r=0x90000000
+fdt_high=0xffffffffffffffff
+fdtcontroladdr=fbc32588
+fdtheader_addr_r=0x80100000
+fman_ucode=fbc45450
+gatewayip=192.168.0.1
+hwconfig=fsl_ddr:bank_intlv=auto
+initrd_high=0xffffffffffffffff
+ipaddr=192.168.0.232
+kernel_addr=0x65000000
+kernel_addr_r=0x81000000
+kernel_addr_sd=0x8000
+kernel_load=0xa0000000
+kernel_size=0x2800000
+kernel_size_sd=0x14000
+kernel_start=0x1000000
+kernelhdr_addr_sd=0x4000
+kernelhdr_size_sd=0x10
+kernelheader_addr_r=0x80200000
+kernelheader_size=0x40000
+kernelheader_start=0x800000
+load_addr=0xa0000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+netmask=255.255.0.0
+qspi_bootcmd=echo Trying load from qspi..;sf probe && sf read $load_addr $kernel_start $kernel_size; env exists secureboot && sf read $kernelheader_addr_r $kernelheader_start $kernelheader_size && esbc_validate ${kernelheader_addr_r}; bootm $load_addr#$board
+ramdisk_addr=0x800000
+ramdisk_addr_r=0xa0000000
+ramdisk_size=0x2000000
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+scriptaddr=0x80000000
+scripthdraddr=0x80080000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+sd_bootcmd=echo Trying load from SD ..;mmcinfo; mmc read $load_addr $kernel_addr_sd $kernel_size_sd && env exists secureboot && mmc read $kernelheader_addr_r $kernelhdr_addr_sd $kernelhdr_size_sd  && esbc_validate ${kernelheader_addr_r};bootm $load_addr#$board
+serverip=192.168.0.100
+soc=fsl-layerscape
+stderr=serial
+stdin=serial
+stdout=serial
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=freescale
+
+Environment size: 5619/8188 bytes
+=> ping 192.168.0.100
+Trying FM1@DTSEC4
+FM1@DTSEC4 Waiting for PHY auto negotiation to complete....... done
+eth_current->state: ETH_STATE_ACTIVE
+Using FM1@DTSEC4 device
+host 192.168.0.100 is alive
+=> <INTERRUPT>
+=> 
+=> 
+=> ping 192.168.0.100
+Trying FM1@DTSEC4
+eth_current->state: ETH_STATE_ACTIVE
+Using FM1@DTSEC4 device
+host 192.168.0.100 is alive
+=> ping 192.168.0.100
+Trying FM1@DTSEC4
+eth_current->state: ETH_STATE_ACTIVE
+Using FM1@DTSEC4 device
+host 192.168.0.100 is alive
+=> reset
+resetting ...
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  0 
+=> 
+=> 
+=> 
+=> 
+=> printenv 
+arch=arm
+baudrate=115200
+board=ls1046afrwy
+board_name=ls1046afrwy
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; env exists secureboot && load ${devtype} ${devnum}:${distro_bootpart} ${scripthdraddr} ${prefix}${boot_script_hdr}; env exists secureboot && esbc_validate ${scripthdraddr};source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_pci_enum=pci enum
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_script_hdr=hdr_ls1046afrwy_bs.out
+boot_scripts=ls1046afrwy_boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=scsi0 mmc0 usb0 dhcp 
+bootargs=console=ttyS0,115200 root=/dev/ram0 earlycon=uart8250,mmio,0x21c0500 mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+bootcmd=run distro_bootcmd;run sd_bootcmd; env exists secureboot && esbc_halt;
+bootcmd_dhcp=run boot_net_usb_start; run boot_net_pci_enum; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootdelay=5
+console=ttyS0,115200
+cpu=armv8
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+eth1addr=92:8d:6a:9b:12:3a
+eth2addr=c2:dd:f9:08:bc:cd
+eth3addr=6e:75:fe:c4:4c:1c
+eth4addr=e6:62:ce:37:12:6b
+eth5addr=b6:32:5d:a4:bc:9c
+ethact=FM1@DTSEC9
+ethaddr=4e:3e:e5:48:55:4c
+ethprime=FM1@DTSEC9
+fdt_addr=0x64f00000
+fdt_addr_r=0x90000000
+fdt_high=0xffffffffffffffff
+fdtcontroladdr=fbc32588
+fdtheader_addr_r=0x80100000
+fman_ucode=fbc45450
+gatewayip=192.168.0.1
+hwconfig=fsl_ddr:bank_intlv=auto
+initrd_high=0xffffffffffffffff
+ipaddr=192.168.0.232
+kernel_addr=0x65000000
+kernel_addr_r=0x81000000
+kernel_addr_sd=0x8000
+kernel_load=0xa0000000
+kernel_size=0x2800000
+kernel_size_sd=0x14000
+kernel_start=0x1000000
+kernelhdr_addr_sd=0x4000
+kernelhdr_size_sd=0x10
+kernelheader_addr_r=0x80200000
+kernelheader_size=0x40000
+kernelheader_start=0x800000
+load_addr=0xa0000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+netmask=255.255.0.0
+qspi_bootcmd=echo Trying load from qspi..;sf probe && sf read $load_addr $kernel_start $kernel_size; env exists secureboot && sf read $kernelheader_addr_r $kernelheader_start $kernelheader_size && esbc_validate ${kernelheader_addr_r}; bootm $load_addr#$board
+ramdisk_addr=0x800000
+ramdisk_addr_r=0xa0000000
+ramdisk_size=0x2000000
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+scriptaddr=0x80000000
+scripthdraddr=0x80080000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+sd_bootcmd=echo Trying load from SD ..;mmcinfo; mmc read $load_addr $kernel_addr_sd $kernel_size_sd && env exists secureboot && mmc read $kernelheader_addr_r $kernelhdr_addr_sd $kernelhdr_size_sd  && esbc_validate ${kernelheader_addr_r};bootm $load_addr#$board
+serverip=192.168.0.100
+soc=fsl-layerscape
+stderr=serial
+stdin=serial
+stdout=serial
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=freescale
+
+Environment size: 5619/8188 bytes
+=> ping 19. 2.168.0.100
+Trying FM1@DTSEC9
+FM1@DTSEC9 Waiting for PHY auto negotiation to complete......... TIMEOUT !
+FM1@DTSEC9: Could not initialize
+FAIL
+Trying FM1@DTSEC10
+eth_current->state: ETH_STATE_ACTIVE
+Using FM1@DTSEC10 device
+
+Abort
+ping failed; host 192.168.0.100 is not alive
+=> ping 192.168.0.100                  printenv <INTERRUPT>
+=> setenv ethact FM1@DTSEC5 4
+=> saveenv 
+Saving Environment to MMC... Writing to MMC(0)... OK
+=> printenv 
+arch=arm
+baudrate=115200
+board=ls1046afrwy
+board_name=ls1046afrwy
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; env exists secureboot && load ${devtype} ${devnum}:${distro_bootpart} ${scripthdraddr} ${prefix}${boot_script_hdr}; env exists secureboot && esbc_validate ${scripthdraddr};source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_pci_enum=pci enum
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_script_hdr=hdr_ls1046afrwy_bs.out
+boot_scripts=ls1046afrwy_boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=scsi0 mmc0 usb0 dhcp 
+bootargs=console=ttyS0,115200 root=/dev/ram0 earlycon=uart8250,mmio,0x21c0500 mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+bootcmd=run distro_bootcmd;run sd_bootcmd; env exists secureboot && esbc_halt;
+bootcmd_dhcp=run boot_net_usb_start; run boot_net_pci_enum; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootdelay=5
+console=ttyS0,115200
+cpu=armv8
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+eth1addr=92:8d:6a:9b:12:3a
+eth2addr=c2:dd:f9:08:bc:cd
+eth3addr=6e:75:fe:c4:4c:1c
+eth4addr=e6:62:ce:37:12:6b
+eth5addr=b6:32:5d:a4:bc:9c
+ethact=FM1@DTSEC4
+ethaddr=4e:3e:e5:48:55:4c
+ethprime=FM1@DTSEC9
+fdt_addr=0x64f00000
+fdt_addr_r=0x90000000
+fdt_high=0xffffffffffffffff
+fdtcontroladdr=fbc32588
+fdtheader_addr_r=0x80100000
+fman_ucode=fbc45450
+gatewayip=192.168.0.1
+hwconfig=fsl_ddr:bank_intlv=auto
+initrd_high=0xffffffffffffffff
+ipaddr=192.168.0.232
+kernel_addr=0x65000000
+kernel_addr_r=0x81000000
+kernel_addr_sd=0x8000
+kernel_load=0xa0000000
+kernel_size=0x2800000
+kernel_size_sd=0x14000
+kernel_start=0x1000000
+kernelhdr_addr_sd=0x4000
+kernelhdr_size_sd=0x10
+kernelheader_addr_r=0x80200000
+kernelheader_size=0x40000
+kernelheader_start=0x800000
+load_addr=0xa0000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+netmask=255.255.0.0
+qspi_bootcmd=echo Trying load from qspi..;sf probe && sf read $load_addr $kernel_start $kernel_size; env exists secureboot && sf read $kernelheader_addr_r $kernelheader_start $kernelheader_size && esbc_validate ${kernelheader_addr_r}; bootm $load_addr#$board
+ramdisk_addr=0x800000
+ramdisk_addr_r=0xa0000000
+ramdisk_size=0x2000000
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+scriptaddr=0x80000000
+scripthdraddr=0x80080000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+sd_bootcmd=echo Trying load from SD ..;mmcinfo; mmc read $load_addr $kernel_addr_sd $kernel_size_sd && env exists secureboot && mmc read $kernelheader_addr_r $kernelhdr_addr_sd $kernelhdr_size_sd  && esbc_validate ${kernelheader_addr_r};bootm $load_addr#$board
+serverip=192.168.0.100
+soc=fsl-layerscape
+stderr=serial
+stdin=serial
+stdout=serial
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=freescale
+
+Environment size: 5619/8188 bytes
+=> printenv          saveenv         setenv ethact FM1@DTSEC4                        ping 192.168.0.100
+Trying FM1@DTSEC4
+eth_current->state: ETH_STATE_ACTIVE
+Using FM1@DTSEC4 device
+host 192.168.0.100 is alive
+=> rs s eset
+resetting ...
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  0 
+=> 
+=> 
+=> 
+=> printenv 
+arch=arm
+baudrate=115200
+board=ls1046afrwy
+board_name=ls1046afrwy
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; env exists secureboot && load ${devtype} ${devnum}:${distro_bootpart} ${scripthdraddr} ${prefix}${boot_script_hdr}; env exists secureboot && esbc_validate ${scripthdraddr};source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_pci_enum=pci enum
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_script_hdr=hdr_ls1046afrwy_bs.out
+boot_scripts=ls1046afrwy_boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=scsi0 mmc0 usb0 dhcp 
+bootargs=console=ttyS0,115200 root=/dev/ram0 earlycon=uart8250,mmio,0x21c0500 mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+bootcmd=run distro_bootcmd;run sd_bootcmd; env exists secureboot && esbc_halt;
+bootcmd_dhcp=run boot_net_usb_start; run boot_net_pci_enum; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootdelay=5
+console=ttyS0,115200
+cpu=armv8
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+eth1addr=92:8d:6a:9b:12:3a
+eth2addr=c2:dd:f9:08:bc:cd
+eth3addr=6e:75:fe:c4:4c:1c
+eth4addr=e6:62:ce:37:12:6b
+eth5addr=b6:32:5d:a4:bc:9c
+ethact=FM1@DTSEC9
+ethaddr=4e:3e:e5:48:55:4c
+ethprime=FM1@DTSEC9
+fdt_addr=0x64f00000
+fdt_addr_r=0x90000000
+fdt_high=0xffffffffffffffff
+fdtcontroladdr=fbc32588
+fdtheader_addr_r=0x80100000
+fman_ucode=fbc45450
+gatewayip=192.168.0.1
+hwconfig=fsl_ddr:bank_intlv=auto
+initrd_high=0xffffffffffffffff
+ipaddr=192.168.0.232
+kernel_addr=0x65000000
+kernel_addr_r=0x81000000
+kernel_addr_sd=0x8000
+kernel_load=0xa0000000
+kernel_size=0x2800000
+kernel_size_sd=0x14000
+kernel_start=0x1000000
+kernelhdr_addr_sd=0x4000
+kernelhdr_size_sd=0x10
+kernelheader_addr_r=0x80200000
+kernelheader_size=0x40000
+kernelheader_start=0x800000
+load_addr=0xa0000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+netmask=255.255.0.0
+qspi_bootcmd=echo Trying load from qspi..;sf probe && sf read $load_addr $kernel_start $kernel_size; env exists secureboot && sf read $kernelheader_addr_r $kernelheader_start $kernelheader_size && esbc_validate ${kernelheader_addr_r}; bootm $load_addr#$board
+ramdisk_addr=0x800000
+ramdisk_addr_r=0xa0000000
+ramdisk_size=0x2000000
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+scriptaddr=0x80000000
+scripthdraddr=0x80080000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+sd_bootcmd=echo Trying load from SD ..;mmcinfo; mmc read $load_addr $kernel_addr_sd $kernel_size_sd && env exists secureboot && mmc read $kernelheader_addr_r $kernelhdr_addr_sd $kernelhdr_size_sd  && esbc_validate ${kernelheader_addr_r};bootm $load_addr#$board
+serverip=192.168.0.100
+soc=fsl-layerscape
+stderr=serial
+stdin=serial
+stdout=serial
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=freescale
+
+Environment size: 5619/8188 bytes
+=> setenv ethact FM1@DTSEC5 4
+=> saveenv 
+Saving Environment to MMC... Writing to MMC(0)... OK
+=> printenv 
+arch=arm
+baudrate=115200
+board=ls1046afrwy
+board_name=ls1046afrwy
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; env exists secureboot && load ${devtype} ${devnum}:${distro_bootpart} ${scripthdraddr} ${prefix}${boot_script_hdr}; env exists secureboot && esbc_validate ${scripthdraddr};source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_pci_enum=pci enum
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_script_hdr=hdr_ls1046afrwy_bs.out
+boot_scripts=ls1046afrwy_boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=scsi0 mmc0 usb0 dhcp 
+bootargs=console=ttyS0,115200 root=/dev/ram0 earlycon=uart8250,mmio,0x21c0500 mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+bootcmd=run distro_bootcmd;run sd_bootcmd; env exists secureboot && esbc_halt;
+bootcmd_dhcp=run boot_net_usb_start; run boot_net_pci_enum; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootdelay=5
+console=ttyS0,115200
+cpu=armv8
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+eth1addr=92:8d:6a:9b:12:3a
+eth2addr=c2:dd:f9:08:bc:cd
+eth3addr=6e:75:fe:c4:4c:1c
+eth4addr=e6:62:ce:37:12:6b
+eth5addr=b6:32:5d:a4:bc:9c
+ethact=FM1@DTSEC4
+ethaddr=4e:3e:e5:48:55:4c
+ethprime=FM1@DTSEC9
+fdt_addr=0x64f00000
+fdt_addr_r=0x90000000
+fdt_high=0xffffffffffffffff
+fdtcontroladdr=fbc32588
+fdtheader_addr_r=0x80100000
+fman_ucode=fbc45450
+gatewayip=192.168.0.1
+hwconfig=fsl_ddr:bank_intlv=auto
+initrd_high=0xffffffffffffffff
+ipaddr=192.168.0.232
+kernel_addr=0x65000000
+kernel_addr_r=0x81000000
+kernel_addr_sd=0x8000
+kernel_load=0xa0000000
+kernel_size=0x2800000
+kernel_size_sd=0x14000
+kernel_start=0x1000000
+kernelhdr_addr_sd=0x4000
+kernelhdr_size_sd=0x10
+kernelheader_addr_r=0x80200000
+kernelheader_size=0x40000
+kernelheader_start=0x800000
+load_addr=0xa0000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+netmask=255.255.0.0
+qspi_bootcmd=echo Trying load from qspi..;sf probe && sf read $load_addr $kernel_start $kernel_size; env exists secureboot && sf read $kernelheader_addr_r $kernelheader_start $kernelheader_size && esbc_validate ${kernelheader_addr_r}; bootm $load_addr#$board
+ramdisk_addr=0x800000
+ramdisk_addr_r=0xa0000000
+ramdisk_size=0x2000000
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+scriptaddr=0x80000000
+scripthdraddr=0x80080000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+sd_bootcmd=echo Trying load from SD ..;mmcinfo; mmc read $load_addr $kernel_addr_sd $kernel_size_sd && env exists secureboot && mmc read $kernelheader_addr_r $kernelhdr_addr_sd $kernelhdr_size_sd  && esbc_validate ${kernelheader_addr_r};bootm $load_addr#$board
+serverip=192.168.0.100
+soc=fsl-layerscape
+stderr=serial
+stdin=serial
+stdout=serial
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=freescale
+
+Environment size: 5619/8188 bytes
+=> ping 192.168.0.100
+Trying FM1@DTSEC4
+FM1@DTSEC4 Waiting for PHY auto negotiation to complete....... done
+eth_current->state: ETH_STATE_ACTIVE
+Using FM1@DTSEC4 device
+host 192.168.0.100 is alive
+=> ping 192.168.0.100                  rr eset
+resetting ...
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  0 
+=> 
+=> 
+=> 
+=> 
+=> printenv 
+arch=arm
+baudrate=115200
+board=ls1046afrwy
+board_name=ls1046afrwy
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; env exists secureboot && load ${devtype} ${devnum}:${distro_bootpart} ${scripthdraddr} ${prefix}${boot_script_hdr}; env exists secureboot && esbc_validate ${scripthdraddr};source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_pci_enum=pci enum
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_script_hdr=hdr_ls1046afrwy_bs.out
+boot_scripts=ls1046afrwy_boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=scsi0 mmc0 usb0 dhcp 
+bootargs=console=ttyS0,115200 root=/dev/ram0 earlycon=uart8250,mmio,0x21c0500 mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+bootcmd=run distro_bootcmd;run sd_bootcmd; env exists secureboot && esbc_halt;
+bootcmd_dhcp=run boot_net_usb_start; run boot_net_pci_enum; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootdelay=5
+console=ttyS0,115200
+cpu=armv8
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+eth1addr=92:8d:6a:9b:12:3a
+eth2addr=c2:dd:f9:08:bc:cd
+eth3addr=6e:75:fe:c4:4c:1c
+eth4addr=e6:62:ce:37:12:6b
+eth5addr=b6:32:5d:a4:bc:9c
+ethact=FM1@DTSEC9
+ethaddr=4e:3e:e5:48:55:4c
+ethprime=FM1@DTSEC9
+fdt_addr=0x64f00000
+fdt_addr_r=0x90000000
+fdt_high=0xffffffffffffffff
+fdtcontroladdr=fbc32588
+fdtheader_addr_r=0x80100000
+fman_ucode=fbc45450
+gatewayip=192.168.0.1
+hwconfig=fsl_ddr:bank_intlv=auto
+initrd_high=0xffffffffffffffff
+ipaddr=192.168.0.232
+kernel_addr=0x65000000
+kernel_addr_r=0x81000000
+kernel_addr_sd=0x8000
+kernel_load=0xa0000000
+kernel_size=0x2800000
+kernel_size_sd=0x14000
+kernel_start=0x1000000
+kernelhdr_addr_sd=0x4000
+kernelhdr_size_sd=0x10
+kernelheader_addr_r=0x80200000
+kernelheader_size=0x40000
+kernelheader_start=0x800000
+load_addr=0xa0000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+netmask=255.255.0.0
+qspi_bootcmd=echo Trying load from qspi..;sf probe && sf read $load_addr $kernel_start $kernel_size; env exists secureboot && sf read $kernelheader_addr_r $kernelheader_start $kernelheader_size && esbc_validate ${kernelheader_addr_r}; bootm $load_addr#$board
+ramdisk_addr=0x800000
+ramdisk_addr_r=0xa0000000
+ramdisk_size=0x2000000
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+scriptaddr=0x80000000
+scripthdraddr=0x80080000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+sd_bootcmd=echo Trying load from SD ..;mmcinfo; mmc read $load_addr $kernel_addr_sd $kernel_size_sd && env exists secureboot && mmc read $kernelheader_addr_r $kernelhdr_addr_sd $kernelhdr_size_sd  && esbc_validate ${kernelheader_addr_r};bootm $load_addr#$board
+serverip=192.168.0.100
+soc=fsl-layerscape
+stderr=serial
+stdin=serial
+stdout=serial
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=freescale
+
+Environment size: 5619/8188 bytes
+=> setenv ethact FM1@DTSEC5 4
+=> saveenv 
+Saving Environment to MMC... Writing to MMC(0)... OK
+=> saveenv         setenv ethact FM1@DTSEC4                        printenv <INTERRUPT>
+=> ping 192.168.0.100
+Trying FM1@DTSEC4
+FM1@DTSEC4 Waiting for PHY auto negotiation to complete....... done
+eth_current->state: ETH_STATE_ACTIVE
+Using FM1@DTSEC4 device
+host 192.168.0.100 is alive
+=> NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... *** Warning - bad CRC, using default environment
+
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3 [PRIME]
+Warning: FM1@DTSEC3 (eth0) using random MAC address - da:68:f0:d1:d5:ff
+Saving Environment to MMC... Writing to MMC(0)... OK
+ETH_STATE_INIT
+, FM1@DTSEC4
+Warning: FM1@DTSEC4 (eth1) using random MAC address - 4e:3e:e5:48:55:4c
+Saving Environment to MMC... Writing to MMC(0)... OK
+ETH_STATE_INIT
+, FM1@DTSEC5
+Warning: FM1@DTSEC5 (eth2) using random MAC address - 36:88:ab:d8:f7:8d
+Saving Environment to MMC... Writing to MMC(0)... OK
+ETH_STATE_INIT
+, FM1@DTSEC6
+Warning: FM1@DTSEC6 (eth3) using random MAC address - 46:d9:fd:04:88:aa
+Saving Environment to MMC... Writing to MMC(0)... OK
+ETH_STATE_INIT
+, FM1@DTSEC9
+Warning: FM1@DTSEC9 (eth4) using random MAC address - b2:29:40:21:5a:80
+Saving Environment to MMC... Writing to MMC(0)... OK
+ETH_STATE_INIT
+, FM1@DTSEC10
+Warning: FM1@DTSEC10 (eth5) using random MAC address - 62:66:ca:3b:26:0c
+Saving Environment to MMC... Writing to MMC(0)... OK
+ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  4  3  0 
+=> 
+=> mii info 
+PHY 0x00: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x01: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x02: OUI = 0x0732, Model = 0x11, Rev = 0x06, 100baseT, FDX
+PHY 0x03: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x04: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+PHY 0x05: OUI = 0x0732, Model = 0x11, Rev = 0x06,  10baseT, HDX
+=> mdio list
+FSL_MDIO0:
+1 - RealTek RTL8211F <--> FM1@DTSEC3
+2 - RealTek RTL8211F <--> FM1@DTSEC4
+3 - RealTek RTL8211F <--> FM1@DTSEC9
+4 - RealTek RTL8211F <--> FM1@DTSEC5
+5 - RealTek RTL8211F <--> FM1@DTSEC6
+=> printenv 
+arch=arm
+baudrate=115200
+board=ls1046afrwy
+board_name=ls1046afrwy
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; env exists secureboot && load ${devtype} ${devnum}:${distro_bootpart} ${scripthdraddr} ${prefix}${boot_script_hdr}; env exists secureboot && esbc_validate ${scripthdraddr};source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_pci_enum=pci enum
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_script_hdr=hdr_ls1046afrwy_bs.out
+boot_scripts=ls1046afrwy_boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=scsi0 mmc0 usb0 dhcp 
+bootargs=console=ttyS0,115200 root=/dev/ram0 earlycon=uart8250,mmio,0x21c0500 mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+bootcmd=run distro_bootcmd;run sd_bootcmd; env exists secureboot && esbc_halt;
+bootcmd_dhcp=run boot_net_usb_start; run boot_net_pci_enum; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootdelay=5
+console=ttyS0,115200
+cpu=armv8
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+eth1addr=4e:3e:e5:48:55:4c
+eth2addr=36:88:ab:d8:f7:8d
+eth3addr=46:d9:fd:04:88:aa
+eth4addr=b2:29:40:21:5a:80
+eth5addr=62:66:ca:3b:26:0c
+ethact=FM1@DTSEC3
+ethaddr=da:68:f0:d1:d5:ff
+ethprime=FM1@DTSEC3
+fdt_addr=0x64f00000
+fdt_addr_r=0x90000000
+fdt_high=0xffffffffffffffff
+fdtcontroladdr=fbc32588
+fdtheader_addr_r=0x80100000
+fman_ucode=fbc44610
+hwconfig=fsl_ddr:bank_intlv=auto
+initrd_high=0xffffffffffffffff
+kernel_addr=0x65000000
+kernel_addr_r=0x81000000
+kernel_addr_sd=0x8000
+kernel_load=0xa0000000
+kernel_size=0x2800000
+kernel_size_sd=0x14000
+kernel_start=0x1000000
+kernelhdr_addr_sd=0x4000
+kernelhdr_size_sd=0x10
+kernelheader_addr_r=0x80200000
+kernelheader_size=0x40000
+kernelheader_start=0x800000
+load_addr=0xa0000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+qspi_bootcmd=echo Trying load from qspi..;sf probe && sf read $load_addr $kernel_start $kernel_size; env exists secureboot && sf read $kernelheader_addr_r $kernelheader_start $kernelheader_size && esbc_validate ${kernelheader_addr_r}; bootm $load_addr#$board
+ramdisk_addr=0x800000
+ramdisk_addr_r=0xa0000000
+ramdisk_size=0x2000000
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+scriptaddr=0x80000000
+scripthdraddr=0x80080000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+sd_bootcmd=echo Trying load from SD ..;mmcinfo; mmc read $load_addr $kernel_addr_sd $kernel_size_sd && env exists secureboot && mmc read $kernelheader_addr_r $kernelhdr_addr_sd $kernelhdr_size_sd  && esbc_validate ${kernelheader_addr_r};bootm $load_addr#$board
+soc=fsl-layerscape
+stderr=serial
+stdin=serial
+stdout=serial
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=freescale
+
+Environment size: 5533/8188 bytes
+=> setenv ipaddr 192.168.0.232
+"Synchronous Abort" handler, esr 0x96000210
+elr: 0000000082070e94 lr : 00000000820718d0 (reloc)
+elr: 00000000fbda9e94 lr : 00000000fbdaa8d0
+x0 : 00000000fbdb42c2 x1 : 00000000fbc30840
+x2 : 00000000fbdb79b7 x3 : 00000000fbc304c0
+x4 : 00000000fbc30500 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 00000000fbc32208
+x8 : 00000000fbc30700 x9 : 0000000000000008
+x10: 000000000000000d x11: 64615f7464667b24
+x12: 74203b7d725f7264 x13: 746f6f62206e6568
+x14: 746f6f6220696665 x15: 64667b242072676d
+x16: 725f726464615f74 x17: 622065736c653b7d
+x18: 6220696665746f6f x19: 00000000ffffffc8
+x20: 00000000fbc3077c x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc303e0
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2ff50 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc30180 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc302e0
+x20: 0000000096000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc30190
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2fd00 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2ff30 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc30090
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2ff40
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2fab0 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2fce0 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2fe40
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2fcf0
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2f860 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2fa90 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2fbf0
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2faa0
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2f610 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2f840 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2f9a0
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2f850
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000218 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39218 lr : 00000000fbd3ecb4
+x0 : 0000000000000000 x1 : 000000000000000a
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2f3c0 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2f5f0 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2f750
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2f600
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2f170 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2f3a0 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2f500
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2f3b0
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000218 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39218 lr : 00000000fbd3ecb4
+x0 : 0000000000000000 x1 : 000000000000000a
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2ef20 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2f150 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2f2b0
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2f160
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2ecd0 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2ef00 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2f060
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2ef10
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000218 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39218 lr : 00000000fbd3ecb4
+x0 : 0000000000000000 x1 : 000000000000000a
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2ea80 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2ecb0 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2ee10
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2ecc0
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2e830 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2ea60 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2ebc0
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2ea70
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000218 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39218 lr : 00000000fbd3ecb4
+x0 : 0000000000000000 x1 : 000000000000000a
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2e5e0 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2e810 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2e970
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2e820
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2e390 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2e5c0 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2e720
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2e5d0
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000218 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39218 lr : 00000000fbd3ecb4
+x0 : 0000000000000000 x1 : 000000000000000a
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2e140 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2e370 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2e4d0
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2e380
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2def0 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2e120 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2e280
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2e130
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000218 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39218 lr : 00000000fbd3ecb4
+x0 : 0000000000000000 x1 : 000000000000000a
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2dca0 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2ded0 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2e030
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2dee0
+
+Resetting CPU ...
+
+resetting ...
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082000220 lr : 0000000082005cb4 (reloc)
+elr: 00000000fbd39220 lr : 00000000fbd3ecb4
+x0 : 00000000fbd39000 x1 : 0000000001ee00b0
+x2 : 0000000000000020 x3 : 0000000000000001
+x4 : 00000000fbc2da50 x5 : fffffffffffffff8
+x6 : ffffff80ffffffc8 x7 : 000000000000000f
+x8 : 00000000fbc2dc80 x9 : 0000000000000008
+x10: 0000000000000010 x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000010
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbc2dde0
+x20: 0000000086000210 x21: 00000000fbc30840
+x22: 00000000fbc31de0 x23: 00000000fbc30568
+x24: 0000000000000214 x25: 00000000fbdb4000
+x26: 00000000fbc30460 x27: 00000000fbdb79b7
+x28: 00000000fbc30568 x29: 00000000fbc2dc90
+
+Resetting CPU ...
+
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  0 
+=> 
+=> setenv ipaddr 192.168.0.232
+=> setenv serverip 192.168.0.100
+=> setenv ethact FM1@DTSEC5 4
+=> saveenv 
+Saving Environment to MMC... Writing to MMC(0)... OK
+=> printenv 
+arch=arm
+baudrate=115200
+board=ls1046afrwy
+board_name=ls1046afrwy
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; env exists secureboot && load ${devtype} ${devnum}:${distro_bootpart} ${scripthdraddr} ${prefix}${boot_script_hdr}; env exists secureboot && esbc_validate ${scripthdraddr};source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_pci_enum=pci enum
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_script_hdr=hdr_ls1046afrwy_bs.out
+boot_scripts=ls1046afrwy_boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=scsi0 mmc0 usb0 dhcp 
+bootargs=console=ttyS0,115200 root=/dev/ram0 earlycon=uart8250,mmio,0x21c0500 mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+bootcmd=run distro_bootcmd;run sd_bootcmd; env exists secureboot && esbc_halt;
+bootcmd_dhcp=run boot_net_usb_start; run boot_net_pci_enum; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootdelay=5
+console=ttyS0,115200
+cpu=armv8
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+eth1addr=4e:3e:e5:48:55:4c
+eth2addr=36:88:ab:d8:f7:8d
+eth3addr=46:d9:fd:04:88:aa
+eth4addr=b2:29:40:21:5a:80
+eth5addr=62:66:ca:3b:26:0c
+ethact=FM1@DTSEC4
+ethaddr=da:68:f0:d1:d5:ff
+ethprime=FM1@DTSEC3
+fdt_addr=0x64f00000
+fdt_addr_r=0x90000000
+fdt_high=0xffffffffffffffff
+fdtcontroladdr=fbc32588
+fdtheader_addr_r=0x80100000
+fman_ucode=fbc45350
+hwconfig=fsl_ddr:bank_intlv=auto
+initrd_high=0xffffffffffffffff
+ipaddr=192.168.0.232
+kernel_addr=0x65000000
+kernel_addr_r=0x81000000
+kernel_addr_sd=0x8000
+kernel_load=0xa0000000
+kernel_size=0x2800000
+kernel_size_sd=0x14000
+kernel_start=0x1000000
+kernelhdr_addr_sd=0x4000
+kernelhdr_size_sd=0x10
+kernelheader_addr_r=0x80200000
+kernelheader_size=0x40000
+kernelheader_start=0x800000
+load_addr=0xa0000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mtdparts=1550000.spi:1m(rcw),15m(u-boot),48m(kernel.itb);7e800000.flash:16m(nand_uboot),48m(nand_kernel),448m(nand_free)
+qspi_bootcmd=echo Trying load from qspi..;sf probe && sf read $load_addr $kernel_start $kernel_size; env exists secureboot && sf read $kernelheader_addr_r $kernelheader_start $kernelheader_size && esbc_validate ${kernelheader_addr_r}; bootm $load_addr#$board
+ramdisk_addr=0x800000
+ramdisk_addr_r=0xa0000000
+ramdisk_size=0x2000000
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+scriptaddr=0x80000000
+scripthdraddr=0x80080000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+sd_bootcmd=echo Trying load from SD ..;mmcinfo; mmc read $load_addr $kernel_addr_sd $kernel_size_sd && env exists secureboot && mmc read $kernelheader_addr_r $kernelhdr_addr_sd $kernelhdr_size_sd  && esbc_validate ${kernelheader_addr_r};bootm $load_addr#$board
+serverip=192.168.0.100
+soc=fsl-layerscape
+stderr=serial
+stdin=serial
+stdout=serial
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=freescale
+
+Environment size: 5577/8188 bytes
+=> ping 192.168.01 .100
+Trying FM1@DTSEC4
+FM1@DTSEC4 Waiting for PHY auto negotiation to complete....... done
+eth_current->state: ETH_STATE_ACTIVE
+Using FM1@DTSEC4 device
+host 192.168.0.100 is alive
+=> boot
+"Error" handler, esr 0xbf000002
+elr: 000000008206d58c lr : 000000008206d57c (reloc)
+elr: 00000000fbda658c lr : 00000000fbda657c
+x0 : 00000000000087a9 x1 : 00000000ffffffff
+x2 : 0000000000000049 x3 : 00000000fbdd4e78
+x4 : 0000000000000000 x5 : 00000000fbc6e690
+x6 : 0000000000000001 x7 : 00000000fbdcd3c8
+x8 : 00000000fbc6e690 x9 : 0000000000000008
+x10: 000000000000000d x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3010c x15: 00000000ffffffff
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: 00000000fbdd4e78
+x20: 0000000000000001 x21: 0000000000000000
+x22: 00000000fbde6000 x23: 00000000fbc31cb8
+x24: 00000000fbdbf70e x25: 0000000000000000
+x26: 0000000000000000 x27: 0000000000000000
+x28: 00000000fbc6e350 x29: 00000000fbc31c10
+
+Resetting CPU ...
+
+resetting ...
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  4  3  2  1  0 
+"Synchronous Abort" handler, esr 0x86000210
+elr: 0000000082001090 lr : 0000000082001208 (reloc)
+elr: 00000000fbd3a090 lr : 00000000fbd3a208
+x0 : 00000000fbc43970 x1 : 0000000000000002
+x2 : 0000000000000000 x3 : 0000000000000001
+x4 : 0000000000000000 x5 : 0000000000000030
+x6 : 0000000000000002 x7 : 0000000000000000
+x8 : 00000000ffffffd0 x9 : 0000000000000008
+x10: 000000000000000a x11: 0000000000000006
+x12: 000000000001869f x13: 0000000000001668
+x14: 00000000fbc3247c x15: 0000000000000002
+x16: 0000000000002080 x17: 000000000153000c
+x18: 00000000fbc34d68 x19: ffffffffffffffff
+x20: 00000000fbc43970 x21: 0000000000000000
+x22: 0000000000000000 x23: 0000000000000000
+x24: 0000000000000000 x25: 0000000000000000
+x26: 0000000000000000 x27: 0000000000000000
+x28: 0000000000000000 x29: 00000000fbc324e0
+
+Resetting CPU ...
+
+resetting ...
+NOTICE:  Fixed DDR on board
+
+NOTICE:  4 GB DDR4, 64-bit, CL=15, ECC on
+NOTICE:  BL2: v1.5(release):LSDK-19.06
+NOTICE:  BL2: Built : 19:21:33, Jan 22 2024
+NOTICE:  BL2: Booting BL31NOTICE:  BL31: v1.5(release):LSDK-19.06
+NOTICE:  BL31: Built : 19:21:38, Jan 22 2024
+NOTICE:  Welcome to LS1046 BL31 Phase
+
+
+U-Boot 2019.04-ge7f38bb-dirty (Jan 22 2024 - 19:15:27 -0800)
+
+SoC:  LS1046AE Rev1.0 (0x87070010)
+Clock Configuration:
+       CPU0(A72):1800 MHz  CPU1(A72):1800 MHz  CPU2(A72):1800 MHz  
+       CPU3(A72):1800 MHz  
+       Bus:      700  MHz  DDR:      2100 MT/s  FMAN:     800  MHz
+Reset Configuration Word (RCW):
+       00000000: 0e150012 10000000 00000000 00000000
+       00000010: 33335559 40805012 60040000 c1000000
+       00000020: 00000000 00000000 00000000 00238804
+       00000030: 20124000 00003101 00000096 00000001
+Model: GIE LS1046A FRWY Board
+Board: LS1046AFRWY, Rev: A, boot from SD
+SD1_CLK1 = 100.00MHZ, SD1_CLK2 = 100.00MHZ
+I2C:   ready
+DRAM:  3.9 GiB (DDR4, 64-bit, CL=15, ECC on)
+SEC0: RNG instantiated
+PCA: failed to select proper channel
+Using SERDES1 Protocol: 13107 (0x3333)
+Using SERDES2 Protocol: 21849 (0x5559)
+NAND:  512 MiB
+MMC:   FSL_SDHC: 0
+Loading Environment from MMC... OK
+EEPROM: Read failed.
+In:    serial
+Out:   serial
+Err:   serial
+Net:   phy_realtek_init
+****switch 0x3333****
+
+MMC read: dev # 0, block # 18432, count 128 ...
+Fman1: Uploading microcode version 106.4.18
+addr:1 is connected to FM1@DTSEC3.
+FM1@DTSEC3 connected to RealTek RTL8211F
+addr:2 is connected to FM1@DTSEC4.
+FM1@DTSEC4 connected to RealTek RTL8211F
+addr:4 is connected to FM1@DTSEC5.
+FM1@DTSEC5 connected to RealTek RTL8211F
+addr:5 is connected to FM1@DTSEC6.
+FM1@DTSEC6 connected to RealTek RTL8211F
+addr:3 is connected to FM1@DTSEC9.
+FM1@DTSEC9 connected to RealTek RTL8211F
+PCIe0: pcie@3400000 Root Complex: no link
+PCIe1: pcie@3500000 Root Complex: no link
+PCIe2: pcie@3600000 Root Complex: no link
+FM1@DTSEC3 [PRIME]ETH_STATE_INIT
+, FM1@DTSEC4ETH_STATE_INIT
+, FM1@DTSEC5ETH_STATE_INIT
+, FM1@DTSEC6ETH_STATE_INIT
+, FM1@DTSEC9ETH_STATE_INIT
+, FM1@DTSEC10ETH_STATE_INIT
+
+Hit any key to stop autoboot:  5  4  3  2  1  0 
+scanning bus for devices...
+Target spinup took 0 ms.
+AHCI 0001.0301 32 slots 1 ports 6 Gbps 0x1 impl SATA mode
+flags: 64bit ncq pm clo only pmp fbss pio slum part ccc apst 
+  Device 0: (0:0) Vendor: ATA Prod.: Lenovo SSD SL700 Rev: W022
+            Type: Hard Disk
+            Capacity: 122104.3 MB = 119.2 GB (250069680 x 512)
+
+Device 0: (0:0) Vendor: ATA Prod.: Lenovo SSD SL700 Rev: W022
+            Type: Hard Disk
+            Capacity: 122104.3 MB = 119.2 GB (250069680 x 512)
+... is now current device
+Scanning scsi 0:1...
+switch to partitions #0, OK
+mmc0 is current device
+Scanning mmc 0:1...
+Scanning mmc 0:2...
+Found U-Boot script /ls1046afrwy_boot.scr
+979 bytes read in 5 ms (190.4 KiB/s)
+## Executing script at 80000000
+21750272 bytes read in 1049 ms (19.8 MiB/s)
+32990 bytes read in 11 ms (2.9 MiB/s)
+## Flattened Device Tree blob at 90000000
+   Booting using the fdt blob at 0x90000000
+   Using Device Tree in place at 0000000090000000, end 000000009001b0dd
+WARNING failed to get smmu node: FDT_ERR_NOTFOUND
+WARNING failed to get smmu node: FDT_ERR_NOTFOUND
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.14.122-g277cb24a1-dirty (root@ubuntu) (gcc version 7.5.0 (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04)) #2 SMP PREEMPT Sun Jan 7 22:30:36 PST 2024
+[    0.000000] Boot CPU: AArch64 Processor [410fd082]
+[    0.000000] Machine model: LS1046A FRWY Board
+[    0.000000] earlycon: uart8250 at MMIO 0x00000000021c0500 (options '')
+[    0.000000] bootconsole [uart8250] enabled
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] OF: reserved mem: initialized node qman-fqd, compatible id fsl,qman-fqd
+[    0.000000] OF: reserved mem: initialized node qman-pfdr, compatible id fsl,qman-pfdr
+[    0.000000] OF: reserved mem: initialized node bman-fbpr, compatible id fsl,bman-fbpr
+[    0.000000] cma: Reserved 64 MiB at 0x00000000f7c00000
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000000000000-0x00000008ff7fffff]
+[    0.000000] NUMA: NODE_DATA [mem 0x8ff7c0b00-0x8ff7c22bf]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000080000000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x00000008ff7fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x00000000fbdfffff]
+[    0.000000]   node   0: [mem 0x0000000880000000-0x00000008fbffffff]
+[    0.000000]   node   0: [mem 0x00000008ff000000-0x00000008ff7fffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x00000008ff7fffff]
+[    0.000000] On node 0 totalpages: 1017344
+[    0.000000]   DMA zone: 8192 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 507392 pages, LIFO batch:31
+[    0.000000]   Normal zone: 7968 pages used for memmap
+[    0.000000]   Normal zone: 509952 pages, LIFO batch:31
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.1
+[    0.000000] percpu: Embedded 25 pages/cpu s62040 r8192 d32168 u102400
+[    0.000000] pcpu-alloc: s62040 r8192 d32168 u102400 alloc=25*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] Speculative Store Bypass Disable mitigation not required
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1001184
+[    0.000000] Policy zone: Normal
+[    0.000000] Kernel command line: console=ttyS0,115200 earlycon=uart8250,mmio,0x21c0500 root=PARTUUID=fac44477-04 rw rootwait loglevel=8
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] software IO TLB: mapped [mem 0xf3c00000-0xf7c00000] (64MB)
+[    0.000000] Memory: 3849376K/4069376K available (13308K kernel code, 1336K rwdata, 5296K rodata, 1280K init, 930K bss, 154464K reserved, 65536K cma-reserved)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     modules : 0xffff000000000000 - 0xffff000008000000   (   128 MB)
+[    0.000000]     vmalloc : 0xffff000008000000 - 0xffff7dffbfff0000   (129022 GB)
+[    0.000000]       .text : 0xffff000008080000 - 0xffff000008d80000   ( 13312 KB)
+[    0.000000]     .rodata : 0xffff000008d80000 - 0xffff0000092b0000   (  5312 KB)
+[    0.000000]       .init : 0xffff0000092b0000 - 0xffff0000093f0000   (  1280 KB)
+[    0.000000]       .data : 0xffff0000093f0000 - 0xffff00000953e200   (  1337 KB)
+[    0.000000]        .bss : 0xffff00000953e200 - 0xffff000009626da0   (   931 KB)
+[    0.000000]     fixed   : 0xffff7dfffe7f9000 - 0xffff7dfffec00000   (  4124 KB)
+[    0.000000]     PCI I/O : 0xffff7dfffee00000 - 0xffff7dffffe00000   (    16 MB)
+[    0.000000]     vmemmap : 0xffff7e0000000000 - 0xffff800000000000   (  2048 GB maximum)
+[    0.000000]               0xffff7e0000000000 - 0xffff7e0021fe0000   (   543 MB actual)
+[    0.000000]     memory  : 0xffff800000000000 - 0xffff80087f800000   ( 34808 MB)
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+[    0.000000] Tasks RCU enabled.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GIC: Adjusting CPU interface base to 0x000000000142f000
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] arch_timer: cp15 timer(s) running at 25.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x5c40939b5, max_idle_ns: 440795202646 ns
+[    0.000002] sched_clock: 56 bits at 25MHz, resolution 40ns, wraps every 4398046511100ns
+[    0.008342] Console: colour dummy device 80x25
+[    0.012832] Calibrating delay loop (skipped), value calculated using timer frequency.. 50.00 BogoMIPS (lpj=100000)
+[    0.023241] pid_max: default: 32768 minimum: 301
+[    0.027925] Security Framework initialized
+[    0.033045] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.040851] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.047966] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.054717] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.077918] ASID allocator initialised with 32768 entries
+[    0.091353] Hierarchical SRCU implementation.
+[    0.104166] EFI services will not be available.
+[    0.116727] smp: Bringing up secondary CPUs ...
+[    0.149394] Detected PIPT I-cache on CPU1
+[    0.149414] CPU1: Booted secondary processor [410fd082]
+[    0.177406] Detected PIPT I-cache on CPU2
+[    0.177419] CPU2: Booted secondary processor [410fd082]
+[    0.205431] Detected PIPT I-cache on CPU3
+[    0.205443] CPU3: Booted secondary processor [410fd082]
+[    0.205472] smp: Brought up 1 node, 4 CPUs
+[    0.237415] SMP: Total of 4 processors activated.
+[    0.242147] CPU features: detected feature: 32-bit EL0 Support
+[    0.248010] CPU features: detected feature: Kernel page table isolation (KPTI)
+[    0.259142] CPU: All CPU(s) started at EL2
+[    0.263264] alternatives: patching kernel code
+[    0.268204] devtmpfs: initialized
+[    0.273761] random: get_random_u32 called from bucket_table_alloc+0x108/0x258 with crng_init=0
+[    0.282600] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.292409] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[    0.299205] xor: measuring software checksum speed
+[    0.344039]    8regs     :  7631.000 MB/sec
+[    0.388256]    8regs_prefetch:  6687.000 MB/sec
+[    0.432823]    32regs    :  7682.000 MB/sec
+[    0.477040]    32regs_prefetch:  7243.000 MB/sec
+[    0.481678] xor: using function: 32regs (7682.000 MB/sec)
+[    0.487104] pinctrl core: initialized pinctrl subsystem
+[    0.492847] DMI not present or invalid.
+[    0.496845] NET: Registered protocol family 16
+[    0.502082] cpuidle: using governor menu
+[    0.506219] Bman ver:0a02,02,01
+[    0.511239] qman-fqd addr 0x00000008ff800000 size 0x800000
+[    0.516752] qman-pfdr addr 0x00000008fc000000 size 0x2000000
+[    0.522463] Qman ver:0a01,03,02,01
+[    0.525953] vdso: 2 pages (1 code @ ffff000008d86000, 1 data @ ffff0000093f5000)
+[    0.533396] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.540614] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.546834] Serial: AMBA PL011 UART driver
+[    0.553949] Machine: LS1046A FRWY Board
+[    0.557806] SoC family: QorIQ LS1046A
+[    0.561479] SoC ID: svr:0x87070010, Revision: 1.0
+[    0.577633] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.649477] raid6: int64x1  gen()  1113 MB/s
+[    0.721482] raid6: int64x1  xor()  1010 MB/s
+[    0.793521] raid6: int64x2  gen()  1534 MB/s
+[    0.865532] raid6: int64x2  xor()  1463 MB/s
+[    0.937575] raid6: int64x4  gen()  2318 MB/s
+[    1.009604] raid6: int64x4  xor()  1649 MB/s
+[    1.081617] raid6: int64x8  gen()  2317 MB/s
+[    1.153652] raid6: int64x8  xor()  1608 MB/s
+[    1.225688] raid6: neonx1   gen()  2240 MB/s
+[    1.297719] raid6: neonx1   xor()  2520 MB/s
+[    1.369759] raid6: neonx2   gen()  2942 MB/s
+[    1.441773] raid6: neonx2   xor()  3157 MB/s
+[    1.513809] raid6: neonx4   gen()  3806 MB/s
+[    1.585832] raid6: neonx4   xor()  3370 MB/s
+[    1.657864] raid6: neonx8   gen()  4387 MB/s
+[    1.729889] raid6: neonx8   xor()  3726 MB/s
+[    1.734177] raid6: using algorithm neonx8 gen() 4387 MB/s
+[    1.739601] raid6: .... xor() 3726 MB/s, rmw enabled
+[    1.744588] raid6: using neon recovery algorithm
+[    1.749541] ACPI: Interpreter disabled.
+[    1.754861] vgaarb: loaded
+[    1.757704] SCSI subsystem initialized
+[    1.761541] libata version 3.00 loaded.
+[    1.765436] libphy: Generic 10G PHY: Registered new driver
+[    1.770998] libphy: Generic PHY: Registered new driver
+[    1.776219] usbcore: registered new interface driver usbfs
+[    1.781763] usbcore: registered new interface driver hub
+[    1.787127] usbcore: registered new device driver usb
+[    1.792526] imx-i2c 2180000.i2c: scl-gpios not found
+[    1.797622] i2c i2c-0: using dma0chan16 (tx) and dma0chan17 (rx) for DMA transfers
+[    1.805236] i2c i2c-0: IMX I2C adapter registered
+[    1.810454] pps_core: LinuxPPS API ver. 1 registered
+[    1.815444] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.824635] PTP clock support registered
+[    1.828673] EDAC MC: Ver: 3.0.0
+[    1.831925] dmi: Firmware registration failed.
+[    1.836402] bman-fbpr addr 0x00000008fe000000 size 0x1000000
+[    1.842106] Bman err interrupt handler present
+[    1.846900] Bman portal initialised, cpu 0
+[    1.851065] Bman portal initialised, cpu 1
+[    1.855232] Bman portal initialised, cpu 2
+[    1.859396] Bman portal initialised, cpu 3
+[    1.863512] Bman portals initialised
+[    1.867864] Qman err interrupt handler present
+[    1.872681] QMan: Allocated lookup table at ffff00000b755000, entry count 131073
+[    1.880426] Qman portal initialised, cpu 0
+[    1.884584] Qman portal initialised, cpu 1
+[    1.888741] Qman portal initialised, cpu 2
+[    1.892909] Qman portal initialised, cpu 3
+[    1.897023] Qman portals initialised
+[    1.900656] Bman: BPID allocator includes range 32:32
+[    1.905762] Qman: FQID allocator includes range 256:256
+[    1.911014] Qman: FQID allocator includes range 32768:32768
+[    1.916647] Qman: CGRID allocator includes range 0:256
+[    1.921936] Qman: pool channel allocator includes range 1025:15
+[    1.927948] No USDPAA memory, no 'fsl,usdpaa-mem' in device-tree
+[    1.934014] fsl-ifc 1530000.ifc: Freescale Integrated Flash Controller
+[    1.940585] fsl-ifc 1530000.ifc: IFC version 1.4, 8 banks
+[    1.946212] Advanced Linux Sound Architecture Driver Initialized.
+[    1.952623] clocksource: Switched to clocksource arch_sys_counter
+[    1.958810] VFS: Disk quotas dquot_6.6.0
+[    1.962778] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.969738] pnp: PnP ACPI: disabled
+[    1.975953] NET: Registered protocol family 2
+[    1.980570] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+[    1.987986] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    1.994883] TCP: Hash tables configured (established 32768 bind 32768)
+[    2.001490] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    2.007577] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    2.014141] NET: Registered protocol family 1
+[    2.018638] RPC: Registered named UNIX socket transport module.
+[    2.024593] RPC: Registered udp transport module.
+[    2.029336] RPC: Registered tcp transport module.
+[    2.034065] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    2.040542] PCI: CLS 0 bytes, default 64
+[    2.044813] hw perfevents: enabled with armv8_cortex_a72 PMU driver, 7 counters available
+[    2.053255] kvm [1]: 8-bit VMID
+[    2.056993] kvm [1]: vgic interrupt IRQ1
+[    2.060982] kvm [1]: Hyp mode initialized successfully
+[    2.067226] audit: initializing netlink subsys (disabled)
+[    2.072703] audit: type=2000 audit(2.004:1): state=initialized audit_enabled=0 res=1
+[    2.072847] workingset: timestamp_bits=44 max_order=20 bucket_order=0
+[    2.087199] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    2.093163] NFS: Registering the id_resolver key type
+[    2.098251] Key type id_resolver registered
+[    2.102455] Key type id_legacy registered
+[    2.106486] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    2.113275] fuse init (API version 7.26)
+[    2.117275] 9p: Installing v9fs 9p2000 file system support
+[    2.124023] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    2.131504] io scheduler noop registered
+[    2.135458] io scheduler cfq registered (default)
+[    2.140187] io scheduler mq-deadline registered
+[    2.144738] io scheduler kyber registered
+[    2.150606] libphy: mdio_driver_register: phy-bcm-ns2-pci
+[    2.159321] OF: PCI: host bridge /soc/pcie@3400000 ranges:
+[    2.164843] OF: PCI:    IO 0x4000010000..0x400001ffff -> 0x00000000
+[    2.171148] OF: PCI:   MEM 0x4040000000..0x407fffffff -> 0x40000000
+[    2.177543] layerscape-pcie 3400000.pcie: PCI host bridge to bus 0000:00
+[    2.184284] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    2.189798] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    2.196014] pci_bus 0000:00: root bus resource [mem 0x4040000000-0x407fffffff] (bus address [0x40000000-0x7fffffff])
+[    2.206606] pci 0000:00:00.0: [1957:81c0] type 01 class 0x060400
+[    2.212661] pci 0000:00:00.0: reg 0x38: [mem 0x4040000000-0x40400007ff pref]
+[    2.219769] pci 0000:00:00.0: supports D1 D2
+[    2.224060] pci 0000:00:00.0: PME# supported from D0 D1 D2 D3hot
+[    2.230213] pci 0000:00:00.0: BAR 6: assigned [mem 0x4040000000-0x40400007ff pref]
+[    2.237829] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+[    2.243185] pcieport 0000:00:00.0: Signaling PME with IRQ 68
+[    2.248927] pcieport 0000:00:00.0: AER enabled with IRQ 69
+[    2.254539] OF: PCI: host bridge /soc/pcie@3500000 ranges:
+[    2.260060] OF: PCI:    IO 0x4800010000..0x480001ffff -> 0x00000000
+[    2.266362] OF: PCI:   MEM 0x4840000000..0x487fffffff -> 0x40000000
+[    2.272727] layerscape-pcie 3500000.pcie: PCI host bridge to bus 0001:00
+[    2.279466] pci_bus 0001:00: root bus resource [bus 00-ff]
+[    2.284981] pci_bus 0001:00: root bus resource [io  0x10000-0x1ffff] (bus address [0x0000-0xffff])
+[    2.293991] pci_bus 0001:00: root bus resource [mem 0x4840000000-0x487fffffff] (bus address [0x40000000-0x7fffffff])
+[    2.304583] pci 0001:00:00.0: [1957:81c0] type 01 class 0x060400
+[    2.310634] pci 0001:00:00.0: reg 0x38: [mem 0x4840000000-0x48400007ff pref]
+[    2.317740] pci 0001:00:00.0: supports D1 D2
+[    2.322033] pci 0001:00:00.0: PME# supported from D0 D1 D2 D3hot
+[    2.328177] pci 0001:00:00.0: BAR 6: assigned [mem 0x4840000000-0x48400007ff pref]
+[    2.335790] pci 0001:00:00.0: PCI bridge to [bus 01-ff]
+[    2.341132] pcieport 0001:00:00.0: Signaling PME with IRQ 70
+[    2.346876] pcieport 0001:00:00.0: AER enabled with IRQ 71
+[    2.352468] OF: PCI: host bridge /soc/pcie@3600000 ranges:
+[    2.357988] OF: PCI:    IO 0x5000010000..0x500001ffff -> 0x00000000
+[    2.364293] OF: PCI:   MEM 0x5040000000..0x507fffffff -> 0x40000000
+[    2.370655] layerscape-pcie 3600000.pcie: PCI host bridge to bus 0002:00
+[    2.377396] pci_bus 0002:00: root bus resource [bus 00-ff]
+[    2.382911] pci_bus 0002:00: root bus resource [io  0x20000-0x2ffff] (bus address [0x0000-0xffff])
+[    2.391922] pci_bus 0002:00: root bus resource [mem 0x5040000000-0x507fffffff] (bus address [0x40000000-0x7fffffff])
+[    2.402512] pci 0002:00:00.0: [1957:81c0] type 01 class 0x060400
+[    2.408563] pci 0002:00:00.0: reg 0x38: [mem 0x5040000000-0x50400007ff pref]
+[    2.415668] pci 0002:00:00.0: supports D1 D2
+[    2.419960] pci 0002:00:00.0: PME# supported from D0 D1 D2 D3hot
+[    2.426101] pci 0002:00:00.0: BAR 6: assigned [mem 0x5040000000-0x50400007ff pref]
+[    2.433716] pci 0002:00:00.0: PCI bridge to [bus 01-ff]
+[    2.439054] pcieport 0002:00:00.0: Signaling PME with IRQ 72
+[    2.444795] pcieport 0002:00:00.0: AER enabled with IRQ 73
+[    2.453436] Freescale LS2 console driver
+[    2.457430] fsl-ls2-console: device fsl_mc_console registered
+[    2.463238] fsl-ls2-console: device fsl_aiop_console registered
+[    2.471992] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    2.479343] console [ttyS0] disabled
+[    2.482956] 21c0500.serial: ttyS0 at MMIO 0x21c0500 (irq = 38, base_baud = 21875000) is a 16550A
+[    2.491805] console [ttyS0] enabled
+[    2.491805] console [ttyS0] enabled
+[    2.498788] bootconsole [uart8250] disabled
+[    2.498788] bootconsole [uart8250] disabled
+[    2.507480] 21c0600.serial: ttyS1 at MMIO 0x21c0600 (irq = 38, base_baud = 21875000) is a 16550A
+[    2.516469] 21d0500.serial: ttyS2 at MMIO 0x21d0500 (irq = 39, base_baud = 21875000) is a 16550A
+[    2.525459] 21d0600.serial: ttyS3 at MMIO 0x21d0600 (irq = 39, base_baud = 21875000) is a 16550A
+[    2.534646] SuperH (H)SCI(F) driver initialized
+[    2.543485] brd: module loaded
+[    2.548981] loop: module loaded
+[    2.553360] ahci-qoriq 3200000.sata: AHCI 0001.0301 32 slots 1 ports 6 Gbps 0x1 impl platform mode
+[    2.562322] ahci-qoriq 3200000.sata: flags: 64bit ncq sntf pm clo only pmp fbs pio slum part ccc sds apst 
+[    2.572260] scsi host0: ahci-qoriq
+[    2.575809] ata1: SATA max UDMA/133 mmio [mem 0x03200000-0x0320ffff] port 0x100 irq 50
+[    2.584522] fsl-quadspi 1550000.quadspi: unrecognized JEDEC id bytes: ff, ff, ff
+[    2.591919] fsl-quadspi 1550000.quadspi: Freescale QuadSPI probe failed
+[    2.598547] fsl-quadspi: probe of 1550000.quadspi failed with error -2
+[    2.606217] libphy: Aquantia AQ1202: Registered new driver
+[    2.611719] libphy: Aquantia AQ2104: Registered new driver
+[    2.617210] libphy: Aquantia AQR105: Registered new driver
+[    2.622700] libphy: Aquantia AQR106: Registered new driver
+[    2.628190] libphy: Aquantia AQR107: Registered new driver
+[    2.633679] libphy: Aquantia AQR405: Registered new driver
+[    2.639279] libphy: Fixed MDIO Bus: probed
+[    2.643379] libphy: Inphi 112525_S03: Registered new driver
+[    2.648957] libphy: Micrel KS8737: Registered new driver
+[    2.654273] libphy: Micrel KSZ8021 or KSZ8031: Registered new driver
+[    2.660632] libphy: Micrel KSZ8031: Registered new driver
+[    2.666036] libphy: Micrel KSZ8041: Registered new driver
+[    2.671439] libphy: Micrel KSZ8041RNLI: Registered new driver
+[    2.677187] libphy: Micrel KSZ8051: Registered new driver
+[    2.682591] libphy: Micrel KSZ8001 or KS8721: Registered new driver
+[    2.688865] libphy: Micrel KSZ8081 or KSZ8091: Registered new driver
+[    2.695224] libphy: Micrel KSZ8061: Registered new driver
+[    2.700629] libphy: Micrel KSZ9021 Gigabit PHY: Registered new driver
+[    2.707073] libphy: Micrel KSZ9031 Gigabit PHY: Registered new driver
+[    2.713520] libphy: Micrel KSZ8873MLL Switch: Registered new driver
+[    2.719791] libphy: Micrel KSZ886X Switch: Registered new driver
+[    2.725802] libphy: Micrel KSZ8795: Registered new driver
+[    2.731203] libphy: Microchip KSZ9477: Registered new driver
+[    2.736868] libphy: RTL8201CP Ethernet: Registered new driver
+[    2.742617] libphy: RTL8211B Gigabit Ethernet: Registered new driver
+[    2.748976] libphy: RTL8211DN Gigabit Ethernet: Registered new driver
+[    2.755420] libphy: RTL8211E Gigabit Ethernet: Registered new driver
+[    2.761779] libphy: RTL8211F Gigabit Ethernet: Registered new driver
+[    2.768137] libphy: Rockchip integrated EPHY: Registered new driver
+[    2.774409] libphy: Vitesse VSC8234: Registered new driver
+[    2.779897] libphy: Vitesse VSC8244: Registered new driver
+[    2.785387] libphy: Vitesse VSC8514: Registered new driver
+[    2.790875] libphy: Vitesse VSC8572: Registered new driver
+[    2.796364] libphy: Vitesse VSC8574: Registered new driver
+[    2.801852] libphy: Vitesse VSC8601: Registered new driver
+[    2.807342] libphy: Vitesse VSC8662: Registered new driver
+[    2.812833] libphy: Vitesse VSC8221: Registered new driver
+[    2.818324] libphy: Vitesse VSC8211: Registered new driver
+[    2.823806] tun: Universal TUN/TAP device driver, 1.6
+[    2.829529] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.834543] mdio_bus 1afc000: read 001c
+[    2.838417] mdio_bus 1afc000: read c916
+[    2.842403] mdio_bus 1afc000: read 001c
+[    2.846279] mdio_bus 1afc000: read c916
+[    2.850250] mdio_bus 1afc000: read 001c
+[    2.854126] mdio_bus 1afc000: read c916
+[    2.858096] mdio_bus 1afc000: read 001c
+[    2.861971] mdio_bus 1afc000: read c916
+[    2.865943] mdio_bus 1afc000: read 001c
+[    2.869818] mdio_bus 1afc000: read c916
+[    2.873791] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.878812] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.883804] mdio_bus 1ae1000: read 0000
+[    2.887642] mdio_bus 1ae1000: read 0000
+[    2.891613] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.896586] mdio_bus 1ae3000: read 0000
+[    2.900426] mdio_bus 1ae3000: read 0000
+[    2.904410] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.909384] mdio_bus 1ae5000: read 0000
+[    2.913222] mdio_bus 1ae5000: read 0000
+[    2.917182] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.922153] mdio_bus 1ae7000: read 0000
+[    2.925991] mdio_bus 1ae7000: read 0000
+[    2.929961] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.934932] mdio_bus 1ae9000: read 0083
+[    2.938770] mdio_bus 1ae9000: read e400
+[    2.942733] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.947704] mdio_bus 1aeb000: read 0083
+[    2.951542] mdio_bus 1aeb000: read e400
+[    2.955507] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.960478] mdio_bus 1af1000: read 0083
+[    2.964316] mdio_bus 1af1000: read e400
+[    2.968285] libphy: Freescale XGMAC MDIO Bus: probed
+[    2.973257] mdio_bus 1af3000: read 0083
+[    2.977097] mdio_bus 1af3000: read e400
+[    2.989630] Freescale FM module, FMD API version 21.1.0
+[    2.996932] Freescale FM Ports module
+[    3.000587] fsl_mac: fsl_mac: FSL FMan MAC API based driver
+[    3.006365] fsl_mac 1ae4000.ethernet: FMan MEMAC
+[    3.010984] fsl_mac 1ae4000.ethernet: FMan MAC address: da:68:f0:d1:d5:ff
+[    3.017873] fsl_mac 1ae6000.ethernet: FMan MEMAC
+[    3.022490] fsl_mac 1ae6000.ethernet: FMan MAC address: 4e:3e:e5:48:55:4c
+[    3.029419] fsl_mac 1ae8000.ethernet: FMan MEMAC
+[    3.034037] fsl_mac 1ae8000.ethernet: FMan MAC address: 36:88:ab:d8:f7:8d
+[    3.040974] fsl_mac 1aea000.ethernet: FMan MEMAC
+[    3.045591] fsl_mac 1aea000.ethernet: FMan MAC address: 46:d9:fd:04:88:aa
+[    3.052528] fsl_mac 1af0000.ethernet: FMan MEMAC
+[    3.057145] fsl_mac 1af0000.ethernet: FMan MAC address: b2:29:40:21:5a:80
+[    3.060636] ata1: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+[    3.064026] fsl_mac 1af2000.ethernet: Wrong PHY information of mac node /soc/fman@1a00000/ethernet@f2000
+[    3.071684] ata1.00: ATA-9: Lenovo SSD SL700 M.2 128G, W0222A0, max UDMA/133
+[    3.079605] fsl_dpa: FSL DPAA Ethernet driver
+[    3.086624] ata1.00: 250069680 sectors, multi 1: LBA48 NCQ (depth 31/32)
+[    3.093859] fsl_dpa: fsl_dpa: Probed interface eth0
+[    3.100236] ata1.00: configured for UDMA/133
+[    3.105188] fsl_dpa: fsl_dpa: Probed interface eth1
+[    3.107041] scsi 0:0:0:0: Direct-Access     ATA      Lenovo SSD SL700 2A0  PQ: 0 ANSI: 5
+[    3.114619] fsl_dpa: fsl_dpa: Probed interface eth2
+[    3.120476] sd 0:0:0:0: [sda] 250069680 512-byte logical blocks: (128 GB/119 GiB)
+[    3.129159] fsl_dpa: fsl_dpa: Probed interface eth3
+[    3.132358] sd 0:0:0:0: [sda] Write Protect is off
+[    3.140228] fsl_dpa: fsl_dpa: Probed interface eth4
+[    3.142214] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    3.146716] fsl_advanced: FSL DPAA Advanced drivers:
+[    3.151813] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    3.156692] fsl_proxy: FSL DPAA Proxy initialization driver
+[    3.166250]  sda: sda1
+[    3.171436] fsl_oh: FSL FMan Offline Parsing port driver
+[    3.173979] sd 0:0:0:0: [sda] Attached SCSI disk
+[    3.179290] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    3.190598] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    3.196364] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[    3.202192] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    3.208126] igb: Intel(R) Gigabit Ethernet Network Driver - version 5.4.0-k
+[    3.215084] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    3.220668] igbvf: Intel(R) Gigabit Virtual Function Network Driver - version 2.4.0-k
+[    3.228493] igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+[    3.234680] sky2: driver version 1.30
+[    3.238909] VFIO - User Level meta-driver version: 0.3
+[    3.245539] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.252070] ehci-pci: EHCI PCI platform driver
+[    3.256522] ehci-platform: EHCI generic platform driver
+[    3.261867] ehci-orion: EHCI orion driver
+[    3.265956] ehci-exynos: EHCI EXYNOS driver
+[    3.270217] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    3.276398] ohci-pci: OHCI PCI platform driver
+[    3.280856] ohci-platform: OHCI generic platform driver
+[    3.286170] ohci-exynos: OHCI EXYNOS driver
+[    3.290629] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.296121] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    3.303942] xhci-hcd xhci-hcd.0.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x0000002002010810
+[    3.313352] xhci-hcd xhci-hcd.0.auto: irq 47, io mem 0x02f00000
+[    3.319487] hub 1-0:1.0: USB hub found
+[    3.323244] hub 1-0:1.0: 1 port detected
+[    3.327265] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.332752] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    3.340408] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0  SuperSpeed
+[    3.347206] hub 2-0:1.0: USB hub found
+[    3.350960] hub 2-0:1.0: 1 port detected
+[    3.355035] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.360521] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 3
+[    3.368330] xhci-hcd xhci-hcd.1.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x0000002002010810
+[    3.377733] xhci-hcd xhci-hcd.1.auto: irq 48, io mem 0x03000000
+[    3.383826] hub 3-0:1.0: USB hub found
+[    3.387580] hub 3-0:1.0: 1 port detected
+[    3.391594] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.397079] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 4
+[    3.404735] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0  SuperSpeed
+[    3.411530] hub 4-0:1.0: USB hub found
+[    3.415285] hub 4-0:1.0: 1 port detected
+[    3.419332] xhci-hcd xhci-hcd.2.auto: xHCI Host Controller
+[    3.424820] xhci-hcd xhci-hcd.2.auto: new USB bus registered, assigned bus number 5
+[    3.432639] xhci-hcd xhci-hcd.2.auto: hcc params 0x0220f66d hci version 0x100 quirks 0x0000002002010810
+[    3.442042] xhci-hcd xhci-hcd.2.auto: irq 49, io mem 0x03100000
+[    3.448134] hub 5-0:1.0: USB hub found
+[    3.451887] hub 5-0:1.0: 1 port detected
+[    3.455902] xhci-hcd xhci-hcd.2.auto: xHCI Host Controller
+[    3.461389] xhci-hcd xhci-hcd.2.auto: new USB bus registered, assigned bus number 6
+[    3.469047] xhci-hcd xhci-hcd.2.auto: Host supports USB 3.0  SuperSpeed
+[    3.475847] hub 6-0:1.0: USB hub found
+[    3.479602] hub 6-0:1.0: 1 port detected
+[    3.483793] usbcore: registered new interface driver cdc_wdm
+[    3.489489] usbcore: registered new interface driver usb-storage
+[    3.497380] i2c /dev entries driver
+[    3.502392] pca954x 0-0077: probe failed
+[    3.506360] IR NEC protocol handler initialized
+[    3.510886] IR RC5(x/sz) protocol handler initialized
+[    3.515934] IR RC6 protocol handler initialized
+[    3.520464] IR JVC protocol handler initialized
+[    3.524992] IR Sony protocol handler initialized
+[    3.529604] IR SANYO protocol handler initialized
+[    3.534303] IR Sharp protocol handler initialized
+[    3.539001] IR MCE Keyboard/mouse protocol handler initialized
+[    3.544829] IR XMP protocol handler initialized
+[    3.549518] ptp_qoriq: device tree node missing required elements, try automatic configuration
+[    3.558266] pps pps0: new PPS source ptp0
+[    3.563558] imx2-wdt 2ad0000.watchdog: timeout 60 sec (nowayout=0)
+[    3.570399] qoriq_cpufreq: Freescale QorIQ CPU frequency scaling driver
+[    3.577279] sdhci: Secure Digital Host Controller Interface driver
+[    3.583457] sdhci: Copyright(c) Pierre Ossman
+[    3.587945] Synopsys Designware Multimedia Card Interface Driver
+[    3.594630] sdhci-pltfm: SDHCI platform and OF driver helper
+[    3.640638] mmc0: SDHCI controller on 1560000.esdhc [1560000.esdhc] using ADMA 64-bit
+[    3.649204] ledtrig-cpu: registered to indicate activity on CPUs
+[    3.658766] caam 1700000.crypto: Linux CAAM Queue I/F driver initialised
+[    3.666513] caam 1700000.crypto: device ID = 0x0a11030100000000 (Era 8)
+[    3.673165] caam 1700000.crypto: job rings = 3, qi = 1
+[    3.684007] caam algorithms registered in /proc/crypto
+[    3.689568] caam 1700000.crypto: caam pkc algorithms registered in /proc/crypto
+[    3.697312] caam_jr 1710000.jr: registering rng-caam
+[    3.703863] caam 1700000.crypto: algorithms registered in /proc/crypto
+[    3.710923] usbcore: registered new interface driver usbhid
+[    3.713575] mmc0: new high speed SDXC card at address 5048
+[    3.716500] usbhid: USB HID core driver
+[    3.722132] mmcblk0: mmc0:5048 SD64G 58.0 GiB 
+[    3.725926] DPAA2-ETH: debugfs created
+[    3.731500]  mmcblk0: p1 p2 p3 p4
+[    3.734580] Freescale USDPAA process driver
+[    3.741547] fsl-usdpaa: no region found
+[    3.745377] Freescale USDPAA process IRQ driver
+[    3.750597]  fake-fmc-carrier: mezzanine 0
+[    3.754692]       Manufacturer: fake-vendor
+[    3.758868]       Product name: fake-design-for-testing
+[    3.764118] fmc fake-design-for-testing-f001: Driver has no ID: matches all
+[    3.771086] fmc_trivial: probe of fake-design-for-testing-f001 failed with error -95
+[    3.778838] fmc fake-design-for-testing-f001: Driver has no ID: matches all
+[    3.785801] fmc_write_eeprom fake-design-for-testing-f001: fmc_write_eeprom: no busid passed, refusing all cards
+[    3.795988] fmc fake-design-for-testing-f001: Driver has no ID: matches all
+[    3.802990] fmc_chardev fake-design-for-testing-f001: Created misc device "fake-design-for-testing-f001"
+[    3.812506] optee: probing for conduit method from DT.
+[    3.817642] optee: api uid mismatch
+[    3.821761] Netfilter messages via NETLINK v0.30.
+[    3.826531] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+[    3.832718] nf_tables: (c) 2007-2009 Patrick McHardy <kaber@trash.net>
+[    3.839242] nf_tables_compat: (c) 2012 Pablo Neira Ayuso <pablo@netfilter.org>
+[    3.846553] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    3.852057] Initializing XFRM netlink socket
+[    3.856361] NET: Registered protocol family 10
+[    3.861197] Segment Routing with IPv6
+[    3.864895] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    3.870992] NET: Registered protocol family 17
+[    3.875447] NET: Registered protocol family 15
+[    3.879900] Bridge firewalling registered
+[    3.883906] Ebtables v2.0 registered
+[    3.887550] 8021q: 802.1Q VLAN Support v1.8
+[    3.891734] lib80211: common routines for IEEE802.11 drivers
+[    3.897389] lib80211_crypt: registered algorithm 'NULL'
+[    3.902609] lib80211_crypt: registered algorithm 'WEP'
+[    3.907744] lib80211_crypt: registered algorithm 'CCMP'
+[    3.912964] lib80211_crypt: registered algorithm 'TKIP'
+[    3.918201] 9pnet: Installing 9P2000 support
+[    3.922486] Key type dns_resolver registered
+[    3.927016] registered taskstats version 1
+[    3.931312] Btrfs loaded, crc32c=crc32c-generic
+[    3.936440] hctosys: unable to open rtc device (rtc0)
+[    3.941587] ALSA device list:
+[    3.944545]   No soundcards found.
+[    3.959859] EXT4-fs (mmcblk0p4): recovery complete
+[    3.964654] EXT4-fs (mmcblk0p4): mounted filesystem with ordered data mode. Opts: (null)
+[    3.972752] VFS: Mounted root (ext4 filesystem) on device 179:4.
+[    3.980950] devtmpfs: mounted
+[    3.984320] Freeing unused kernel memory: 1280K
+[    4.149546] random: fast init done
+[    4.461802] systemd[1]: System time before build time, advancing clock.
+[    4.498996] systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+[    4.523988] systemd[1]: Detected architecture arm64.
+
+Welcome to NXP LSDK 1906 main!
+
+[    4.553844] systemd[1]: Set hostname to <ubuntu>.
+[    4.841954] systemd[1]: File /lib/systemd/system/systemd-journald.service:36 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
+[    4.858998] systemd[1]: Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
+[    4.953439] systemd[1]: Configuration file /lib/systemd/system/fmc.service is marked executable. Please remove executable permission bits. Proceeding anyway.
+[    5.000061] random: systemd: uninitialized urandom read (16 bytes read)
+[    5.007489] systemd[1]: Created slice User and Session Slice.
+[  OK  ] Created slice User and Session Slice.
+[    5.028693] random: systemd: uninitialized urandom read (16 bytes read)
+[    5.035369] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[  OK  ] Started Dispatch Password Requests to Console Directory Watch.
+[    5.060678] random: systemd: uninitialized urandom read (16 bytes read)
+[    5.067355] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[  OK  ] Started Forward Password Requests to Wall Directory Watch.
+[    5.088659] systemd[1]: Reached target Local Encrypted Volumes.
+[  OK  ] Reached target Local Encrypted Volumes.
+[  OK  ] Reached target Swap.
+[  OK  ] Created slice System Slice.
+[  OK  ] Listening on RPCbind Server Activation Socket.
+[  OK  ] Listening on Journal Audit Socket.
+[  OK  ] Listening on Syslog Socket.
+[  OK  ] Listening on /dev/initctl Compatibility Named Pipe.
+[  OK  ] Created slice system-serial\x2dgetty.slice.
+[  OK  ] Reached target Slices.
+[  OK  ] Listening on udev Kernel Socket.
+[  OK  ] Listening on Journal Socket.
+         Mounting Kernel Debug File System...
+         Starting Set the console keyboard layout...
+         Mounting POSIX Message Queue File System...
+         Starting Load Kernel Modules...
+         Mounting RPC Pipe File System...
+[  OK  ] Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on udev Control Socket.
+         Starting udev Coldplug all Devices...
+         Starting Create list of required stce nodes for the current kernel...
+         Mounting Huge Pages File System...
+[  OK  ] Created slice system-systemd\x2dfsck.slice.
+         Starting Journal Service...
+         Mounting NFSD configuration filesystem...
+[  OK  ] Listening on fsck to fsckd communication Socket.
+         Starting Remount Root and Kernel File Systems...
+[  OK  ] Mounted Kernel Debug File System.
+[  OK  ] Started Set the console keyboard layout.
+[  OK  ] Mounted POSIX Message Queue File System.
+[  OK  ] Started Load Kernel Modules.
+[    5.567090] EXT4-fs (mmcblk0p4): re-mounted. Opts: errors=remount-ro
+[  OK  ] Mounted RPC Pipe File System.
+[  OK  ] Started Create list of required stavice nodes for the current kernel.
+[  OK  ] Mounted Huge Pages File System.
+[  OK  ] Started Journal Service.
+[  OK  ] Started Remount Root and Kernel File Systems.
+         Starting Load/Save Random Seed...
+         Starting Flush Journal to Persistent Storage...
+         Starting Create Static Device Nodes in /dev...
+         Starting pNFS block layout mapping daemon...
+         Mounting FUSE Control File System...
+         Mounting Kernel Configuration File System...
+         Starting Apply Kernel Variables...
+[    5.818209] Installing knfsd (copyright (C) 1996 okir@monad.swb.de).
+[  OK  ] Mounted NFSD configuration filesystem.
+[  OK  ] Started udev Coldplug all Devices.
+[  OK  ] Started Load/Save Random Seed.
+[  OK  ] Mounted FUSE Control File System.
+[  OK  ] Mounted Kernel Configuration File System.
+[  OK  ] Started pNFS block layout mapping daemon.
+[  OK  ] Started Create Static Device Nodes in /dev.
+[  OK  ] Started Apply Kernel Variables.
+         Starting udev Kernel Device Manager...
+[  OK  ] Reached target Local File Systems (Pre).
+[  OK  ] Started udev Kernel Device Manager.
+[  OK  ] Started Flush Journal to Persistent Storage.
+[  OK  ] Found device /dev/ttyS0.
+[  OK  ] Found device /dev/disk/by-uuid/ac004a8a-5e68-4429-b956-29dbfeed7caf.
+         Starting File System Check on /dev/a8a-5e68-4429-b956-29dbfeed7caf...
+[  OK  ] Started File System Check Daemon to report status.
+Checking in progress on 1 disk (0.0% complete)Checking in progress on 1 disk (8.8% complete)Checking in progress on 1 disk (17.5% complete)Checking in progress on 1 disk (26.2% complete)Checking in progress on 1 disk (35.0% complete)Checking in progress on 1 disk (43.8% complete)Checking in progress on 1 disk (52.5% complete)Checking in progress on 1 disk (61.2% complete)Checking in progress on 1 disk (70.0% complete)Checking in progress on 1 disk (100.0% complete)[  OK  ] Started File System Check on /dev/d04a8a-5e68-4429-b956-29dbfeed7caf.
+Checking in progress on 0 disks (100.0% complete)         Mounting /boot...
+[  OK  ] Mounted /boot.
+[  OK  ] Reached target Local File Systems.
+         Starting Set console font and keymap...
+         Starting Preprocess NFS configuration...
+         Starting QEMU KVM preparation - module, ksm, hugepages...
+         Starting Create Volatile Files and Directories...
+         Starting netfilter persistent configuration...
+         Starting Enable support for additional executable binary formats...
+[  OK  ] Started Set console font and keymap.
+[  OK  ] Started Preprocess NFS configuration.
+[  OK  ] Started QEMU KVM preparation - module, ksm, hugepages.
+[  OK  ] Started Create Volatile Files and Directories.
+[  OK  ] Started netfilter persistent configuration.
+[  OK  ] Started Enable support for additional executable binary formats.
+[  OK  ] Reached target Network (Pre).
+         Starting Raise network interfaces...
+         Starting RPC bind portmap service...
+         Starting Network Name Resolution...
+         Starting Update UTMP about System Boot/Shutdown...
+         Starting Network Time Synchronization...
+[  OK  ] Reached target NFS client services.
+         Starting NFSv4 ID-name mapping service...
+[  OK  ] Started RPC bind portmap service.
+[  OK  ] Reached target RPC Port Mapper.
+[  OK  ] Started Update UTMP about System Boot/Shutdown.
+[  OK  ] Started NFSv4 ID-name mapping service.
+[  OK  ] Started Network Name Resolution.
+[  OK  ] Reached target Host and Network Name Lookups.
+[  OK  ] Started Network Time Synchronization.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+         Starting Docker Socket for the API.
+[  OK  ] Listening on Avahi mDNS/DNS-SD Stack Activation Socket.
+[  OK  ] Reached target Paths.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Reached target System Time Synchronized.
+[  OK  ] Started Discard unused blocks once a week.
+[  OK  ] Started Daily apt download activities.
+[  OK  ] Started Daily apt upgrade and clean activities.
+[  OK  ] Started Message of the Day.
+[  OK  ] Reached target Timers.
+[FAILED] Failed to start Raise network interfaces.
+See 'systemctl status networking.service' for details.
+[  OK  ] Listening on Docker Socket for the API.
+[  OK  ] Reached target Sockets.
+[  OK  ] Reached target Basic System.
+         Starting LSB: Execute the kexec -e command to reboot system...
+[  OK  ] Started Regular background program processing daemon.
+         Starting System Logging Service...
+         Starting Login Service...
+         Starting Modem Manager...
+[  OK  ] Started Set the CPU Frequency Scaling governor.
+         Starting Resets System Activity Data Collector...
+         Starting Kernel crash dump capture service...
+[  OK  ] Started D-Bus System Message Bus.
+         Starting WPA supplicant...
+         Starting Avahi mDNS/DNS-SD Stack...
+         Starting Dispatcher daemon for systemd-networkd...
+         Starting LSB: Record successful boot for GRUB...
+[  OK  ] Started System Logging Service.
+[  OK  ] Started Resets System Activity Data Collector.
+[  OK  ] Started Login Service.
+[  OK  ] Started Avahi mDNS/DNS-SD Stack.
+[  OK  ] Started WPA supplicant.
+[    9.254823] kdump-tools[4066]: Starting kdump-tools:  * no crashkernel= parameter in the kernel cmdline
+[  OK  ] Started Kernel crash dump capture service.
+[  OK  ] Started LSB: Execute the kexec -e command to reboot system.
+[  OK  ] Reached target Network.
+         Starting OpenBSD Secure Shell server...
+         Starting vsftpd FTP server...
+         Starting containerd container runtime...
+[  OK  ] Reached target Network is Online.
+[  OK  ] Started ISC DHCP IPv6 server.
+[  OK  ] Started ISC DHCP IPv4 server.
+         Starting NFS Mount Daemon...
+         Starting NXP Frame Manager Configuration tool...
+[  OK  ] Started Run wifi connect script.
+         Starting Authorization Manager...
+[  OK  ] Started Unattended Upgrades Shutdown.
+[  OK  ] Started LSB: Record successful boot for GRUB.
+[  OK  ] Started vsftpd FTP server.
+[  OK  ] Started containerd container runtime.
+         Starting Docker Application Container Engine...
+[  OK  ] Started OpenBSD Secure Shell server.
+[  OK  ] Started NFS Mount Daemon.
+         Starting NFS server and services...
+[  OK  ] Started NFS server and services.
+[  OK  ] Reached target Remote File Systems (Pre).
+[  OK  ] Reached target Remote File Systems.
+         Starting Permit User Sessions...
+         Starting LSB: automatic crash report generation...
+         Starting LSB: Load kernel image with kexec...
+         Starting LSB: disk temperature monitoring daemon...
+         Starting LSB: HPA's tftp server...
+[  OK  ] Started LSB: Load kernel image with kexec.
+[  OK  ] Started Permit User Sessions.
+[  OK  ] Started Serial Getty on ttyS0.
+         Starting Set console scheme...
+[  OK  ] Started LSB: automatic crash report generation.
+[  OK  ] Started LSB: disk temperature monitoring daemon.
+[  OK  ] Started Set console scheme.
+[  OK  ] Created slice system-getty.slice.
+[  OK  ] Started Getty on tty1.
+[  OK  ] Reached target Login Prompts.
+[  OK  ] Started Authorization Manager.
+[  OK  ] Started LSB: HPA's tftp server.
+[  OK  ] Started Dispatcher daemon for systemd-networkd.
+[  OK  ] Started Modem Manager.
+[FAILED] Failed to start NXP Frame Manager Configuration tool.
+See 'systemctl status fmc.service' for details.
+
+NXP LSDK 1906 main
+ubuntu login: root
+Password: 
+Welcome to NXP LSDK 1906 main (GNU/Linux 4.14.122-g277cb24a1-dirty aarch64)
+
+ * Support:        https://www.nxp.com/lsdk
+ * Documentation:  https://lsdk.github.io/document
+ * Licensing:      https://lsdk.github.io/eula
+
+The programs included with the NXP LSDK are free software, the exact distribution
+terms of some programs are described in the individual files in /usr/share/doc.
+NXP LSDK comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
+By using this LSDK, you indicate that you accept the terms of the Agreement in
+the link above and you acknowledge that you have the authority, for yourself
+or on behalf of your company, to bind your company to these terms.
+
+
+
+root@ubuntu:~# 
+root@ubuntu:~# 
+root@ubuntu:~# 
+root@ubuntu:~# 
+root@ubuntu:~# 
+root@ubuntu:~# 
+root@ubuntu:~# ifconfig 
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 14  bytes 1726 (1.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14  bytes 1726 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~# ifconfig -a
+fm1-mac3: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether da:68:f0:d1:d5:ff  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae4000-1ae4fff  
+
+fm1-mac4: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 4e:3e:e5:48:55:4c  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff  
+
+fm1-mac5: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 36:88:ab:d8:f7:8d  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae8000-1ae8fff  
+
+fm1-mac6: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 46:d9:fd:04:88:aa  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1aea000-1aeafff  
+
+fm1-mac9: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether b2:29:40:21:5a:80  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1af0000-1af0fff  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 14  bytes 1726 (1.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14  bytes 1726 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sit0: flags=128<NOARP>  mtu 1480
+        sit  txqueuelen 1000  (IPv6-in-IPv4)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~#                                                    ^C
+root@ubuntu:~# i r 
+root@ubuntu:~# etr   
+root@ubuntu:~# ethrool^C
+root@ubuntu:~# ethtool fm1-mac4
+Settings for fm1-mac4:
+Supported ports: [ ]
+Supported link modes:   Not reported
+Supported pause frame use: No
+Supports auto-negotiation: No
+Supported FEC modes: Not reported
+Advertised link modes:  Not reported
+Advertised pause frame use: No
+Advertised auto-negotiation: No
+Advertised FEC modes: Not reported
+Speed: Unknown!
+Duplex: Half
+Port: Twisted Pair
+PHYAD: 0
+Transceiver: internal
+Auto-negotiation: off
+MDI-X: Unknown
+Supports Wake-on: d
+Wake-on: d
+Current message level: 0xffffffff (-1)
+       drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol 0xffff8000
+Link detected: no
+root@ubuntu:~# ifconfig fm1-mac4 up
+root@ubuntu:~# ifconfig fm1-mac4 uproot@ubuntu:~# ethtool fm1-mac4
+Settings for fm1-mac4:
+Supported ports: [ MII ]
+Supported link modes:   10baseT/Half 10baseT/Full 
+                        100baseT/Half 100baseT/Full 
+                        1000baseT/Full 
+Supported pause frame use: Symmetric Receive-only
+Supports auto-negotiation: Yes
+Supported FEC modes: Not reported
+Advertised link modes:  10baseT/Half 10baseT/Full 
+                        100baseT/Half 100baseT/Full 
+                        1000baseT/Full 
+Advertised pause frame use: Symmetric Receive-only
+Advertised auto-negotiation: Yes
+Advertised FEC modes: Not reported
+Speed: 10Mb/s
+Duplex: Half
+Port: MII
+PHYAD: 2
+Transceiver: internal
+Auto-negotiation: on
+Supports Wake-on: d
+Wake-on: d
+Current message level: 0xffffffff (-1)
+       drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol 0xffff8000
+Link detected: no
+root@ubuntu:~# ifconfig 
+fm1-mac4: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::4c3e:e5ff:fe48:554c  prefixlen 64  scopeid 0x20<link>
+        ether 4e:3e:e5:48:55:4c  txqueuelen 1000  (Ethernet)
+        RX packets 33  bytes 2708 (2.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 13  bytes 1752 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 14  bytes 1726 (1.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14  bytes 1726 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~# ifconfig fm1-mac4 192.168.0.232
+root@ubuntu:~# ifconfig 
+fm1-mac4: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.232  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::4c3e:e5ff:fe48:554c  prefixlen 64  scopeid 0x20<link>
+        ether 4e:3e:e5:48:55:4c  txqueuelen 1000  (Ethernet)
+        RX packets 41  bytes 3791 (3.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 23  bytes 3414 (3.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 14  bytes 1726 (1.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14  bytes 1726 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~# ping 192.168.0.100
+PING 192.168.0.100 (192.168.0.100) 56(84) bytes of data.
+64 bytes from 192.168.0.100: icmp_seq=1 ttl=128 time=0.548 ms
+64 bytes from 192.168.0.100: icmp_seq=2 ttl=128 time=0.290 ms
+64 bytes from 192.168.0.100: icmp_seq=3 ttl=128 time=0.451 ms
+64 bytes from 192.168.0.100: icmp_seq=4 ttl=128 time=0.516 ms
+64 bytes from 192.168.0.100: icmp_seq=5 ttl=128 time=0.415 ms
+^C
+--- 192.168.0.100 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4103ms
+rtt min/avg/max/mdev = 0.290/0.444/0.548/0.090 ms
+root@ubuntu:~# fdisk -l
+Disk /dev/ram0: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram1: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram2: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram3: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram4: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram5: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram6: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram7: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram8: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram9: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram10: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram11: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram12: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram13: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram14: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/ram15: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/sda: 119.2 GiB, 128035676160 bytes, 250069680 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xe31484f6
+
+Device     Boot Start       End   Sectors   Size Id Type
+/dev/sda1        2048 250069679 250067632 119.2G 83 Linux
+
+
+Disk /dev/mmcblk0: 58 GiB, 62226694144 bytes, 121536512 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xfac44477
+
+Device         Boot    Start       End   Sectors  Size Id Type
+/dev/mmcblk0p1        139264    344063    204800  100M 83 Linux
+/dev/mmcblk0p2        346112   2443263   2097152    1G 83 Linux
+/dev/mmcblk0p3       2445312  15028223  12582912    6G 83 Linux
+/dev/mmcblk0p4      15030272 121536511 106506240 50.8G 83 Linux
+root@ubuntu:~# ifconfig 
+fm1-mac4: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.232  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::4c3e:e5ff:fe48:554c  prefixlen 64  scopeid 0x20<link>
+        ether 4e:3e:e5:48:55:4c  txqueuelen 1000  (Ethernet)
+        RX packets 55  bytes 5610 (5.6 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 37  bytes 4656 (4.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0x1ae6000-1ae6fff  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 14  bytes 1726 (1.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14  bytes 1726 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:~# ping 192.168.0.232
+PING 192.168.0.232 (192.168.0.232) 56(84) bytes of data.
+64 bytes from 192.168.0.232: icmp_seq=1 ttl=64 time=0.048 ms
+64 bytes from 192.168.0.232: icmp_seq=2 ttl=64 time=0.047 ms
+^C
+--- 192.168.0.232 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 0.047/0.047/0.048/0.006 ms
+root@ubuntu:~# ethtool fm1-mac4
+Settings for fm1-mac4:
+Supported ports: [ MII ]
+Supported link modes:   10baseT/Half 10baseT/Full 
+                        100baseT/Half 100baseT/Full 
+                        1000baseT/Full 
+Supported pause frame use: Symmetric Receive-only
+Supports auto-negotiation: Yes
+Supported FEC modes: Not reported
+Advertised link modes:  10baseT/Half 10baseT/Full 
+                        100baseT/Half 100baseT/Full 
+                        1000baseT/Full 
+Advertised pause frame use: Symmetric Receive-only
+Advertised auto-negotiation: Yes
+Advertised FEC modes: Not reported
+Link partner advertised link modes:  10baseT/Half 10baseT/Full 
+                                     100baseT/Half 100baseT/Full 
+                                     1000baseT/Full 
+Link partner advertised pause frame use: Symmetric Receive-only
+Link partner advertised auto-negotiation: Yes
+Link partner advertised FEC modes: Not reported
+Speed: 1000Mb/s
+Duplex: Full
+Port: MII
+PHYAD: 2
+Transceiver: internal
+Auto-negotiation: on
+Supports Wake-on: d
+Wake-on: d
+Current message level: 0xffffffff (-1)
+       drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol 0xffff8000
+Link detected: yes
+root@ubuntu:~# ^C
+root@ubuntu:~# 
+root@ubuntu:~# 
