@@ -197,7 +197,18 @@
 
 - 新增文件——》ls1046a驱动移植-eMMC.md
 
+### 2024/03/08
 
+1-完全手册
 
+- 更新内容——》Gie-1046A平台功能测试.md
+- 新增文件——》ls1046a驱动移植-NOR FLASH.md
+- 新增文件——》ls1046a驱动移植-有线网口RGMII&SGMII.md
 
+6-从零开始解析系统启动
 
+- 更新内容——》kernel.md
+
+5-开发参考资料
+
+- 新增文件——》Layerscape FRWY-LS1046A Board Getting Started Guide（中文）.pdf
