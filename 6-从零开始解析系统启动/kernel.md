@@ -85,6 +85,16 @@ mkimage -l uImage
 aarch64-linux-gnu-objdump -D vmlinux > vmlinux.dis
 ```
 
+[根据pc寄存器的值定位出错代码行_skb_release_data-CSDN博客](https://blog.csdn.net/liweigao01/article/details/90062364)
+
+[驱动调试(三)oops确定函数PC - zongzi10010 - 博客园 (cnblogs.com)](https://www.cnblogs.com/zongzi10010/p/10269156.html)
+
+[linux设备驱动第四篇：驱动调试方法_linux 驱动调试-CSDN博客](https://blog.csdn.net/vic_qxz/article/details/112772685)
+
+[linux panic 问题定位_kernel panic定位-CSDN博客](https://blog.csdn.net/varistor/article/details/50462252?spm=1001.2014.3001.5502)
+
+[linux oops产生原理,kernel panic , Oops 等cpu异常的分析与定位-CSDN博客](https://blog.csdn.net/weixin_39980929/article/details/116936728?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2-116936728-blog-50462252.235^v40^pc_relevant_3m_sort_dl_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2-116936728-blog-50462252.235^v40^pc_relevant_3m_sort_dl_base4&utm_relevant_index=5)
+
 
 
 ## linux崩溃后打印这些信息的时候，应该怎么去分析
@@ -261,4 +271,42 @@ aarch64-linux-gnu-objdump -D vmlinux > vmlinux.dis
    - 内存故障、内存损坏或硬件错误。
    - 软件错误导致的内存访问异常。
    - 内核代码中的 bug 或故障。
+
+## module_param
+
+[Linux内核之module_param()函数使用说明-CSDN博客](https://blog.csdn.net/sinat_29891353/article/details/106355202)
+
+## 内核异常报错类型汇总
+
+[内核异常报错类型汇总_kernel panic - not syncing: attempted to kill init-CSDN博客](https://blog.csdn.net/qq_35399548/article/details/122817988)
+
+## 文件详解
+
+[编译Linux后在根目录下生成的几个文件详解_modules.order-CSDN博客](https://blog.csdn.net/weixin_42492218/article/details/130562207)
+
+## kallsyms
+
+[linux内核符号表kallsyms简介_kernel.kallsyms-CSDN博客](https://blog.csdn.net/qq1602382784/article/details/80066847#:~:text=kallsyms抽取了内核用到的所有函数地址,(全局的、静态的)和非栈数据变量地址，生成一个数据块，作为只读数据链接进kernel image，相当于内核中存了一个System.map。)
+
+config中配置
+
+```
+CONFIG_KALLSYMS=y
+CONFIG_KALLSYMS_ALL=y
+```
+
+查看kallsyms表：
+得益于/proc文件系统，我们可以直接读取这个表。
+
+```
+less /proc/kallsyms
+```
+
+[/proc/kallsyms 符号表说明-CSDN博客](https://blog.csdn.net/qq_42931917/article/details/129943916)
+
+[kallsyms | kernel tour (kernel-tour.org)](http://kernel-tour.org/kernel/kallsyms.html)
+
+
+
+
 
