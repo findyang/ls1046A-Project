@@ -212,3 +212,9 @@
 5-开发参考资料
 
 - 新增文件——》Layerscape FRWY-LS1046A Board Getting Started Guide（中文）.pdf
+
+### 2024/07/23
+
+6-从零开始解析系统启动
+
+- 更新内容——》rootfs.md
